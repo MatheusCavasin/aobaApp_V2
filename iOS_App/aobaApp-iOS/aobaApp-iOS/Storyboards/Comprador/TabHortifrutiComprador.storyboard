@@ -21,23 +21,278 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="sI2-BX-5ce" kind="relationship" relationship="rootViewController" id="N9B-eR-eja"/>
+                        <segue destination="gFd-MX-da2" kind="relationship" relationship="rootViewController" id="q0K-QA-dBl"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XfG-Bk-rch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1565" y="-22"/>
+            <point key="canvasLocation" x="-1516" y="-729"/>
         </scene>
         <!--Hortifruti-->
+        <scene sceneID="FQg-K0-wTP">
+            <objects>
+                <viewController id="gFd-MX-da2" customClass="MenuViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yPL-p9-6tq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9eK-xu-lwd">
+                                <rect key="frame" x="20" y="248.5" width="374" height="112.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-9Q-BHR" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="72.5" height="112.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L75-JR-Blg">
+                                                <rect key="frame" x="22" y="46.5" width="28" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.3411764705882353" green="0.70588235294117641" blue="0.23921568627450979" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="L75-JR-Blg" firstAttribute="centerX" secondItem="MIz-9Q-BHR" secondAttribute="centerX" id="Fkr-pg-fC7"/>
+                                            <constraint firstItem="L75-JR-Blg" firstAttribute="centerY" secondItem="MIz-9Q-BHR" secondAttribute="centerY" id="h0n-Bz-71p"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYL-aH-QVu" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="75.5" y="0.0" width="72.5" height="112.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jky-ed-keP">
+                                                <rect key="frame" x="25.5" y="46.5" width="21.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.50196078430000002" green="0.65490196079999996" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="jky-ed-keP" firstAttribute="centerX" secondItem="JYL-aH-QVu" secondAttribute="centerX" id="Lcg-QJ-z9Y"/>
+                                            <constraint firstItem="jky-ed-keP" firstAttribute="centerY" secondItem="JYL-aH-QVu" secondAttribute="centerY" id="jxz-Wz-5ve"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BD-Xv-Jjs" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="151" y="0.0" width="72" height="112.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qua" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibm-ZD-Pyo">
+                                                <rect key="frame" x="22" y="46.5" width="28.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.66274509803921566" green="0.59999999999999998" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ibm-ZD-Pyo" firstAttribute="centerY" secondItem="1BD-Xv-Jjs" secondAttribute="centerY" id="HhG-w2-lvD"/>
+                                            <constraint firstItem="Ibm-ZD-Pyo" firstAttribute="centerX" secondItem="1BD-Xv-Jjs" secondAttribute="centerX" id="IuA-Zg-lXV"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1o-5U-5cE" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="226" y="0.0" width="72.5" height="112.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="qui" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ana-q8-dh1">
+                                                <rect key="frame" x="24.5" y="46.5" width="23.5" height="19.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.81960784313725488" green="0.5490196078431373" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ana-q8-dh1" firstAttribute="centerX" secondItem="a1o-5U-5cE" secondAttribute="centerX" id="jst-S2-nxJ"/>
+                                            <constraint firstItem="Ana-q8-dh1" firstAttribute="centerY" secondItem="a1o-5U-5cE" secondAttribute="centerY" id="lVh-je-e1Y"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-Oj-bRy" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="301.5" y="0.0" width="72.5" height="112.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMr-Mc-mLF">
+                                                <rect key="frame" x="22" y="47" width="27" height="20"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="GMr-Mc-mLF" firstAttribute="centerX" secondItem="Xtk-Oj-bRy" secondAttribute="centerX" id="TLi-qo-3k6"/>
+                                            <constraint firstItem="GMr-Mc-mLF" firstAttribute="centerY" secondItem="Xtk-Oj-bRy" secondAttribute="centerY" id="hZN-LW-Yti"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9eK-xu-lwd" secondAttribute="height" multiplier="200:60" id="BtU-VW-gZa"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP">
+                                <rect key="frame" x="0.0" y="140" width="414" height="49.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não se esqueça de fechar seu pedido até às 20h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fc9-lA-qlz">
+                                        <rect key="frame" x="20" y="17" width="374" height="15.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.49411764705882355" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="fc9-lA-qlz" firstAttribute="leading" secondItem="JEb-x6-gbP" secondAttribute="leading" constant="20" id="7k4-lG-0wL"/>
+                                    <constraint firstAttribute="width" secondItem="JEb-x6-gbP" secondAttribute="height" multiplier="100:12" id="8rY-01-LN7"/>
+                                    <constraint firstAttribute="trailing" secondItem="fc9-lA-qlz" secondAttribute="trailing" constant="20" id="OVi-Ai-aSo"/>
+                                    <constraint firstItem="fc9-lA-qlz" firstAttribute="centerY" secondItem="JEb-x6-gbP" secondAttribute="centerY" id="b7D-0c-eUY"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pra já?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-YD-eAs">
+                                <rect key="frame" x="20" y="214.5" width="66.5" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veja os principais produtores prontos pra entregar no dia que você escolher!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF8-uz-TLc">
+                                <rect key="frame" x="20" y="376" width="374" height="38.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está procurando?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="45k-gI-M7Y">
+                                <rect key="frame" x="20" y="464" width="374" height="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4MU-Rm-4bZ">
+                                <rect key="frame" x="20" y="498" width="374" height="149.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-u9-OMc">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="149.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="k6a-Kr-Ug1" secondAttribute="height" multiplier="113:109" id="g1K-Ht-eoi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frutas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-Jh-ToC">
+                                                <rect key="frame" x="40" y="123" width="41" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="EUt-Jh-ToC" firstAttribute="top" secondItem="k6a-Kr-Ug1" secondAttribute="bottom" constant="6" id="Jfh-3v-qlV"/>
+                                            <constraint firstItem="k6a-Kr-Ug1" firstAttribute="centerX" secondItem="vqt-u9-OMc" secondAttribute="centerX" id="Ken-20-lfq"/>
+                                            <constraint firstItem="k6a-Kr-Ug1" firstAttribute="top" secondItem="vqt-u9-OMc" secondAttribute="top" id="alE-Dc-dWI"/>
+                                            <constraint firstItem="k6a-Kr-Ug1" firstAttribute="width" secondItem="vqt-u9-OMc" secondAttribute="width" id="lY5-2b-TQ8"/>
+                                            <constraint firstItem="EUt-Jh-ToC" firstAttribute="centerX" secondItem="vqt-u9-OMc" secondAttribute="centerX" id="sGb-w3-9DA"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-PK-EAu">
+                                        <rect key="frame" x="126.5" y="0.0" width="121" height="149.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="121" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="ofx-5U-3wZ" secondAttribute="height" multiplier="113:109" id="Qxd-PB-Ief"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verduras" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l78-FT-FNO">
+                                                <rect key="frame" x="32" y="123" width="57" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="l78-FT-FNO" firstAttribute="centerX" secondItem="fR8-PK-EAu" secondAttribute="centerX" id="Aun-O5-F3r"/>
+                                            <constraint firstItem="ofx-5U-3wZ" firstAttribute="width" secondItem="fR8-PK-EAu" secondAttribute="width" id="RZ2-bU-wdy"/>
+                                            <constraint firstItem="ofx-5U-3wZ" firstAttribute="centerX" secondItem="fR8-PK-EAu" secondAttribute="centerX" id="it4-qG-c5L"/>
+                                            <constraint firstItem="ofx-5U-3wZ" firstAttribute="top" secondItem="fR8-PK-EAu" secondAttribute="top" id="t9Y-1h-fts"/>
+                                            <constraint firstItem="l78-FT-FNO" firstAttribute="top" secondItem="ofx-5U-3wZ" secondAttribute="bottom" constant="6" id="txJ-3b-4BN"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-jK-Y1F">
+                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="149.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="or0-9d-pzp" secondAttribute="height" multiplier="113:109" id="eRv-jq-R3f"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Legumes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMF-go-Sf0">
+                                                <rect key="frame" x="31" y="123" width="59.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="CMF-go-Sf0" firstAttribute="centerX" secondItem="SGd-jK-Y1F" secondAttribute="centerX" id="6Tt-zg-YYX"/>
+                                            <constraint firstItem="or0-9d-pzp" firstAttribute="width" secondItem="SGd-jK-Y1F" secondAttribute="width" id="6Zn-5r-hho"/>
+                                            <constraint firstItem="or0-9d-pzp" firstAttribute="top" secondItem="SGd-jK-Y1F" secondAttribute="top" id="Kac-yH-uaw"/>
+                                            <constraint firstItem="or0-9d-pzp" firstAttribute="centerX" secondItem="SGd-jK-Y1F" secondAttribute="centerX" id="MTO-MS-ff8"/>
+                                            <constraint firstItem="CMF-go-Sf0" firstAttribute="top" secondItem="or0-9d-pzp" secondAttribute="bottom" constant="6" id="rHh-Kw-5aE"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4MU-Rm-4bZ" secondAttribute="height" multiplier="100:40" id="Rec-aY-sOb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Gl2-Wz-Opp" firstAttribute="trailing" secondItem="EF8-uz-TLc" secondAttribute="trailing" constant="20" id="4bc-0E-xQD"/>
+                            <constraint firstItem="JEb-x6-gbP" firstAttribute="top" secondItem="Gl2-Wz-Opp" secondAttribute="top" id="74R-j3-7Zi"/>
+                            <constraint firstItem="hPG-YD-eAs" firstAttribute="top" secondItem="JEb-x6-gbP" secondAttribute="bottom" constant="25" id="BLH-rc-wkE"/>
+                            <constraint firstItem="hPG-YD-eAs" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="DM5-Pi-Jzj"/>
+                            <constraint firstItem="Gl2-Wz-Opp" firstAttribute="trailing" secondItem="45k-gI-M7Y" secondAttribute="trailing" constant="20" id="FKw-8F-1IQ"/>
+                            <constraint firstItem="9eK-xu-lwd" firstAttribute="top" secondItem="hPG-YD-eAs" secondAttribute="bottom" constant="10" id="INH-Lp-fZh"/>
+                            <constraint firstItem="Gl2-Wz-Opp" firstAttribute="trailing" secondItem="4MU-Rm-4bZ" secondAttribute="trailing" constant="20" id="Jl0-EL-GLe"/>
+                            <constraint firstItem="9eK-xu-lwd" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="T3g-SJ-R6o"/>
+                            <constraint firstItem="EF8-uz-TLc" firstAttribute="top" secondItem="MIz-9Q-BHR" secondAttribute="bottom" constant="15" id="TIC-7x-9Kx"/>
+                            <constraint firstItem="JEb-x6-gbP" firstAttribute="width" secondItem="yPL-p9-6tq" secondAttribute="width" id="VTS-Cd-4QN"/>
+                            <constraint firstItem="JEb-x6-gbP" firstAttribute="centerX" secondItem="Gl2-Wz-Opp" secondAttribute="centerX" id="Z65-0N-5Fq"/>
+                            <constraint firstItem="Gl2-Wz-Opp" firstAttribute="trailing" secondItem="9eK-xu-lwd" secondAttribute="trailing" constant="20" id="ckH-UB-Zvw"/>
+                            <constraint firstItem="45k-gI-M7Y" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="kM4-Qr-2Ok"/>
+                            <constraint firstItem="4MU-Rm-4bZ" firstAttribute="top" secondItem="45k-gI-M7Y" secondAttribute="bottom" constant="10" id="mfq-xS-wG9"/>
+                            <constraint firstItem="EF8-uz-TLc" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="sya-2V-Acc"/>
+                            <constraint firstItem="45k-gI-M7Y" firstAttribute="top" secondItem="EF8-uz-TLc" secondAttribute="bottom" multiplier="1.1" constant="8" symbolic="YES" id="yoR-ND-4Hh"/>
+                            <constraint firstItem="4MU-Rm-4bZ" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="zlM-P9-EC4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gl2-Wz-Opp"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Hortifruti" largeTitleDisplayMode="always" id="pbv-td-mSJ"/>
+                    <connections>
+                        <outlet property="imgFrutas" destination="k6a-Kr-Ug1" id="JUh-AV-Mr0"/>
+                        <outlet property="imgLegumes" destination="or0-9d-pzp" id="4Pp-b5-txy"/>
+                        <outlet property="imgVerduras" destination="ofx-5U-3wZ" id="bYI-wU-lNn"/>
+                        <outlet property="qua" destination="1BD-Xv-Jjs" id="Aob-Sf-hGI"/>
+                        <outlet property="qui" destination="a1o-5U-5cE" id="6wA-48-hJb"/>
+                        <outlet property="seg" destination="MIz-9Q-BHR" id="x2g-HW-DvY"/>
+                        <outlet property="sex" destination="Xtk-Oj-bRy" id="nQt-a1-xxF"/>
+                        <outlet property="ter" destination="JYL-aH-QVu" id="N8o-F1-z8Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLT-Xk-uvo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-710.14492753623199" y="-729.24107142857144"/>
+        </scene>
+        <!--hortifruti-->
         <scene sceneID="a6x-RW-gZj">
             <objects>
-                <viewController id="sI2-BX-5ce" customClass="HortifrutiViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="hortifruti" storyboardIdentifier="hortifruti" title="hortifruti" id="sI2-BX-5ce" customClass="HortifrutiViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5bk-iK-afS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qgy-47-Kmi">
-                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
@@ -57,7 +312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h41-TO-e27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-688.40579710144937" y="-21.428571428571427"/>
+            <point key="canvasLocation" x="-709" y="-22"/>
         </scene>
         <!--Produto Table View Controller-->
         <scene sceneID="BXd-Cn-kAn">
@@ -634,9 +889,12 @@
     </scenes>
     <resources>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="fruta-abacaxi" width="139" height="95"/>
         <image name="fruta-maca" width="113" height="102"/>
         <image name="icone-loja" width="22" height="19.5"/>
+        <image name="legume-milho" width="139" height="95"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="verdura-alface" width="139" height="95"/>
+        <image name="verdura-brocolis" width="139" height="95"/>
     </resources>
 </document>

@@ -19,6 +19,7 @@ class ProdutoTableViewController: UITableViewController {
         
         // Navigation Controller
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Busque aqui seu produto"
         navigationItem.searchController = searchController
         btnCarrinho = UIBarButtonItem(image: UIImage(named: "icone-carrinho")?.withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(self.addTappped))
         navigationItem.setRightBarButton(btnCarrinho, animated: true)
