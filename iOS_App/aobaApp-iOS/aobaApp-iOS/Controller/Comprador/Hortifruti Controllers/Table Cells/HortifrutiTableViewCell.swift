@@ -42,7 +42,7 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     // Collection view inside table row
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return produtos.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

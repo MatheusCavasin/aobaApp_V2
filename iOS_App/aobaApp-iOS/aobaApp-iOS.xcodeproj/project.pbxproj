@@ -64,6 +64,9 @@
 		D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67924E43369007D138A /* TipoComercio.swift */; };
 		D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67A24E4336A007D138A /* TipoProduto.swift */; };
 		D19FE68824E4336A007D138A /* Ceasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67B24E4336A007D138A /* Ceasa.swift */; };
+		D1CAE65E250917E100A024E4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE65D250917E000A024E4 /* MenuViewController.swift */; };
+		D1CAE66125091FAC00A024E4 /* DiaDaSemanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */; };
+		D1CAE6632509207E00A024E4 /* ImagemArredondada.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */; };
 		D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876624EC1B4900266EC0 /* Singleton.swift */; };
 		D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */; };
 		D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */; };
@@ -137,6 +140,9 @@
 		D19FE67924E43369007D138A /* TipoComercio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoComercio.swift; sourceTree = "<group>"; };
 		D19FE67A24E4336A007D138A /* TipoProduto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoProduto.swift; sourceTree = "<group>"; };
 		D19FE67B24E4336A007D138A /* Ceasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ceasa.swift; sourceTree = "<group>"; };
+		D1CAE65D250917E000A024E4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaView.swift; sourceTree = "<group>"; };
+		D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagemArredondada.swift; sourceTree = "<group>"; };
 		D1CB876624EC1B4900266EC0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
 		D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
@@ -351,12 +357,14 @@
 		D16DB9A124E6B8A500B2B279 /* Hortifruti Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D1CAE65F25091F8D00A024E4 /* Elementos Personalizados */,
 				D16DB9A724E6B95300B2B279 /* Table Cells */,
 				D16DB9A624E6B94700B2B279 /* Collection Cells */,
 				D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */,
 				D14CB6E324ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift */,
 				D16DB9AE24E6BD7900B2B279 /* HortifrutiViewController.swift */,
 				D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */,
+				D1CAE65D250917E000A024E4 /* MenuViewController.swift */,
 			);
 			path = "Hortifruti Controllers";
 			sourceTree = "<group>";
@@ -401,6 +409,15 @@
 				D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */,
 			);
 			path = Comprador;
+			sourceTree = "<group>";
+		};
+		D1CAE65F25091F8D00A024E4 /* Elementos Personalizados */ = {
+			isa = PBXGroup;
+			children = (
+				D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */,
+				D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */,
+			);
+			path = "Elementos Personalizados";
 			sourceTree = "<group>";
 		};
 		D1EC845F24F54B08003BB786 /* Classes Anuncio */ = {
@@ -503,6 +520,8 @@
 				88B8423524E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift in Sources */,
 				88359C8224D9A3640073628A /* User.swift in Sources */,
 				D123483A24EEC540007095E2 /* Celulas do detalhe do produto.swift in Sources */,
+				D1CAE65E250917E100A024E4 /* MenuViewController.swift in Sources */,
+				D1CAE66125091FAC00A024E4 /* DiaDaSemanaView.swift in Sources */,
 				88051B2524D1A39100339FE9 /* ViewController.swift in Sources */,
 				88051B2124D1A39100339FE9 /* AppDelegate.swift in Sources */,
 				D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */,
@@ -535,6 +554,7 @@
 				D19D95D924E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift in Sources */,
 				88B8423E24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift in Sources */,
 				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
+				D1CAE6632509207E00A024E4 /* ImagemArredondada.swift in Sources */,
 				88C22E042508607B00A92F77 /* LoadingViewController.swift in Sources */,
 				D1E9C28224EFF37A0002B9B6 /* Celulas do carrinho.swift in Sources */,
 				D14CB6E224ED6B7C00CA9B3F /* CarrinhoViewController.swift in Sources */,
@@ -693,7 +713,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GN6S9CHL7;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = "aobaApp-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -714,7 +734,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GN6S9CHL7;
+				DEVELOPMENT_TEAM = CM34PRAQJX;
 				INFOPLIST_FILE = "aobaApp-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

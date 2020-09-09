@@ -53,6 +53,7 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         
         //Navbar and search item
         let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Busque aqui seu produto"
         navigationItem.searchController = searchController
         
         frutas = [
