@@ -1,0 +1,31 @@
+### Read all
+https://aoba-app-server.herokuapp.com/getall
+
+
+### Read by ID
+https://aoba-app-server.herokuapp.com/get/22
+
+
+### Delete
+https://aoba-app-server.herokuapp.com/delete/3
+
+
+### Create
+POST https://aoba-app-server.herokuapp.com/add/form
+Content-Type: application/json
+
+{
+    "author": "Jose Guilherminho",
+    "name": "A arte de esconder meu segundo nome",
+    "published": "onti"
+}
+
+### Update
+PUT https://aoba-app-server.herokuapp.com/update/2
+Content-Type: application/json
+
+{
+    "author": "Cava",
+    "name": "O famoso cavasódia",
+    "published": "anti-onti"
+}

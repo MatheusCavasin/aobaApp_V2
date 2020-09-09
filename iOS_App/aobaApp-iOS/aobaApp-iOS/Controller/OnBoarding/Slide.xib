@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="Slide" customModule="aobaApp_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RGN-kS-Uts" userLabel="HeaderView">
+                    <rect key="frame" x="0.0" y="44" width="414" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="RGN-kS-Uts" secondAttribute="height" multiplier="6:1" id="jW2-Rt-1AP"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epS-yT-o88" userLabel="LogoView">
+                    <rect key="frame" x="0.0" y="113" width="414" height="130"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aoba-onboarding" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-8P-heb" userLabel="logoImageView">
+                            <rect key="frame" x="142" y="0.0" width="130" height="130"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="dIb-8P-heb" secondAttribute="height" multiplier="1:1" id="DbQ-is-IrM"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="dIb-8P-heb" firstAttribute="centerX" secondItem="epS-yT-o88" secondAttribute="centerX" id="WXc-Qr-9se"/>
+                        <constraint firstAttribute="width" secondItem="epS-yT-o88" secondAttribute="height" multiplier="207:65" id="kOJ-rC-KOU"/>
+                        <constraint firstItem="dIb-8P-heb" firstAttribute="height" secondItem="epS-yT-o88" secondAttribute="height" id="nF7-DZ-7mu"/>
+                        <constraint firstItem="dIb-8P-heb" firstAttribute="centerY" secondItem="epS-yT-o88" secondAttribute="centerY" id="y4X-oT-ict"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0QU-vl-5UP" userLabel="SpaceView">
+                    <rect key="frame" x="0.0" y="243" width="414" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="0QU-vl-5UP" secondAttribute="height" multiplier="138:5" id="NGh-RG-6V1"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehr-We-OKb" userLabel="ImageView">
+                    <rect key="frame" x="0.0" y="258" width="414" height="316"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HAH-wG-bPR" userLabel="imageBoardingView">
+                            <rect key="frame" x="44" y="0.0" width="326" height="316"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="HAH-wG-bPR" secondAttribute="height" multiplier="163:158" id="thM-OR-77K"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="HAH-wG-bPR" firstAttribute="centerX" secondItem="ehr-We-OKb" secondAttribute="centerX" id="Ujd-Aa-UeJ"/>
+                        <constraint firstItem="HAH-wG-bPR" firstAttribute="height" secondItem="ehr-We-OKb" secondAttribute="height" id="c3d-wL-gFB"/>
+                        <constraint firstItem="HAH-wG-bPR" firstAttribute="centerY" secondItem="ehr-We-OKb" secondAttribute="centerY" id="y3v-9G-hVI"/>
+                        <constraint firstAttribute="width" secondItem="ehr-We-OKb" secondAttribute="height" multiplier="207:158" id="z25-v0-Qpt"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bW-ux-Do5" userLabel="Space2View">
+                    <rect key="frame" x="0.0" y="574" width="414" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="4bW-ux-Do5" secondAttribute="height" multiplier="9:1" id="hCB-kg-DKb"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwt-dI-Kdi" userLabel="DescriptionView">
+                    <rect key="frame" x="0.0" y="620" width="414" height="141"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mk7-i8-Jaj" userLabel="descriptionTextView">
+                            <rect key="frame" x="44.5" y="0.0" width="325" height="141"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="mk7-i8-Jaj" secondAttribute="height" multiplier="325:141" id="fe1-Hy-RO9"/>
+                            </constraints>
+                            <string key="text">Negócio fechado? Nós buscamos o alimento com o produtor no CEASA e levamos até o comerciante final. E ambos ainda podem acompanhar todo o trajeto da carga!</string>
+                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="mk7-i8-Jaj" firstAttribute="height" secondItem="Iwt-dI-Kdi" secondAttribute="height" id="Eu0-dL-d60"/>
+                        <constraint firstItem="mk7-i8-Jaj" firstAttribute="centerX" secondItem="Iwt-dI-Kdi" secondAttribute="centerX" id="Ney-Tp-yQd"/>
+                        <constraint firstItem="mk7-i8-Jaj" firstAttribute="centerY" secondItem="Iwt-dI-Kdi" secondAttribute="centerY" id="fCf-HZ-lqt"/>
+                        <constraint firstAttribute="width" secondItem="Iwt-dI-Kdi" secondAttribute="height" multiplier="138:47" id="tco-Zd-dyG"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ehr-We-OKb" firstAttribute="top" secondItem="0QU-vl-5UP" secondAttribute="bottom" id="0aY-bE-BtN"/>
+                <constraint firstItem="0QU-vl-5UP" firstAttribute="top" secondItem="epS-yT-o88" secondAttribute="bottom" id="4e6-vK-k7e"/>
+                <constraint firstItem="RGN-kS-Uts" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="AB9-1Y-b3j"/>
+                <constraint firstItem="Iwt-dI-Kdi" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="EvG-sj-OQr"/>
+                <constraint firstItem="epS-yT-o88" firstAttribute="top" secondItem="RGN-kS-Uts" secondAttribute="bottom" id="Faz-6F-kaz"/>
+                <constraint firstItem="4bW-ux-Do5" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="KkS-Kq-pkO"/>
+                <constraint firstItem="epS-yT-o88" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.158924" id="X8q-kC-lje"/>
+                <constraint firstItem="ehr-We-OKb" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="YPE-c0-kzs"/>
+                <constraint firstItem="4bW-ux-Do5" firstAttribute="top" secondItem="ehr-We-OKb" secondAttribute="bottom" id="ZcR-JW-3Nj"/>
+                <constraint firstItem="0QU-vl-5UP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="bUS-fk-BlZ"/>
+                <constraint firstItem="RGN-kS-Uts" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.0843521" id="bkc-jj-aZF"/>
+                <constraint firstItem="0QU-vl-5UP" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.0183374" id="cIe-dU-dgw"/>
+                <constraint firstItem="ehr-We-OKb" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.386308" id="gVr-F6-4Yt"/>
+                <constraint firstItem="RGN-kS-Uts" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="mX2-eY-h2Z"/>
+                <constraint firstItem="epS-yT-o88" firstAttribute="centerX" secondItem="RGN-kS-Uts" secondAttribute="centerX" id="qoa-Or-K1u"/>
+                <constraint firstItem="Iwt-dI-Kdi" firstAttribute="top" secondItem="4bW-ux-Do5" secondAttribute="bottom" id="rPg-2f-hX6"/>
+                <constraint firstItem="Iwt-dI-Kdi" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.172372" id="tro-Lx-tGm"/>
+                <constraint firstItem="4bW-ux-Do5" firstAttribute="height" secondItem="vUN-kp-3ea" secondAttribute="height" multiplier="0.0562347" id="zOT-Jr-Uhy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="descriptionTextView" destination="mk7-i8-Jaj" id="fKF-U4-r7g"/>
+                <outlet property="imageBoardingView" destination="HAH-wG-bPR" id="aC1-lX-Ri0"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="aoba-onboarding" width="130" height="130"/>
+    </resources>
+</document>

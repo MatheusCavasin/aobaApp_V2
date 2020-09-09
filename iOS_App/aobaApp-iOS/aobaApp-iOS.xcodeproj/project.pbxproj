@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39195C5124F54FEE00A1A82A /* ApiResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39195C5024F54FEE00A1A82A /* ApiResource.swift */; };
+		39F57E0424EFFE4D00D9FA4B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F57E0324EFFE4D00D9FA4B /* OnBoardingViewController.swift */; };
+		39F57E0724EFFF2B00D9FA4B /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F57E0624EFFF2B00D9FA4B /* Slide.swift */; };
+		39F57E0924EFFF4B00D9FA4B /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F57E0824EFFF4B00D9FA4B /* Slide.xib */; };
+		88051B2124D1A39100339FE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2024D1A39100339FE9 /* AppDelegate.swift */; };
+		88051B2324D1A39100339FE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2224D1A39100339FE9 /* SceneDelegate.swift */; };
+		88051B2524D1A39100339FE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2424D1A39100339FE9 /* ViewController.swift */; };
+		88051B2824D1A39100339FE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88051B2624D1A39100339FE9 /* Main.storyboard */; };
+		88051B2A24D1A39300339FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88051B2924D1A39300339FE9 /* Assets.xcassets */; };
+		88051B2D24D1A39300339FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88051B2B24D1A39300339FE9 /* LaunchScreen.storyboard */; };
+		8825AB2424FFD25600DC41D6 /* EditarAnuncioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */; };
+		88359C8224D9A3640073628A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88359C8124D9A3640073628A /* User.swift */; };
+		88359C8624E2EB9B0073628A /* PrincipalComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */; };
+		88359C8824E416BC0073628A /* CadastroVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8724E416BC0073628A /* CadastroVendedor.storyboard */; };
+		88359C8A24E4189E0073628A /* PrincipalVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8924E4189E0073628A /* PrincipalVendedor.storyboard */; };
+		88359C8C24E41D670073628A /* CadastroComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8B24E41D670073628A /* CadastroComprador.storyboard */; };
+		88359C9024E41F8C0073628A /* TabHortifrutiComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8F24E41F8C0073628A /* TabHortifrutiComprador.storyboard */; };
+		88359C9224E41FA50073628A /* TabPedidosComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9124E41FA50073628A /* TabPedidosComprador.storyboard */; };
+		88359C9424E41FED0073628A /* PedidosVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9324E41FED0073628A /* PedidosVendedor.storyboard */; };
+		88359C9624E420060073628A /* TabAnuncioVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9524E420060073628A /* TabAnuncioVendedor.storyboard */; };
+		88359C9824E4200E0073628A /* TabPerfilVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9724E4200E0073628A /* TabPerfilVendedor.storyboard */; };
+		88359C9A24E421940073628A /* TabPedidosVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9924E421940073628A /* TabPedidosVendedor.storyboard */; };
+		88359C9C24E424620073628A /* PrincipalVendedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88359C9B24E424620073628A /* PrincipalVendedor.swift */; };
+		886227A324E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */; };
+		889F112124FD227C00B58431 /* ProdutorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F112024FD227C00B58431 /* ProdutorRepository.swift */; };
+		88B8423324E6D47300E21123 /* LoginVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423024E6D47300E21123 /* LoginVendedorViewController.swift */; };
+		88B8423424E6D47300E21123 /* Cadastro1VendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423124E6D47300E21123 /* Cadastro1VendedorViewController.swift */; };
+		88B8423524E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423224E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift */; };
+		88B8423824E6D77900E21123 /* AnuncioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */; };
+		88B8423E24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */; };
+		88C22E042508607B00A92F77 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C22E032508607B00A92F77 /* LoadingViewController.swift */; };
+		D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */; };
+		D123483824EEB6CC007095E2 /* TabPerfilComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D123483724EEB6CC007095E2 /* TabPerfilComprador.storyboard */; };
+		D123483A24EEC540007095E2 /* Celulas do detalhe do produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123483924EEC540007095E2 /* Celulas do detalhe do produto.swift */; };
+		D14CB6E224ED6B7C00CA9B3F /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */; };
+		D14CB6E424ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14CB6E324ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift */; };
+		D16DB9A424E6B93700B2B279 /* HortifrutiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9A224E6B93700B2B279 /* HortifrutiCollectionViewCell.swift */; };
+		D16DB9A524E6B93700B2B279 /* HortifrutiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16DB9A324E6B93700B2B279 /* HortifrutiCollectionViewCell.xib */; };
+		D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9AA24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift */; };
+		D16DB9AD24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16DB9AB24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib */; };
+		D16DB9AF24E6BD7900B2B279 /* HortifrutiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9AE24E6BD7900B2B279 /* HortifrutiViewController.swift */; };
+		D16DB9D324E6FCE400B2B279 /* Comerciante.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9D224E6FCE400B2B279 /* Comerciante.swift */; };
+		D19D95D524E57252007701C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95D424E57252007701C4 /* LoginViewController.swift */; };
+		D19D95D724E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95D624E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift */; };
+		D19D95D924E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95D824E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift */; };
+		D19D95DB24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95DA24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift */; };
+		D19FE67C24E4336A007D138A /* CategoriaProduto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE66F24E43368007D138A /* CategoriaProduto.swift */; };
+		D19FE67D24E4336A007D138A /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67024E43369007D138A /* Pedido.swift */; };
+		D19FE67F24E4336A007D138A /* Anuncio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67224E43369007D138A /* Anuncio.swift */; };
+		D19FE68024E4336A007D138A /* Produtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67324E43369007D138A /* Produtor.swift */; };
+		D19FE68124E4336A007D138A /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67424E43369007D138A /* Produto.swift */; };
+		D19FE68324E4336A007D138A /* ItemCarrinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67624E43369007D138A /* ItemCarrinho.swift */; };
+		D19FE68424E4336A007D138A /* StatusItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67724E43369007D138A /* StatusItem.swift */; };
+		D19FE68524E4336A007D138A /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67824E43369007D138A /* Endereco.swift */; };
+		D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67924E43369007D138A /* TipoComercio.swift */; };
+		D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67A24E4336A007D138A /* TipoProduto.swift */; };
+		D19FE68824E4336A007D138A /* Ceasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67B24E4336A007D138A /* Ceasa.swift */; };
+		D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876624EC1B4900266EC0 /* Singleton.swift */; };
+		D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */; };
+		D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */; };
+		D1CB876D24EC32A000266EC0 /* ProdutoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1CB876B24EC32A000266EC0 /* ProdutoTableViewCell.xib */; };
+		D1E9C28224EFF37A0002B9B6 /* Celulas do carrinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E9C28124EFF37A0002B9B6 /* Celulas do carrinho.swift */; };
+		D1EC845A24F549FF003BB786 /* ButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC845924F549FF003BB786 /* ButtonConfig.swift */; };
+		D1EC845C24F54A1A003BB786 /* ModelVendedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */; };
+		D1EC846124F54B15003BB786 /* CriarAnuncioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */; };
+		D1EC846324F54B1B003BB786 /* CriarAnuncioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		39195C5024F54FEE00A1A82A /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = "aobaApp-iOS/Resource/ApiResource.swift"; sourceTree = SOURCE_ROOT; };
+		39F57E0324EFFE4D00D9FA4B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		39F57E0624EFFF2B00D9FA4B /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		39F57E0824EFFF4B00D9FA4B /* Slide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
+		88051B1D24D1A39100339FE9 /* aobaApp-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "aobaApp-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88051B2024D1A39100339FE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		88051B2224D1A39100339FE9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		88051B2424D1A39100339FE9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		88051B2724D1A39100339FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		88051B2924D1A39300339FE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88051B2C24D1A39300339FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		88051B2E24D1A39300339FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAnuncioController.swift; sourceTree = "<group>"; };
+		88359C8124D9A3640073628A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrincipalComprador.storyboard; sourceTree = "<group>"; };
+		88359C8724E416BC0073628A /* CadastroVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroVendedor.storyboard; sourceTree = "<group>"; };
+		88359C8924E4189E0073628A /* PrincipalVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrincipalVendedor.storyboard; sourceTree = "<group>"; };
+		88359C8B24E41D670073628A /* CadastroComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroComprador.storyboard; sourceTree = "<group>"; };
+		88359C8F24E41F8C0073628A /* TabHortifrutiComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabHortifrutiComprador.storyboard; sourceTree = "<group>"; };
+		88359C9124E41FA50073628A /* TabPedidosComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPedidosComprador.storyboard; sourceTree = "<group>"; };
+		88359C9324E41FED0073628A /* PedidosVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PedidosVendedor.storyboard; sourceTree = "<group>"; };
+		88359C9524E420060073628A /* TabAnuncioVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabAnuncioVendedor.storyboard; sourceTree = "<group>"; };
+		88359C9724E4200E0073628A /* TabPerfilVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPerfilVendedor.storyboard; sourceTree = "<group>"; };
+		88359C9924E421940073628A /* TabPedidosVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPedidosVendedor.storyboard; sourceTree = "<group>"; };
+		88359C9B24E424620073628A /* PrincipalVendedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalVendedor.swift; sourceTree = "<group>"; };
+		88359C9D24E429290073628A /* PrincipalComprador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalComprador.swift; sourceTree = "<group>"; };
+		886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioVendedorTableViewCell.swift; sourceTree = "<group>"; };
+		889F112024FD227C00B58431 /* ProdutorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutorRepository.swift; sourceTree = "<group>"; };
+		88B8423024E6D47300E21123 /* LoginVendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVendedorViewController.swift; sourceTree = "<group>"; };
+		88B8423124E6D47300E21123 /* Cadastro1VendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadastro1VendedorViewController.swift; sourceTree = "<group>"; };
+		88B8423224E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadastro2VendedorViewControllerViewController.swift; sourceTree = "<group>"; };
+		88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioTableViewController.swift; sourceTree = "<group>"; };
+		88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAnuncioVendedorViewController.swift; sourceTree = "<group>"; };
+		88C22E032508607B00A92F77 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalComprador.swift; sourceTree = "<group>"; };
+		D123483724EEB6CC007095E2 /* TabPerfilComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPerfilComprador.storyboard; sourceTree = "<group>"; };
+		D123483924EEC540007095E2 /* Celulas do detalhe do produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Celulas do detalhe do produto.swift"; sourceTree = "<group>"; };
+		D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
+		D14CB6E324ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesDoProdutoViewController.swift; sourceTree = "<group>"; };
+		D16DB9A224E6B93700B2B279 /* HortifrutiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortifrutiCollectionViewCell.swift; sourceTree = "<group>"; };
+		D16DB9A324E6B93700B2B279 /* HortifrutiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HortifrutiCollectionViewCell.xib; sourceTree = "<group>"; };
+		D16DB9AA24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortifrutiTableViewCell.swift; sourceTree = "<group>"; };
+		D16DB9AB24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HortifrutiTableViewCell.xib; sourceTree = "<group>"; };
+		D16DB9AE24E6BD7900B2B279 /* HortifrutiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortifrutiViewController.swift; sourceTree = "<group>"; };
+		D16DB9D224E6FCE400B2B279 /* Comerciante.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comerciante.swift; sourceTree = "<group>"; };
+		D16DB9D424E6FD0300B2B279 /* TabAnuncioVendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabAnuncioVendedorViewController.swift; sourceTree = "<group>"; };
+		D19D95D424E57252007701C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D19D95D624E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiraTelaDeCadastroViewController.swift; sourceTree = "<group>"; };
+		D19D95D824E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegundaTelaDeCadastroViewControllerViewController.swift; sourceTree = "<group>"; };
+		D19D95DA24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiraTelaDeCadastroViewControllerViewController.swift; sourceTree = "<group>"; };
+		D19FE66F24E43368007D138A /* CategoriaProduto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriaProduto.swift; sourceTree = "<group>"; };
+		D19FE67024E43369007D138A /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
+		D19FE67224E43369007D138A /* Anuncio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anuncio.swift; sourceTree = "<group>"; };
+		D19FE67324E43369007D138A /* Produtor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produtor.swift; sourceTree = "<group>"; };
+		D19FE67424E43369007D138A /* Produto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		D19FE67624E43369007D138A /* ItemCarrinho.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCarrinho.swift; sourceTree = "<group>"; };
+		D19FE67724E43369007D138A /* StatusItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusItem.swift; sourceTree = "<group>"; };
+		D19FE67824E43369007D138A /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
+		D19FE67924E43369007D138A /* TipoComercio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoComercio.swift; sourceTree = "<group>"; };
+		D19FE67A24E4336A007D138A /* TipoProduto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoProduto.swift; sourceTree = "<group>"; };
+		D19FE67B24E4336A007D138A /* Ceasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ceasa.swift; sourceTree = "<group>"; };
+		D1CB876624EC1B4900266EC0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
+		D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
+		D1CB876B24EC32A000266EC0 /* ProdutoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProdutoTableViewCell.xib; sourceTree = "<group>"; };
+		D1E9C28124EFF37A0002B9B6 /* Celulas do carrinho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Celulas do carrinho.swift"; sourceTree = "<group>"; };
+		D1EC845924F549FF003BB786 /* ButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
+		D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelVendedor.swift; sourceTree = "<group>"; };
+		D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarAnuncioTableViewCell.swift; sourceTree = "<group>"; };
+		D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarAnuncioViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88051B1A24D1A39100339FE9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		39195C4D24F54FA500A1A82A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				39195C5024F54FEE00A1A82A /* ApiResource.swift */,
+			);
+			name = Resource;
+			path = Model/Resource;
+			sourceTree = "<group>";
+		};
+		39F57E0524EFFEFA00D9FA4B /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				39F57E0324EFFE4D00D9FA4B /* OnBoardingViewController.swift */,
+				39F57E0624EFFF2B00D9FA4B /* Slide.swift */,
+				39F57E0824EFFF4B00D9FA4B /* Slide.xib */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		88051B1424D1A39100339FE9 = {
+			isa = PBXGroup;
+			children = (
+				88051B1F24D1A39100339FE9 /* aobaApp-iOS */,
+				88051B1E24D1A39100339FE9 /* Products */,
+				D16DB9D124E6FCBF00B2B279 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		88051B1E24D1A39100339FE9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88051B1D24D1A39100339FE9 /* aobaApp-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88051B1F24D1A39100339FE9 /* aobaApp-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				39195C4D24F54FA500A1A82A /* Resource */,
+				889F111D24FD221E00B58431 /* Repository */,
+				88359C7E24D848770073628A /* Model */,
+				88359C7F24D848B90073628A /* Controller */,
+				88359C8024D848D10073628A /* Storyboards */,
+				88051B2024D1A39100339FE9 /* AppDelegate.swift */,
+				88051B2224D1A39100339FE9 /* SceneDelegate.swift */,
+				88051B2924D1A39300339FE9 /* Assets.xcassets */,
+				88051B2E24D1A39300339FE9 /* Info.plist */,
+			);
+			path = "aobaApp-iOS";
+			sourceTree = "<group>";
+		};
+		88359C7E24D848770073628A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				88825C7524FC5763002256F4 /* Produto */,
+				D19FE67224E43369007D138A /* Anuncio.swift */,
+				D19FE67B24E4336A007D138A /* Ceasa.swift */,
+				D19FE67824E43369007D138A /* Endereco.swift */,
+				D19FE67624E43369007D138A /* ItemCarrinho.swift */,
+				D19FE67024E43369007D138A /* Pedido.swift */,
+				D19FE67324E43369007D138A /* Produtor.swift */,
+				D16DB9D224E6FCE400B2B279 /* Comerciante.swift */,
+				D19FE67724E43369007D138A /* StatusItem.swift */,
+				D19FE67924E43369007D138A /* TipoComercio.swift */,
+				D1EC845924F549FF003BB786 /* ButtonConfig.swift */,
+				D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */,
+				88359C8124D9A3640073628A /* User.swift */,
+				D1CB876624EC1B4900266EC0 /* Singleton.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		88359C7F24D848B90073628A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				39F57E0524EFFEFA00D9FA4B /* OnBoarding */,
+				D19D95D324E57228007701C4 /* Comprador */,
+				88B8423624E6D47C00E21123 /* Vendedor */,
+				88051B2424D1A39100339FE9 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		88359C8024D848D10073628A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				88051B2B24D1A39300339FE9 /* LaunchScreen.storyboard */,
+				88051B2624D1A39100339FE9 /* Main.storyboard */,
+				88359C8E24E41F4F0073628A /* Comprador */,
+				88359C8D24E41F3B0073628A /* Vendedor */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		88359C8D24E41F3B0073628A /* Vendedor */ = {
+			isa = PBXGroup;
+			children = (
+				88359C8724E416BC0073628A /* CadastroVendedor.storyboard */,
+				88359C9324E41FED0073628A /* PedidosVendedor.storyboard */,
+				88359C8924E4189E0073628A /* PrincipalVendedor.storyboard */,
+				88359C9524E420060073628A /* TabAnuncioVendedor.storyboard */,
+				88359C9924E421940073628A /* TabPedidosVendedor.storyboard */,
+				88359C9724E4200E0073628A /* TabPerfilVendedor.storyboard */,
+			);
+			path = Vendedor;
+			sourceTree = "<group>";
+		};
+		88359C8E24E41F4F0073628A /* Comprador */ = {
+			isa = PBXGroup;
+			children = (
+				88359C8F24E41F8C0073628A /* TabHortifrutiComprador.storyboard */,
+				88359C8B24E41D670073628A /* CadastroComprador.storyboard */,
+				88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */,
+				88359C9124E41FA50073628A /* TabPedidosComprador.storyboard */,
+				D123483724EEB6CC007095E2 /* TabPerfilComprador.storyboard */,
+			);
+			path = Comprador;
+			sourceTree = "<group>";
+		};
+		88825C7424FC4CE6002256F4 /* Cadastro Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				88B8423024E6D47300E21123 /* LoginVendedorViewController.swift */,
+				88B8423124E6D47300E21123 /* Cadastro1VendedorViewController.swift */,
+				88B8423224E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift */,
+			);
+			path = "Cadastro Controllers";
+			sourceTree = "<group>";
+		};
+		88825C7524FC5763002256F4 /* Produto */ = {
+			isa = PBXGroup;
+			children = (
+				D19FE67A24E4336A007D138A /* TipoProduto.swift */,
+				D19FE66F24E43368007D138A /* CategoriaProduto.swift */,
+				D19FE67424E43369007D138A /* Produto.swift */,
+			);
+			path = Produto;
+			sourceTree = "<group>";
+		};
+		889F111D24FD221E00B58431 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				889F111E24FD223C00B58431 /* Produtor Request */,
+				889F111F24FD224500B58431 /* Comprador Request */,
+			);
+			name = Repository;
+			path = "Model/Resource/aobaApp-iOS/Model/Resource/Repository";
+			sourceTree = "<group>";
+		};
+		889F111E24FD223C00B58431 /* Produtor Request */ = {
+			isa = PBXGroup;
+			children = (
+				889F112024FD227C00B58431 /* ProdutorRepository.swift */,
+			);
+			path = "Produtor Request";
+			sourceTree = "<group>";
+		};
+		889F111F24FD224500B58431 /* Comprador Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Comprador Request";
+			sourceTree = "<group>";
+		};
+		88B8423624E6D47C00E21123 /* Vendedor */ = {
+			isa = PBXGroup;
+			children = (
+				88825C7424FC4CE6002256F4 /* Cadastro Controllers */,
+				D1EC845F24F54B08003BB786 /* Classes Anuncio */,
+				88359C9B24E424620073628A /* PrincipalVendedor.swift */,
+				88C22E032508607B00A92F77 /* LoadingViewController.swift */,
+				88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */,
+				88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */,
+				886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */,
+			);
+			path = Vendedor;
+			sourceTree = "<group>";
+		};
+		D16DB9A024E6B85500B2B279 /* Cadastro Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D19D95D624E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift */,
+				D19D95D824E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift */,
+				D19D95DA24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift */,
+			);
+			path = "Cadastro Controllers";
+			sourceTree = "<group>";
+		};
+		D16DB9A124E6B8A500B2B279 /* Hortifruti Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D16DB9A724E6B95300B2B279 /* Table Cells */,
+				D16DB9A624E6B94700B2B279 /* Collection Cells */,
+				D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */,
+				D14CB6E324ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift */,
+				D16DB9AE24E6BD7900B2B279 /* HortifrutiViewController.swift */,
+				D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */,
+			);
+			path = "Hortifruti Controllers";
+			sourceTree = "<group>";
+		};
+		D16DB9A624E6B94700B2B279 /* Collection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D16DB9A224E6B93700B2B279 /* HortifrutiCollectionViewCell.swift */,
+				D16DB9A324E6B93700B2B279 /* HortifrutiCollectionViewCell.xib */,
+			);
+			path = "Collection Cells";
+			sourceTree = "<group>";
+		};
+		D16DB9A724E6B95300B2B279 /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D16DB9AA24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift */,
+				D16DB9AB24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib */,
+				D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */,
+				D1CB876B24EC32A000266EC0 /* ProdutoTableViewCell.xib */,
+				D123483924EEC540007095E2 /* Celulas do detalhe do produto.swift */,
+				D1E9C28124EFF37A0002B9B6 /* Celulas do carrinho.swift */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
+		D16DB9D124E6FCBF00B2B279 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				88359C9D24E429290073628A /* PrincipalComprador.swift */,
+				D16DB9D424E6FD0300B2B279 /* TabAnuncioVendedorViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		D19D95D324E57228007701C4 /* Comprador */ = {
+			isa = PBXGroup;
+			children = (
+				D16DB9A124E6B8A500B2B279 /* Hortifruti Controllers */,
+				D16DB9A024E6B85500B2B279 /* Cadastro Controllers */,
+				D19D95D424E57252007701C4 /* LoginViewController.swift */,
+				D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */,
+			);
+			path = Comprador;
+			sourceTree = "<group>";
+		};
+		D1EC845F24F54B08003BB786 /* Classes Anuncio */ = {
+			isa = PBXGroup;
+			children = (
+				D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */,
+				D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */,
+				8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */,
+			);
+			path = "Classes Anuncio";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88051B1C24D1A39100339FE9 /* aobaApp-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88051B3124D1A39300339FE9 /* Build configuration list for PBXNativeTarget "aobaApp-iOS" */;
+			buildPhases = (
+				88051B1924D1A39100339FE9 /* Sources */,
+				88051B1A24D1A39100339FE9 /* Frameworks */,
+				88051B1B24D1A39100339FE9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "aobaApp-iOS";
+			productName = "aobaApp-iOS";
+			productReference = 88051B1D24D1A39100339FE9 /* aobaApp-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88051B1524D1A39100339FE9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "M Cavasin";
+				TargetAttributes = {
+					88051B1C24D1A39100339FE9 = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
+				};
+			};
+			buildConfigurationList = 88051B1824D1A39100339FE9 /* Build configuration list for PBXProject "aobaApp-iOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 88051B1424D1A39100339FE9;
+			productRefGroup = 88051B1E24D1A39100339FE9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88051B1C24D1A39100339FE9 /* aobaApp-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88051B1B24D1A39100339FE9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88359C8824E416BC0073628A /* CadastroVendedor.storyboard in Resources */,
+				88359C8624E2EB9B0073628A /* PrincipalComprador.storyboard in Resources */,
+				88359C8C24E41D670073628A /* CadastroComprador.storyboard in Resources */,
+				88051B2D24D1A39300339FE9 /* LaunchScreen.storyboard in Resources */,
+				88359C9024E41F8C0073628A /* TabHortifrutiComprador.storyboard in Resources */,
+				88051B2A24D1A39300339FE9 /* Assets.xcassets in Resources */,
+				88359C9624E420060073628A /* TabAnuncioVendedor.storyboard in Resources */,
+				88359C8A24E4189E0073628A /* PrincipalVendedor.storyboard in Resources */,
+				D1CB876D24EC32A000266EC0 /* ProdutoTableViewCell.xib in Resources */,
+				D16DB9A524E6B93700B2B279 /* HortifrutiCollectionViewCell.xib in Resources */,
+				D123483824EEB6CC007095E2 /* TabPerfilComprador.storyboard in Resources */,
+				88051B2824D1A39100339FE9 /* Main.storyboard in Resources */,
+				88359C9424E41FED0073628A /* PedidosVendedor.storyboard in Resources */,
+				D16DB9AD24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib in Resources */,
+				88359C9824E4200E0073628A /* TabPerfilVendedor.storyboard in Resources */,
+				88359C9224E41FA50073628A /* TabPedidosComprador.storyboard in Resources */,
+				88359C9A24E421940073628A /* TabPedidosVendedor.storyboard in Resources */,
+				39F57E0924EFFF4B00D9FA4B /* Slide.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88051B1924D1A39100339FE9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88B8423524E6D47300E21123 /* Cadastro2VendedorViewControllerViewController.swift in Sources */,
+				88359C8224D9A3640073628A /* User.swift in Sources */,
+				D123483A24EEC540007095E2 /* Celulas do detalhe do produto.swift in Sources */,
+				88051B2524D1A39100339FE9 /* ViewController.swift in Sources */,
+				88051B2124D1A39100339FE9 /* AppDelegate.swift in Sources */,
+				D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */,
+				D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */,
+				D19D95DB24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift in Sources */,
+				889F112124FD227C00B58431 /* ProdutorRepository.swift in Sources */,
+				D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */,
+				D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */,
+				D19D95D524E57252007701C4 /* LoginViewController.swift in Sources */,
+				D16DB9D324E6FCE400B2B279 /* Comerciante.swift in Sources */,
+				88359C9C24E424620073628A /* PrincipalVendedor.swift in Sources */,
+				D19FE68024E4336A007D138A /* Produtor.swift in Sources */,
+				D19FE68324E4336A007D138A /* ItemCarrinho.swift in Sources */,
+				D19FE67C24E4336A007D138A /* CategoriaProduto.swift in Sources */,
+				D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */,
+				D19FE67D24E4336A007D138A /* Pedido.swift in Sources */,
+				D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */,
+				D1EC846124F54B15003BB786 /* CriarAnuncioTableViewCell.swift in Sources */,
+				D19FE68824E4336A007D138A /* Ceasa.swift in Sources */,
+				D19FE67F24E4336A007D138A /* Anuncio.swift in Sources */,
+				D19D95D724E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift in Sources */,
+				D1EC845A24F549FF003BB786 /* ButtonConfig.swift in Sources */,
+				39F57E0724EFFF2B00D9FA4B /* Slide.swift in Sources */,
+				D19FE68124E4336A007D138A /* Produto.swift in Sources */,
+				88B8423324E6D47300E21123 /* LoginVendedorViewController.swift in Sources */,
+				39F57E0424EFFE4D00D9FA4B /* OnBoardingViewController.swift in Sources */,
+				8825AB2424FFD25600DC41D6 /* EditarAnuncioController.swift in Sources */,
+				D1EC846324F54B1B003BB786 /* CriarAnuncioViewController.swift in Sources */,
+				88B8423424E6D47300E21123 /* Cadastro1VendedorViewController.swift in Sources */,
+				D19D95D924E5841A007701C4 /* SegundaTelaDeCadastroViewControllerViewController.swift in Sources */,
+				88B8423E24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift in Sources */,
+				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
+				88C22E042508607B00A92F77 /* LoadingViewController.swift in Sources */,
+				D1E9C28224EFF37A0002B9B6 /* Celulas do carrinho.swift in Sources */,
+				D14CB6E224ED6B7C00CA9B3F /* CarrinhoViewController.swift in Sources */,
+				886227A324E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift in Sources */,
+				D19FE68424E4336A007D138A /* StatusItem.swift in Sources */,
+				88B8423824E6D77900E21123 /* AnuncioTableViewController.swift in Sources */,
+				39195C5124F54FEE00A1A82A /* ApiResource.swift in Sources */,
+				D19FE68524E4336A007D138A /* Endereco.swift in Sources */,
+				D16DB9AF24E6BD7900B2B279 /* HortifrutiViewController.swift in Sources */,
+				D16DB9A424E6B93700B2B279 /* HortifrutiCollectionViewCell.swift in Sources */,
+				D14CB6E424ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift in Sources */,
+				D1EC845C24F54A1A003BB786 /* ModelVendedor.swift in Sources */,
+				88051B2324D1A39100339FE9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88051B2624D1A39100339FE9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88051B2724D1A39100339FE9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		88051B2B24D1A39300339FE9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88051B2C24D1A39300339FE9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88051B2F24D1A39300339FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		88051B3024D1A39300339FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88051B3224D1A39300339FE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GN6S9CHL7;
+				INFOPLIST_FILE = "aobaApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.aobaApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		88051B3324D1A39300339FE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8GN6S9CHL7;
+				INFOPLIST_FILE = "aobaApp-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.aobaApp-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88051B1824D1A39100339FE9 /* Build configuration list for PBXProject "aobaApp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88051B2F24D1A39300339FE9 /* Debug */,
+				88051B3024D1A39300339FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88051B3124D1A39300339FE9 /* Build configuration list for PBXNativeTarget "aobaApp-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88051B3224D1A39300339FE9 /* Debug */,
+				88051B3324D1A39300339FE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88051B1524D1A39100339FE9 /* Project object */;
+}

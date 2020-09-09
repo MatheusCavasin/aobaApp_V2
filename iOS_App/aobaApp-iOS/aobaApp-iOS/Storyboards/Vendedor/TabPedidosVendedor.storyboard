@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="njD-YW-pwB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pedidos-->
+        <scene sceneID="vrZ-f7-ygz">
+            <objects>
+                <viewController storyboardIdentifier="TabPedidosVendedor" id="njD-YW-pwB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mit-cC-PBp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-2Z-A1d">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="height" secondItem="Mit-cC-PBp" secondAttribute="height" id="ASc-IE-m7p"/>
+                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="centerX" secondItem="yAF-Mv-EwC" secondAttribute="centerX" id="N4b-z7-Af1"/>
+                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="centerY" secondItem="yAF-Mv-EwC" secondAttribute="centerY" id="WK3-Zq-75c"/>
+                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="width" secondItem="Mit-cC-PBp" secondAttribute="width" id="tWd-xP-PQX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yAF-Mv-EwC"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pedidos" image="icone-pedidos" id="Xgc-dD-qi4"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Smo-dm-9lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="128"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+    <resources>
+        <image name="TESTE" width="572" height="1066"/>
+        <image name="icone-pedidos" width="48" height="32"/>
+    </resources>
+</document>
