@@ -1,0 +1,13 @@
+###
+https://aoba-api-server.herokuapp.com/
+Content-Type: application/json
+
+{
+  "codigoRegistro": "777777777777",
+  "descricao": "Vendemos coisas",
+  "email": "salve@pereira.com",
+  "foto": "foto.png",
+  "nome": "Carlos",
+  "nomeFantasia": "Seu Carlos Legumes",
+  "senha": "senha"
+}
