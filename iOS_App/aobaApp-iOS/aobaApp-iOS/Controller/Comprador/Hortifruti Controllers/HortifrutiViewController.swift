@@ -69,9 +69,15 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             ["name": "Couve-flor", "image-name": "verdura-couveflor"],
             ["name": "Brocolis", "image-name": "verdura-brocolis"],
             ["name": "Alface", "image-name": "verdura-alface"],
+            ["name": "Couve-flor", "image-name": "verdura-couveflor"],
+            ["name": "Brocolis", "image-name": "verdura-brocolis"],
+            ["name": "Alface", "image-name": "verdura-alface"],
         ]
         
         legumes = [
+            ["name": "Beterraba", "image-name": "legume-beterraba"],
+            ["name": "Milho", "image-name": "legume-milho"],
+            ["name": "Rabanete", "image-name": "legume-rabanete"],
             ["name": "Beterraba", "image-name": "legume-beterraba"],
             ["name": "Milho", "image-name": "legume-milho"],
             ["name": "Rabanete", "image-name": "legume-rabanete"],
@@ -93,17 +99,14 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
-            // Para a primeira célula escrito "Selecionados para você"
             
             
             let cell = UITableViewCell()
+            let avisoDeFechamento = AvisoDeFechamentoView()
+            avisoDeFechamento.draw(CGRect())
+
             
-            let label = UILabel()
-            label.frame = CGRect(x:20, y: 9, width:280, height:26.5)
-            label.text = "Selecionados para você"
-            label.font = UIFont(name: "HelveticaNeue-Medium", size: 22)
-            
-            cell.addSubview(label)
+            cell.addSubview(avisoDeFechamento)
             return cell
         }
         
@@ -127,7 +130,7 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Determinando o tamanho das células
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var cellsize = 181
+        var cellsize = 200
         if indexPath.row == 0 {
             cellsize = 49  //Para a primeira celula: "Selecionados para você"
         }
