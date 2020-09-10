@@ -12,11 +12,105 @@ class Singleton {
     static var shared = Singleton()
     var macas: [Dictionary<String, Any>]
     var carrinho: Dictionary<String, Any>
-   
+    
+    var anuncios: [AtivosSecao]!
     
     
+
     
     private init() {
+        anuncios = [
+            AtivosSecao(secao: "FRUTAS",
+                        categorias: [
+                            AtivosCategoria(categoria: "Maça", foto: "fruta-maca", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ]),
+                            
+                            AtivosCategoria(categoria: "Maça", foto: "fruta-maca", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ]),
+                            AtivosCategoria(categoria: "Maça", foto: "fruta-maca", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ])
+            ]),
+            
+            
+            AtivosSecao(secao: "LEGUMES",
+                        categorias: [
+                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ]),
+                            
+                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ]),
+                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                                [
+                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                            diasDisponiveis: ["SEG", "QUA"]))
+                            ])
+            ]),
+        ]
+        
+        
         macas = [
             ["titulo": "Maçã Gala",
              "imagem": "maca-gala",
@@ -134,5 +228,10 @@ class Singleton {
         ]
         
         
+        
+        
     }
 }
+
+
+

@@ -18,27 +18,31 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     var fruta = TipoProduto(nome: "Fruta")
     var verdura = TipoProduto(nome: "Verdura")
     var legume = TipoProduto(nome: "Legume")
-    var categorias : [CategoriaProduto] = []
+    var categorias : [[CategoriaProduto]] = []
     
     
     
     func initObjeto(){
-        categorias.append(CategoriaProduto(nome: "Abacaxi", foto: "fruta-abacaxi", tipoProduto: fruta))
-               categorias.append(CategoriaProduto(nome: "Abacate", foto: "fruta-abacate", tipoProduto: fruta))
-               categorias.append(CategoriaProduto(nome: "Mamão", foto: "fruta-mamao", tipoProduto: fruta))
-               categorias.append(CategoriaProduto(nome: "Maça", foto: "fruta-maca", tipoProduto: fruta))
-               categorias.append(CategoriaProduto(nome: "Banana", foto: "fruta-banana", tipoProduto: fruta))
-               categorias.append(CategoriaProduto(nome: "Laranja", foto: "fruta-laranja", tipoProduto: fruta))
-               
-               categorias.append(CategoriaProduto(nome:"Couve-flor", foto: "verdura-couveflor", tipoProduto: verdura))
-               categorias.append(CategoriaProduto(nome: "Brocolis", foto: "verdura-brocolis", tipoProduto: verdura))
-               categorias.append(CategoriaProduto(nome: "Alface", foto: "verdura-alface", tipoProduto: verdura))
-               
-               categorias.append(CategoriaProduto(nome: "Beterraba", foto: "legume-beterraba", tipoProduto: legume))
-               categorias.append(CategoriaProduto(nome: "Milho", foto: "legume-milho", tipoProduto: legume))
-               categorias.append(CategoriaProduto(nome: "Rabanete", foto: "legume-rabanete", tipoProduto: legume))
-        
-       }
+        categorias = [
+            [
+                CategoriaProduto(nome: "Abacate", foto: "fruta-abacate", tipoProduto: fruta),
+                CategoriaProduto(nome: "Mamão", foto: "fruta-mamao", tipoProduto: fruta),
+                CategoriaProduto(nome: "Maça", foto: "fruta-maca", tipoProduto: fruta),
+                CategoriaProduto(nome: "Banana", foto: "fruta-banana", tipoProduto: fruta),
+                CategoriaProduto(nome: "Laranja", foto: "fruta-laranja", tipoProduto: fruta)
+            ],
+            [
+                CategoriaProduto(nome:"Couve-flor", foto: "verdura-couveflor", tipoProduto: verdura),
+                CategoriaProduto(nome: "Brocolis", foto: "verdura-brocolis", tipoProduto: verdura),
+                CategoriaProduto(nome: "Alface", foto: "verdura-alface", tipoProduto: verdura),
+            ],
+            [
+                CategoriaProduto(nome: "Beterraba", foto: "legume-beterraba", tipoProduto: legume),
+                CategoriaProduto(nome: "Milho", foto: "legume-milho", tipoProduto: legume),
+                CategoriaProduto(nome: "Rabanete", foto: "legume-rabanete", tipoProduto: legume),
+            ]
+        ]
+    }
     
     
     override func viewDidLoad() {

@@ -14,8 +14,6 @@ class AvisoDeFechamentoView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        
-        
         let label = UILabel(frame: CGRect(x: 0, y: self.frame.size.height/2 - 15, width: self.frame.size.width, height: 30))
         label.text = "Não se esqueça de fechar seu pedido até às 20h"
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
