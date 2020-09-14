@@ -23,7 +23,7 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     var navigationController: UINavigationController!
     
     
-    public var produtos: [Dictionary<String, String>]!
+    public var produtos: [AtivosCategoria]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,39 +35,42 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         
     }
     
-    func configure(title: String, produtos: [Dictionary<String, String>]) {
+    func configure(title: String, produtos: [AtivosCategoria]) {
         self.title.text = title
         self.produtos = produtos
     }
     
     // Collection view inside table row
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.produtos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HortifrutiCollectionViewCell.identifier, for: indexPath) as! HortifrutiCollectionViewCell
-        cell.configure(name: produtos[indexPath.row]["name"]!, imageName: produtos[indexPath.row]["image-name"]!)
+        cell.configure(name: produtos[indexPath.row].categoria, imageName: produtos[indexPath.row].foto)
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 139, height: 118)
+        return CGSize(width: 100, height: 133)
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let produtosViewController: ProdutoTableViewController!
         let produtosView = UIStoryboard(name: "TabHortifrutiComprador", bundle: nil)
         
+        
         produtosViewController = produtosView.instantiateViewController(identifier: "produtos") as? ProdutoTableViewController
         
         // Melhora a navegação 
         collectionView.cellForItem(at: indexPath)?.isSelected = false
         
+        
         self.navigationController.show(produtosViewController, sender: self)
-        produtosViewController.navigationItem.title = produtos[indexPath.row]["name"]!
+        produtosViewController.navigationItem.title = produtos[indexPath.row].categoria
         produtosViewController.produtos = Singleton.shared.macas
 
     }

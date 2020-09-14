@@ -125,22 +125,11 @@
                                     <constraint firstAttribute="width" secondItem="9eK-xu-lwd" secondAttribute="height" multiplier="200:60" id="BtU-VW-gZa"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP" customClass="AvisoDeFechamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="140" width="414" height="49.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não se esqueça de fechar seu pedido até às 20h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fc9-lA-qlz">
-                                        <rect key="frame" x="20" y="17" width="374" height="15.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.49411764705882355" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="fc9-lA-qlz" firstAttribute="leading" secondItem="JEb-x6-gbP" secondAttribute="leading" constant="20" id="7k4-lG-0wL"/>
                                     <constraint firstAttribute="width" secondItem="JEb-x6-gbP" secondAttribute="height" multiplier="100:12" id="8rY-01-LN7"/>
-                                    <constraint firstAttribute="trailing" secondItem="fc9-lA-qlz" secondAttribute="trailing" constant="20" id="OVi-Ai-aSo"/>
-                                    <constraint firstItem="fc9-lA-qlz" firstAttribute="centerY" secondItem="JEb-x6-gbP" secondAttribute="centerY" id="b7D-0c-eUY"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pra já?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-YD-eAs">
@@ -167,7 +156,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-u9-OMc">
                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="k6a-Kr-Ug1" secondAttribute="height" multiplier="113:109" id="g1K-Ht-eoi"/>
@@ -192,7 +181,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-PK-EAu">
                                         <rect key="frame" x="126.5" y="0.0" width="121" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ofx-5U-3wZ" secondAttribute="height" multiplier="113:109" id="Qxd-PB-Ief"/>
@@ -217,7 +206,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-jK-Y1F">
                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="or0-9d-pzp" secondAttribute="height" multiplier="113:109" id="eRv-jq-R3f"/>

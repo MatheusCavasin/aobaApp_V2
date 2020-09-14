@@ -19,9 +19,9 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var sex: DiaDaSemanaView!
     
     
-    @IBOutlet weak var imgFrutas: ImagemArredondada!
-    @IBOutlet weak var imgVerduras: ImagemArredondada!
-    @IBOutlet weak var imgLegumes: ImagemArredondada!
+    @IBOutlet weak var imgFrutas: CardOQueProcura!
+    @IBOutlet weak var imgVerduras: CardOQueProcura!
+    @IBOutlet weak var imgLegumes: CardOQueProcura!
     
     
     override func viewDidLoad() {
@@ -31,7 +31,6 @@ class MenuViewController: UIViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Busque aqui seu produto"
         navigationItem.searchController = searchController
-        
         
         //Tela
         setupDiasDaSemanaView()
@@ -48,9 +47,9 @@ class MenuViewController: UIViewController {
     }
     
     private func setupImagensDasCategorias() {
-        imgFrutas.roundBorder()
-        imgLegumes.roundBorder()
-        imgVerduras.roundBorder()
+        imgFrutas.setupView("FRUTAS", presentingController: self)
+        imgLegumes.setupView("VERDURAS", presentingController: self)
+        imgVerduras.setupView("LEGUMES", presentingController: self)
     }
 
     
