@@ -22,7 +22,6 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func initObjeto(){
         // request da API
-        
         if modoDeApresetacao == ModoDeApresentacao.diasDaSemana {
             let segunda = classificadorDeSecoes.getCategoriasPelodiaDaSemana(anuncios: Singleton.shared.anuncios, nomeDaSecao: nomeDaSecaoFVL!, diaDaSemana: "SEG")
             let terca = classificadorDeSecoes.getCategoriasPelodiaDaSemana(anuncios: Singleton.shared.anuncios, nomeDaSecao: nomeDaSecaoFVL!, diaDaSemana: "TER")
@@ -45,19 +44,17 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             let legumes = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "LEGUMES", diaDaSemana: diaDaSemana!)
             
             
-           
+            
             frutas != nil ? secoes.append(frutas!) : print("nao contem produtos")
             verduras != nil ? secoes.append(verduras!) : print("nao conem produtos")
             legumes != nil ? secoes.append(legumes!) : print("nao conem produtos")
         }
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initObjeto()
+        
         
         
         // Tableview Configure
@@ -117,7 +114,6 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         return CGFloat(cellsize)
     }
 }
-
 
 
 enum ModoDeApresentacao {

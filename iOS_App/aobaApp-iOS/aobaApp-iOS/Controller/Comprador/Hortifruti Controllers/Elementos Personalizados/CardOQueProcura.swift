@@ -16,7 +16,7 @@ class CardOQueProcura: UIImageView {
     
     
     private func roundBorder() {
-        self.layer.cornerRadius = 7.0
+        self.layer.cornerRadius = 6
     }
     
     func setupView(_ identifier: String, presentingController: MenuViewController) {

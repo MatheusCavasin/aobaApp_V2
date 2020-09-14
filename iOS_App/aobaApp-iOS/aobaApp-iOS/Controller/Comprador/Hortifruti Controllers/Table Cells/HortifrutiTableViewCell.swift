@@ -56,15 +56,18 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         return CGSize(width: 100, height: 133)
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let produtosViewController: ProdutoTableViewController!
         let produtosView = UIStoryboard(name: "TabHortifrutiComprador", bundle: nil)
         
+        
         produtosViewController = produtosView.instantiateViewController(identifier: "produtos") as? ProdutoTableViewController
         
         // Melhora a navegação 
         collectionView.cellForItem(at: indexPath)?.isSelected = false
+        
         
         self.navigationController.show(produtosViewController, sender: self)
         produtosViewController.navigationItem.title = produtos[indexPath.row].categoria

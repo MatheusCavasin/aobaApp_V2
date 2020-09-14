@@ -38,7 +38,7 @@ class DiaDaSemanaView: UIView {
     }
     
     public func setupView(_ identifier: String, presentingController: MenuViewController) {
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 16
         self.identifier = identifier
         
         if identifier == "Segunda" {

@@ -9,9 +9,6 @@
 import UIKit
 
 class AvisoDeFechamentoView: UIView {
-
-    
-    
     override func draw(_ rect: CGRect) {
         
         let label = UILabel(frame: CGRect(x: 0, y: self.frame.size.height/2 - 15, width: self.frame.size.width, height: 30))
@@ -28,7 +25,7 @@ class AvisoDeFechamentoView: UIView {
         
         
         self.addSubview(label)
-        self.backgroundColor = #colorLiteral(red: 1, green: 0.4941176471, blue: 0.1058823529, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
     }
 }
 
