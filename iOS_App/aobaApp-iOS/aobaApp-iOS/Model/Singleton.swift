@@ -16,8 +16,6 @@ class Singleton {
     var anuncios: [AtivosSecao]!
     
     
-
-    
     private init() {
         anuncios = [
             AtivosSecao(secao: "FRUTAS",
@@ -32,13 +30,13 @@ class Singleton {
                                             produtor: AtivosProdutor(
                                                 codigoProdutor: "46323423423",
                                                 descricao: "descricao do produtor",
-                                                diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
+                                                diasAtendimento: ["SEG", "QUA"]),
                                             diasDisponiveis: ["SEG", "QUA"]))
                             ]),
                             
-                            AtivosCategoria(categoria: "Maça", foto: "fruta-maca", produtos:
+                            AtivosCategoria(categoria: "Laranja", foto: "fruta-laranja", produtos:
                                 [
-                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                    AtivosProduto(nome: "Laranja lima", anuncio:
                                         AtivosAnuncio(
                                             id: 124234,
                                             valor: 14.99,
@@ -47,11 +45,11 @@ class Singleton {
                                                 codigoProdutor: "46323423423",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
-                                            diasDisponiveis: ["SEG", "QUA"]))
+                                            diasDisponiveis: ["SEG", "QUI"]))
                             ]),
-                            AtivosCategoria(categoria: "Maça", foto: "fruta-maca", produtos:
+                            AtivosCategoria(categoria: "Abacaxi", foto: "fruta-abacaxi", produtos:
                                 [
-                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                    AtivosProduto(nome: "Abacaxi perola", anuncio:
                                         AtivosAnuncio(
                                             id: 124234,
                                             valor: 14.99,
@@ -60,16 +58,16 @@ class Singleton {
                                                 codigoProdutor: "46323423423",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
-                                            diasDisponiveis: ["SEG", "QUA"]))
+                                            diasDisponiveis: ["TER", "QUI"]))
                             ])
             ]),
             
             
             AtivosSecao(secao: "LEGUMES",
                         categorias: [
-                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                            AtivosCategoria(categoria: "Beterraba", foto: "legume-beterraba", produtos:
                                 [
-                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                    AtivosProduto(nome: "Beterraba roxa", anuncio:
                                         AtivosAnuncio(
                                             id: 124234,
                                             valor: 14.99,
@@ -81,9 +79,9 @@ class Singleton {
                                             diasDisponiveis: ["SEG", "QUA"]))
                             ]),
                             
-                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                            AtivosCategoria(categoria: "Rabanete", foto: "legume-rabanete", produtos:
                                 [
-                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                    AtivosProduto(nome: "Rabanete do Caule verde", anuncio:
                                         AtivosAnuncio(
                                             id: 124234,
                                             valor: 14.99,
@@ -92,11 +90,16 @@ class Singleton {
                                                 codigoProdutor: "46323423423",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
-                                            diasDisponiveis: ["SEG", "QUA"]))
+                                            diasDisponiveis: ["QUI", "TER"]))
                             ]),
-                            AtivosCategoria(categoria: "Maça", foto: "legume-alface", produtos:
+                            
+            ]),
+            
+            AtivosSecao(secao: "VERDURAS",
+                        categorias: [
+                            AtivosCategoria(categoria: "Brocolis", foto: "verdura-brocolis", produtos:
                                 [
-                                    AtivosProduto(nome: "Maca gala", anuncio:
+                                    AtivosProduto(nome: "Brocolis", anuncio:
                                         AtivosAnuncio(
                                             id: 124234,
                                             valor: 14.99,
@@ -105,7 +108,34 @@ class Singleton {
                                                 codigoProdutor: "46323423423",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
-                                            diasDisponiveis: ["SEG", "QUA"]))
+                                            diasDisponiveis: ["SEX", "QUA"]))
+                            ]),
+                            
+                            AtivosCategoria(categoria: "Alface", foto: "verdura-alface", produtos:
+                                [
+                                    AtivosProduto(nome: "Alface crespa", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "QUA"]),
+                                            diasDisponiveis: ["TER", "QUI"]))
+                            ]),
+                            AtivosCategoria(categoria: "Couve-flor", foto: "verdura-couveflor", produtos:
+                                [
+                                    AtivosProduto(nome: "Couve", anuncio:
+                                        AtivosAnuncio(
+                                            id: 124234,
+                                            valor: 14.99,
+                                            qtdeMax: 43,
+                                            produtor: AtivosProdutor(
+                                                codigoProdutor: "46323423423",
+                                                descricao: "descricao do produtor",
+                                                diasAtendimento: ["SEG", "QUA"]),
+                                            diasDisponiveis: ["SEG"]))
                             ])
             ]),
         ]

@@ -73,7 +73,7 @@
 		D19FE68824E4336A007D138A /* Ceasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67B24E4336A007D138A /* Ceasa.swift */; };
 		D1CAE65E250917E100A024E4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE65D250917E000A024E4 /* MenuViewController.swift */; };
 		D1CAE66125091FAC00A024E4 /* DiaDaSemanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */; };
-		D1CAE6632509207E00A024E4 /* ImagemArredondada.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */; };
+		D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE6622509207E00A024E4 /* CardOQueProcura.swift */; };
 		D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876624EC1B4900266EC0 /* Singleton.swift */; };
 		D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */; };
 		D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */; };
@@ -156,7 +156,7 @@
 		D19FE67B24E4336A007D138A /* Ceasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ceasa.swift; sourceTree = "<group>"; };
 		D1CAE65D250917E000A024E4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaView.swift; sourceTree = "<group>"; };
-		D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagemArredondada.swift; sourceTree = "<group>"; };
+		D1CAE6622509207E00A024E4 /* CardOQueProcura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOQueProcura.swift; sourceTree = "<group>"; };
 		D1CB876624EC1B4900266EC0 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
 		D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
@@ -443,7 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */,
-				D1CAE6622509207E00A024E4 /* ImagemArredondada.swift */,
+				D1CAE6622509207E00A024E4 /* CardOQueProcura.swift */,
 				D12476B7250A569400E95433 /* AvisoDeFechamentoView.swift */,
 			);
 			path = "Elementos Personalizados";
@@ -587,7 +587,7 @@
 				D12476C1250A663200E95433 /* AtivosAnuncios.swift in Sources */,
 				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
 				D12476BD250A660500E95433 /* AtivosCategoria.swift in Sources */,
-				D1CAE6632509207E00A024E4 /* ImagemArredondada.swift in Sources */,
+				D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */,
 				88C22E042508607B00A92F77 /* LoadingViewController.swift in Sources */,
 				D1E9C28224EFF37A0002B9B6 /* Celulas do carrinho.swift in Sources */,
 				D14CB6E224ED6B7C00CA9B3F /* CarrinhoViewController.swift in Sources */,

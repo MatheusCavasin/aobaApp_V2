@@ -156,7 +156,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-u9-OMc">
                                         <rect key="frame" x="0.0" y="0.0" width="121.5" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="k6a-Kr-Ug1" secondAttribute="height" multiplier="113:109" id="g1K-Ht-eoi"/>
@@ -181,7 +181,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-PK-EAu">
                                         <rect key="frame" x="126.5" y="0.0" width="121" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="ofx-5U-3wZ" secondAttribute="height" multiplier="113:109" id="Qxd-PB-Ief"/>
@@ -206,7 +206,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-jK-Y1F">
                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="149.5"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="ImagemArredondada" customModule="aobaApp_iOS" customModuleProvider="target">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="or0-9d-pzp" secondAttribute="height" multiplier="113:109" id="eRv-jq-R3f"/>

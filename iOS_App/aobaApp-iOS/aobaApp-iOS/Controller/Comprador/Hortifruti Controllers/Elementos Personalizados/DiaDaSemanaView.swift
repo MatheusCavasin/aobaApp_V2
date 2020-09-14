@@ -11,6 +11,7 @@ import UIKit
 class DiaDaSemanaView: UIView {
     
     var identifier: String?
+    var diaDaSemana: String?
     var controller: MenuViewController!
     
     override init (frame : CGRect) {
@@ -28,6 +29,8 @@ class DiaDaSemanaView: UIView {
         controller.navigationController?.show(hortifrutiViewController, sender: controller)
         hortifrutiViewController.navigationItem.title = identifier
         hortifrutiViewController.navigationController?.navigationBar.prefersLargeTitles = true
+        hortifrutiViewController.modoDeApresetacao = ModoDeApresentacao.fvl
+        hortifrutiViewController.diaDaSemana = diaDaSemana
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,6 +40,19 @@ class DiaDaSemanaView: UIView {
     public func setupView(_ identifier: String, presentingController: MenuViewController) {
         self.layer.cornerRadius = 10
         self.identifier = identifier
+        
+        if identifier == "Segunda" {
+            diaDaSemana = "SEG"
+        } else if identifier == "Terça" {
+            diaDaSemana = "TER"
+        } else if identifier == "Quarta" {
+            diaDaSemana = "QUA"
+        } else if identifier == "Quinta" {
+            diaDaSemana = "QUI"
+        } else {
+            diaDaSemana = "SEX"
+        }
+        
         
         self.controller = presentingController
         
