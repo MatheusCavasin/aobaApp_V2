@@ -12,7 +12,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIBarButtonItem!
-    var produto: Dictionary<String, Any>! = [:]
+    var produto: AtivosProduto!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,24 +35,24 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "image") as! ImageTableViewCell
-            cell.congif(imageName: produto["imagem"] as! String)
+            cell.congif(imageName: "logo.png")
             return cell
         }
         else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! TitleTableViewCell
-            cell.config(nome: produto["titulo"] as! String, preco: Float(produto["preco"] as! Double))
+            cell.config(nome: produto.nome!, preco: Float(produto.anuncio.valor))
             return cell
         }
         
         else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "fazenda") as! FazendaTableViewCell
-            cell.config(nomeFazenda: produto["produtor"] as! String, avaliacao: Float(produto["avaliação do produtor"] as! Double))
+            cell.config(nomeFazenda: produto.anuncio.produtor.codigoProdutor, avaliacao: Float(5.0))
             return cell
         }
         
         else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "caixasDisponiveis") as! CaixasDisponivelsTableViewCell
-            cell.config(quantidadeDisponivel: produto["quantidadeDisponiel"] as! Int)
+            cell.config(quantidadeDisponivel: produto.anuncio.qtdeMax)
             return cell
         }
         

@@ -11,7 +11,7 @@ import Foundation
 class AtivosAnuncio {
     let id: CLong!
     let valor: Float!
-    let qtdeMax: Int!
+    var qtdeMax: Int!
     let produtor: AtivosProdutor!
     let diasDisponiveis: [String]!
     

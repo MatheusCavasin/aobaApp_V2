@@ -73,15 +73,15 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     
     private var quantidade: Int = 0
     private var pickerData: [String] = []
-    private var produto: Dictionary<String, Any> = [:]
+    private var produto: AtivosProduto!
     public var presentView: DetalhesDoProdutoViewController!
     
     override func awakeFromNib() {
         
     }
     
-    public func config(produto: Dictionary<String, Any>) {
-       quantidade = produto["quantidadeDisponiel"] as! Int
+    public func config(produto: AtivosProduto) {
+        quantidade = produto.anuncio.qtdeMax
         for i in 0...quantidade {
             pickerData.append("\(i)")
         }
@@ -106,21 +106,9 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     @IBAction func btnAdicionarPressed(_ sender: Any) {
         presentView.dismiss(animated: true, completion: nil)
         let quantidadeEscolhida = pkvQuantidade.selectedRow(inComponent: 0)
+        produto.anuncio.qtdeMax = quantidadeEscolhida
         
-        var produtos = Singleton.shared.carrinho["produtos"] as! [Dictionary<String, Any>]
-        let novoProduto: Dictionary<String, Any> = [
-            "titulo": produto["titulo"] ?? "nome da fruta",
-            "imagem": produto["imagem"] ?? "logo",
-            "preco": produto["preco"] ?? 0.00,
-            "quantidade": quantidadeEscolhida,
-        ]
-        
-        produtos.append(novoProduto)
-        Singleton.shared.carrinho["produtos"] = produtos
-    }
-    
-    private func adicionarProduto() {
-        
+        Singleton.shared.carrinho.append(produto)
     }
 }
 

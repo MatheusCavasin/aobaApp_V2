@@ -22,8 +22,9 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     @IBOutlet var title: UILabel!
     var navigationController: UINavigationController!
     
-    
+    public var diaDaSemana: String?
     public var produtos: [AtivosCategoria]!
+    private let classificadorDeSecoes = ClassificadorDeSecoes()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -71,7 +72,11 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         
         self.navigationController.show(produtosViewController, sender: self)
         produtosViewController.navigationItem.title = produtos[indexPath.row].categoria
-        produtosViewController.produtos = Singleton.shared.macas
-
+        
+        if diaDaSemana != nil {
+            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categorias: self.produtos, diaDaSemana: diaDaSemana!)
+        } else {
+            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categorias: self.produtos, diaDaSemana: title.text!)
+        }
     }
 }

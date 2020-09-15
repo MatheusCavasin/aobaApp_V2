@@ -11,7 +11,7 @@ import UIKit
 class ProdutoTableViewController: UITableViewController {
    
     var btnCarrinho: UIBarButtonItem!
-    var produtos: [Dictionary<String, Any>]!
+    var produtos: [AtivosProduto] = []
     
     
     override func viewDidLoad() {
@@ -20,9 +20,6 @@ class ProdutoTableViewController: UITableViewController {
         // Navigation Controller
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Busque aqui seu produto"
-        navigationItem.searchController = searchController
-        btnCarrinho = UIBarButtonItem(image: UIImage(named: "icone-carrinho")?.withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(self.addTappped))
-        navigationItem.setRightBarButton(btnCarrinho, animated: true)
         
 
         // TableView
@@ -73,10 +70,7 @@ class ProdutoTableViewController: UITableViewController {
 
     
     private func irParaOCarrinho() {
-        let carrinhoViewController: CarrinhoViewController!
-        let carrinhoView = UIStoryboard(name: "TabHortifrutiComprador", bundle: nil)
-        carrinhoViewController = carrinhoView.instantiateViewController(identifier: "carrinho") as? CarrinhoViewController
-        self.navigationController?.showDetailViewController(carrinhoViewController, sender: self)
+        self.tabBarController?.selectedIndex = 1
     }
     
     private func  abrirDetalhesDoProduto(indexPath: IndexPath) {

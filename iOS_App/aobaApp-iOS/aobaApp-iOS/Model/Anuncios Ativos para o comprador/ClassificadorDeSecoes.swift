@@ -48,10 +48,6 @@ class ClassificadorDeSecoes {
     }
     
     
-    
-    
-    
-    
     public func getCategoriaPelaSecao(anuncios: [AtivosSecao], nomeDaSecao: String, diaDaSemana: String) -> AtivosSecao? {
         var novasCategorias: [AtivosCategoria] = []
         
@@ -73,7 +69,26 @@ class ClassificadorDeSecoes {
             return nil
         }
     }
-
+    
+    
+    public func getProdutosDaCategoria(categorias: [AtivosCategoria], diaDaSemana: String) -> [AtivosProduto] {
+        
+        var produtosDaCategoria: [AtivosProduto] = []
+        
+        for categoria in categorias {
+            for produto in categoria.produtos {
+                for diaDisponivel in produto.anuncio.diasDisponiveis {
+                    if diaDisponivel == diaDaSemana {
+                        produtosDaCategoria.append(produto)
+                    }
+                }
+            }
+        }
+        return produtosDaCategoria
+    }
+    
+    
+    
     
     
 }

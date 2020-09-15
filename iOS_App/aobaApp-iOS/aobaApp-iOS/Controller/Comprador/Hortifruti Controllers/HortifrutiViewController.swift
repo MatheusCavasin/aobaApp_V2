@@ -96,6 +96,7 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: HortifrutiTableViewCell.identifier, for: indexPath) as! HortifrutiTableViewCell
             
             cell.configure(title: secoes[indexPath.row-1].secao, produtos: secoes[indexPath.row-1].categorias)
+            cell.diaDaSemana = self.diaDaSemana
             cell.navigationController = self.navigationController
             
             
