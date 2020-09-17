@@ -34,19 +34,21 @@ class ClassificadorDeSecoes {
         }
         
     }
-
+    
     // Se houver pelo menos 1 produto o dia cadastrado, retorna true
     private func getCategoriasPelodiaDaSemanaAuxiliar (produtos: [AtivosProduto], diaDaSemana: String) -> Bool{
         for produto in produtos {
-            for _diaDaSemana in produto.anuncio.diasDisponiveis {
-                if _diaDaSemana == diaDaSemana {
-                    return true
+            for anuncio in produto.anuncios {
+                for _diaDaSemana in anuncio.diasDisponiveis {
+                    if _diaDaSemana == diaDaSemana {
+                        return true
+                    }
                 }
             }
         }
         return false
     }
-    
+
     
     public func getCategoriaPelaSecao(anuncios: [AtivosSecao], nomeDaSecao: String, diaDaSemana: String) -> AtivosSecao? {
         var novasCategorias: [AtivosCategoria] = []
@@ -71,23 +73,27 @@ class ClassificadorDeSecoes {
     }
     
     
-    public func getProdutosDaCategoria(categorias: [AtivosCategoria], diaDaSemana: String) -> [AtivosProduto] {
+    public func getProdutosDaCategoria(categoria: AtivosCategoria, diaDaSemana: String) -> [AtivosProduto] {
         
         var produtosDaCategoria: [AtivosProduto] = []
+        var anuncios: [AtivosAnuncio] = []
         
-        for categoria in categorias {
-            for produto in categoria.produtos {
-                for diaDisponivel in produto.anuncio.diasDisponiveis {
+        
+        
+        for produto in categoria.produtos {
+            for anuncio in produto.anuncios {
+                for diaDisponivel in anuncio.diasDisponiveis {
                     if diaDisponivel == diaDaSemana {
-                        produtosDaCategoria.append(produto)
+                        anuncios.append(anuncio)
                     }
                 }
+                produtosDaCategoria.append(AtivosProduto(nome: produto.nome, anuncio: anuncios))
+                anuncios = []
             }
         }
+        
         return produtosDaCategoria
     }
-    
-    
     
     
     

@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsI-CG-pRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="892.75362318840587" y="-14.0625"/>
+            <point key="canvasLocation" x="900" y="-14"/>
         </scene>
         <!--Lista de Produtos-->
         <scene sceneID="b7W-fj-sxy">
@@ -337,7 +337,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgC-2K-96L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673.913043478261" y="-14.0625"/>
+            <point key="canvasLocation" x="1672" y="-14"/>
         </scene>
     </scenes>
     <resources>

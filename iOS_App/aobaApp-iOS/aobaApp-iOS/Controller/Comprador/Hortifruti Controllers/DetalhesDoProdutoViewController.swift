@@ -12,7 +12,8 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIBarButtonItem!
-    var produto: AtivosProduto!
+    var anuncio: AtivosAnuncio!
+    var nomeDoProduto: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,26 +41,26 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         }
         else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! TitleTableViewCell
-            cell.config(nome: produto.nome!, preco: Float(produto.anuncio.valor))
+            cell.config(nome: nomeDoProduto, preco: Float(anuncio.valor))
             return cell
         }
         
         else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "fazenda") as! FazendaTableViewCell
-            cell.config(nomeFazenda: produto.anuncio.produtor.codigoProdutor, avaliacao: Float(5.0))
+            cell.config(nomeFazenda: anuncio.produtor.codigoProdutor, avaliacao: Float(5.0))
             return cell
         }
         
         else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "caixasDisponiveis") as! CaixasDisponivelsTableViewCell
-            cell.config(quantidadeDisponivel: produto.anuncio.qtdeMax)
+            cell.config(quantidadeDisponivel: anuncio.qtdeMax)
             return cell
         }
         
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "quantidade") as! QuantidadeTableViewCell
         cell.presentView = self
-        cell.config(produto: produto)
+        cell.config(anuncio: anuncio)
         return cell
     }
     

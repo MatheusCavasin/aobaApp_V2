@@ -75,6 +75,7 @@
 		D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67924E43369007D138A /* TipoComercio.swift */; };
 		D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67A24E4336A007D138A /* TipoProduto.swift */; };
 		D19FE68824E4336A007D138A /* Ceasa.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19FE67B24E4336A007D138A /* Ceasa.swift */; };
+		D1C9C9C825123975005E3B18 /* AnunciosValidosRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C9C9C725123975005E3B18 /* AnunciosValidosRepository.swift */; };
 		D1CAE65E250917E100A024E4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE65D250917E000A024E4 /* MenuViewController.swift */; };
 		D1CAE66125091FAC00A024E4 /* DiaDaSemanaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */; };
 		D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CAE6622509207E00A024E4 /* CardOQueProcura.swift */; };
@@ -162,6 +163,7 @@
 		D19FE67924E43369007D138A /* TipoComercio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoComercio.swift; sourceTree = "<group>"; };
 		D19FE67A24E4336A007D138A /* TipoProduto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipoProduto.swift; sourceTree = "<group>"; };
 		D19FE67B24E4336A007D138A /* Ceasa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ceasa.swift; sourceTree = "<group>"; };
+		D1C9C9C725123975005E3B18 /* AnunciosValidosRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnunciosValidosRepository.swift; path = "aobaApp-iOS/Controller/Comprador/Carrinho Controllers/AnunciosValidosRepository.swift"; sourceTree = SOURCE_ROOT; };
 		D1CAE65D250917E000A024E4 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D1CAE66025091FAC00A024E4 /* DiaDaSemanaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaDaSemanaView.swift; sourceTree = "<group>"; };
 		D1CAE6622509207E00A024E4 /* CardOQueProcura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOQueProcura.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		889F111F24FD224500B58431 /* Comprador Request */ = {
 			isa = PBXGroup;
 			children = (
+				D1C9C9C725123975005E3B18 /* AnunciosValidosRepository.swift */,
 			);
 			path = "Comprador Request";
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				D19FE67F24E4336A007D138A /* Anuncio.swift in Sources */,
 				D19D95D724E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift in Sources */,
 				D1EC845A24F549FF003BB786 /* ButtonConfig.swift in Sources */,
+				D1C9C9C825123975005E3B18 /* AnunciosValidosRepository.swift in Sources */,
 				39F57E0724EFFF2B00D9FA4B /* Slide.swift in Sources */,
 				D19FE68124E4336A007D138A /* Produto.swift in Sources */,
 				88B8423324E6D47300E21123 /* LoginVendedorViewController.swift in Sources */,

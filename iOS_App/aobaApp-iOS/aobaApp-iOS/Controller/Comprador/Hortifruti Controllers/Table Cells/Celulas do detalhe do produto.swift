@@ -73,21 +73,21 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     
     private var quantidade: Int = 0
     private var pickerData: [String] = []
-    private var produto: AtivosProduto!
+    private var anuncio: AtivosAnuncio!
     public var presentView: DetalhesDoProdutoViewController!
     
     override func awakeFromNib() {
         
     }
     
-    public func config(produto: AtivosProduto) {
-        quantidade = produto.anuncio.qtdeMax
+    public func config(anuncio: AtivosAnuncio) {
+        quantidade = anuncio.qtdeMax
         for i in 0...quantidade {
             pickerData.append("\(i)")
         }
         self.pkvQuantidade.delegate = self
         self.pkvQuantidade.dataSource = self
-        self.produto = produto
+        self.anuncio = anuncio
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -106,9 +106,9 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
     @IBAction func btnAdicionarPressed(_ sender: Any) {
         presentView.dismiss(animated: true, completion: nil)
         let quantidadeEscolhida = pkvQuantidade.selectedRow(inComponent: 0)
-        produto.anuncio.qtdeMax = quantidadeEscolhida
+        anuncio.qtdeMax = quantidadeEscolhida
         
-        Singleton.shared.carrinho.append(produto)
+        
     }
 }
 

@@ -18,7 +18,6 @@ class Cadastro1VendedorViewController: UIViewController {
     @IBOutlet weak var confirmacaoTextField: UITextField!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cadastro"

@@ -74,9 +74,12 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         produtosViewController.navigationItem.title = produtos[indexPath.row].categoria
         
         if diaDaSemana != nil {
-            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categorias: self.produtos, diaDaSemana: diaDaSemana!)
+            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categoria: self.produtos[indexPath.row], diaDaSemana: diaDaSemana!)
+            produtosViewController.diaDaSemana = diaDaSemana!
+            
         } else {
-            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categorias: self.produtos, diaDaSemana: title.text!)
+            produtosViewController.produtos = classificadorDeSecoes.getProdutosDaCategoria(categoria: self.produtos[indexPath.row], diaDaSemana: title.text!)
+            produtosViewController.diaDaSemana = title.text!
         }
     }
 }

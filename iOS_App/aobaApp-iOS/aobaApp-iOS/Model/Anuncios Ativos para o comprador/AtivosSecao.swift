@@ -17,4 +17,6 @@ class AtivosSecao {
         self.categorias = categorias
     }
     
+
 }
+
