@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "cadastro-comerciante2.png",
+      "filename" : "aoba_vendedor.pdf",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cadastro-comerciante2@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cadastro-comerciante2@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

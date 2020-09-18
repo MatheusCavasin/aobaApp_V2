@@ -37,6 +37,8 @@ class ProdutorRepository {
         }
     print("ENTROU \n\n\n")}
     
+    
+    
     func getProdutos(){
         print("requestProducts")
         
@@ -45,27 +47,6 @@ class ProdutorRepository {
         
         //Chamando a funcão GET produtor
         
-        /*
-        let username = UserDefaults.standard.string(forKey: "Usuario")!
-        let password = UserDefaults.standard.string(forKey: "senha")!
-        
-        let loginString = "\(username):\(password)"
-        
-        let loginData = loginString.data(using: String.Encoding.utf8)!
-        let base64LoginString = loginData.base64EncodedString()
-//        let url = URL(string: "http://192.168.1.2/rest")
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "GET"
-        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-        
-        
-        */
-        
-        
-        
-        
-        
-        
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
@@ -73,13 +54,14 @@ class ProdutorRepository {
                 if(res) {
                     //Aqui res podera assumir dois valores, true ou false
                     print("sua requisicao foi realizada com sucesso")
-//                    print(result as! [[String : Any?]])
+                    //                    print(result as! [[String : Any?]])
+                    
                     ModelVendedor.instance.dictListaProdutos = result as! [[String : Any?]]
                     print(ModelVendedor.instance.dictListaProdutos[0])
-//                    print(ModelVendedor.instance.dictListaProdutos[0]["nome"] as! String)
-                 /*   // para pegar a categoria
-                    var categoria = ModelVendedor.instance.dictListaProdutos[1]["categoria"] as! [String : Any?]
-                    print("\n\n\(categoria["nome"] as! String)") */
+                    //                    print(ModelVendedor.instance.dictListaProdutos[0]["nome"] as! String)
+                    /*   // para pegar a categoria
+                     var categoria = ModelVendedor.instance.dictListaProdutos[1]["categoria"] as! [String : Any?]
+                     print("\n\n\(categoria["nome"] as! String)") */
                     
                     
                 } else {
@@ -99,29 +81,87 @@ class ProdutorRepository {
         let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/produtor/3"
         
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
-                    (result, err)  in
-                    //Aqui você tem seu resultado
-                    if let res:Bool = (err == nil) {
-                        if(res) {
-                            //Aqui res podera assumir dois valores, true ou false
-                            print("sua requisicao foi realizada com sucesso")
-                            ModelVendedor.instance.dictListaAnuncios = result as! [[String : Any?]]
-                            var a = ModelVendedor.instance.dictListaAnuncios
-//                            var b = a[1]["categorias"] as! [[String : Any?]]
-                            print("\n\n\n\n\n\n\(a[0])")
-                            print("\n\n\n\n\n\n\(a[0]["qtdeMax"] as! Int)")
-                            print("\n\n\n\n\n\n\(a[0]["valor"] as! Double)")
-                            print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
-                            print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
-                            NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID3"), object: nil)
-                        } else {
-                            //Aqui voce pode tratar os erros
-                            print("a requisicao nao funcionou")
-                            print(err)
-                        }
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                if(res) {
+                    //Aqui res podera assumir dois valores, true ou false
+                    print("sua requisicao foi realizada com sucesso")
+                    ModelVendedor.instance.dictListaAnuncios = result as! [[String : Any?]]
+                    var a = ModelVendedor.instance.dictListaAnuncios
+                    //                            var b = a[1]["categorias"] as! [[String : Any?]]
+                    print("\n\n\n\n\n\n\(a.count)")
+                    print("\n\n\n\n\n\n\(a[0])")
+                    print("\n\n\n\n\n\n\(a[0]["qtdeMax"] as! Int)")
+                    print("\n\n\n\n\n\n\(a[0]["valor"] as! Double)")
+                    print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
+                    print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
+                    DispatchQueue.main.async{
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID2"), object: nil)
                     }
+                    
+                } else {
+                    //Aqui voce pode tratar os erros
+                    print("a requisicao nao funcionou")
+                    print(err)
                 }
+            }
+        }
     }
+    
+    
+    func ativarAnuncio(idAnuncio: Int){
+        
+        //Coloque a URL da sua API aqui
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/ativar"
+        
+        //Chamando a funcão PUT produtor
+        ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                if(res) {
+                    //Aqui res podera assumir dois valores, true ou false
+                    print("sua requisicao foi realizada com sucesso")
+                    print(result)
+                } else {
+                    //Aqui voce pode tratar os erros
+                    print("a requisicao nao funcionou")
+                    print(err)
+                }
+            }
+        }
+        print("ENTROU PUT ATIVAR\n\n\n")
+        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/ativar")
+    }
+    
+    func desativarAnuncio(idAnuncio: Int){
+        
+        //Coloque a URL da sua API aqui
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar"
+        
+        //Chamando a funcão PUT produtor
+        ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                if(res) {
+                    //Aqui res podera assumir dois valores, true ou false
+                    print("sua requisicao foi realizada com sucesso")
+                    print(result)
+                } else {
+                    //Aqui voce pode tratar os erros
+                    print("a requisicao nao funcionou")
+                    print(err)
+                }
+            }
+        }
+        print("ENTROU PUT DESATIVAR\n\n\n")
+        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar")
+    }
+    
     
 }
 /*

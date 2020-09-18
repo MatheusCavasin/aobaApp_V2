@@ -26,6 +26,7 @@ class ModelVendedor {
     var dictListaProdutos = [[String: Any]]()
     var dictListaAnuncios = [[String: Any]]()
     
+    
 }
 
 

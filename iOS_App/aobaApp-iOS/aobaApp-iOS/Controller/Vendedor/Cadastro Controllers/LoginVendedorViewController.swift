@@ -22,7 +22,7 @@ class LoginVendedorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         EntrarButton.layer.cornerRadius = 5
         CriarButton.layer.cornerRadius = 5
         CriarButton.layer.borderWidth = 2
@@ -53,7 +53,7 @@ class LoginVendedorViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+//        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
     }
     
