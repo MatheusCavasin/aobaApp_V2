@@ -12,7 +12,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var btnEntrar: UIButton!
     @IBOutlet weak var btnCadastro: UIButton!
-    @IBOutlet weak var btnEntrarComApple: UIButton!
+
     
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setBtnCadastro()
         setBtnEntrar()
-        setEntrarComApple()
+   
         
         self.hideKeyboardWhenTappedAround()
         self.txtEmail.keyboardType = UIKeyboardType.emailAddress
@@ -51,12 +51,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         btnEntrar.layer.cornerRadius = 5.0
     }
     
-    
-    func setEntrarComApple() {
-        btnEntrarComApple.layer.borderWidth = 0.5
-        btnEntrarComApple.layer.borderColor = #colorLiteral(red: 0.9176470588, green: 0.9058823529, blue: 0.9058823529, alpha: 1)
-        btnEntrarComApple.layer.cornerRadius = 5.0
+    @IBAction func btnEntrarPressed(_ sender: Any) {
+        
+        Singleton.shared.loggedIn = true
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    
 }
 
 extension UIViewController {

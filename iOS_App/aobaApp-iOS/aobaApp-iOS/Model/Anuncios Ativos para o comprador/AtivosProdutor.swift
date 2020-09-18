@@ -11,12 +11,15 @@ import Foundation
 
 class AtivosProdutor {
     let codigoProdutor: String!
+    let nomeFantasia: String
     let descricao: String!
     let diasAtendimento: [String]!
     
     
-    init(codigoProdutor: String, descricao: String, diasAtendimento: [String]) {
+    
+    init(codigoProdutor: String, nomeFantasia: String ,descricao: String, diasAtendimento: [String]) {
         self.codigoProdutor = codigoProdutor
+        self.nomeFantasia = nomeFantasia
         self.descricao = descricao
         self.diasAtendimento = diasAtendimento
     }
@@ -25,8 +28,8 @@ class AtivosProdutor {
         
         let codigo = dict["codigoRegistro"] as! String
         let descricao = dict["descricao"] as! String
-        
-        return AtivosProdutor(codigoProdutor: codigo, descricao: descricao, diasAtendimento: ["SEG", "TER", "QUA", "SEX"])
+        let nomeFantasia = dict["nomeFantasia"] as! String
+        return AtivosProdutor(codigoProdutor: codigo, nomeFantasia: nomeFantasia, descricao: descricao, diasAtendimento: ["SEG", "TER", "QUA", "SEX"])
     }
 }
 

@@ -27,8 +27,9 @@ class AtivosAnuncio {
     
     static func dictToObject(dict: Dictionary<String,Any>) -> AtivosAnuncio {
         let id = dict["id"] as! CLong
-        let image = dict["foto"] as! String
-        let valor = dict["valor"] as! Float
+        let image = "logo.png"
+        //let image = dict["foto"] as! String
+        let valor = Float(dict["valor"] as! Double)
         let qtdeMax = dict["qtdeMax"] as! Int
         let produtorDict = dict["produtor"] as! Dictionary<String, Any>
         

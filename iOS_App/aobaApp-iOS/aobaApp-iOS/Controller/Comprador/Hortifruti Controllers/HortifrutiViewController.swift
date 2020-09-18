@@ -19,6 +19,8 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     var diaDaSemana: String?
     var nomeDaSecaoFVL: String?
     
+    let anunciosRepository = AnunciosRepository()
+    
     
     func initObjeto(){
         // request da API
@@ -73,6 +75,8 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .always
+        
+        anunciosRepository.getSecoesValidas()
     }
     
     

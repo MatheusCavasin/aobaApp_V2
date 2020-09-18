@@ -69,18 +69,24 @@ class CaixasDisponivelsTableViewCell: UITableViewCell {
 class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pkvQuantidade: UIPickerView!
-    @IBOutlet weak var btnAdicionar: UIButton!
     
     private var quantidade: Int = 0
     private var pickerData: [String] = []
     private var anuncio: AtivosAnuncio!
+    private var controller: DetalhesDoProdutoViewController!
+    
     public var presentView: DetalhesDoProdutoViewController!
+    public var quantidadeEscolhida: Int?
+    
     
     override func awakeFromNib() {
         
     }
     
-    public func config(anuncio: AtivosAnuncio) {
+    public func config(anuncio: AtivosAnuncio, controller: DetalhesDoProdutoViewController) {
+        
+        self.controller = controller
+        
         quantidade = anuncio.qtdeMax
         for i in 0...quantidade {
             pickerData.append("\(i)")
@@ -89,6 +95,8 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
         self.pkvQuantidade.dataSource = self
         self.anuncio = anuncio
     }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //Igual ao numero de caixas disponiveis
@@ -103,12 +111,24 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
         return pickerData[row]
     }
     
-    @IBAction func btnAdicionarPressed(_ sender: Any) {
-        presentView.dismiss(animated: true, completion: nil)
-        let quantidadeEscolhida = pkvQuantidade.selectedRow(inComponent: 0)
-        anuncio.qtdeMax = quantidadeEscolhida
-        
-        
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.quantidadeEscolhida = Int(pickerData[row])
+        self.controller.quantidade = quantidadeEscolhida
     }
+    
+   
+    
 }
 
+
+class BotaoAdicionar: UITableViewCell {
+    var quantidade: Int!
+    var anuncio: AtivosAnuncio!
+    var nomeProduto: String!
+
+    func config(quantidade: Int, anuncio: AtivosAnuncio, nomeProduto:  String) {
+        self.quantidade = quantidade
+        self.anuncio = anuncio
+        self.nomeProduto = nomeProduto
+    }
+}

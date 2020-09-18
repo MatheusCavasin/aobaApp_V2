@@ -2,8 +2,7 @@
 //  LoadingViewController.swift
 //  aobaApp-iOS
 //
-//  Created by M Cavasin on 08/09/20.
-//  Copyright © 2020 M Cavasin. All rights reserved.
+//  Created by M Cavasin on 08/09/20.p//  Copyright © 2020 M Cavasin. All rights reserved.
 //
 
 import UIKit

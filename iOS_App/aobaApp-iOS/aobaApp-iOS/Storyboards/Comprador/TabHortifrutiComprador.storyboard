@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9eK-xu-lwd">
-                                <rect key="frame" x="20" y="248.5" width="374" height="112.5"/>
+                                <rect key="frame" x="20" y="257" width="374" height="112.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-9Q-BHR" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="112.5"/>
@@ -126,35 +126,35 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP" customClass="AvisoDeFechamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="414" height="49.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="49.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JEb-x6-gbP" secondAttribute="height" multiplier="100:12" id="8rY-01-LN7"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pra já?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-YD-eAs">
-                                <rect key="frame" x="20" y="214.5" width="66.5" height="24"/>
+                                <rect key="frame" x="20" y="223" width="66.5" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veja os principais produtores prontos pra entregar no dia que você escolher!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF8-uz-TLc">
-                                <rect key="frame" x="20" y="376" width="374" height="38.5"/>
+                                <rect key="frame" x="20" y="384.5" width="374" height="38.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está procurando?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="45k-gI-M7Y">
-                                <rect key="frame" x="20" y="464" width="374" height="24"/>
+                                <rect key="frame" x="20" y="473" width="374" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4MU-Rm-4bZ">
-                                <rect key="frame" x="20" y="498" width="374" height="149.5"/>
+                                <rect key="frame" x="20" y="507" width="374" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-u9-OMc">
-                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
@@ -179,7 +179,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-PK-EAu">
-                                        <rect key="frame" x="126.5" y="0.0" width="121" height="149.5"/>
+                                        <rect key="frame" x="126.5" y="0.0" width="121" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="117"/>
@@ -204,7 +204,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-jK-Y1F">
-                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="149.5"/>
+                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
@@ -351,7 +351,7 @@
         <!--Detalhes Do Produto View Controller-->
         <scene sceneID="4z5-8Y-VJY">
             <objects>
-                <viewController storyboardIdentifier="detalhesDoProduto" id="Y3e-eI-Fj3" customClass="DetalhesDoProdutoViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="detalhesDoProduto" storyboardIdentifier="detalhesDoProduto" id="Y3e-eI-Fj3" customClass="DetalhesDoProdutoViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gre-3a-gQL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -515,43 +515,54 @@
                                             <outlet property="lblQuantidade" destination="2bn-im-wBB" id="RAf-g9-Mko"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="quantidade" rowHeight="363" id="8Z6-wD-rHO" customClass="QuantidadeTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="491" width="414" height="363"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="quantidade" rowHeight="130" id="8Z6-wD-rHO" customClass="QuantidadeTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="491" width="414" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8Z6-wD-rHO" id="Ion-t2-x8a">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="363"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1GD-2I-TXu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="133"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
                                                 </pickerView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dnp-8G-MgW">
-                                                    <rect key="frame" x="20" y="158" width="374" height="44"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <state key="normal" title="Adicionar">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="btnAdicionarPressed:" destination="8Z6-wD-rHO" eventType="touchUpInside" id="i5c-SW-q09"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="width" secondItem="Ion-t2-x8a" secondAttribute="width" id="1db-On-lxR"/>
-                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="top" secondItem="Ion-t2-x8a" secondAttribute="top" id="4Sw-zX-pLY"/>
-                                                <constraint firstItem="Dnp-8G-MgW" firstAttribute="height" secondItem="Ion-t2-x8a" secondAttribute="height" multiplier="0.121212" id="Aus-V2-UCo"/>
-                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="height" secondItem="Ion-t2-x8a" secondAttribute="height" multiplier="0.366391" id="GfS-4v-uCx"/>
-                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="centerX" secondItem="Ion-t2-x8a" secondAttribute="centerX" id="HQa-Rv-PZa"/>
-                                                <constraint firstAttribute="trailing" secondItem="Dnp-8G-MgW" secondAttribute="trailing" constant="20" id="W6K-ri-YNT"/>
-                                                <constraint firstItem="Dnp-8G-MgW" firstAttribute="top" secondItem="1GD-2I-TXu" secondAttribute="bottom" constant="25" id="bcJ-jh-r8c"/>
-                                                <constraint firstItem="Dnp-8G-MgW" firstAttribute="leading" secondItem="Ion-t2-x8a" secondAttribute="leading" constant="20" id="cjq-Xa-0KP"/>
+                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="centerX" secondItem="Ion-t2-x8a" secondAttribute="centerX" id="3Xr-tD-MVp"/>
+                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="centerY" secondItem="Ion-t2-x8a" secondAttribute="centerY" id="Ems-kS-IZS"/>
+                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="height" secondItem="Ion-t2-x8a" secondAttribute="height" id="Na6-nG-gjL"/>
+                                                <constraint firstItem="1GD-2I-TXu" firstAttribute="width" secondItem="Ion-t2-x8a" secondAttribute="width" id="aOv-rl-PIF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btnAdicionar" destination="Dnp-8G-MgW" id="aRG-yc-kaJ"/>
                                             <outlet property="pkvQuantidade" destination="1GD-2I-TXu" id="hYq-wJ-g4W"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="botaoAdicionar" rowHeight="44" id="bC1-yt-5DM" customClass="BotaoAdicionar" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="621" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bC1-yt-5DM" id="cWp-ao-bOc">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5V-K8-atG">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="374" id="o2g-Ya-VkL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <state key="normal" title="Adicionar">
+                                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="J5V-K8-atG" secondAttribute="trailing" constant="20" id="U93-F7-wQw"/>
+                                                <constraint firstItem="J5V-K8-atG" firstAttribute="height" secondItem="cWp-ao-bOc" secondAttribute="height" id="am0-BT-Jh3"/>
+                                                <constraint firstItem="J5V-K8-atG" firstAttribute="centerY" secondItem="cWp-ao-bOc" secondAttribute="centerY" id="sLs-87-snr"/>
+                                                <constraint firstItem="J5V-K8-atG" firstAttribute="leading" secondItem="cWp-ao-bOc" secondAttribute="leading" constant="20" id="zBt-6a-F49"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -592,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaQ-nZ-05A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="899" y="-14"/>
+            <point key="canvasLocation" x="898.55072463768124" y="-14.0625"/>
         </scene>
     </scenes>
     <resources>

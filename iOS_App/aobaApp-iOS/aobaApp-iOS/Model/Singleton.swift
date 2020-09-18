@@ -13,8 +13,10 @@ class Singleton {
     
     
     var carrinho: [AtivosProduto] = []
-    var anuncios: [AtivosSecao]!
+    var anuncios: [AtivosSecao]! = []
+    var loggedIn: Bool! = false
     
+    var apiEndPoint = "https://aoba-api-server.herokuapp.com"
     
     private init() {
         anuncios = [
@@ -31,6 +33,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUA"]),
                                                 diasDisponiveis: ["SEG", "QUA"]),
@@ -42,6 +45,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUI"]),
                                                 diasDisponiveis: ["SEG", "QUI"]),
@@ -53,6 +57,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUI"]),
                                                 diasDisponiveis: ["SEG", "QUI"])
@@ -68,6 +73,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUA"]),
                                                 diasDisponiveis: ["SEG", "QUA"]),
@@ -79,6 +85,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUI"]),
                                                 diasDisponiveis: ["SEG", "QUI"]),
@@ -90,6 +97,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUI"]),
                                                 diasDisponiveis: ["SEG", "QUI"])
@@ -109,6 +117,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                                 diasDisponiveis: ["SEG", "QUI"]),
@@ -120,6 +129,7 @@ class Singleton {
                                             qtdeMax: 43,
                                             produtor: AtivosProdutor(
                                                 codigoProdutor: "46323423423",
+                                                nomeFantasia: "Fazenda Feliz",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                             diasDisponiveis: ["SEG", "QUI"]),
@@ -131,6 +141,7 @@ class Singleton {
                                             qtdeMax: 43,
                                             produtor: AtivosProdutor(
                                                 codigoProdutor: "46323423423",
+                                                nomeFantasia: "Fazenda Feliz",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                             diasDisponiveis: ["SEG", "QUI"]),
@@ -151,6 +162,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                                 diasDisponiveis: ["TER", "QUI"])])
@@ -171,6 +183,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                                 diasDisponiveis: ["SEG", "QUA"])])
@@ -187,6 +200,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                                 diasDisponiveis: ["QUI", "TER"])])
@@ -206,6 +220,7 @@ class Singleton {
                                             qtdeMax: 43,
                                             produtor: AtivosProdutor(
                                                 codigoProdutor: "46323423423",
+                                                nomeFantasia: "Fazenda Feliz",
                                                 descricao: "descricao do produtor",
                                                 diasAtendimento: ["SEG", "TER", "QUA", "QUI", "SEX"]),
                                             diasDisponiveis: ["SEX", "QUA"])])
@@ -222,6 +237,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUA"]),
                                                 diasDisponiveis: ["TER", "QUI"])])
@@ -237,6 +253,7 @@ class Singleton {
                                                 qtdeMax: 43,
                                                 produtor: AtivosProdutor(
                                                     codigoProdutor: "46323423423",
+                                                    nomeFantasia: "Fazenda Feliz",
                                                     descricao: "descricao do produtor",
                                                     diasAtendimento: ["SEG", "QUA"]),
                                                 diasDisponiveis: ["SEG"])])

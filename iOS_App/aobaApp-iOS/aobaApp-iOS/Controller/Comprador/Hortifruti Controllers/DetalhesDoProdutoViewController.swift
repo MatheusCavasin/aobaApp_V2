@@ -15,6 +15,9 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     var anuncio: AtivosAnuncio!
     var nomeDoProduto: String!
     
+    var quantidade: Int?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +32,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,11 +60,51 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             return cell
         }
         
+        else if indexPath.row == 4 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "quantidade") as! QuantidadeTableViewCell
+            cell.presentView = self
+            cell.config(anuncio: anuncio, controller: self)
+            
+            return cell
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "quantidade") as! QuantidadeTableViewCell
-        cell.presentView = self
-        cell.config(anuncio: anuncio)
-        return cell
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "botaoAdicionar") as! BotaoAdicionar
+            cell.config(quantidade: self.quantidade ?? 0, anuncio: self.anuncio, nomeProduto: self.nomeDoProduto)
+            return cell
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 5 {
+            if Singleton.shared.loggedIn {
+                self.dismiss(animated: true, completion: nil)
+                // Adiciona o produto no carrinho
+            }
+            
+            else {
+            
+                let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
+                
+                let loginController = loginView.instantiateViewController(identifier: "login")
+                tableView.cellForRow(at: indexPath)?.isSelected = false
+                loginController.modalPresentationStyle = .fullScreen
+                loginController.modalTransitionStyle = .partialCurl
+                
+                self.show(loginController, sender: self)
+                
+                
+                
+                
+            }
+            
+            
+
+           
+            
+        }
     }
     
     
@@ -74,8 +117,10 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             return 45
         } else if indexPath.row == 3 {
             return 80
+        } else if indexPath.row == 4 {
+            return 180
+        } else {
+            return 44
         }
-        return 363
-        
     }
 }

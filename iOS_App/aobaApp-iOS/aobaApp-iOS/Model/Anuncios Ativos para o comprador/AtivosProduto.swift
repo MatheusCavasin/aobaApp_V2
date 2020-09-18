@@ -29,9 +29,7 @@ class AtivosProduto {
         
         
         return AtivosProduto(nome: nome, anuncio: anuncios)
-        
-        
-        
+    
         
     }
 }
