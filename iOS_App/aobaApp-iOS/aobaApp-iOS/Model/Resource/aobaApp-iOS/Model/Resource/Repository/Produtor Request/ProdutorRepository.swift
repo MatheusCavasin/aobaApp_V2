@@ -97,7 +97,7 @@ class ProdutorRepository {
                     print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
                     print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
                     DispatchQueue.main.async{
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID2"), object: nil)
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
                     }
                     
                 } else {

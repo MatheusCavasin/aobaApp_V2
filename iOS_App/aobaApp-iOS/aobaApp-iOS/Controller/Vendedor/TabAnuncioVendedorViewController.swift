@@ -56,13 +56,13 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: false, completion: nil)
 //            }
-            self.downloadDados = false
-        } else {
+//            self.downloadDados = false
+        } /*else {
             self.downloadDados = true
             self.loadViewAnuncios.isHidden = true
             self.loadIndicatorAnuncios.stopAnimating()
             reloadView()
-        }
+        }*/
         
         
     }
@@ -93,6 +93,9 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     
     @objc func reloadView(){
         print("bbbbbbbbbbbb")
+        
+        self.loadViewAnuncios.isHidden = true
+        self.loadIndicatorAnuncios.stopAnimating()
         
         self.tableView.reloadData()
         if ModelVendedor.instance.dictListaAnuncios.isEmpty {
