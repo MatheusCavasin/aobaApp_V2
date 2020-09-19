@@ -91,7 +91,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
                 let loginController = loginView.instantiateViewController(identifier: "login")
                 tableView.cellForRow(at: indexPath)?.isSelected = false
                 loginController.modalPresentationStyle = .fullScreen
-                loginController.modalTransitionStyle = .partialCurl
+                
                 
                 self.show(loginController, sender: self)
                 

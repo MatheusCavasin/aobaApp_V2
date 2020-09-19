@@ -24,6 +24,7 @@ class AtivosCategoria {
     static func dictToObject(dict: Dictionary<String, Any>) -> AtivosCategoria {
         let nomeCategoria = dict["categoria"] as! String
         let produtosDict = dict["produtos"] as! [Dictionary<String,Any>]
+        let foto = dict["foto"] as! String
         
         var produtos: [AtivosProduto] = []
         
@@ -31,7 +32,7 @@ class AtivosCategoria {
             produtos.append(AtivosProduto.dictToObject(dict: produtoDict))
         }
         
-        return AtivosCategoria(categoria: nomeCategoria, foto: "logo.png", produtos: produtos)
+        return AtivosCategoria(categoria: nomeCategoria, foto: foto, produtos: produtos)
     }
 }
 

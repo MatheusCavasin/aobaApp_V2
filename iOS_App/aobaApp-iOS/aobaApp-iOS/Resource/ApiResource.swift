@@ -56,8 +56,22 @@ class ApiResource{
         //Se tiver body para enviar à requisição
         if body != nil{
             //Transforma o dicionario em String no formato JSON
-            var requestBody = body!.map { "\"\($0.0)\":\"\($0.1)\""}.joined(separator: ", ")
-            requestBody = "{\(requestBody)}"
+            //var requestBody = body!.map { "\"\($0.0)\":\"\($0.1)\""}.joined(separator: ", ")
+            //requestBody = "{\(requestBody)}"
+            
+            var requestBody: String = ""
+            
+            if let theJSONData = try? JSONSerialization.data(
+                withJSONObject: body,
+                options: []) {
+                let theJSONText = String(data: theJSONData,
+                                           encoding: .ascii)
+                print("JSON string = \(theJSONText!)")
+                
+                requestBody = theJSONText!
+            }
+            
+            
             
             //Atribui o corpo à requisição
             request.httpBody = requestBody.data(using: String.Encoding.utf8)
