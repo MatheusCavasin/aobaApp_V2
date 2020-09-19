@@ -12,6 +12,7 @@ import Foundation
 class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viwLoadView: UIView!
     
     var secoes: [AtivosSecao]! = []
     let classificadorDeSecoes = ClassificadorDeSecoes()
@@ -19,8 +20,54 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     var diaDaSemana: String?
     var nomeDaSecaoFVL: String?
     
+    let anunciosRepository = AnunciosRepository()
+    var downloadDados: Bool! = true
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initObjeto()
+        
+        
+        
+        // Tableview Configure
+        tableView.register(HortifrutiTableViewCell.nib(), forCellReuseIdentifier: HortifrutiTableViewCell.identifier)
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        
+        //Navbar and search item
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "Busque aqui seu produto"
+        navigationItem.searchController = searchController
+        
+        
+        //Observables
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "AnucniosCarregados"), object: nil)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        
+        chamarDados()
+    }
+    
+    private func chamarDados() {
+        anunciosRepository.getSecoesValidas()
+        self.viwLoadView.isHidden = false
+        
+    }
+    
+    @objc func reloadView() {
+        self.viwLoadView.isHidden = true
+        self.initObjeto()
+        self.tableView.reloadData()
+    }
     
     func initObjeto(){
+        
+        secoes = []
         // request da API
         if modoDeApresetacao == ModoDeApresentacao.diasDaSemana {
             let segunda = classificadorDeSecoes.getCategoriasPelodiaDaSemana(anuncios: Singleton.shared.anuncios, nomeDaSecao: nomeDaSecaoFVL!, diaDaSemana: "SEG")
@@ -39,9 +86,9 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             
             
         else if modoDeApresetacao == ModoDeApresentacao.fvl {
-            let frutas = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "FRUTAS", diaDaSemana: diaDaSemana!)
-            let verduras = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "VERDURAS", diaDaSemana: diaDaSemana!)
-            let legumes = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "LEGUMES", diaDaSemana: diaDaSemana!)
+            let frutas = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "FRUTA", diaDaSemana: diaDaSemana!)
+            let verduras = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "VERDURA", diaDaSemana: diaDaSemana!)
+            let legumes = classificadorDeSecoes.getCategoriaPelaSecao(anuncios: Singleton.shared.anuncios, nomeDaSecao: "LEGUME", diaDaSemana: diaDaSemana!)
             
             
             
@@ -51,29 +98,8 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initObjeto()
-        
-        
-        
-        // Tableview Configure
-        tableView.register(HortifrutiTableViewCell.nib(), forCellReuseIdentifier: HortifrutiTableViewCell.identifier)
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        
-        //Navbar and search item
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Busque aqui seu produto"
-        navigationItem.searchController = searchController
-    }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-    }
     
     
     // Quantidade de categorias + 1 devido ao título (Frutas + verduras + Legumes + 1 = 4)
@@ -96,12 +122,14 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             let cell = tableView.dequeueReusableCell(withIdentifier: HortifrutiTableViewCell.identifier, for: indexPath) as! HortifrutiTableViewCell
             
             cell.configure(title: secoes[indexPath.row-1].secao, produtos: secoes[indexPath.row-1].categorias)
+            cell.diaDaSemana = self.diaDaSemana
             cell.navigationController = self.navigationController
             
             
             return cell
         }
     }
+    
     
     
     // Determinando o tamanho das células
@@ -113,6 +141,10 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         
         return CGFloat(cellsize)
     }
+    
+    
+   
+    
 }
 
 

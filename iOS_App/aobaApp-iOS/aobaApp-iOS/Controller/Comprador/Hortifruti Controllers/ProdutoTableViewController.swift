@@ -11,8 +11,12 @@ import UIKit
 class ProdutoTableViewController: UITableViewController {
    
     var btnCarrinho: UIBarButtonItem!
-    var produtos: [Dictionary<String, Any>]!
+    var produtos: [AtivosProduto] = []
+    var produtosContador: Int = 0
+    var anuncios: [AtivosAnuncio] = []
     
+    var diaDaSemana: String!
+    var classificadorDeSecoes = ClassificadorDeSecoes()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,15 +24,20 @@ class ProdutoTableViewController: UITableViewController {
         // Navigation Controller
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = "Busque aqui seu produto"
-        navigationItem.searchController = searchController
-        btnCarrinho = UIBarButtonItem(image: UIImage(named: "icone-carrinho")?.withRenderingMode(.alwaysOriginal), style: .done, target: self, action: #selector(self.addTappped))
-        navigationItem.setRightBarButton(btnCarrinho, animated: true)
         
 
         // TableView
         tableView.separatorStyle = .none
         tableView.register(ProdutoTableViewCell.nib(), forCellReuseIdentifier: ProdutoTableViewCell.identifier)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        anuncios = []
+        produtosContador = 0
+        for produto in produtos {
+            anuncios.append(contentsOf: produto.anuncios)
+        }
+        tableView.reloadData()
     }
     
     @objc func addTappped() {
@@ -36,7 +45,7 @@ class ProdutoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return produtos.count + 1
+        return anuncios.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +56,13 @@ class ProdutoTableViewController: UITableViewController {
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoTableViewCell.identifier, for: indexPath) as! ProdutoTableViewCell
-        cell.config(produto: produtos[indexPath.row])
+        
+        if produtos[produtosContador].anuncios.count > indexPath.row {
+            produtosContador = 0
+        } else {
+            produtosContador += 1
+        }
+        cell.config(nomeProduto: produtos[produtosContador].nome, anuncio: anuncios[indexPath.row])
         return cell
         
     }
@@ -73,10 +88,7 @@ class ProdutoTableViewController: UITableViewController {
 
     
     private func irParaOCarrinho() {
-        let carrinhoViewController: CarrinhoViewController!
-        let carrinhoView = UIStoryboard(name: "TabHortifrutiComprador", bundle: nil)
-        carrinhoViewController = carrinhoView.instantiateViewController(identifier: "carrinho") as? CarrinhoViewController
-        self.navigationController?.showDetailViewController(carrinhoViewController, sender: self)
+        self.tabBarController?.selectedIndex = 1
     }
     
     private func  abrirDetalhesDoProduto(indexPath: IndexPath) {
@@ -84,7 +96,21 @@ class ProdutoTableViewController: UITableViewController {
         let detalhesDoProdutoView = UIStoryboard(name: "TabHortifrutiComprador", bundle: nil)
         detalhesDoProdutoViewController = detalhesDoProdutoView.instantiateViewController(identifier: "detalhesDoProduto") as? DetalhesDoProdutoViewController
         
-        detalhesDoProdutoViewController.produto = produtos[indexPath.row]
+        detalhesDoProdutoViewController.nomeDoProduto = getNomeProduto(row: indexPath.row)
+        detalhesDoProdutoViewController.anuncio = anuncios[indexPath.row]
         self.navigationController?.showDetailViewController(detalhesDoProdutoViewController, sender: self)
+    }
+    
+    private func getNomeProduto(row: Int) -> String? {
+        var contador: Int = 0
+        
+        for produto in produtos {
+            contador += produto.anuncios.count
+            if contador > row {
+                return produto.nome
+            }
+        }
+        
+        return nil
     }
 }

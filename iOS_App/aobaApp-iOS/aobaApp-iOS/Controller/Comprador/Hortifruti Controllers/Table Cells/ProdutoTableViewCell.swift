@@ -40,19 +40,19 @@ class ProdutoTableViewCell: UITableViewCell {
     }
       
     
-    func config(produto: Dictionary<String, Any>) {
-        titulo.text = produto["titulo"] as? String
+    func config(nomeProduto:String ,anuncio: AtivosAnuncio) {
+        titulo.text = nomeProduto
         
         // Se não achar a imagem, mostra o logo
-        imagem.image = UIImage(named: produto["imagem"] as? String ?? "logo") ?? UIImage(named: "logo")
+        imagem.image = UIImage(named: "logo.png")
 
         //Ajusta para as casas decimais e troca o ponto por virgula
-        var precoStr: String = String(format: "%.2f", produto["preco"] as! CVarArg)
+        var precoStr: String = String(format: "%.2f", anuncio.valor!)
         precoStr = precoStr.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         preco.text = "R$ \(precoStr) caixa"
         
-        quantidadeDisponivel.text = "\(produto["quantidadeDisponiel"] ?? "---") + caixas disponíveis"
-        avalicaoDoProdutor.text = "\(produto["avaliação do produtor"]!)"
+        quantidadeDisponivel.text = "\(anuncio.qtdeMax!) caixas disponíveis"
+        avalicaoDoProdutor.text = "\(5.0)"
     }
     
     

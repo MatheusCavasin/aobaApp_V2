@@ -18,11 +18,12 @@ class Cadastro1VendedorViewController: UIViewController {
     @IBOutlet weak var confirmacaoTextField: UITextField!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cadastro"
         ProximoButton.layer.cornerRadius = ButtonConfig.raioBorda
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
 

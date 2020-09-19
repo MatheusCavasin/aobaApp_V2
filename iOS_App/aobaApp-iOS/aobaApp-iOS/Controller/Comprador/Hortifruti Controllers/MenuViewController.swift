@@ -47,9 +47,9 @@ class MenuViewController: UIViewController {
     }
     
     private func setupImagensDasCategorias() {
-        imgFrutas.setupView("FRUTAS", presentingController: self)
-        imgLegumes.setupView("VERDURAS", presentingController: self)
-        imgVerduras.setupView("LEGUMES", presentingController: self)
+        imgFrutas.setupView("FRUTA", presentingController: self)
+        imgLegumes.setupView("VERDURA", presentingController: self)
+        imgVerduras.setupView("LEGUME", presentingController: self)
     }
 
     

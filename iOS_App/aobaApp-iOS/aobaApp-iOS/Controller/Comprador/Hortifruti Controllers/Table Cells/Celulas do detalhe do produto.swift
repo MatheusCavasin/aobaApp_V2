@@ -69,26 +69,34 @@ class CaixasDisponivelsTableViewCell: UITableViewCell {
 class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var pkvQuantidade: UIPickerView!
-    @IBOutlet weak var btnAdicionar: UIButton!
     
     private var quantidade: Int = 0
     private var pickerData: [String] = []
-    private var produto: Dictionary<String, Any> = [:]
+    private var anuncio: AtivosAnuncio!
+    private var controller: DetalhesDoProdutoViewController!
+    
     public var presentView: DetalhesDoProdutoViewController!
+    public var quantidadeEscolhida: Int?
+    
     
     override func awakeFromNib() {
         
     }
     
-    public func config(produto: Dictionary<String, Any>) {
-       quantidade = produto["quantidadeDisponiel"] as! Int
+    public func config(anuncio: AtivosAnuncio, controller: DetalhesDoProdutoViewController) {
+        
+        self.controller = controller
+        
+        quantidade = anuncio.qtdeMax
         for i in 0...quantidade {
             pickerData.append("\(i)")
         }
         self.pkvQuantidade.delegate = self
         self.pkvQuantidade.dataSource = self
-        self.produto = produto
+        self.anuncio = anuncio
     }
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         //Igual ao numero de caixas disponiveis
@@ -103,24 +111,24 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
         return pickerData[row]
     }
     
-    @IBAction func btnAdicionarPressed(_ sender: Any) {
-        presentView.dismiss(animated: true, completion: nil)
-        let quantidadeEscolhida = pkvQuantidade.selectedRow(inComponent: 0)
-        
-        var produtos = Singleton.shared.carrinho["produtos"] as! [Dictionary<String, Any>]
-        let novoProduto: Dictionary<String, Any> = [
-            "titulo": produto["titulo"] ?? "nome da fruta",
-            "imagem": produto["imagem"] ?? "logo",
-            "preco": produto["preco"] ?? 0.00,
-            "quantidade": quantidadeEscolhida,
-        ]
-        
-        produtos.append(novoProduto)
-        Singleton.shared.carrinho["produtos"] = produtos
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.quantidadeEscolhida = Int(pickerData[row])
+        self.controller.quantidade = quantidadeEscolhida
     }
     
-    private func adicionarProduto() {
-        
-    }
+   
+    
 }
 
+
+class BotaoAdicionar: UITableViewCell {
+    var quantidade: Int!
+    var anuncio: AtivosAnuncio!
+    var nomeProduto: String!
+
+    func config(quantidade: Int, anuncio: AtivosAnuncio, nomeProduto:  String) {
+        self.quantidade = quantidade
+        self.anuncio = anuncio
+        self.nomeProduto = nomeProduto
+    }
+}
