@@ -6,6 +6,8 @@
 //  Copyright © 2020 M Cavasin. All rights reserved.
 //
 
+// segmented control
+
 import UIKit
 
 class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
