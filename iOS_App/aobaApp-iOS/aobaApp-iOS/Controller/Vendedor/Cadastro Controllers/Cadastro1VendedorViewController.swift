@@ -12,7 +12,6 @@ import UIKit
 class Cadastro1VendedorViewController: UIViewController {
 
     @IBOutlet weak var ProximoButton: UIButton!
-    @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var confirmacaoTextField: UITextField!
@@ -21,6 +20,10 @@ class Cadastro1VendedorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cadastro"
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = true
+        
         ProximoButton.layer.cornerRadius = ButtonConfig.raioBorda
         
         
@@ -44,7 +47,6 @@ class Cadastro1VendedorViewController: UIViewController {
     
     @IBAction func proximoButton(_ sender: Any) {
         
-        ModelVendedor.instance.nome = nomeTextField.text!
         ModelVendedor.instance.email = emailTextField.text!
         ModelVendedor.instance.senha = senhaTextField.text!
     }

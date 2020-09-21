@@ -176,6 +176,7 @@ class AddProdutoButtonCell: UITableViewCell {
 }
 
 
+
 class ProdutosTableViewCell: UITableViewCell {
     
     
@@ -184,6 +185,9 @@ class ProdutosTableViewCell: UITableViewCell {
     @IBOutlet weak var lblQuantidade: UILabel!
     @IBOutlet weak var lblValor: UILabel!
     
+    
+    
+
     
     
     override func awakeFromNib() {
@@ -200,6 +204,8 @@ class ProdutosTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+
     
     func configureCell (horfruit: [String]) {
         

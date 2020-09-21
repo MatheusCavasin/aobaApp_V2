@@ -15,7 +15,10 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTipo: UILabel!
     @IBOutlet weak var lblQuantidade: UILabel!
     @IBOutlet weak var lblValor: UILabel!
+    @IBOutlet weak var switchStatus: UISwitch!
     
+    let produtorRepositoy = ProdutorRepository()
+    var idAnuncio = 0
     
     
     override func awakeFromNib() {
@@ -29,14 +32,38 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    /*func configuracao(for anuncios: Anuncio){
+    func configuracao(anuncio: [String: Any]){
         
-        self.imgProduto.image = UIImage(named: "maca_gala")
-        self.lblTipo.text = "Maçã Gala"
-        self.lblQuantidade.text = "5 caixas"
-        self.lblValor.text = "R$ 100,00"
+        let produto = (anuncio["produto"] as! [String : Any?])["nome"] as? String
+        let caixas = anuncio["qtdeMax"] as! Int
+        let valor = anuncio["valor"] as! Double
+        let ativo = anuncio["ativo"] as! Bool
+        
+        var formato = NumberFormatter()
+        formato.usesGroupingSeparator = true
+        formato.numberStyle = .currency
+        formato.locale = Locale.current
+        let valorString = formato.string(from: NSNumber(value: valor))!
+        
+        self.imgProduto.image = UIImage(named: "fruta-laranja")
+        self.lblTipo.text = produto
+        self.lblQuantidade.text = ("\(caixas) caixas disponíveis")
+        self.lblValor.text = "R$ \(valorString)"
+        self.switchStatus.isOn = ativo
+        self.idAnuncio = anuncio["id"] as! Int
+    }
+    
+    @IBAction func switchChange(_ sender: Any) {
+        print(switchStatus.isOn)
+        if switchStatus.isOn {
+            produtorRepositoy.ativarAnuncio(idAnuncio: idAnuncio)
+        } else {
+            produtorRepositoy.desativarAnuncio(idAnuncio: idAnuncio)
+        }
+        
         
     }
- */
+    
+ 
     
 }

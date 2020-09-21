@@ -6,9 +6,13 @@
 //  Copyright © 2020 M Cavasin. All rights reserved.
 //
 
+// segmented control
+
 import UIKit
 
 class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
     
     
     
@@ -17,32 +21,51 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblAnunciosAtivos: UILabel!
     @IBOutlet weak var lblSemAnuncio: UILabel!
+    @IBOutlet weak var loadViewAnuncios: UIView!
+    @IBOutlet weak var loadIndicatorAnuncios: UIActivityIndicatorView!
+    
+    
     
     let produtorRepositoy = ProdutorRepository()
-    
+    var downloadDados: Bool! // variável de controle para requisitar dados do back
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        downloadDados = true
         CriarAnuncioButton.layer.cornerRadius = ButtonConfig.raioBorda
         CriarAnuncioButton.layer.borderWidth = ButtonConfig.larguraBorda
         CriarAnuncioButton.layer.borderColor = ButtonConfig.laranja
         tableView.delegate = self
         tableView.dataSource = self
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.dadosCapturados), name: NSNotification.Name(rawValue: "NotificationID2"), object: nil)
-
+        NotificationCenter.default.addObserver(self, selector: #selector(self.dadosChamar), name: NSNotification.Name(rawValue: "NotificationID2"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        reloadView()
+        
         dadosChamar()
+
     }
     
-    func dadosChamar(){
-        produtorRepositoy.getAnuncios()
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "LoadView") as? LoadingViewController {
-            self.present(vc, animated:true, completion:nil)
-        }
+    @objc func dadosChamar(){
+        
+        if downloadDados{
+            produtorRepositoy.getAnuncios()
+            self.loadViewAnuncios.isHidden = false
+            self.loadIndicatorAnuncios.startAnimating()
+//            if let vc = storyboard?.instantiateViewController(withIdentifier: "LoadView") as? LoadingViewController {
+//                vc.modalPresentationStyle = .fullScreen
+//                self.present(vc, animated: false, completion: nil)
+//            }
+//            self.downloadDados = false
+        } /*else {
+            self.downloadDados = true
+            self.loadViewAnuncios.isHidden = true
+            self.loadIndicatorAnuncios.stopAnimating()
+            reloadView()
+        }*/
+        
         
     }
     
@@ -53,25 +76,28 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         
         
     }
-    
-//    @objc func reloadView(){
-//        print("bbbbbbbbbbbb")
-//        
-//        self.tableView.reloadData()
-//        if ModelVendedor.instance.hortifruit == [] {
-//            self.tableView.isHidden = true
-//            self.lblAnunciosAtivos.isHidden = true
-//            self.lblSemAnuncio.isHidden = false
-//        } else {
-//            self.tableView.isHidden = false
-//            self.lblAnunciosAtivos.isHidden = false
-//            self.lblSemAnuncio.isHidden = true
-//        }
-//        
-//    }
+
+    //    @objc func reloadView(){
+    //        print("bbbbbbbbbbbb")
+    //
+    //        self.tableView.reloadData()
+    //        if ModelVendedor.instance.hortifruit == [] {
+    //            self.tableView.isHidden = true
+    //            self.lblAnunciosAtivos.isHidden = true
+    //            self.lblSemAnuncio.isHidden = false
+    //        } else {
+    //            self.tableView.isHidden = false
+    //            self.lblAnunciosAtivos.isHidden = false
+    //            self.lblSemAnuncio.isHidden = true
+    //        }
+    //
+    //    }
     
     @objc func reloadView(){
         print("bbbbbbbbbbbb")
+        
+        self.loadViewAnuncios.isHidden = true
+        self.loadIndicatorAnuncios.stopAnimating()
         
         self.tableView.reloadData()
         if ModelVendedor.instance.dictListaAnuncios.isEmpty {
@@ -87,7 +113,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     }
     
     
-
+    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -95,18 +121,20 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ModelVendedor.instance.dictListaAnuncios.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnuncioCell", for: indexPath) as! AnuncioVendedorTableViewCell
         /// let anuncio = Anuncios[indexPath.row]
-        cell.imgProduto.image = UIImage(named: "maca_gala")
-        cell.imgProduto.layer.cornerRadius = 5
-        cell.lblTipo.text = "Maçã Gala"
-        cell.lblQuantidade.text = "5 caixas"
-        cell.lblValor.text = "R$ 100,00"
+        cell.configuracao(anuncio: ModelVendedor.instance.dictListaAnuncios[indexPath.row])
+        
+//        cell.imgProduto.image = UIImage(named: "maca_gala")
+//        cell.imgProduto.layer.cornerRadius = 5
+//        cell.lblTipo.text = "Maçã Gala"
+//        cell.lblQuantidade.text = "5 caixas"
+//        cell.lblValor.text = "R$ 100,00"
         
         ///cell.configure(for: anuncio)
         
@@ -129,7 +157,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
             print("index path of delete: \(indexPath)")
             completionHandler(true)
         }
-
+        
         let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
             print("index path of edit: \(indexPath)")
             completionHandler(true)

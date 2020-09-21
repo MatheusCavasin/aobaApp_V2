@@ -8,13 +8,12 @@
 
 import UIKit
 
-class Cadastro2VendedorViewControllerViewController: UIViewController {
+class Cadastro2VendedorViewController: UIViewController {
 
     @IBOutlet weak var CadastrarButton: UIButton!
     @IBOutlet weak var descricaoTextField: UITextField!
     @IBOutlet weak var cnpjTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
-    @IBOutlet weak var localTextField: UITextField!
     
     let produtorRepository = ProdutorRepository()
     
