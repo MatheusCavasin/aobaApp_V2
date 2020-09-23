@@ -28,14 +28,14 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
         imageProduto.layer.cornerRadius = 5.0
     }
     
-    public func config(produto: AtivosProduto){
-        self.imageProduto.image = UIImage(named: "logo.png")
-        self.nomeProduto.text = produto.nome
+    public func config(produto: ItemCarrinho){
+        self.imageProduto.image = UIImage(named: produto.anuncio.image[0])
+        self.nomeProduto.text = produto.nomeProduto
         
-        var value: String = String(format: "%.2f", Float((produto.anuncios[0].qtdeMax!)) * Float((produto.anuncios[0].valor)) as CVarArg)
+        var value: String = String(format: "%.2f", Float((produto.anuncio.qtdeMax!)) * Float((produto.anuncio.valor)) as CVarArg)
         value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         self.valorProduto.text = "R$ \(value)"
-        self.quantidadeProduto.text = "\(produto.anuncios[0].qtdeMax ?? 0) caixas"
+        self.quantidadeProduto.text = "\(produto.anuncio.qtdeMax ?? 0) caixas"
     }
     
 }

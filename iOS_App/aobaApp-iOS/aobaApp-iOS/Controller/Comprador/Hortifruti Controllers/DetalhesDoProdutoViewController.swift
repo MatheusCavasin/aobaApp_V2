@@ -39,7 +39,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "image") as! ImageTableViewCell
-            cell.congif(imageName: "logo.png")
+            cell.congif(imageName: anuncio.image[0])
             return cell
         }
         else if indexPath.row == 1 {
@@ -50,7 +50,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         
         else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "fazenda") as! FazendaTableViewCell
-            cell.config(nomeFazenda: anuncio.produtor.codigoProdutor, avaliacao: Float(5.0))
+            cell.config(nomeFazenda: anuncio.produtor.nomeFantasia, avaliacao: Float(5.0))
             return cell
         }
         
@@ -81,11 +81,16 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         if indexPath.row == 5 {
             if Singleton.shared.loggedIn {
                 self.dismiss(animated: true, completion: nil)
-                // Adiciona o produto no carrinho
+            
+                var novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
+                
+                if quantidade != nil {
+                    Singleton.shared.carrinho.adicionarNovoProduto(novoProduto, quantidade!)
+                    //anuncio.decrementarQuantidadeLocal(quantidade: quantidade!)
+                }
             }
             
             else {
-            
                 let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
                 
                 let loginController = loginView.instantiateViewController(identifier: "login")
@@ -94,16 +99,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
                 
                 
                 self.show(loginController, sender: self)
-                
-                
-                
-                
             }
-            
-            
-
-           
-            
         }
     }
     
@@ -120,7 +116,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         } else if indexPath.row == 4 {
             return 180
         } else {
-            return 44
+            return 100
         }
     }
 }
