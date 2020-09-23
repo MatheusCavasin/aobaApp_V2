@@ -10,13 +10,13 @@ import Foundation
 
 class AtivosAnuncio {
     let id: CLong!
-    let image: String!
+    let image: [String]!
     let valor: Float!
     var qtdeMax: Int!
     let produtor: AtivosProdutor!
     let diasDisponiveis: [String]!
     
-    init(id: CLong, image: String, valor: Float, qtdeMax: Int, produtor: AtivosProdutor, diasDisponiveis: [String]) {
+    init(id: CLong, image: [String], valor: Float, qtdeMax: Int, produtor: AtivosProdutor, diasDisponiveis: [String]) {
         self.id = id
         self.image = image
         self.valor = valor
@@ -27,7 +27,7 @@ class AtivosAnuncio {
     
     static func dictToObject(dict: Dictionary<String,Any>) -> AtivosAnuncio {
         let id = dict["id"] as! CLong
-        let image = "logo.png"
+        let image = dict["fotos"] as! [String]
         //let image = dict["foto"] as! String
         let valor = Float(dict["valor"] as! Double)
         let qtdeMax = dict["qtdeMax"] as! Int
@@ -38,6 +38,22 @@ class AtivosAnuncio {
         let diasDisponiveis = dict["diasDisponiveis"] as! [String]
         
         return AtivosAnuncio(id: id, image: image, valor: valor, qtdeMax: qtdeMax, produtor: produtor, diasDisponiveis: diasDisponiveis)
+    }
+    
+    
+    public func decrementarQuantidadeLocal(quantidade: Int) {
+        for secao in Singleton.shared.anuncios {
+            for categoria in secao.categorias {
+                for produto in categoria.produtos {
+                    for anuncio in produto.anuncios {
+                        if anuncio.id == self.id {
+                            anuncio.qtdeMax -= quantidade
+                            return
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

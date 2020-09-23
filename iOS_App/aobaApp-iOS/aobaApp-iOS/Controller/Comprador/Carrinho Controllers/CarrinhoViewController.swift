@@ -12,7 +12,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
  
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIButton!
-    var carrinho: [AtivosProduto]!
+    var carrinho: Carrinho!
     var maisDeTresItems: Bool!
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewWillAppear(_ animated: Bool) {
         
         carrinho =  Singleton.shared.carrinho
-        if carrinho.count > 3 {
+        if carrinho.produtos.count > 3 {
             maisDeTresItems = true
         } else {
             maisDeTresItems = false
@@ -42,7 +42,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         if maisDeTresItems {
             return 6
         } else {
-            return carrinho.count + 2
+            return carrinho.produtos.count + 2
         }
     }
      
@@ -50,7 +50,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         if maisDeTresItems {
             if indexPath.row < 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
-                cell.config(produto: carrinho[indexPath.row])
+                cell.config(produto: carrinho.produtos[indexPath.row])
                 return cell
             } else if indexPath.row == 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "listaCompleta")
@@ -61,21 +61,21 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
-                cell.config(carrinho: Singleton.shared.carrinho)
+                cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
             }
         } else {
-            if indexPath.row < carrinho.count {
+            if indexPath.row < carrinho.produtos.count {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
-                cell.config(produto: carrinho[indexPath.row])
+                cell.config(produto: carrinho.produtos[indexPath.row])
                 return cell
-            } else if indexPath.row == carrinho.count {
+            } else if indexPath.row == carrinho.produtos.count {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
-                cell.config(carrinho: Singleton.shared.carrinho)
+                cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
             }
         }
@@ -106,9 +106,9 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return  325
             }
         } else {
-            if indexPath.row < carrinho.count {
+            if indexPath.row < carrinho.produtos.count {
                 return 60
-            } else if indexPath.row == carrinho.count {
+            } else if indexPath.row == carrinho.produtos.count {
                 return 230
             } else {
                 return 325
@@ -118,7 +118,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if indexPath.row <= carrinho.count - 1 {
+        if indexPath.row <= carrinho.produtos.count - 1 {
             let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
                 // Colocar aqui o que vai acontecer quando o usuario quiser excluir um item do carrinho
                 completionHandler(true)

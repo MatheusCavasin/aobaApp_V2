@@ -12,14 +12,38 @@ class ComercianteData {
     var cnpj: String
     var email: String
     var foto: String
-    var id: Int
+    var id: CLong
     var nome: String
     var nomeFantasia: String
     var rating: Float
     var enderecos: [EnderecoData]
-    var senha: String
+    var senha: String?
     
-    init(cnpj: String, email: String, senha:String, foto: String, nome: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
+    init(cnpj: String, email: String, senha: String, foto: String, nome: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
+        self.cnpj = cnpj
+        self.email = email
+        self.senha = senha
+        self.foto = foto
+        self.nome = nome
+        self.id = 0
+        self.nomeFantasia = nomeFantasia
+        self.rating = rating
+        self.enderecos = enderecos
+    }
+    
+    init(cnpj: String, email: String, senha: String, id: CLong, foto: String, nome: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
+        self.cnpj = cnpj
+        self.email = email
+        self.senha = senha
+        self.foto = foto
+        self.id = id
+        self.nome = nome
+        self.nomeFantasia = nomeFantasia
+        self.rating = rating
+        self.enderecos = enderecos
+    }
+    
+    init(cnpj: String, email: String, senha: String, foto: String, nome: String, nomeFantasia: String, rating: Float) {
         self.cnpj = cnpj
         self.email = email
         self.senha = senha
@@ -28,10 +52,8 @@ class ComercianteData {
         self.nome = nome
         self.nomeFantasia = nomeFantasia
         self.rating = rating
-        self.enderecos = enderecos
+        self.enderecos = []
     }
-    
-    
     
     static func dictToObject(dict: Dictionary<String, Any>) -> ComercianteData {
         let cnpj = dict["cnpj"] as! String
@@ -41,7 +63,7 @@ class ComercianteData {
         let nomeFantasia = dict["nomeFantasia"] as! String
         let rating = dict["rating"] as! Float
         let senha = " "
-        
+        let id = dict["id"]
         
         var enderecos: [EnderecoData] = []
         
@@ -51,7 +73,7 @@ class ComercianteData {
             enderecos.append(EnderecoData.dictToObject(dict: enderecoDict))
         }
         
-        return ComercianteData(cnpj: cnpj, email: email, senha: senha, foto: foto, nome: nome, nomeFantasia: nomeFantasia, rating: rating, enderecos: enderecos)
+        return ComercianteData(cnpj: cnpj, email: email, senha: senha, id: id as! CLong, foto: foto, nome: nome, nomeFantasia: nomeFantasia, rating: rating, enderecos: enderecos)
     }
     
     

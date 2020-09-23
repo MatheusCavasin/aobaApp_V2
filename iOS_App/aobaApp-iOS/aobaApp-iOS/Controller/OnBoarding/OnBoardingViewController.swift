@@ -32,18 +32,22 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
     func createSlides() -> [Slide] {
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide1.imageBoardingView.image = UIImage(named: "onboarding1")
+        slide1.imgLogoVersion.image = UIImage(named: "logo-comprador")
         slide1.descriptionTextView.text = "Aoba é a rede que conecta o agricultor ao mercado, do campo para a cidade. E se você quiser nós também cuidamos da coleta e da entrega."
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageBoardingView.image = UIImage(named: "onboarding2")
+        slide2.imgLogoVersion.image = UIImage(named: "aoba2")
         slide2.descriptionTextView.text = "Se você é agricultor, pode anunciar e vender seus produtos em nosso mercado online, assim compradores de todo o Brasil podem te encontrar"
         
         let slide3:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide3.imageBoardingView.image = UIImage(named: "onboarding3")
+        slide3.imgLogoVersion.image = UIImage(named: "aoba3")
         slide3.descriptionTextView.text = "Se você busca alimentos de qualidade e praticidade para o seu negócio, encontre os melhores produtos e fornecedores de confiança em nossa plataforma, feche a compra e agende sua entrega."
         
         let slide4:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide4.imageBoardingView.image = UIImage(named: "onboarding4")
+        slide4.imgLogoVersion.image = UIImage(named: "aoba_vendedor")
         slide4.descriptionTextView.text = "Nós buscamos o alimento com o produtor no CEASA e levamos até o comerciante final. E ambos ainda podem acompanhar todo o trajeto da carga!"
         
         return [slide1, slide2, slide3, slide4]
@@ -81,8 +85,6 @@ class OnBoardingViewController: UIViewController, UIScrollViewDelegate {
                self.buttonNegocio.isHidden = true
            })
         }
-
-        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {

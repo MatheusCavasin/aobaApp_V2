@@ -28,8 +28,9 @@ class AtivosProdutor {
         
         let codigo = dict["codigoRegistro"] as! String
         let descricao = dict["descricao"] as! String
+        let diasAtendimento = dict["diasAtendimento"] as! [String]
         let nomeFantasia = dict["nomeFantasia"] as! String
-        return AtivosProdutor(codigoProdutor: codigo, nomeFantasia: nomeFantasia, descricao: descricao, diasAtendimento: ["SEG", "TER", "QUA", "SEX"])
+        return AtivosProdutor(codigoProdutor: codigo, nomeFantasia: nomeFantasia, descricao: descricao, diasAtendimento: diasAtendimento)
     }
 }
 

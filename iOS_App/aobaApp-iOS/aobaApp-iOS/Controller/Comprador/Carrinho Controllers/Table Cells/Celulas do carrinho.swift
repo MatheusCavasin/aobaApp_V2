@@ -21,14 +21,14 @@ class ProdutoDoCarrinhoTableViewCell: UITableViewCell {
         imageProduto.layer.cornerRadius = 5.0
     }
     
-    public func config(produto: AtivosProduto){
-        self.imageProduto.image = UIImage(named: "logo.png")
-        self.nomeProduto.text = produto.nome
+    public func config(produto: ItemCarrinho){
+        self.imageProduto.image = UIImage(named: produto.anuncio.image[0])
+        self.nomeProduto.text = produto.nomeProduto
 
-        var value: String = String(format: "%.2f", Float((produto.anuncios[0].qtdeMax!)) * Float((produto.anuncios[0].valor)) as CVarArg)
+        var value: String = String(format: "%.2f", Float((produto.anuncio.qtdeMax!)) * Float((produto.anuncio.valor)) as CVarArg)
         value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         self.valorProduto.text = "R$ \(value)"
-        self.quantidadeProduto.text = "\(produto.anuncios[0].qtdeMax ?? 0) caixas"
+        self.quantidadeProduto.text = "\(produto.anuncio.qtdeMax ?? 0) caixas"
     }
 }
 
@@ -48,25 +48,17 @@ class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
         viwBackground.layer.cornerRadius = 10.0
     }
     
-    public func config(carrinho: [AtivosProduto]) {
+    public func config(carrinho: Carrinho) {
 
-        let total = String(format: "%.2f", calculateTotal(produtos: carrinho)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-        
+        let total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         self.subTotal.text = total
         
-        self.cidade.text =  "Taubate-SP"
-        self.valorDoFrete.text = String(format: "%.2f", (Float(30.0))).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-    }
-    
-    private func calculateTotal(produtos: [AtivosProduto]) -> Float {
-        var total: Float = 0.0
-        var valor: Float = 0.0
-        
-        for produto in produtos {
-            valor = Float(produto.anuncios[0].qtdeMax) * produto.anuncios[0].valor
-            total = total + valor
+        if carrinho.endereco != nil {
+            self.endereco.text = "\(carrinho.endereco!.logradouro), \(carrinho.endereco!.numero)"
+            self.cidade.text =  "\(carrinho.endereco?.cidade) - \(carrinho.endereco?.uf)"
         }
-        return total
+        
+        self.valorDoFrete.text = String(format: "%.2f", (carrinho.valorEntrega)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
     }
 }
 
@@ -80,23 +72,11 @@ class TotalDoPedidoTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    public func config(carrinho: [AtivosProduto]) {
+    public func config(valorTotal: Float) {
         
         
-        let total = String(format: "%.2f", (calculateTotal(produtos: carrinho) + Float(30.0))).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        let total = String(format: "%.2f", (valorTotal)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         
         self.totalDoPedido.text = total
     }
-    
-    private func calculateTotal(produtos: [AtivosProduto]) -> Float {
-        var total: Float = 0.0
-        var valor: Float = 0.0
-        
-        for produto in produtos {
-            valor = Float(produto.anuncios[0].qtdeMax) * produto.anuncios[0].valor
-            total = total + valor
-        }
-        return total
-    }
-
 }

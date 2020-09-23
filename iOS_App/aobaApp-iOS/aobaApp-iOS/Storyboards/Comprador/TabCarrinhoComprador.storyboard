@@ -99,8 +99,8 @@
                                                                 <constraint firstAttribute="width" secondItem="zaF-tZ-Ftc" secondAttribute="height" multiplier="1:1" id="ptO-oo-StX"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua Nilo José Casarin, 193" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-B6-Udx">
-                                                            <rect key="frame" x="45" y="14" width="249" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não possui endereços cadastrados" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Ghk-B6-Udx">
+                                                            <rect key="frame" x="45" y="14" width="268" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -122,8 +122,8 @@
                                                                 <constraint firstAttribute="width" secondItem="2f4-xz-KPU" secondAttribute="height" multiplier="1:1" id="Uko-EV-4ND"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Curitiba - PR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-Ow-NY3">
-                                                            <rect key="frame" x="45" y="31" width="249" height="16"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clique para adicionar um" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ar-Ow-NY3">
+                                                            <rect key="frame" x="45" y="30.5" width="249" height="16"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                             <color key="textColor" red="0.70588235290000001" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -140,7 +140,7 @@
                                                         <constraint firstItem="2f4-xz-KPU" firstAttribute="height" secondItem="8Sx-CP-rnc" secondAttribute="height" id="Wtc-Ul-2Cn"/>
                                                         <constraint firstItem="zaF-tZ-Ftc" firstAttribute="leading" secondItem="8Sx-CP-rnc" secondAttribute="leading" constant="11" id="hog-cO-2dO"/>
                                                         <constraint firstItem="1Ar-Ow-NY3" firstAttribute="leading" secondItem="zaF-tZ-Ftc" secondAttribute="trailing" constant="10" id="p1E-FX-zkS"/>
-                                                        <constraint firstItem="2f4-xz-KPU" firstAttribute="leading" secondItem="Ghk-B6-Udx" secondAttribute="trailing" constant="20" id="pPM-f3-K4E"/>
+                                                        <constraint firstItem="2f4-xz-KPU" firstAttribute="leading" secondItem="Ghk-B6-Udx" secondAttribute="trailing" constant="1" id="pPM-f3-K4E"/>
                                                         <constraint firstItem="1Ar-Ow-NY3" firstAttribute="top" secondItem="Ghk-B6-Udx" secondAttribute="bottom" constant="1" id="rXA-5e-2y1"/>
                                                         <constraint firstAttribute="width" secondItem="8Sx-CP-rnc" secondAttribute="height" multiplier="187:30" id="vkZ-Po-D8s"/>
                                                     </constraints>

@@ -14,7 +14,7 @@ class EnderecoData {
     var cep: String
     var cidade: String
     var complemento: String
-    var id: Int
+    var id: CLong
     var latitude: Int
     var longitude: Int
     var logradouro: String
@@ -40,7 +40,7 @@ class EnderecoData {
         let bairro = dict["bairro"] as! String
         let cep = dict["cep"] as! String
         let cidade = dict["cidade"] as! String
-        let complemento = dict["complemento"] as! String
+        let complemento = String(dict["complemento"]  as! String)
         let id = dict["id"] as! CLong
         let latitude = dict["latitude"] as! Int
         let longitude = dict["longitude"] as! Int

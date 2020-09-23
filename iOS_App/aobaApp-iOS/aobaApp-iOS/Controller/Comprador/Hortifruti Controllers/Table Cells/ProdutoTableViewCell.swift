@@ -44,7 +44,7 @@ class ProdutoTableViewCell: UITableViewCell {
         titulo.text = nomeProduto
         
         // Se não achar a imagem, mostra o logo
-        imagem.image = UIImage(named: "logo.png")
+        imagem.image = UIImage(named: anuncio.image[0])
 
         //Ajusta para as casas decimais e troca o ponto por virgula
         var precoStr: String = String(format: "%.2f", anuncio.valor!)

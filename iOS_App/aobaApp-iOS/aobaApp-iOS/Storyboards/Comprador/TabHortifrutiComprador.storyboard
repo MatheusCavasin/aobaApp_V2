@@ -286,24 +286,25 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ww-95-Bn7">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-Rf-NND">
+                                        <rect key="frame" x="188" y="390" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-Rf-NND">
-                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4ww-95-Bn7" firstAttribute="width" secondItem="863-nn-Tdt" secondAttribute="width" id="Adx-sL-flP"/>
                             <constraint firstItem="4ww-95-Bn7" firstAttribute="centerY" secondItem="863-nn-Tdt" secondAttribute="centerY" id="Fxg-Do-etX"/>
-                            <constraint firstItem="DWz-Rf-NND" firstAttribute="centerY" secondItem="4ww-95-Bn7" secondAttribute="centerY" id="IE1-Bb-wjB"/>
                             <constraint firstItem="qgy-47-Kmi" firstAttribute="width" secondItem="5bk-iK-afS" secondAttribute="width" id="VTM-og-1ze"/>
                             <constraint firstItem="4ww-95-Bn7" firstAttribute="centerX" secondItem="863-nn-Tdt" secondAttribute="centerX" id="arw-Vi-COc"/>
                             <constraint firstItem="4ww-95-Bn7" firstAttribute="height" secondItem="863-nn-Tdt" secondAttribute="height" id="c1U-xw-vzg"/>
                             <constraint firstItem="qgy-47-Kmi" firstAttribute="top" secondItem="863-nn-Tdt" secondAttribute="top" id="d4V-QW-5BO"/>
                             <constraint firstItem="qgy-47-Kmi" firstAttribute="height" secondItem="863-nn-Tdt" secondAttribute="height" id="div-dC-Asr"/>
-                            <constraint firstItem="DWz-Rf-NND" firstAttribute="centerX" secondItem="4ww-95-Bn7" secondAttribute="centerX" id="lBc-Zk-JLy"/>
                             <constraint firstItem="qgy-47-Kmi" firstAttribute="centerX" secondItem="863-nn-Tdt" secondAttribute="centerX" id="sLN-LZ-57s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="863-nn-Tdt"/>
@@ -552,19 +553,16 @@
                                             <outlet property="pkvQuantidade" destination="1GD-2I-TXu" id="hYq-wJ-g4W"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="botaoAdicionar" rowHeight="44" id="bC1-yt-5DM" customClass="BotaoAdicionar" customModule="aobaApp_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="621" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="botaoAdicionar" rowHeight="100" id="bC1-yt-5DM" customClass="BotaoAdicionar" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="621" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bC1-yt-5DM" id="cWp-ao-bOc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J5V-K8-atG">
                                                     <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="374" id="o2g-Ya-VkL"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <state key="normal" title="Adicionar">
                                                         <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -572,9 +570,9 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="J5V-K8-atG" firstAttribute="top" secondItem="cWp-ao-bOc" secondAttribute="top" id="Fbf-qy-RCJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="J5V-K8-atG" secondAttribute="trailing" constant="20" id="U93-F7-wQw"/>
-                                                <constraint firstItem="J5V-K8-atG" firstAttribute="height" secondItem="cWp-ao-bOc" secondAttribute="height" id="am0-BT-Jh3"/>
-                                                <constraint firstItem="J5V-K8-atG" firstAttribute="centerY" secondItem="cWp-ao-bOc" secondAttribute="centerY" id="sLs-87-snr"/>
+                                                <constraint firstAttribute="bottom" secondItem="J5V-K8-atG" secondAttribute="bottom" constant="56" id="kkH-Sf-wIx"/>
                                                 <constraint firstItem="J5V-K8-atG" firstAttribute="leading" secondItem="cWp-ao-bOc" secondAttribute="leading" constant="20" id="zBt-6a-F49"/>
                                             </constraints>
                                         </tableViewCellContentView>

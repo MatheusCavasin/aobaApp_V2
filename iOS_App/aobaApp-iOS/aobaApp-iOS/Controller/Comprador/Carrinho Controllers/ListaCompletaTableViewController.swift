@@ -10,7 +10,7 @@ import UIKit
 
 class ListaCompletaTableViewController: UITableViewController {
 
-    var carrinho: [AtivosProduto]!
+    var carrinho: Carrinho!
     
     
     override func viewDidLoad() {
@@ -30,16 +30,16 @@ class ListaCompletaTableViewController: UITableViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carrinho.count + 2
+        return carrinho.produtos.count + 2
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if  indexPath.row < carrinho.count {
+        if  indexPath.row < carrinho.produtos.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
-            cell.config(produto: carrinho[indexPath.row])
+            cell.config(produto: carrinho.produtos[indexPath.row])
             return cell
-        } else if indexPath.row == carrinho.count {
+        } else if indexPath.row == carrinho.produtos.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "valorCarrinho")
             return cell!
         } else {

@@ -44,6 +44,9 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         //Observables
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "AnucniosCarregados"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoCarregar), name: NSNotification.Name(rawValue: "ErroAoCarregarAnuncios"), object: nil)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,6 +59,17 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     private func chamarDados() {
         anunciosRepository.getSecoesValidas()
         self.viwLoadView.isHidden = false
+        
+    }
+    
+    @objc func erroAoCarregar() {
+        let alert = UIAlertController(title: "Erro ao tentar carregar", message: "Verifique sua conexão com a internet", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
         
     }
     
@@ -77,11 +91,11 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
             let sexta = classificadorDeSecoes.getCategoriasPelodiaDaSemana(anuncios: Singleton.shared.anuncios, nomeDaSecao: nomeDaSecaoFVL!, diaDaSemana: "SEX")
             
             
-            segunda != nil ? secoes.append(segunda!) : print("nao conem produtos")
-            terca != nil ? secoes.append(terca!) : print("nao conem produtos")
-            quarta != nil ? secoes.append(quarta!) : print("nao conem produtos")
-            quinta != nil ? secoes.append(quinta!) : print("nao conem produtos")
-            sexta != nil ? secoes.append(sexta!) : print("nao conem produtos")
+            segunda != nil ? secoes.append(segunda!) : print("nao contem produtos")
+            terca != nil ? secoes.append(terca!) : print("nao contem produtos")
+            quarta != nil ? secoes.append(quarta!) : print("nao contem produtos")
+            quinta != nil ? secoes.append(quinta!) : print("nao contem produtos")
+            sexta != nil ? secoes.append(sexta!) : print("nao contem produtos")
         }
             
             

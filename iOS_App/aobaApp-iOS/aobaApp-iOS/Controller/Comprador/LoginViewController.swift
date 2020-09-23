@@ -17,15 +17,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtSenha: UITextField!
     
+    @IBOutlet weak var loadingView: UIView!
+    
+    
+    @IBOutlet weak var btnNBVoltar: UIButton!
+    
+    var request = CompradorRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBtnCadastro()
         setBtnEntrar()
-   
+        self.loadingView.isHidden = true
+        
         
         self.hideKeyboardWhenTappedAround()
         self.txtEmail.keyboardType = UIKeyboardType.emailAddress
+        
+        
+        // observvables
+        NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoLogar), name: NSNotification.Name(rawValue: "ErroAoLogar"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sucessoAoLogar), name: NSNotification.Name(rawValue: "SucessoAoLogar"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,6 +53,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
     }
+    
+    @objc func erroAoLogar() {
+        loadingView.isHidden = true
+        
+        let alert = UIAlertController(title: "Erro ao tentar logar-se", message: "Usuário ou senha incorreto", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func sucessoAoLogar() {
+        loadingView.isHidden = true
+        Singleton.shared.loggedIn = true
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 
     func setBtnCadastro() {
         btnCadastro.layer.borderWidth = 2.0
@@ -53,10 +83,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func btnEntrarPressed(_ sender: Any) {
         
-        Singleton.shared.loggedIn = true
-        self.dismiss(animated: true, completion: nil)
+        let defaults = UserDefaults.standard
+        defaults.set(txtEmail.text, forKey: "Usuario")
+        defaults.set(txtSenha.text, forKey: "senha")
+        
+        showLoadingView()
+        request.login()
+        
     }
     
+    
+    private func showLoadingView() {
+        loadingView.isHidden = false
+    }
+    
+    
+    @IBAction func btnNBVoltarPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
 

@@ -13,10 +13,12 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     @IBOutlet weak var btnCadastrar: UIButton!
     @IBOutlet weak var loadingView: UIView!
     
-    @IBOutlet weak var cep: UITextField!
-    @IBOutlet weak var endereco: UITextField!
-    @IBOutlet weak var complemento: UITextField!
+    @IBOutlet weak var txtNome: UITextField!
+    @IBOutlet weak var txtNomeFantasia: UITextField!
+    @IBOutlet weak var txtTelefone: UITextField!
+    @IBOutlet weak var txtCnpj: UITextField!
     
+    var comercianteData: ComercianteData!
     let repository = CompradorRepository()
     
     
@@ -49,6 +51,7 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     
     @objc func logar() {
         Singleton.shared.loggedIn = true
+        Singleton.shared.comercianteLogado = comercianteData
         self.navigationController?.dismiss(animated: true, completion: nil)
         loadingView.isHidden = true
     }
@@ -74,13 +77,11 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     
     
     @IBAction func btnCadastrarPressed(_ sender: Any) {
-        if cep.text != "" && endereco.text != "" {
-            let enderecoData = EnderecoData(bairro: "String", cep: cep.text!, cidade: "String", complemento: complemento.text!, id: 0, latitude: 0, longitude: 0, logradouro: endereco.text!, numero: 2, uf: "String")
-            
-            let enderecosData: [EnderecoData] = [enderecoData]
-            
-            let comercianteData = ComercianteData(cnpj: Singleton.shared.creatingUser[3], email: Singleton.shared.creatingUser[0], senha: Singleton.shared.creatingUser[1], foto: "person.fill", nome: Singleton.shared.creatingUser[2], nomeFantasia: "String", rating: 0, enderecos: enderecosData)
-            
+        if txtNome.text != "" && txtCnpj.text != "" && txtTelefone.text != "" && txtNomeFantasia.text != "" {
+
+            comercianteData = ComercianteData(cnpj: txtCnpj.text!, email: Singleton.shared.creatingUser[0], senha: Singleton.shared.creatingUser[1], foto: "person.fill", nome: txtNome.text!, nomeFantasia: txtNomeFantasia.text!, rating: 0)
+                
+    
             repository.create(comerciante: comercianteData)
             loadingView.isHidden = false
 
