@@ -42,8 +42,6 @@ class PrimeiraTelaDeCadastroViewController: UIViewController, UITextFieldDelegat
         }
     }
     
-
-    
     func setBtnProximo() {
         btnProximo.layer.borderWidth = 2.0
         btnProximo.layer.borderColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)

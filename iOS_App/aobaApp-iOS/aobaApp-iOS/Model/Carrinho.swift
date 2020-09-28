@@ -16,9 +16,15 @@ class Carrinho {
     var metodoPagamento: String = "Dinheiro"
     var endereco: EnderecoData?
     
-    public func setEndereco(novoEndereco: EnderecoData) {
-        self.endereco = novoEndereco
+    public func setEndereco(novoEndereco: EnderecoData?) {
+        if novoEndereco == nil {
+            return
+        } else {
+            self.endereco = novoEndereco
+        }
+        
     }
+    
     
     public func adicionarNovoProduto(_ novoProduto: ItemCarrinho, _ qtde: Int) {
         novoProduto.anuncio.qtdeMax = qtde

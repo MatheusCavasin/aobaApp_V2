@@ -32,14 +32,31 @@ class ProdutoDoCarrinhoTableViewCell: UITableViewCell {
     }
 }
 
+class SubTotalCarrinhoTableViewCell: UITableViewCell {
+    @IBOutlet weak var lblSubTotal: UILabel!
+    public func config(carrinho: Carrinho) {
+        let total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        
+        self.lblSubTotal.text = total
+    }
+}
+
+class ValorFreteCarrinhoTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var lblFrete: UILabel!
+    
+    public func config(carrinho: Carrinho) {
+        lblFrete.text = String(format: "%.2f", (carrinho.valorEntrega)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+    }
+}
+
 class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var subTotal: UILabel!
     @IBOutlet weak var viwBackground: UIView!
     @IBOutlet weak var endereco: UILabel!
     @IBOutlet weak var cidade: UILabel!
-    @IBOutlet weak var valorDoFrete: UILabel!
     
+    var navigationController: UINavigationController!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,18 +65,21 @@ class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
         viwBackground.layer.cornerRadius = 10.0
     }
     
-    public func config(carrinho: Carrinho) {
-
-        let total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-        self.subTotal.text = total
+    public func config(carrinho: Carrinho, navigationController: UINavigationController) {
+        
+        self.navigationController = navigationController
+        
         
         if carrinho.endereco != nil {
             self.endereco.text = "\(carrinho.endereco!.logradouro), \(carrinho.endereco!.numero)"
-            self.cidade.text =  "\(carrinho.endereco?.cidade) - \(carrinho.endereco?.uf)"
+            self.cidade.text =  "\(carrinho.endereco!.cidade) - \(carrinho.endereco!.uf)"
         }
         
-        self.valorDoFrete.text = String(format: "%.2f", (carrinho.valorEntrega)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        
+        
     }
+   
+    
 }
 
 class TotalDoPedidoTableViewCell: UITableViewCell {
@@ -70,6 +90,7 @@ class TotalDoPedidoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        btnFinalizarPEdido.layer.cornerRadius = 5.0
     }
     
     public func config(valorTotal: Float) {
