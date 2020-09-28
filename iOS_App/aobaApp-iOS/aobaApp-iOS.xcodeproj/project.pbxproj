@@ -18,6 +18,11 @@
 		88051B2A24D1A39300339FE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88051B2924D1A39300339FE9 /* Assets.xcassets */; };
 		88051B2D24D1A39300339FE9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88051B2B24D1A39300339FE9 /* LaunchScreen.storyboard */; };
 		8825AB2424FFD25600DC41D6 /* EditarAnuncioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */; };
+		882FC421251B7ED20019FEA5 /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882FC41F251B7ED20019FEA5 /* FotoCollectionViewCell.swift */; };
+		882FC422251B7ED20019FEA5 /* FotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882FC420251B7ED20019FEA5 /* FotoCollectionViewCell.xib */; };
+		882FC426251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882FC424251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift */; };
+		882FC427251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 882FC425251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib */; };
+		882FC42B251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882FC42A251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift */; };
 		88359C8224D9A3640073628A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88359C8124D9A3640073628A /* User.swift */; };
 		88359C8624E2EB9B0073628A /* PrincipalComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */; };
 		88359C8824E416BC0073628A /* CadastroVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C8724E416BC0073628A /* CadastroVendedor.storyboard */; };
@@ -110,6 +115,11 @@
 		88051B2C24D1A39300339FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88051B2E24D1A39300339FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAnuncioController.swift; sourceTree = "<group>"; };
+		882FC41F251B7ED20019FEA5 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		882FC420251B7ED20019FEA5 /* FotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		882FC424251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		882FC425251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionTableViewCell.xib; sourceTree = "<group>"; };
+		882FC42A251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAnuncioViewController.swift; sourceTree = "<group>"; };
 		88359C8124D9A3640073628A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrincipalComprador.storyboard; sourceTree = "<group>"; };
 		88359C8724E416BC0073628A /* CadastroVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroVendedor.storyboard; sourceTree = "<group>"; };
@@ -249,6 +259,17 @@
 				88051B2E24D1A39300339FE9 /* Info.plist */,
 			);
 			path = "aobaApp-iOS";
+			sourceTree = "<group>";
+		};
+		882FC41E251B7EA20019FEA5 /* Collection Fotos Anuncio */ = {
+			isa = PBXGroup;
+			children = (
+				882FC41F251B7ED20019FEA5 /* FotoCollectionViewCell.swift */,
+				882FC420251B7ED20019FEA5 /* FotoCollectionViewCell.xib */,
+				882FC424251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift */,
+				882FC425251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib */,
+			);
+			path = "Collection Fotos Anuncio";
 			sourceTree = "<group>";
 		};
 		88359C7E24D848770073628A /* Model */ = {
@@ -513,7 +534,9 @@
 		D1EC845F24F54B08003BB786 /* Classes Anuncio */ = {
 			isa = PBXGroup;
 			children = (
+				882FC41E251B7EA20019FEA5 /* Collection Fotos Anuncio */,
 				D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */,
+				882FC42A251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift */,
 				D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */,
 				8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */,
 			);
@@ -592,9 +615,11 @@
 				D123483824EEB6CC007095E2 /* TabPerfilComprador.storyboard in Resources */,
 				88051B2824D1A39100339FE9 /* Main.storyboard in Resources */,
 				88359C9424E41FED0073628A /* PedidosVendedor.storyboard in Resources */,
+				882FC427251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib in Resources */,
 				D16DB9AD24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib in Resources */,
 				D14757712510F84400868B46 /* ProdutoCarrinhoTableViewCell.xib in Resources */,
 				88359C9824E4200E0073628A /* TabPerfilVendedor.storyboard in Resources */,
+				882FC422251B7ED20019FEA5 /* FotoCollectionViewCell.xib in Resources */,
 				88359C9224E41FA50073628A /* TabPedidosComprador.storyboard in Resources */,
 				88359C9A24E421940073628A /* TabPedidosVendedor.storyboard in Resources */,
 				39F57E0924EFFF4B00D9FA4B /* Slide.xib in Resources */,
@@ -622,11 +647,13 @@
 				D19FE68724E4336A007D138A /* TipoProduto.swift in Sources */,
 				D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */,
 				D19D95DB24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift in Sources */,
+				882FC421251B7ED20019FEA5 /* FotoCollectionViewCell.swift in Sources */,
 				889F112124FD227C00B58431 /* ProdutorRepository.swift in Sources */,
 				D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */,
 				D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */,
 				D19D95D524E57252007701C4 /* LoginViewController.swift in Sources */,
 				D16DB9D324E6FCE400B2B279 /* Comerciante.swift in Sources */,
+				882FC426251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift in Sources */,
 				88359C9C24E424620073628A /* PrincipalVendedor.swift in Sources */,
 				D1778CED251594C900D4432B /* EnderecoData.swift in Sources */,
 				D19FE68024E4336A007D138A /* Produtor.swift in Sources */,
@@ -664,6 +691,7 @@
 				D12476C3250A663F00E95433 /* AtivosProduto.swift in Sources */,
 				886227A324E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift in Sources */,
 				D12476BB250A65FA00E95433 /* AtivosSecao.swift in Sources */,
+				882FC42B251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift in Sources */,
 				D14D35F0251A7C3500610AF7 /* loadingActivityView.swift in Sources */,
 				D19FE68424E4336A007D138A /* StatusItem.swift in Sources */,
 				88B8423824E6D77900E21123 /* AnuncioTableViewController.swift in Sources */,

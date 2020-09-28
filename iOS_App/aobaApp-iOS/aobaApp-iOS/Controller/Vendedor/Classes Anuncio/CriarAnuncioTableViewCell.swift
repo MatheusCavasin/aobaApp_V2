@@ -16,7 +16,7 @@ class LabelsCriarAnuncioTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblQtdeCaixasCell: UILabel!
     @IBOutlet weak var lblValorCell: UILabel!
-    
+    @IBOutlet weak var lbDataCell: UILabel!
     
     
     override func awakeFromNib() {
@@ -28,6 +28,24 @@ class LabelsCriarAnuncioTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func validade(){
+        let currentDate = Date()
+        var dateComponent = DateComponents()
+        dateComponent.day = 7
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+        
+        let dateFormat2 = DateFormatter()
+        dateFormat2.dateFormat = "MMMM"
+        dateFormat2.locale = Locale(identifier: "pt_BR")
+        let stringMonth = dateFormat2.string(from: futureDate!)
+
+        let dateFormat3 = DateFormatter()
+        dateFormat3.dateFormat = "dd"
+        let numDay = dateFormat3.string(from: futureDate!)
+        
+        lbDataCell.text = String(format: "%@ %@", numDay, stringMonth)
     }
     
 }
@@ -63,8 +81,8 @@ class QtdeCaixasCell: UITableViewCell {
         
         var number = 0
         number = Int(sender.value)
+        ModelVendedor.instance.quantidadeCaixas = number
         lblCaixas.text = String(number)
-        print("aaaAAAAAAA")
     }
     
     
@@ -96,7 +114,7 @@ class TextFieldValorCell: UITableViewCell, UITextFieldDelegate {
     
     func updateTextField () -> String? {
         let numero = Double(qtde/100) + Double(qtde%100)/100
-        
+        ModelVendedor.instance.precoCaixa = numero
         return numberFormatter.string(from: NSNumber(value: numero))
     }
     
@@ -130,14 +148,13 @@ class TextFieldValorCell: UITableViewCell, UITextFieldDelegate {
 class FotoButtonCell: UITableViewCell {
     
     
-    @IBOutlet weak var addFotoButton: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        addFotoButton.layer.cornerRadius = ButtonConfig.raioBorda
-        addFotoButton.layer.borderWidth = ButtonConfig.larguraBorda
-        addFotoButton.layer.borderColor = ButtonConfig.laranja
+//        addFotoButton.layer.cornerRadius = ButtonConfig.raioBorda
+//        addFotoButton.layer.borderWidth = ButtonConfig.larguraBorda
+//        addFotoButton.layer.borderColor = ButtonConfig.laranja
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -151,10 +168,36 @@ class FotoButtonCell: UITableViewCell {
     
 }
 
+class PublicarProdutoButtonCell: UITableViewCell {
+    
+    @IBOutlet weak var publicarProdutoButton: UIButton!
+    weak var delegate: CellsDelegate?
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        publicarProdutoButton.layer.cornerRadius = ButtonConfig.raioBorda
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    @IBAction func publicarProdutoButton(_ sender: Any) {
+        delegate?.publicarButtonPressed()
+        print("Add produto pressionado")
+//        ModelVendedor.instance.hortifruit = ["maça gala", "5", "R$ 70,00"]
+    }
+    
+    
+}
+
 class AddProdutoButtonCell: UITableViewCell {
     
+
     @IBOutlet weak var addProdutoButton: UIButton!
-    weak var delegate: CellsDelegate?
+
+//    weak var delegate: CellsDelegate?
     
     
     override func awakeFromNib() {
@@ -165,13 +208,6 @@ class AddProdutoButtonCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-    
-    @IBAction func addProdutoButton(_ sender: Any) {
-        delegate?.addButtonPressed()
-        print("Add produto pressionado")
-        ModelVendedor.instance.hortifruit = ["maça gala", "5", "R$ 70,00"]
-    }
-    
     
 }
 
@@ -270,7 +306,22 @@ class EditarAnuncioTableViewCell: UITableViewCell {
     
 }
 
-
+class editarButtonCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var editarButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        editarButton.layer.cornerRadius = ButtonConfig.raioBorda
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
 
 
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, CellsDelegate {
+class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
     
@@ -17,9 +17,12 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableViewSearch: UITableView!
     
+    
+    
     var qtde = 0
     var tabVendedor = TabAnuncioVendedorViewController()
     var filtroHortifruit = ModelVendedor.instance.dictListaProdutos
+//    var fotos = [FotosHortifruit]()
     
     var numberFormatter: NumberFormatter {
         let formatter = NumberFormatter()
@@ -31,6 +34,7 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewAnuncio.register(FotoCollectionTableViewCell.nib(), forCellReuseIdentifier: FotoCollectionTableViewCell.identifier)
         tableViewAnuncio.delegate = self
         tableViewAnuncio.dataSource = self
         tableViewAnuncio.reloadData()
@@ -38,10 +42,12 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         
         tableViewSearch.delegate = self
         tableViewSearch.dataSource = self
+        ModelVendedor.instance.tipoHortifruit = searchBar.text!
         
         searchBar.delegate = self
         
-       
+        fotos.append(FotosHortifruit(imageName: UIImage(named: "AdicionarFoto")!))
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pickFoto), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
 
     }
     
@@ -67,7 +73,7 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-    
+        
         tableViewSearch.isHidden = false
     }
     
@@ -85,7 +91,7 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         
         switch tableView {
         case tableViewAnuncio:
-            numberRow = 7
+            numberRow = 10
         case tableViewSearch:
             numberRow = filtroHortifruit.count
         default:
@@ -123,12 +129,26 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
                 cellReturn = cell
             }
             else if indexPath.row == 5 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "fotoCell", for: indexPath) as! FotoButtonCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "lblValidadeCell", for: indexPath) as! LabelsCriarAnuncioTableViewCell
                 cellReturn = cell
             }
-            else{
+            else if indexPath.row == 6 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "lblValidadeDiaCell", for: indexPath) as! LabelsCriarAnuncioTableViewCell
+                cellReturn = cell
+            }
+            else if indexPath.row == 7 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "lbDataCell", for: indexPath) as! LabelsCriarAnuncioTableViewCell
+                cell.validade()
+                cellReturn = cell
+            }
+            else if indexPath.row == 8{
+                let cell = tableView.dequeueReusableCell(withIdentifier: FotoCollectionTableViewCell.identifier, for: indexPath) as! FotoCollectionTableViewCell
+                cell.configure(with: fotos)
+                return cell
+            }
+            else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "addProdutoCell", for: indexPath) as! AddProdutoButtonCell
-                cell.delegate = self
+//                cell.delegate = self
                 cellReturn = cell
             }
         case tableViewSearch:
@@ -170,33 +190,59 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         //            let cell = tableView.dequeueReusableCell(withIdentifier: "publicarCell", for: indexPath) as! PublicarButtonCell
         //            return cell
         //        }
-        
+    
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == tableViewSearch {
-            searchBar.text = filtroHortifruit[indexPath.row]["nome"] as! String
+            searchBar.text = (filtroHortifruit[indexPath.row]["nome"] as! String)
+            ModelVendedor.instance.tipoHortifruit = searchBar.text!
             tableView.isHidden = true
+            ModelVendedor.instance.idProduto = (filtroHortifruit[indexPath.row]["id"] as! Int)
             dismissKeyboard()
         }
     }
     
-    func addButtonPressed() {
-        tableViewAnuncio.reloadData()
-        self.dismiss(animated: true)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
-    }
-    func publicarButtonPressed() {
-        self.dismiss(animated: true){
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
-
-        }
-    }
+    
+    
+//    func addButtonPressed() {
+//        tableViewAnuncio.reloadData()
+//        self.dismiss(animated: true)
+//        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
+//    }
+//    func publicarButtonPressed() {
+//        self.dismiss(animated: true){
+//            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
+//
+//        }
+//    }
     
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    //MARK: Funcoes foto
+    @objc func pickFoto() {
+        let vc = UIImagePickerController()
+//        vc.sourceType = .camera
+        vc.allowsEditing = true
+        vc.delegate = self
+        present(vc, animated: true)
+        self.present(vc, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+
+            guard let image = info[.editedImage] as? UIImage else {
+                print("No image found")
+                return
+            }
+        fotos.append(FotosHortifruit(imageName: image))
+        tableViewAnuncio.reloadData()
+    }
+    
     
 }
