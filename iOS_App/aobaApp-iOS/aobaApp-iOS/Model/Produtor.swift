@@ -50,5 +50,5 @@ class Produtor: User {
         
         return produtor
     }
-    
+        
 }

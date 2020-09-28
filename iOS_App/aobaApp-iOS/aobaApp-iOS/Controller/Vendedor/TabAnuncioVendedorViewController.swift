@@ -23,13 +23,14 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var lblSemAnuncio: UILabel!
     @IBOutlet weak var loadViewAnuncios: UIView!
     @IBOutlet weak var loadIndicatorAnuncios: UIActivityIndicatorView!
-    
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     
     let produtorRepositoy = ProdutorRepository()
     var downloadDados: Bool! // variável de controle para requisitar dados do back
     
     override func viewDidLoad() {
+        print("LOOOOAADE")
         super.viewDidLoad()
         downloadDados = true
         CriarAnuncioButton.layer.cornerRadius = ButtonConfig.raioBorda
@@ -46,6 +47,18 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         
         dadosChamar()
 
+    }
+    
+    
+    @IBAction func editButtonPressed(_ sender: Any) {
+        
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        if tableView.isEditing == true {
+            editButton.title = "Ok"
+        }else {
+            editButton.title = "Editar"
+        }
+        
     }
     
     @objc func dadosChamar(){
@@ -94,7 +107,6 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     //    }
     
     @objc func reloadView(){
-        print("bbbbbbbbbbbb")
         
         self.loadViewAnuncios.isHidden = true
         self.loadIndicatorAnuncios.stopAnimating()
@@ -147,26 +159,28 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "EditarAnuncio") as? EditarAnuncioController {
+            vc.nomeHortifruit = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["produto"] as! [String : Any?])["nome"] as? String
             self.present(vc, animated:true, completion:nil)
         }
         
     }
     
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-            print("index path of delete: \(indexPath)")
-            completionHandler(true)
-        }
-        
-        let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
-            print("index path of edit: \(indexPath)")
-            completionHandler(true)
-        }
-        let swipeActionConfig = UISwipeActionsConfiguration(actions: [rename, delete])
-        swipeActionConfig.performsFirstActionWithFullSwipe = false
-        return swipeActionConfig
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCell.EditingStyle.delete) {
+            print("DELETAR \(indexPath.row)")
+            let idAnuncio = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as! Int
+            print("DELETAR \(idAnuncio)")
+            produtorRepositoy.deletarAnuncio(idAnuncio: idAnuncio)
+            dadosChamar()
+            }
+    }
+    
+
     
     /*
      // MARK: - Navigation

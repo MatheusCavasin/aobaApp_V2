@@ -17,17 +17,47 @@ class ModelVendedor {
     }
     
     var hortifruit: [String] = []
+    var dictListaProdutos = [[String: Any]]()
+    var dictListaAnuncios = [[String: Any]]()
     var email: String = ""
     var senha: String = ""
     var nome: String = ""
     var codigo_registro: String = ""
     var foto: String = ""
     var descricao: String = ""
-    var dictListaProdutos = [[String: Any]]()
-    var dictListaAnuncios = [[String: Any]]()
-    
+    var tipoHortifruit = ""
+    var quantidadeCaixas = 0
+    var precoCaixa = 0.0
+    var idProduto = 0
+    var idProdutor = 3
     
 }
+
+func anuncioDictionary() -> Dictionary<String, Any> {
+    var dict: Dictionary<String, Any> = [:]
+    
+    dict["fotos"] = ["String"]
+    dict["id"] = 0
+    dict["produtoId"] = ModelVendedor.instance.idProduto
+    dict["produtorId"] = ModelVendedor.instance.idProdutor
+    dict["qtdeMax"] =  ModelVendedor.instance.quantidadeCaixas
+    dict["valor"] =  ModelVendedor.instance.precoCaixa
+
+    print("\n\n\nAAAA\n \(dict)\n\nAAAA\n\n")
+    return dict
+}
+
+
+
+struct FotosHortifruit {
+    let imageName: UIImage!
+    
+    init(imageName: UIImage){
+        self.imageName = imageName
+    }
+}
+
+var fotos = [FotosHortifruit]()
 
 
 

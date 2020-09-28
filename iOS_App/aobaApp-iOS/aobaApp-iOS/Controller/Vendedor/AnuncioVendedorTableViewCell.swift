@@ -48,7 +48,7 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
         self.imgProduto.image = UIImage(named: "fruta-laranja")
         self.lblTipo.text = produto
         self.lblQuantidade.text = ("\(caixas) caixas disponíveis")
-        self.lblValor.text = "R$ \(valorString)"
+        self.lblValor.text = "\(valorString)"
         self.switchStatus.isOn = ativo
         self.idAnuncio = anuncio["id"] as! Int
     }

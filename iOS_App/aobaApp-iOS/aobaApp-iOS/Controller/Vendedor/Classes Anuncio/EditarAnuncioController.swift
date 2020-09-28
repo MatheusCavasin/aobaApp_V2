@@ -11,6 +11,7 @@ import UIKit
 class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewEditar: UITableView!
+    var nomeHortifruit: String!
     
     
     override func viewDidLoad() {
@@ -25,13 +26,19 @@ class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableVie
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func salvarButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblProdutoCell", for: indexPath) as! EditarAnuncioTableViewCell
+            cell.lblProduto.text = nomeHortifruit
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblQtdeCaixasCell", for: indexPath) as! EditarAnuncioTableViewCell
@@ -42,8 +49,12 @@ class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableVie
         } else if indexPath.row == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblValorCell", for: indexPath) as! EditarAnuncioTableViewCell
             return cell
-        } else {
+        } else if indexPath.row == 4{
             let cell = tableView.dequeueReusableCell(withIdentifier: "txtValorCell", for: indexPath) as! TextFieldValorCell
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "salvarEdicao", for: indexPath) as! editarButtonCell
             return cell
         }
     }

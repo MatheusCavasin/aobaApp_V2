@@ -109,6 +109,53 @@ class ProdutorRepository {
         }
     }
     
+    func criarAnuncio(){
+        
+        //Coloque a URL da sua API aqui
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio"
+        let produtorDict = anuncioDictionary()
+        
+        //Chamando a funcão POST produtor
+        ApiResource.request(method: "POST", url: url, params: nil, body: produtorDict, withAuth: false){
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                if(res) {
+                    //Aqui res podera assumir dois valores, true ou false
+                    print("sua requisicao foi realizada com sucesso")
+                    print(result)
+                } else {
+                    //Aqui voce pode tratar os erros
+                    print("a requisicao nao funcionou")
+                    print(err)
+                }
+            }
+        }
+    }
+    
+    func deletarAnuncio(idAnuncio: Int){
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)"
+        let produtorDict = anuncioDictionary()
+        
+        //Chamando a funcão POST produtor
+        ApiResource.request(method: "DELETE", url: url, params: nil, body: produtorDict, withAuth: false){
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                if(res) {
+                    //Aqui res podera assumir dois valores, true ou false
+                    print("sua requisicao foi realizada com sucesso")
+                    print(result)
+                } else {
+                    //Aqui voce pode tratar os erros
+                    print("a requisicao nao funcionou")
+                    print(err)
+                }
+            }
+        }
+    }
     
     func ativarAnuncio(idAnuncio: Int){
         
