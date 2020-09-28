@@ -12,6 +12,8 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
  
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIButton!
+    
+    
     var carrinho: Carrinho!
     var maisDeTresItems: Bool!
     
@@ -20,17 +22,30 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
         
         carrinho =  Singleton.shared.carrinho
+        
+        if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
+            carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
+        }
+       
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        carrinho =  Singleton.shared.carrinho
+        
+        if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
+            carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
+        }
+        
         if carrinho.produtos.count > 3 {
             maisDeTresItems = true
         } else {
             maisDeTresItems = false
         }
+        
         tableView.reloadData()
     }
     
@@ -40,9 +55,9 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if maisDeTresItems {
-            return 6
+            return 8
         } else {
-            return carrinho.produtos.count + 2
+            return carrinho.produtos.count + 4
         }
     }
      
@@ -56,10 +71,20 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: "listaCompleta")
                 return cell!
             } else if indexPath.row == 4 {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "subTotal") as! SubTotalCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
-            } else {
+            }
+            else if indexPath.row == 5 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
+                cell.config(carrinho: carrinho, navigationController: self.navigationController!)
+                return cell
+            } else if indexPath.row == 6 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteCarrinhoTableViewCell
+                cell.config(carrinho: carrinho)
+                return cell
+            }
+            else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
@@ -69,11 +94,20 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
                 cell.config(produto: carrinho.produtos[indexPath.row])
                 return cell
+                
             } else if indexPath.row == carrinho.produtos.count {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "subTotal") as! SubTotalCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
-            } else {
+            } else if indexPath.row == carrinho.produtos.count + 1{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
+                cell.config(carrinho: carrinho, navigationController: self.navigationController!)
+                return cell
+            } else if indexPath.row == carrinho.produtos.count + 2 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteCarrinhoTableViewCell
+                cell.config(carrinho: carrinho)
+                return cell
+            }else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
@@ -82,34 +116,57 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
      }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // Melhora a navegação
+        tableView.cellForRow(at: indexPath)?.isSelected = false
+        
         if maisDeTresItems {
             if indexPath.row == 3 {
                 let listaCompletaController: ListaCompletaTableViewController!
                 let listaCompletaView = UIStoryboard(name: "TabCarrinhoComprador", bundle: nil)
                 
-                
                 listaCompletaController = listaCompletaView.instantiateViewController(identifier: "todosOsProdutos") as? ListaCompletaTableViewController
-                
-                // Melhora a navegação
                 self.navigationController!.show(listaCompletaController, sender: self)
+            } else if indexPath.row == 5{
+                let enderecoCompradorController: EnderecoCompradorViewController!
+                let enderecoCompradorView = UIStoryboard(name: "TabCarrinhoComprador", bundle: nil)
+                
+                enderecoCompradorController = enderecoCompradorView.instantiateViewController(identifier: "enderecos") as? EnderecoCompradorViewController
+                
+                navigationController!.showDetailViewController(enderecoCompradorController, sender: self)
+                enderecoCompradorController.navigationItem.title = "Enderecos"
+                enderecoCompradorController.carrinhoController = self
+                
+            }
+        } else {
+            if indexPath.row == carrinho.produtos.count + 1 {
+                let enderecoCompradorController: EnderecoCompradorViewController!
+                let enderecoCompradorView = UIStoryboard(name: "TabCarrinhoComprador", bundle: nil)
+                
+                enderecoCompradorController = enderecoCompradorView.instantiateViewController(identifier: "enderecos") as? EnderecoCompradorViewController
+                
+                navigationController!.showDetailViewController(enderecoCompradorController, sender: self)
+                enderecoCompradorController.navigationItem.title = "Enderecos"
+                enderecoCompradorController.carrinhoController = self
             }
         }
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if maisDeTresItems {
-            if indexPath.row <= 3 {
+            if indexPath.row <= 4 || indexPath.row == 6{
                 return 60
-            } else if indexPath.row == 4{
-                return 230
+            } else if indexPath.row == 5{
+                return 120
             } else {
                 return  325
             }
         } else {
-            if indexPath.row < carrinho.produtos.count {
+            if indexPath.row <= carrinho.produtos.count || indexPath.row == carrinho.produtos.count + 2{
                 return 60
-            } else if indexPath.row == carrinho.produtos.count {
-                return 230
+            } else if indexPath.row == carrinho.produtos.count + 1{
+                return 120
             } else {
                 return 325
             }
@@ -134,5 +191,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return nil
     }
+    
+    
 
 }

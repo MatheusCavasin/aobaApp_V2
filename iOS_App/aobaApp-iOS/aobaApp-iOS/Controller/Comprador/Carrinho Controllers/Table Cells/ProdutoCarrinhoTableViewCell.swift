@@ -14,7 +14,7 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
     @IBOutlet weak var nomeProduto: UILabel!
     @IBOutlet weak var valorProduto: UILabel!
     @IBOutlet weak var quantidadeProduto: UILabel!
-    
+    @IBOutlet weak var viewBackgroundView: UIView!
     
     static let identifier = "ProdutoCarrinhoTableViewCell"
     static func nib() -> UINib {
@@ -26,6 +26,9 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         imageProduto.layer.cornerRadius = 5.0
+        
+        viewBackgroundView.layer.borderWidth = 0.5
+        viewBackgroundView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
     }
     
     public func config(produto: ItemCarrinho){

@@ -46,6 +46,7 @@
 		88C22E0825139A4F00A92F77 /* DiasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C22E0725139A4F00A92F77 /* DiasTableViewCell.swift */; };
 		D10BF1C7250FB25D005B874D /* TabCarrinhoComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10BF1C6250FB25D005B874D /* TabCarrinhoComprador.storyboard */; };
 		D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */; };
+		D11D2D7B25220F1D0007D8DD /* NovoEnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D2D7A25220F1D0007D8DD /* NovoEnderecoViewController.swift */; };
 		D123483824EEB6CC007095E2 /* TabPerfilComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D123483724EEB6CC007095E2 /* TabPerfilComprador.storyboard */; };
 		D123483A24EEC540007095E2 /* Celulas do detalhe do produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D123483924EEC540007095E2 /* Celulas do detalhe do produto.swift */; };
 		D12476B8250A569400E95433 /* AvisoDeFechamentoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12476B7250A569400E95433 /* AvisoDeFechamentoView.swift */; };
@@ -99,6 +100,11 @@
 		D1EC845C24F54A1A003BB786 /* ModelVendedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */; };
 		D1EC846124F54B15003BB786 /* CriarAnuncioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */; };
 		D1EC846324F54B1B003BB786 /* CriarAnuncioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */; };
+		D1EDDA2B251B76860039E6D9 /* EnderecoCompradorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EDDA2A251B76860039E6D9 /* EnderecoCompradorViewController.swift */; };
+		D1EDDA2E251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EDDA2C251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift */; };
+		D1EDDA2F251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EDDA2D251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib */; };
+		D1EDDA32251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EDDA30251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift */; };
+		D1EDDA33251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1EDDA31251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +149,7 @@
 		88C22E0725139A4F00A92F77 /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
 		D10BF1C6250FB25D005B874D /* TabCarrinhoComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabCarrinhoComprador.storyboard; sourceTree = "<group>"; };
 		D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalComprador.swift; sourceTree = "<group>"; };
+		D11D2D7A25220F1D0007D8DD /* NovoEnderecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoEnderecoViewController.swift; sourceTree = "<group>"; };
 		D123483724EEB6CC007095E2 /* TabPerfilComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPerfilComprador.storyboard; sourceTree = "<group>"; };
 		D123483924EEC540007095E2 /* Celulas do detalhe do produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Celulas do detalhe do produto.swift"; sourceTree = "<group>"; };
 		D12476B7250A569400E95433 /* AvisoDeFechamentoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvisoDeFechamentoView.swift; sourceTree = "<group>"; };
@@ -196,6 +203,11 @@
 		D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelVendedor.swift; sourceTree = "<group>"; };
 		D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarAnuncioTableViewCell.swift; sourceTree = "<group>"; };
 		D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarAnuncioViewController.swift; sourceTree = "<group>"; };
+		D1EDDA2A251B76860039E6D9 /* EnderecoCompradorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCompradorViewController.swift; sourceTree = "<group>"; };
+		D1EDDA2C251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCadastradoTableViewCell.swift; sourceTree = "<group>"; };
+		D1EDDA2D251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnderecoCadastradoTableViewCell.xib; sourceTree = "<group>"; };
+		D1EDDA30251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampoNovoEnderecoTableViewCell.swift; sourceTree = "<group>"; };
+		D1EDDA31251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampoNovoEnderecoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +415,8 @@
 				D10BF1C9250FB87E005B874D /* Table Cells */,
 				D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */,
 				D14757722510FB0E00868B46 /* ListaCompletaTableViewController.swift */,
+				D1EDDA2A251B76860039E6D9 /* EnderecoCompradorViewController.swift */,
+				D11D2D7A25220F1D0007D8DD /* NovoEnderecoViewController.swift */,
 			);
 			path = "Carrinho Controllers";
 			sourceTree = "<group>";
@@ -413,6 +427,10 @@
 				D1E9C28124EFF37A0002B9B6 /* Celulas do carrinho.swift */,
 				D147576E2510F84400868B46 /* ProdutoCarrinhoTableViewCell.swift */,
 				D147576F2510F84400868B46 /* ProdutoCarrinhoTableViewCell.xib */,
+				D1EDDA2C251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift */,
+				D1EDDA2D251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib */,
+				D1EDDA30251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift */,
+				D1EDDA31251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib */,
 			);
 			path = "Table Cells";
 			sourceTree = "<group>";
@@ -613,7 +631,9 @@
 				D1CB876D24EC32A000266EC0 /* ProdutoTableViewCell.xib in Resources */,
 				D16DB9A524E6B93700B2B279 /* HortifrutiCollectionViewCell.xib in Resources */,
 				D123483824EEB6CC007095E2 /* TabPerfilComprador.storyboard in Resources */,
+				D1EDDA2F251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib in Resources */,
 				88051B2824D1A39100339FE9 /* Main.storyboard in Resources */,
+				D1EDDA33251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib in Resources */,
 				88359C9424E41FED0073628A /* PedidosVendedor.storyboard in Resources */,
 				882FC427251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib in Resources */,
 				D16DB9AD24E6B9DA00B2B279 /* HortifrutiTableViewCell.xib in Resources */,
@@ -652,13 +672,16 @@
 				D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */,
 				D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */,
 				D19D95D524E57252007701C4 /* LoginViewController.swift in Sources */,
+				D1EDDA2E251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift in Sources */,
 				D16DB9D324E6FCE400B2B279 /* Comerciante.swift in Sources */,
 				882FC426251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift in Sources */,
+				D11D2D7B25220F1D0007D8DD /* NovoEnderecoViewController.swift in Sources */,
 				88359C9C24E424620073628A /* PrincipalVendedor.swift in Sources */,
 				D1778CED251594C900D4432B /* EnderecoData.swift in Sources */,
 				D19FE68024E4336A007D138A /* Produtor.swift in Sources */,
 				D1E296A2251A4E7200B34BEA /* Carrinho.swift in Sources */,
 				D19FE68324E4336A007D138A /* ItemCarrinhoPedido.swift in Sources */,
+				D1EDDA2B251B76860039E6D9 /* EnderecoCompradorViewController.swift in Sources */,
 				D19FE67C24E4336A007D138A /* CategoriaProduto.swift in Sources */,
 				D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */,
 				D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */,
@@ -694,6 +717,7 @@
 				882FC42B251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift in Sources */,
 				D14D35F0251A7C3500610AF7 /* loadingActivityView.swift in Sources */,
 				D19FE68424E4336A007D138A /* StatusItem.swift in Sources */,
+				D1EDDA32251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift in Sources */,
 				88B8423824E6D77900E21123 /* AnuncioTableViewController.swift in Sources */,
 				39195C5124F54FEE00A1A82A /* ApiResource.swift in Sources */,
 				D19FE68524E4336A007D138A /* Endereco.swift in Sources */,
