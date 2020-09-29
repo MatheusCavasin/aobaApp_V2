@@ -24,23 +24,3 @@ class Comerciante: User {
 
 
 // MARK: Funcao para pegar imagem do firebase
-/*
-
-import Firebase
-
- colocar dentro de um for
- 
-let storageRef = Storage.storage().reference(withPath: "Aqui vai o id da foto que voce vai pegar do array de fotos do back")
-storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
-    if let error == error {
-        print("Erro no download: \(error.localizedDescription)")
-        return
-    }
-    if data == data {
-        variavel da imagemView que voce quer coloca-la = UIImage(data: data)
-    }
-    
-}
- 
- end funcao for
-*/

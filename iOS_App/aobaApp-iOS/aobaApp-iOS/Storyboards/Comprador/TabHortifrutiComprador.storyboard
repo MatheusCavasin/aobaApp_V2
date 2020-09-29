@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9eK-xu-lwd">
-                                <rect key="frame" x="20" y="248.5" width="374" height="112.5"/>
+                                <rect key="frame" x="20" y="257" width="374" height="112.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIz-9Q-BHR" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="72.5" height="112.5"/>
@@ -126,35 +126,35 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP" customClass="AvisoDeFechamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="140" width="414" height="49.5"/>
+                                <rect key="frame" x="0.0" y="148.5" width="414" height="49.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="JEb-x6-gbP" secondAttribute="height" multiplier="100:12" id="8rY-01-LN7"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pra já?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPG-YD-eAs">
-                                <rect key="frame" x="20" y="214.5" width="66.5" height="24"/>
+                                <rect key="frame" x="20" y="223" width="66.5" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veja os principais produtores prontos pra entregar no dia que você escolher!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF8-uz-TLc">
-                                <rect key="frame" x="20" y="376" width="374" height="38.5"/>
+                                <rect key="frame" x="20" y="384.5" width="374" height="38.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.58039215686274503" green="0.58039215686274503" blue="0.58039215686274503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O que você está procurando?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="45k-gI-M7Y">
-                                <rect key="frame" x="20" y="464" width="374" height="24"/>
+                                <rect key="frame" x="20" y="473" width="374" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="4MU-Rm-4bZ">
-                                <rect key="frame" x="20" y="498" width="374" height="149.5"/>
+                                <rect key="frame" x="20" y="507" width="374" height="150"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vqt-u9-OMc">
-                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="149.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-abacaxi" translatesAutoresizingMaskIntoConstraints="NO" id="k6a-Kr-Ug1" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
@@ -179,7 +179,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fR8-PK-EAu">
-                                        <rect key="frame" x="126.5" y="0.0" width="121" height="149.5"/>
+                                        <rect key="frame" x="126.5" y="0.0" width="121" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="legume-milho" translatesAutoresizingMaskIntoConstraints="NO" id="ofx-5U-3wZ" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121" height="117"/>
@@ -204,7 +204,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SGd-jK-Y1F">
-                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="149.5"/>
+                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="150"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verdura-brocolis" translatesAutoresizingMaskIntoConstraints="NO" id="or0-9d-pzp" customClass="CardOQueProcura" customModule="aobaApp_iOS" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="121.5" height="117"/>
@@ -288,7 +288,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-Rf-NND">
-                                        <rect key="frame" x="188" y="390" width="37" height="37"/>
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
                                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -386,7 +386,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-maca" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avaliacao" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
                                                     <rect key="frame" x="20" y="9" width="374" height="234"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="eYk-qN-JfG" secondAttribute="height" multiplier="345:216" id="zNV-Uu-Nnk"/>
@@ -628,8 +628,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="avaliacao" width="344" height="196"/>
         <image name="fruta-abacaxi" width="139" height="95"/>
-        <image name="fruta-maca" width="113" height="102"/>
         <image name="icone-loja" width="22" height="19.5"/>
         <image name="legume-milho" width="139" height="95"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>

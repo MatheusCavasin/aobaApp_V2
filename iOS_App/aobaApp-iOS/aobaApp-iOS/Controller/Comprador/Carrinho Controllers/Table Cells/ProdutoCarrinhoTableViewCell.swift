@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProdutoCarrinhoTableViewCell: UITableViewCell {
     
@@ -32,7 +33,18 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
     }
     
     public func config(produto: ItemCarrinho){
-        self.imageProduto.image = UIImage(named: produto.anuncio.image[0])
+        
+        let storageRef = Storage.storage().reference(withPath: produto.anuncio.image[0])
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Erro no download: \(error.localizedDescription)")
+                return
+            } else {
+                self.imageProduto.image = UIImage(data: data!)
+            }
+        }
+        
+    
         self.nomeProduto.text = produto.nomeProduto
         
         var value: String = String(format: "%.2f", Float((produto.anuncio.qtdeMax!)) * Float((produto.anuncio.valor)) as CVarArg)

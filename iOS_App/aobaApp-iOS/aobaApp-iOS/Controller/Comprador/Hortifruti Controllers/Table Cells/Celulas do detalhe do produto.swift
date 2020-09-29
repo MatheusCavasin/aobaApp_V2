@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var imgProduto: UIImageView!
@@ -16,7 +17,16 @@ class ImageTableViewCell: UITableViewCell {
     }
     
     public func congif(imageName: String) {
-        self.imgProduto.image = UIImage(named: imageName)
+        
+        let storageRef = Storage.storage().reference(withPath: imageName)
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Erro no download: \(error.localizedDescription)")
+                return
+            } else {
+                self.imgProduto.image = UIImage(data: data!)
+            }
+        }
     }
     
 }

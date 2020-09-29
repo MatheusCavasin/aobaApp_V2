@@ -35,6 +35,7 @@ class AtivosAnuncio {
         let produtor = AtivosProdutor.dictToObject(dict: produtorDict)
         let diasDisponiveis = dict["diasDisponiveis"] as! [String]
         
+        
         return AtivosAnuncio(id: id, image: image, valor: valor, qtdeMax: qtdeMax, produtor: produtor, diasDisponiveis: diasDisponiveis)
     }
     
@@ -54,6 +55,29 @@ class AtivosAnuncio {
         }
     }
 }
+
+
+/*
+
+import Firebase
+
+ colocar dentro de um for
+ 
+let storageRef = Storage.storage().reference(withPath: "Aqui vai o id da foto que voce vai pegar do array de fotos do back")
+storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+    if let error == error {
+        print("Erro no download: \(error.localizedDescription)")
+        return
+    }
+    if data == data {
+        variavel da imagemView que voce quer coloca-la = UIImage(data: data)
+    }
+    
+}
+ 
+ end funcao for
+*/
+
 
 
 /*

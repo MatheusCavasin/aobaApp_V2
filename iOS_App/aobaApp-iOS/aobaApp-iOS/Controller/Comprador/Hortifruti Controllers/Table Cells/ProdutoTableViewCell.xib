@@ -19,8 +19,8 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uy7-u2-aGM">
                         <rect key="frame" x="20" y="20" width="304" height="102"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="maca-argentina" translatesAutoresizingMaskIntoConstraints="NO" id="Uez-xX-o2p">
-                                <rect key="frame" x="0.0" y="0.0" width="113" height="102"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icone-hort" translatesAutoresizingMaskIntoConstraints="NO" id="Uez-xX-o2p">
+                                <rect key="frame" x="0.0" y="1" width="113" height="100.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Uez-xX-o2p" secondAttribute="height" multiplier="113:102" id="zJY-Yi-5hb"/>
                                 </constraints>
@@ -145,7 +145,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="maca-argentina" width="113" height="102"/>
+        <image name="icone-hort" width="48" height="32"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
     </resources>
 </document>
