@@ -57,7 +57,7 @@ struct FotosHortifruit {
     }
 }
 
-var fotos = [FotosHortifruit]()
+var modelFotos = [FotosHortifruit]()
 
 
 
