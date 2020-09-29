@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginVendedorViewController: UIViewController {
     
@@ -66,6 +67,9 @@ class LoginVendedorViewController: UIViewController {
         defaults.set(senhaVendedor.text, forKey: "senha")
         
         produtorRepository.getProdutos()
+        
+        
+        
         /*
         let username = "username"
         let password = "password"

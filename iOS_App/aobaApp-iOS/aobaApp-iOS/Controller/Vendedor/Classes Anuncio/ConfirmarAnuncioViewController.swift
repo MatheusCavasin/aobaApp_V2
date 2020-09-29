@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellsDelegate {
 
@@ -37,7 +38,7 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: FotoCollectionTableViewCell.identifier, for: indexPath) as! FotoCollectionTableViewCell
-            cell.configure(with: fotos)
+            cell.configure(with: modelFotos, fotoInicial: false)
             return cell
         }
         else if indexPath.row == 1 {
@@ -103,6 +104,27 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
     func publicarButtonPressed() {
         print("ENTROU2")
         produtorRepositoy.criarAnuncio()
+        
+        for imagem in modelFotos {
+            
+            let randomID = UUID.init().uuidString
+            let uploadRef = Storage.storage().reference(withPath: "\(randomID).jpg")
+            guard let imagem = imagem.imageName?.jpegData(compressionQuality: 0.75) else { return }
+            let uploadMetadata = StorageMetadata.init()
+            uploadMetadata.contentType = "image/jpeg"
+            
+            uploadRef.putData(imagem, metadata: uploadMetadata) { (dowloadMetadata, error) in
+                if let error = error {
+                    print("erro no upload da imagem! \(error.localizedDescription)")
+                    return
+                }
+                print("Imagem enviada corretamente: \(dowloadMetadata)")
+            }
+        }
+        
+        
+        
+        
         self.dismiss(animated: true){
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
 

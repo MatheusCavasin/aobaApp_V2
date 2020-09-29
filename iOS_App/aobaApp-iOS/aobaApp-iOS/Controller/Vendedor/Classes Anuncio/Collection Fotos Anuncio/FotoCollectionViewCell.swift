@@ -26,10 +26,13 @@ class FotoCollectionViewCell: UICollectionViewCell {
     public func configure(with foto: FotosHortifruit){
         self.imageHortifruit.image = foto.imageName
         self.imageHortifruit.contentMode = .scaleAspectFit
+        print("\n\n\n\n SEGUNDA \n\n\n\n\n")
+
     }
     
     public func configureFirst(){
         self.imageHortifruit.image = UIImage(named: "AdicionarFoto")
+        print("\n\n\n\n PRIMEIRA \n\n\n\n\n")
     }
     
     

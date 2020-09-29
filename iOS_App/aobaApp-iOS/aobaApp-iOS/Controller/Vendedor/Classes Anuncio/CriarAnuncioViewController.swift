@@ -46,8 +46,8 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         
         searchBar.delegate = self
         
-        fotos.append(FotosHortifruit(imageName: UIImage(named: "AdicionarFoto")!))
-        NotificationCenter.default.addObserver(self, selector: #selector(self.pickFoto), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
+//        modelFotos.append(FotosHortifruit(imageName: UIImage(named: "AdicionarFoto")!))
+        NotificationCenter.default.addObserver(self, selector: #selector(self.pickFoto), name: NSNotification.Name(rawValue: "NotificationFoto"), object: nil)
 
     }
     
@@ -143,7 +143,7 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
             }
             else if indexPath.row == 8{
                 let cell = tableView.dequeueReusableCell(withIdentifier: FotoCollectionTableViewCell.identifier, for: indexPath) as! FotoCollectionTableViewCell
-                cell.configure(with: fotos)
+                cell.configure(with: modelFotos, fotoInicial: true)
                 return cell
             }
             else {
@@ -240,7 +240,7 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
                 print("No image found")
                 return
             }
-        fotos.append(FotosHortifruit(imageName: image))
+        modelFotos.append(FotosHortifruit(imageName: image))
         tableViewAnuncio.reloadData()
     }
     

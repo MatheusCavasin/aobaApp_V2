@@ -15,6 +15,7 @@ class FotoCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     @IBOutlet var collectionView: UICollectionView!
     
     var fotos = [FotosHortifruit]()
+    var fotoInicial: Bool!
     
     static let identifier = "FotoCollectionTableViewCell"
     static func nib() -> UINib {
@@ -34,21 +35,32 @@ class FotoCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
         // Configure the view for the selected state
     }
     
-    func configure (with fotos: [FotosHortifruit]){
+    func configure (with fotos: [FotosHortifruit], fotoInicial: Bool){
         self.fotos = fotos
+        self.fotoInicial = fotoInicial
         collectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fotos.count
+        if fotoInicial {
+            return fotos.count + 1 // quando precisa da imagem "Adicionar foto"
+        } else {
+            return fotos.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FotoCollectionViewCell.identifier, for: indexPath) as! FotoCollectionViewCell
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && fotoInicial {
             cell.configureFirst()
         } else {
-            cell.configure(with: fotos[indexPath.row])
+            if fotoInicial {
+                cell.configure(with: fotos[indexPath.row - 1]) // -1 para quando há a foto "Adicionar foto" que nao esta no array modelFotos
+            } else {
+                cell.configure(with: fotos[indexPath.row]) // para quando não há a foto "Adicionar foto" e o array de fotos é igual ao numero de colunas
+            }
+            
         }
         
         return cell
@@ -59,9 +71,9 @@ class FotoCollectionTableViewCell: UITableViewCell, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+        if indexPath.row == 0 && fotoInicial{
             print("FOOOOOOI")
-            NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationFoto"), object: nil)
 //            present(vc, animated: true)
 //
         }
