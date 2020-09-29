@@ -423,7 +423,7 @@
                                                         <constraint firstAttribute="width" secondItem="DnR-PW-PH6" secondAttribute="height" multiplier="17:2" id="SVo-bg-uyn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <state key="normal" title="Atualizar endereço">
+                                                    <state key="normal" title="Novo Endereço">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
@@ -478,10 +478,10 @@
             </objects>
             <point key="canvasLocation" x="2476.811594202899" y="-20.089285714285712"/>
         </scene>
-        <!--View Controller-->
+        <!--Novo Endereco View Controller-->
         <scene sceneID="qXr-zT-5Ii">
             <objects>
-                <viewController id="zYv-A7-kTw" sceneMemberID="viewController">
+                <viewController restorationIdentifier="novoEndereco" storyboardIdentifier="novoEndereco" id="zYv-A7-kTw" customClass="NovoEnderecoViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pC-1N-16m">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -497,13 +497,16 @@
                                                 <state key="normal" title="Cancelar">
                                                     <color key="titleColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="btnCancelarPressed:" destination="zYv-A7-kTw" eventType="touchUpInside" id="Xem-wc-ka7"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="1Qj-1m-DXs">
-                                <rect key="frame" x="20" y="118" width="374" height="347"/>
+                                <rect key="frame" x="20" y="118" width="374" height="407"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CEP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ykw-IP-B1L">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -523,34 +526,43 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-9o-YCe">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XHy-mT-4Pj">
                                         <rect key="frame" x="0.0" y="179.5" width="374" height="48"/>
+                                        <string key="placeholder">Complemento	</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-9o-YCe">
+                                        <rect key="frame" x="0.0" y="239.5" width="374" height="47.5"/>
                                         <string key="placeholder">Bairro	</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cidade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NG2-Od-oP5">
-                                        <rect key="frame" x="0.0" y="239.5" width="374" height="47.5"/>
+                                        <rect key="frame" x="0.0" y="299" width="374" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UF" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ikl-zO-Mag">
-                                        <rect key="frame" x="0.0" y="299" width="374" height="48"/>
+                                        <rect key="frame" x="0.0" y="359" width="374" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZj-Hv-kHH">
-                                <rect key="frame" x="20" y="501" width="374" height="48"/>
+                                <rect key="frame" x="20" y="561" width="374" height="47.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hZj-Hv-kHH" secondAttribute="height" multiplier="344:44" id="TPT-7V-3eN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Salvar endereço">
                                     <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnSalvarEnderercoPressed:" destination="zYv-A7-kTw" eventType="touchUpInside" id="hWn-DT-JKc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -567,6 +579,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yky-en-Gla"/>
                     </view>
+                    <connections>
+                        <outlet property="btnCancelar" destination="Ih3-Pw-6RJ" id="23a-hS-SCf"/>
+                        <outlet property="btnSalvarEndereco" destination="hZj-Hv-kHH" id="OQy-CZ-X1S"/>
+                        <outlet property="txtBairro" destination="taJ-9o-YCe" id="N1X-ES-m8C"/>
+                        <outlet property="txtCep" destination="Ykw-IP-B1L" id="ge0-Tv-rPQ"/>
+                        <outlet property="txtCidade" destination="NG2-Od-oP5" id="rmr-hM-PIx"/>
+                        <outlet property="txtComplemento" destination="XHy-mT-4Pj" id="0j3-bw-LPG"/>
+                        <outlet property="txtNumero" destination="ccb-Iw-TTe" id="5dA-kN-6U6"/>
+                        <outlet property="txtRua" destination="UY8-78-elx" id="Qa3-BO-Kkn"/>
+                        <outlet property="txtUf" destination="ikl-zO-Mag" id="50P-4h-MHv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzz-hs-Fwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
