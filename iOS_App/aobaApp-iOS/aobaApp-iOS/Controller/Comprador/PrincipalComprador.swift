@@ -30,7 +30,6 @@ class PrincipalComprador: UITabBarController {
         let storyboard3 = UIStoryboard(name: "TabCarrinhoComprador", bundle: nil)
         
         
-        
         let firstBookTableVc = storyboard.instantiateViewController(withIdentifier: "TabHortifrutiComprador")
         let secondBookTableVc = storyboard1.instantiateViewController(withIdentifier: "TabPedidosComprador")
         let thirdBookTableVc = storyboard2.instantiateViewController(withIdentifier: "TabPerfilComprador")

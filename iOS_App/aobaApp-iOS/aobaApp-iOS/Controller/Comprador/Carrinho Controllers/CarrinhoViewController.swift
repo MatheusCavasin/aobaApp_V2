@@ -25,7 +25,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.separatorStyle = .none
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
         
-        carrinho =  Singleton.shared.carrinho
+        self.carrinho =  Singleton.shared.carrinho
         
         if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
             carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
@@ -55,9 +55,9 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if maisDeTresItems {
-            return 8
+            return 9
         } else {
-            return carrinho.produtos.count + 4
+            return carrinho.produtos.count + 5
         }
     }
      
@@ -74,8 +74,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: "subTotal") as! SubTotalCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
-            }
-            else if indexPath.row == 5 {
+            } else if indexPath.row == 5 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
                 cell.config(carrinho: carrinho, navigationController: self.navigationController!)
                 return cell
@@ -83,8 +82,10 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
-            }
-            else {
+            } else if indexPath.row == 7 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
+                return cell
+            } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
@@ -94,7 +95,6 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
                 cell.config(produto: carrinho.produtos[indexPath.row])
                 return cell
-                
             } else if indexPath.row == carrinho.produtos.count {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "subTotal") as! SubTotalCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
@@ -107,7 +107,10 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteCarrinhoTableViewCell
                 cell.config(carrinho: carrinho)
                 return cell
-            }else {
+            } else if indexPath.row == carrinho.produtos.count + 3 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
+                return cell
+            } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
                 return cell
@@ -159,6 +162,8 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return 60
             } else if indexPath.row == 5{
                 return 120
+            } else if indexPath.row == 7 {
+                return 100
             } else {
                 return  325
             }
@@ -167,6 +172,8 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return 60
             } else if indexPath.row == carrinho.produtos.count + 1{
                 return 120
+            } else if indexPath.row == carrinho.produtos.count + 3 {
+                return 100
             } else {
                 return 325
             }
@@ -175,9 +182,26 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        if indexPath.row <= carrinho.produtos.count - 1 {
+        
+        
+        
+        if indexPath.row <= carrinho.produtos.count - 1 && !maisDeTresItems || indexPath.row < 3 && maisDeTresItems {
             let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-                // Colocar aqui o que vai acontecer quando o usuario quiser excluir um item do carrinho
+                
+                
+                Singleton.shared.carrinho.produtos.remove(at: indexPath.row)
+                Singleton.shared.carrinho.valorProdutos = self.calcularTotal()
+                self.carrinho = Singleton.shared.carrinho
+                
+                
+                if self.carrinho.produtos.count > 3 {
+                    self.maisDeTresItems = true
+                } else {
+                    self.maisDeTresItems = false
+                }
+                
+                tableView.reloadData()
+                
                 completionHandler(true)
             }
 
@@ -192,6 +216,12 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         return nil
     }
     
-    
+    private func calcularTotal() -> Float {
+        var total: Float = 0.0
+        for produtos in Singleton.shared.carrinho.produtos {
+            total += produtos.anuncio.valor * Float(produtos.anuncio.qtdeMax)
+        }
+        return total
+    }
 
 }

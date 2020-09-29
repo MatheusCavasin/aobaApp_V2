@@ -72,8 +72,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sub-total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSz-vd-4Rf">
-                                                    <rect key="frame" x="20" y="19" width="83" height="23.5"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1w-pw-O92">
+                                                    <rect key="frame" x="-20.5" y="0.0" width="455" height="60"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrinho total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSz-vd-4Rf">
+                                                    <rect key="frame" x="20" y="19" width="128" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -89,12 +93,17 @@
                                                 <constraint firstItem="9zj-aV-Hlg" firstAttribute="top" secondItem="V9P-FG-4f6" secondAttribute="top" constant="19" id="0ut-P3-aoY"/>
                                                 <constraint firstAttribute="trailing" secondItem="9zj-aV-Hlg" secondAttribute="trailing" constant="20" id="HcR-EC-maC"/>
                                                 <constraint firstItem="gSz-vd-4Rf" firstAttribute="top" secondItem="V9P-FG-4f6" secondAttribute="top" constant="19" id="QEv-7p-NUc"/>
+                                                <constraint firstItem="l1w-pw-O92" firstAttribute="width" secondItem="V9P-FG-4f6" secondAttribute="width" multiplier="1.1" id="UNz-kD-6oy"/>
+                                                <constraint firstItem="l1w-pw-O92" firstAttribute="centerX" secondItem="V9P-FG-4f6" secondAttribute="centerX" id="X5f-Kz-xC9"/>
                                                 <constraint firstItem="gSz-vd-4Rf" firstAttribute="leading" secondItem="V9P-FG-4f6" secondAttribute="leading" constant="20" id="cFj-Qx-Llt"/>
+                                                <constraint firstItem="l1w-pw-O92" firstAttribute="centerY" secondItem="V9P-FG-4f6" secondAttribute="centerY" id="o5i-Vk-KZ9"/>
+                                                <constraint firstItem="l1w-pw-O92" firstAttribute="height" secondItem="V9P-FG-4f6" secondAttribute="height" id="qtk-Ao-8zx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="lblSubTotal" destination="9zj-aV-Hlg" id="RER-8A-fmw"/>
+                                            <outlet property="viewBackgroundView" destination="l1w-pw-O92" id="oW5-Zr-tRc"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="endereco" rowHeight="120" id="tz0-1A-7FJ" customClass="EnderecoDoCarrinhoTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
@@ -104,8 +113,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entregar em:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-M9-25f">
-                                                    <rect key="frame" x="20" y="10" width="123" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço de etrega:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQj-M9-25f">
+                                                    <rect key="frame" x="20" y="10" width="193" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -195,8 +204,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5F-ol-PhV">
-                                                    <rect key="frame" x="20" y="21" width="46" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frete total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5F-ol-PhV">
+                                                    <rect key="frame" x="20" y="21" width="96" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -219,15 +228,55 @@
                                             <outlet property="lblFrete" destination="85P-8F-8XM" id="2tg-Vh-C7c"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="dataEntrega" rowHeight="100" id="Dcw-p8-Ig7" customClass="DataEntregaTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="325" width="414" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dcw-p8-Ig7" id="stJ-6u-3WP">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tr6-nl-L8O">
+                                                    <rect key="frame" x="-20.5" y="0.0" width="455" height="100"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Data da entrega:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcC-VO-Lln">
+                                                    <rect key="frame" x="20" y="17" width="159" height="24"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Segunda-feira 05/10/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJL-6K-lSp">
+                                                    <rect key="frame" x="20" y="56" width="245" height="24"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="EcC-VO-Lln" firstAttribute="top" secondItem="stJ-6u-3WP" secondAttribute="top" constant="17" id="DSx-td-Qs6"/>
+                                                <constraint firstItem="OJL-6K-lSp" firstAttribute="leading" secondItem="stJ-6u-3WP" secondAttribute="leading" constant="20" id="MOM-tb-Pzt"/>
+                                                <constraint firstItem="Tr6-nl-L8O" firstAttribute="height" secondItem="stJ-6u-3WP" secondAttribute="height" id="O4K-qm-lpz"/>
+                                                <constraint firstItem="Tr6-nl-L8O" firstAttribute="centerX" secondItem="stJ-6u-3WP" secondAttribute="centerX" id="e20-q4-MhQ"/>
+                                                <constraint firstItem="OJL-6K-lSp" firstAttribute="top" secondItem="EcC-VO-Lln" secondAttribute="bottom" constant="15" id="feQ-AN-GQ4"/>
+                                                <constraint firstItem="Tr6-nl-L8O" firstAttribute="width" secondItem="stJ-6u-3WP" secondAttribute="width" multiplier="1.1" id="i15-hK-DZr"/>
+                                                <constraint firstItem="EcC-VO-Lln" firstAttribute="leading" secondItem="stJ-6u-3WP" secondAttribute="leading" constant="20" id="rSZ-CQ-71y"/>
+                                                <constraint firstItem="Tr6-nl-L8O" firstAttribute="centerY" secondItem="stJ-6u-3WP" secondAttribute="centerY" id="wVo-ob-gS7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblDataEntrega" destination="OJL-6K-lSp" id="SLH-KD-MA0"/>
+                                            <outlet property="viewBackgroundView" destination="Tr6-nl-L8O" id="b5L-mM-SrK"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="total" rowHeight="323" id="T4Z-Bl-bzj" customClass="TotalDoPedidoTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="325" width="414" height="323"/>
+                                        <rect key="frame" x="0.0" y="425" width="414" height="323"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T4Z-Bl-bzj" id="V34-ek-fGX">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKB-1i-pDh">
-                                                    <rect key="frame" x="20" y="15" width="52" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor do pedido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKB-1i-pDh">
+                                                    <rect key="frame" x="20" y="15" width="150" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -244,15 +293,18 @@
                                                     <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cartão" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-wG-hze">
-                                                    <rect key="frame" x="20" y="121" width="52" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinheiro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-wG-hze">
+                                                    <rect key="frame" x="20" y="103" width="60" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-UW-UsX">
-                                                    <rect key="frame" x="20" y="172" width="374" height="44"/>
+                                                    <rect key="frame" x="20" y="153" width="374" height="44"/>
                                                     <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="ctD-UW-UsX" secondAttribute="height" multiplier="17:2" id="hJP-yF-Sb0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <state key="normal" title="Finalizar pedido">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,9 +315,8 @@
                                                 <constraint firstAttribute="trailing" secondItem="ctD-UW-UsX" secondAttribute="trailing" constant="20" id="4Dk-bv-KAQ"/>
                                                 <constraint firstItem="qzd-wG-hze" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C28-5O-jPW"/>
                                                 <constraint firstItem="BOP-4R-FRw" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C4I-Gx-bkn"/>
-                                                <constraint firstAttribute="bottom" secondItem="ctD-UW-UsX" secondAttribute="bottom" constant="107" id="ILG-xk-8U9"/>
                                                 <constraint firstItem="BOP-4R-FRw" firstAttribute="top" secondItem="tKB-1i-pDh" secondAttribute="bottom" constant="30" id="PXg-3r-oC8"/>
-                                                <constraint firstItem="qzd-wG-hze" firstAttribute="top" secondItem="BOP-4R-FRw" secondAttribute="bottom" constant="28" id="XtF-vM-8es"/>
+                                                <constraint firstItem="qzd-wG-hze" firstAttribute="top" secondItem="BOP-4R-FRw" secondAttribute="bottom" constant="10" id="XtF-vM-8es"/>
                                                 <constraint firstItem="ctD-UW-UsX" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="Zfa-P4-45y"/>
                                                 <constraint firstAttribute="trailing" secondItem="5gD-5M-JBb" secondAttribute="trailing" constant="20" id="a6m-bg-H5R"/>
                                                 <constraint firstItem="tKB-1i-pDh" firstAttribute="top" secondItem="V34-ek-fGX" secondAttribute="top" constant="15" id="bs2-jH-mH6"/>
@@ -445,7 +496,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xoh-LT-3vd">
                                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Voltar">
+                                                <state key="normal" title="Concluir">
                                                     <color key="titleColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
