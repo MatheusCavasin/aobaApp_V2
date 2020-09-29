@@ -32,11 +32,14 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
         // Inicializaçao das variáveis
         enderecosComerciante = Singleton.shared.comercianteLogado?.enderecos
         enderecoCarrinho = Singleton.shared.carrinho.endereco
-        
-
     }
 
-    
+    func reloadData() {
+        // Inicializaçao das variáveis
+        enderecosComerciante = Singleton.shared.comercianteLogado?.enderecos
+        enderecoCarrinho = Singleton.shared.carrinho.endereco
+        tableView.reloadData()
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (enderecosComerciante?.count ?? 0) + 1
     }
@@ -62,6 +65,14 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
             self.carrinhoController.tableView.reloadData()
             tableView.reloadData()
             tableView.cellForRow(at: indexPath)?.isSelected = true
+         } else {
+            let novoEnderecoController: NovoEnderecoViewController!
+            let novoEnderecoView = UIStoryboard(name: "TabCarrinhoComprador", bundle: nil)
+            
+            novoEnderecoController = novoEnderecoView.instantiateViewController(identifier: "novoEndereco") as? NovoEnderecoViewController
+            
+            novoEnderecoController.presentingController = self
+            self.showDetailViewController(novoEnderecoController, sender: nil)
         }
     }
     

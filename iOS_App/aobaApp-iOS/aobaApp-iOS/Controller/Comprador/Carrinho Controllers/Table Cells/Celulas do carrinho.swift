@@ -34,9 +34,17 @@ class ProdutoDoCarrinhoTableViewCell: UITableViewCell {
 
 class SubTotalCarrinhoTableViewCell: UITableViewCell {
     @IBOutlet weak var lblSubTotal: UILabel!
+    @IBOutlet weak var viewBackgroundView: UIView!
+    
+    override func awakeFromNib() {
+        viewBackgroundView.layer.borderWidth = 0.5
+        viewBackgroundView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    }
+    
+    
     public func config(carrinho: Carrinho) {
-        let total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-        
+        var total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        total = "R$\(total)"
         self.lblSubTotal.text = total
     }
 }
@@ -75,22 +83,32 @@ class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
             self.cidade.text =  "\(carrinho.endereco!.cidade) - \(carrinho.endereco!.uf)"
         }
         
-        
-        
     }
-   
+}
+
+
+class DataEntregaTableViewCell: UITableViewCell {
+    @IBOutlet weak var lblDataEntrega: UILabel!
+    @IBOutlet weak var viewBackgroundView: UIView!
     
+    override func awakeFromNib() {
+        viewBackgroundView.layer.borderWidth = 0.5
+        viewBackgroundView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+    }
+    
+    
+    public func config(dataEntrega: String) {
+        lblDataEntrega.text = dataEntrega
+    }
 }
 
 class TotalDoPedidoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totalDoPedido: UILabel!
-    @IBOutlet weak var btnFinalizarPEdido: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnFinalizarPEdido.layer.cornerRadius = 5.0
     }
     
     public func config(valorTotal: Float) {
@@ -99,5 +117,15 @@ class TotalDoPedidoTableViewCell: UITableViewCell {
         let total = String(format: "%.2f", (valorTotal)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         
         self.totalDoPedido.text = total
+    }
+}
+
+
+class FinalizarPedidoTableViewCell: UITableViewCell {
+    @IBOutlet weak var btnFinalizarPedido: UIButton!
+    
+    
+    override func awakeFromNib() {
+        self.btnFinalizarPedido.layer.cornerRadius = 5.0
     }
 }

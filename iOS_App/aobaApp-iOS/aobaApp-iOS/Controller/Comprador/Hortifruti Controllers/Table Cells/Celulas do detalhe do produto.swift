@@ -122,13 +122,11 @@ class QuantidadeTableViewCell: UITableViewCell, UIPickerViewDelegate, UIPickerVi
 
 
 class BotaoAdicionar: UITableViewCell {
-    var quantidade: Int!
-    var anuncio: AtivosAnuncio!
-    var nomeProduto: String!
-
-    func config(quantidade: Int, anuncio: AtivosAnuncio, nomeProduto:  String) {
-        self.quantidade = quantidade
-        self.anuncio = anuncio
-        self.nomeProduto = nomeProduto
+    
+    
+    @IBOutlet weak var btnAdicionar: UIButton!
+    
+    override func awakeFromNib() {
+        btnAdicionar.layer.cornerRadius = 5.0
     }
 }

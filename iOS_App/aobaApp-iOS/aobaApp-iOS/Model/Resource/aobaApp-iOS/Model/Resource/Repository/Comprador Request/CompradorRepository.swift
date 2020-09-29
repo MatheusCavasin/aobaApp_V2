@@ -48,17 +48,14 @@ class CompradorRepository {
                     let resultDict = result as! Dictionary<String, Any>
                     var statusCode: Int = 200
                         
-                    if resultDict["status"] != nil {
-                        statusCode = (resultDict["status"] as? Int)!
+                    if resultDict["statusCode"] != nil {
+                        statusCode = (resultDict["statusCode"] as? Int)!
                     }
-
                     
                     
                     if statusCode == 200 {
                         DispatchQueue.main.async {
                             NotificationCenter.default.post(name: Notification.Name(rawValue: "ComercianteCriado"), object: nil)
-                            
-                            
                             
                             // Decodificar o response para obter o id
                             
@@ -87,8 +84,6 @@ class CompradorRepository {
         
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true) { (result, err) in
             
-            
-            
             if let res:Bool = (err == nil) {
                 if(res) {
                     print("sua requisicao foi realizada com sucesso")
@@ -98,7 +93,7 @@ class CompradorRepository {
                     let resultDict = result as! Dictionary<String, Any>
                     var statusCode: Int = 200
                         
-                    if resultDict["statusCode"] != nil {
+                    if resultDict["status"] != nil {
                         statusCode = (resultDict["status"] as? Int)!
                     }
 
@@ -129,4 +124,44 @@ class CompradorRepository {
             }
         }
     }
+    
+    func addEndereco(endereco: EnderecoData) {
+        
+        if Singleton.shared.comercianteLogado == nil {
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(name: Notification.Name(rawValue: "ErroAoAdicionarEndereco"), object: nil)
+            }
+        } else {
+            
+            let url = Singleton.shared.apiEndPoint + "/api/v1/comerciante/\(Singleton.shared.comercianteLogado!.id)/endereco"
+            let enderecoDict = endereco.objectToDictrionary()
+            
+            ApiResource.request(method: "POST", url: url, params: nil, body: enderecoDict, withAuth: true) { (result, err) in
+                if let res:Bool = (err == nil) {
+                    if (res) {
+                        print("Sucesso")
+                        
+                        /*
+                         let resultDict = result as! Dictionary<String, Any>
+                         var statusCode: Int = 200
+                         
+                         if resultDict["status"] != nil {
+                         statusCode = (resultDict["statas"] as? Int)!
+                         }
+                         */
+                        let statusCode = 200
+                        if statusCode == 200 {
+                            DispatchQueue.main.async {
+                                NotificationCenter.default.post(name: Notification.Name(rawValue: "EnderecoAdicionado"), object: nil)
+                            }
+                        }
+                    } else {
+                        print(err)
+                    }
+                }
+            }
+        }
+    }
+    
+    
 }
