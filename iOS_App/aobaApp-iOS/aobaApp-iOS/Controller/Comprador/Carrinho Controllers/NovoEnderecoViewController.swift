@@ -19,20 +19,47 @@ class NovoEnderecoViewController: UIViewController {
     @IBOutlet weak var txtUf: UITextField!
     @IBOutlet weak var btnCancelar: UIButton!
     @IBOutlet weak var btnSalvarEndereco: UIButton!
+    @IBOutlet weak var viewLoadView: UIView!
     
     var presentingController: EnderecoCompradorViewController!
-    
+    let repository = CompradorRepository()
+    var novoEndereco: EnderecoData?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         
         //keyboard
         self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(sender:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(sender:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //Request
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "EnderecoAdicionado"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoCarregar), name: NSNotification.Name(rawValue: "ErroAoAdicionarEndereco"), object: nil)
+        viewLoadView.isHidden = true
     }
     
+    @objc func reloadView() {
+        Singleton.shared.comercianteLogado?.enderecos.append(novoEndereco!)
+        self.presentingController.reloadData()
+        self.dismiss(animated: true, completion: nil)
+        
+        // Dismiss load view
+        viewLoadView.isHidden = true
+    }
+    
+    @objc func erroAoCarregar() {
+        viewLoadView.isHidden = true
+        let alert = UIAlertController(title: "Erro ao adicionar endereço", message: "Você deve estar logado para adicionar um endereço", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     @objc func keyboardWillShow(sender: NSNotification) {
         if ((sender.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
@@ -53,23 +80,27 @@ class NovoEnderecoViewController: UIViewController {
     }
     
     
+    
+    
     @IBAction func btnSalvarEnderercoPressed(_ sender: Any) {
         if txtCep.text != "" && txtRua.text != "" && txtCep.text != "" && txtNumero.text != "" && txtBairro.text != "" && txtCidade.text != "" && txtUf.text != "" {
             
-            let novoEndereco = EnderecoData(bairro: txtBairro.text!, cep: txtCep.text!, cidade: txtCidade.text!, complemento: txtComplemento.text!, id: 0, latitude: 0, longitude: 0, logradouro: txtRua.text!, numero: Int(txtNumero.text!)!, uf: txtUf.text!)
+            self.novoEndereco = EnderecoData(bairro: txtBairro.text!, cep: txtCep.text!, cidade: txtCidade.text!, complemento: txtComplemento.text!, id: 0, latitude: 0, longitude: 0, logradouro: txtRua.text!, numero: Int(txtNumero.text!)!, uf: txtUf.text!)
             
-            Singleton.shared.comercianteLogado?.enderecos.append(novoEndereco)
-            self.presentingController.reloadData()
-            self.dismiss(animated: true, completion: nil)
-            
+            self.chamarDados(endereco: novoEndereco!)
         }
         
         else {
-            let alert = UIAlertController(title: "Erro ao adicionar endereço", message: "Todos os campos devem ser preenchidos corretamete", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Erro ao adicionar endereço", message: "Todos os campos devem ser preenchidos corretamente", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    private func chamarDados(endereco: EnderecoData) {
+        repository.addEndereco(endereco: endereco)
+        viewLoadView.isHidden = false
     }
 }

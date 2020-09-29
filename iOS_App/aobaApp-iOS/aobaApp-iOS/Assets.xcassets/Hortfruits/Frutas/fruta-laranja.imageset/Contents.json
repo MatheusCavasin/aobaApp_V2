@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "laranja-mini.png",
+      "filename" : "WhatsApp Image 2020-09-29 at 10.58.02 (1).jpeg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "laranja-mini@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "laranja-mini@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

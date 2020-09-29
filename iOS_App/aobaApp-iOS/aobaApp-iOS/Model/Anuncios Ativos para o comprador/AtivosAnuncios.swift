@@ -31,10 +31,8 @@ class AtivosAnuncio {
         //let image = dict["foto"] as! String
         let valor = Float(dict["valor"] as! Double)
         let qtdeMax = dict["qtdeMax"] as! Int
-        
         let produtorDict = dict["produtor"] as! Dictionary<String, Any>
         let produtor = AtivosProdutor.dictToObject(dict: produtorDict)
-        
         let diasDisponiveis = dict["diasDisponiveis"] as! [String]
         
         return AtivosAnuncio(id: id, image: image, valor: valor, qtdeMax: qtdeMax, produtor: produtor, diasDisponiveis: diasDisponiveis)

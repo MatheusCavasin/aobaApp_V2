@@ -70,7 +70,6 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
         
         else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "botaoAdicionar") as! BotaoAdicionar
-            cell.config(quantidade: self.quantidade ?? 0, anuncio: self.anuncio, nomeProduto: self.nomeDoProduto)
             return cell
         }
         
@@ -82,7 +81,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             if Singleton.shared.loggedIn {
                 self.dismiss(animated: true, completion: nil)
             
-                var novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
+                let novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
                 
                 if quantidade != nil {
                     Singleton.shared.carrinho.adicionarNovoProduto(novoProduto, quantidade!)
@@ -96,8 +95,6 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
                 let loginController = loginView.instantiateViewController(identifier: "login")
                 tableView.cellForRow(at: indexPath)?.isSelected = false
                 loginController.modalPresentationStyle = .fullScreen
-                
-                
                 self.show(loginController, sender: self)
             }
         }

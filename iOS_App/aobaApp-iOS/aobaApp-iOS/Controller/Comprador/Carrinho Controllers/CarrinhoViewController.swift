@@ -55,9 +55,9 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if maisDeTresItems {
-            return 9
+            return 10
         } else {
-            return carrinho.produtos.count + 5
+            return carrinho.produtos.count + 6
         }
     }
      
@@ -85,9 +85,12 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             } else if indexPath.row == 7 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
                 return cell
-            } else {
+            } else if indexPath.row == 8 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "botao")!
                 return cell
             }
         } else {
@@ -110,9 +113,12 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             } else if indexPath.row == carrinho.produtos.count + 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
                 return cell
-            } else {
+            } else if indexPath.row == carrinho.produtos.count + 4{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
                 cell.config(valorTotal: carrinho.valorEntrega + carrinho.valorProdutos)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "botao")!
                 return cell
             }
         }
@@ -139,7 +145,12 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 navigationController!.showDetailViewController(enderecoCompradorController, sender: self)
                 enderecoCompradorController.navigationItem.title = "Enderecos"
                 enderecoCompradorController.carrinhoController = self
-                
+            } else if indexPath.row == 9 {
+                let alert = UIAlertController(title: "AOOOBA", message: "Pedido realizado com sucesso. Agora é só aguardar ele chegar até você", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
         } else {
             if indexPath.row == carrinho.produtos.count + 1 {
@@ -151,7 +162,14 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 navigationController!.showDetailViewController(enderecoCompradorController, sender: self)
                 enderecoCompradorController.navigationItem.title = "Enderecos"
                 enderecoCompradorController.carrinhoController = self
+            } else if indexPath.row == carrinho.produtos.count + 5 {
+                let alert = UIAlertController(title: "AOOOBA", message: "Pedido realizado com sucesso. Agora é só aguardar ele chegar até você", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    NSLog("The \"OK\" alert occured.")
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
+            
         }
         
     }
@@ -165,7 +183,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             } else if indexPath.row == 7 {
                 return 100
             } else {
-                return  325
+                return  150
             }
         } else {
             if indexPath.row <= carrinho.produtos.count || indexPath.row == carrinho.produtos.count + 2{
@@ -175,7 +193,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             } else if indexPath.row == carrinho.produtos.count + 3 {
                 return 100
             } else {
-                return 325
+                return 150
             }
         }
     }

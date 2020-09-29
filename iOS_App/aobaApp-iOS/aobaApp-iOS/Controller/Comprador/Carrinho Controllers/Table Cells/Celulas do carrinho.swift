@@ -105,12 +105,10 @@ class DataEntregaTableViewCell: UITableViewCell {
 class TotalDoPedidoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totalDoPedido: UILabel!
-    @IBOutlet weak var btnFinalizarPEdido: UIButton!
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        btnFinalizarPEdido.layer.cornerRadius = 5.0
     }
     
     public func config(valorTotal: Float) {
@@ -119,5 +117,15 @@ class TotalDoPedidoTableViewCell: UITableViewCell {
         let total = String(format: "%.2f", (valorTotal)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         
         self.totalDoPedido.text = total
+    }
+}
+
+
+class FinalizarPedidoTableViewCell: UITableViewCell {
+    @IBOutlet weak var btnFinalizarPedido: UIButton!
+    
+    
+    override func awakeFromNib() {
+        self.btnFinalizarPedido.layer.cornerRadius = 5.0
     }
 }

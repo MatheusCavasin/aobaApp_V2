@@ -268,11 +268,11 @@
                                             <outlet property="viewBackgroundView" destination="Tr6-nl-L8O" id="b5L-mM-SrK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="total" rowHeight="323" id="T4Z-Bl-bzj" customClass="TotalDoPedidoTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="425" width="414" height="323"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="total" rowHeight="150" id="T4Z-Bl-bzj" customClass="TotalDoPedidoTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="425" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T4Z-Bl-bzj" id="V34-ek-fGX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="323"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor do pedido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKB-1i-pDh">
@@ -299,8 +299,31 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-UW-UsX">
-                                                    <rect key="frame" x="20" y="153" width="374" height="44"/>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qzd-wG-hze" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C28-5O-jPW"/>
+                                                <constraint firstItem="BOP-4R-FRw" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C4I-Gx-bkn"/>
+                                                <constraint firstItem="BOP-4R-FRw" firstAttribute="top" secondItem="tKB-1i-pDh" secondAttribute="bottom" constant="30" id="PXg-3r-oC8"/>
+                                                <constraint firstItem="qzd-wG-hze" firstAttribute="top" secondItem="BOP-4R-FRw" secondAttribute="bottom" constant="10" id="XtF-vM-8es"/>
+                                                <constraint firstAttribute="trailing" secondItem="5gD-5M-JBb" secondAttribute="trailing" constant="20" id="a6m-bg-H5R"/>
+                                                <constraint firstItem="tKB-1i-pDh" firstAttribute="top" secondItem="V34-ek-fGX" secondAttribute="top" constant="15" id="bs2-jH-mH6"/>
+                                                <constraint firstItem="5gD-5M-JBb" firstAttribute="top" secondItem="V34-ek-fGX" secondAttribute="top" constant="15" id="k1C-pB-O2g"/>
+                                                <constraint firstItem="tKB-1i-pDh" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="uKj-zs-vFt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="totalDoPedido" destination="5gD-5M-JBb" id="WqF-tv-Hkr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="botao" rowHeight="150" id="TLW-h2-xWF" customClass="FinalizarPedidoTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="575" width="414" height="150"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TLW-h2-xWF" id="Vsa-oO-yjK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctD-UW-UsX">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="44"/>
                                                     <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="ctD-UW-UsX" secondAttribute="height" multiplier="17:2" id="hJP-yF-Sb0"/>
@@ -312,22 +335,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ctD-UW-UsX" secondAttribute="trailing" constant="20" id="4Dk-bv-KAQ"/>
-                                                <constraint firstItem="qzd-wG-hze" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C28-5O-jPW"/>
-                                                <constraint firstItem="BOP-4R-FRw" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="C4I-Gx-bkn"/>
-                                                <constraint firstItem="BOP-4R-FRw" firstAttribute="top" secondItem="tKB-1i-pDh" secondAttribute="bottom" constant="30" id="PXg-3r-oC8"/>
-                                                <constraint firstItem="qzd-wG-hze" firstAttribute="top" secondItem="BOP-4R-FRw" secondAttribute="bottom" constant="10" id="XtF-vM-8es"/>
-                                                <constraint firstItem="ctD-UW-UsX" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="Zfa-P4-45y"/>
-                                                <constraint firstAttribute="trailing" secondItem="5gD-5M-JBb" secondAttribute="trailing" constant="20" id="a6m-bg-H5R"/>
-                                                <constraint firstItem="tKB-1i-pDh" firstAttribute="top" secondItem="V34-ek-fGX" secondAttribute="top" constant="15" id="bs2-jH-mH6"/>
-                                                <constraint firstItem="5gD-5M-JBb" firstAttribute="top" secondItem="V34-ek-fGX" secondAttribute="top" constant="15" id="k1C-pB-O2g"/>
-                                                <constraint firstItem="tKB-1i-pDh" firstAttribute="leading" secondItem="V34-ek-fGX" secondAttribute="leading" constant="20" id="uKj-zs-vFt"/>
-                                                <constraint firstItem="ctD-UW-UsX" firstAttribute="top" secondItem="qzd-wG-hze" secondAttribute="bottom" constant="30" id="yqq-Am-N9A"/>
+                                                <constraint firstItem="ctD-UW-UsX" firstAttribute="leading" secondItem="Vsa-oO-yjK" secondAttribute="leading" constant="20" id="Yah-f4-SWx"/>
+                                                <constraint firstItem="ctD-UW-UsX" firstAttribute="top" secondItem="Vsa-oO-yjK" secondAttribute="top" id="lJ7-2v-Cma"/>
+                                                <constraint firstAttribute="trailing" secondItem="ctD-UW-UsX" secondAttribute="trailing" constant="20" id="ztW-ig-ZdF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btnFinalizarPEdido" destination="ctD-UW-UsX" id="9T8-ZO-EhK"/>
-                                            <outlet property="totalDoPedido" destination="5gD-5M-JBb" id="WqF-tv-Hkr"/>
+                                            <outlet property="btnFinalizarPedido" destination="ctD-UW-UsX" id="d2V-hY-cRN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -615,16 +629,34 @@
                                     <action selector="btnSalvarEnderercoPressed:" destination="zYv-A7-kTw" eventType="touchUpInside" id="hWn-DT-JKc"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T9d-Az-oe5">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Ny3-VO-hzG">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ny3-VO-hzG" firstAttribute="centerY" secondItem="T9d-Az-oe5" secondAttribute="centerY" id="Lpm-sN-sXO"/>
+                                    <constraint firstItem="Ny3-VO-hzG" firstAttribute="centerX" secondItem="T9d-Az-oe5" secondAttribute="centerX" id="dmL-rK-i5I"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="T9d-Az-oe5" firstAttribute="leading" secondItem="Yky-en-Gla" secondAttribute="leading" id="45t-7E-N3z"/>
                             <constraint firstItem="GaF-1M-rcX" firstAttribute="width" secondItem="Yky-en-Gla" secondAttribute="width" id="7mx-YZ-5CD"/>
                             <constraint firstItem="GaF-1M-rcX" firstAttribute="top" secondItem="Yky-en-Gla" secondAttribute="top" id="BDS-Lf-4P8"/>
                             <constraint firstItem="1Qj-1m-DXs" firstAttribute="top" secondItem="GaF-1M-rcX" secondAttribute="bottom" constant="30" id="H9w-8p-TQ2"/>
+                            <constraint firstItem="T9d-Az-oe5" firstAttribute="bottom" secondItem="Yky-en-Gla" secondAttribute="bottom" id="IRG-XJ-hNX"/>
                             <constraint firstItem="Yky-en-Gla" firstAttribute="trailing" secondItem="1Qj-1m-DXs" secondAttribute="trailing" constant="20" id="JOi-SW-Lch"/>
                             <constraint firstItem="hZj-Hv-kHH" firstAttribute="top" secondItem="ikl-zO-Mag" secondAttribute="bottom" constant="36" id="NuC-fY-dJx"/>
                             <constraint firstItem="Yky-en-Gla" firstAttribute="trailing" secondItem="hZj-Hv-kHH" secondAttribute="trailing" constant="20" id="PDm-7S-TaA"/>
+                            <constraint firstItem="Yky-en-Gla" firstAttribute="trailing" secondItem="T9d-Az-oe5" secondAttribute="trailing" id="YsL-bW-N6J"/>
                             <constraint firstItem="1Qj-1m-DXs" firstAttribute="leading" secondItem="Yky-en-Gla" secondAttribute="leading" constant="20" id="ecj-0z-pqN"/>
+                            <constraint firstItem="T9d-Az-oe5" firstAttribute="top" secondItem="Yky-en-Gla" secondAttribute="top" id="exg-Bu-lYl"/>
                             <constraint firstItem="hZj-Hv-kHH" firstAttribute="leading" secondItem="Yky-en-Gla" secondAttribute="leading" constant="20" id="fyV-hm-Xi1"/>
                             <constraint firstItem="GaF-1M-rcX" firstAttribute="centerX" secondItem="Yky-en-Gla" secondAttribute="centerX" id="kKY-oh-2gF"/>
                         </constraints>
@@ -640,6 +672,7 @@
                         <outlet property="txtNumero" destination="ccb-Iw-TTe" id="5dA-kN-6U6"/>
                         <outlet property="txtRua" destination="UY8-78-elx" id="Qa3-BO-Kkn"/>
                         <outlet property="txtUf" destination="ikl-zO-Mag" id="50P-4h-MHv"/>
+                        <outlet property="viewLoadView" destination="T9d-Az-oe5" id="e7d-HG-JZD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzz-hs-Fwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

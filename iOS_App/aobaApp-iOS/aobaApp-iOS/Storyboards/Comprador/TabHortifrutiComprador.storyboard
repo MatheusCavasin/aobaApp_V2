@@ -579,6 +579,9 @@
                                                 <constraint firstItem="J5V-K8-atG" firstAttribute="leading" secondItem="cWp-ao-bOc" secondAttribute="leading" constant="20" id="zBt-6a-F49"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnAdicionar" destination="J5V-K8-atG" id="dS7-YT-vzy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
