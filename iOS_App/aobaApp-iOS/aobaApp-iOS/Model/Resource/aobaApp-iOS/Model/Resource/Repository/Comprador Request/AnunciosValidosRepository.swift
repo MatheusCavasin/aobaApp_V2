@@ -13,33 +13,25 @@ class AnunciosRepository {
         let url = Singleton.shared.apiEndPoint + "/api/v1/anuncio/validos"
         
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: false) { (result, err) in
-            if let res:Bool = (err == nil) {
-                if res {
-                    print("Requisicão realizada com sucesso")
-                    
-                    if result != nil {
-                        var dictResult = result as! [Dictionary<String, Any>]
-                        
-                        Singleton.shared.anuncios = []
-                        for dictSecao in dictResult {
-                            
-                            Singleton.shared.anuncios.append(AtivosSecao.dictToObject(dict: dictSecao))
-                        }
-                        
-                        
-                        DispatchQueue.main.async {
-                            NotificationCenter.default.post(name: Notification.Name(rawValue: "AnucniosCarregados"), object: nil)
-                        }
+            if result != nil {
+                print("Requisicão realizada com sucesso")
+                
+                if result != nil {
+                    let dictResult = result as! [Dictionary<String, Any>]
+                    Singleton.shared.anuncios = []
+                    for dictSecao in dictResult {
+                        Singleton.shared.anuncios.append(AtivosSecao.dictToObject(dict: dictSecao))
                     }
                     
-                    else {
-                        DispatchQueue.main.async {
-                            NotificationCenter.default.post(name: Notification.Name(rawValue: "ErroAoCarregarAnuncios"), object: nil)
-                        }
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "AnucniosCarregados"), object: nil)
                     }
-                    
-                    
+                }
 
+                else {
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name(rawValue: "ErroAoCarregarAnuncios"), object: nil)
+                    }
                 }
             }
         }

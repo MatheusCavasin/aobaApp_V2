@@ -18,8 +18,9 @@ class ComercianteData {
     var rating: Float
     var enderecos: [EnderecoData]
     var senha: String?
+    var telefone: String
     
-    init(cnpj: String, email: String, senha: String, foto: String, nome: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
+    init(cnpj: String, email: String, senha: String, foto: String, nome: String, nomeFantasia: String, telefone: String, rating: Float, enderecos: [EnderecoData]) {
         self.cnpj = cnpj
         self.email = email
         self.senha = senha
@@ -29,9 +30,10 @@ class ComercianteData {
         self.nomeFantasia = nomeFantasia
         self.rating = rating
         self.enderecos = enderecos
+        self.telefone = telefone
     }
     
-    init(cnpj: String, email: String, senha: String, id: CLong, foto: String, nome: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
+    init(cnpj: String, email: String, senha: String, id: CLong, foto: String, nome: String, telefone: String, nomeFantasia: String, rating: Float, enderecos: [EnderecoData]) {
         self.cnpj = cnpj
         self.email = email
         self.senha = senha
@@ -41,9 +43,10 @@ class ComercianteData {
         self.nomeFantasia = nomeFantasia
         self.rating = rating
         self.enderecos = enderecos
+        self.telefone = telefone
     }
     
-    init(cnpj: String, email: String, senha: String, foto: String, nome: String, nomeFantasia: String, rating: Float) {
+    init(cnpj: String, email: String, senha: String, foto: String, nome: String, telefone: String, nomeFantasia: String, rating: Float) {
         self.cnpj = cnpj
         self.email = email
         self.senha = senha
@@ -53,6 +56,7 @@ class ComercianteData {
         self.nomeFantasia = nomeFantasia
         self.rating = rating
         self.enderecos = []
+        self.telefone = telefone
     }
     
     static func dictToObject(dict: Dictionary<String, Any>) -> ComercianteData {
@@ -64,6 +68,7 @@ class ComercianteData {
         let rating = dict["rating"] as! Float
         let senha = " "
         let id = dict["id"]
+        let telefone = dict["telefone"] as! String
         
         var enderecos: [EnderecoData] = []
         
@@ -73,7 +78,7 @@ class ComercianteData {
             enderecos.append(EnderecoData.dictToObject(dict: enderecoDict))
         }
         
-        return ComercianteData(cnpj: cnpj, email: email, senha: senha, id: id as! CLong, foto: foto, nome: nome, nomeFantasia: nomeFantasia, rating: rating, enderecos: enderecos)
+        return ComercianteData(cnpj: cnpj, email: email, senha: senha, id: id as! CLong, foto: foto, nome: nome, telefone: telefone, nomeFantasia: nomeFantasia, rating: rating, enderecos: enderecos)
     }
     
     
@@ -88,6 +93,7 @@ class ComercianteData {
         dict["nomeFantasia"] = self.nomeFantasia
         dict["rating"] = 0
         dict["senha"] = self.senha
+        dict["telefone"] = self.telefone
         
         var enderecosDict: [Dictionary<String, Any>] = []
         

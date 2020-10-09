@@ -9,30 +9,38 @@
 import UIKit
 
 class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIButton!
+    @IBOutlet weak var viwLoadView: UIView!
     
     
+    // Variavel que armazena todos os dados do carrinho que foram retornados pela requisicao
+    var carrinhoCriado: CarrinhoData?
+    
+    // Esse é o carrinho antigo, com tudo feito por aqui
     var carrinho: Carrinho!
+    
     var maisDeTresItems: Bool!
+    let repository = CarrinhoRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Configuraçoes da TableView
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
         
+        // Configuraçao do carrinho
         self.carrinho =  Singleton.shared.carrinho
-        
         if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
             carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
         }
-       
     }
-
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         carrinho =  Singleton.shared.carrinho
         
@@ -44,6 +52,27 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             maisDeTresItems = true
         } else {
             maisDeTresItems = false
+        }
+        
+        self.viwLoadView.isHidden = false
+        if let carrinhoPedido = Singleton.shared.carrinhoPedido {
+            repository.getCarrinho(carrinhoPedido: carrinhoPedido) { (result, err) in
+                if let result = result {
+                    DispatchQueue.main.async {
+                        // Quando carregado, esconde a tela de load e atribui o valor de carrinhoData
+                        self.viwLoadView.isHidden = true
+                        self.carrinhoCriado = CarrinhoData.jsonToObject(dict: result as! Dictionary<String, Any>)
+                    }
+                } else {
+                    print(err as Any)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Erro ao carregar o carrinho", message: "Lembre-se de entrar em sua conta para acessar o carrinho", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         
         tableView.reloadData()
@@ -60,8 +89,8 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             return carrinho.produtos.count + 6
         }
     }
-     
-     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if maisDeTresItems {
             if indexPath.row < 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
@@ -122,7 +151,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return cell
             }
         }
-     }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -200,17 +229,12 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        
-        
         if indexPath.row <= carrinho.produtos.count - 1 && !maisDeTresItems || indexPath.row < 3 && maisDeTresItems {
             let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
-                
                 
                 Singleton.shared.carrinho.produtos.remove(at: indexPath.row)
                 Singleton.shared.carrinho.valorProdutos = self.calcularTotal()
                 self.carrinho = Singleton.shared.carrinho
-                
                 
                 if self.carrinho.produtos.count > 3 {
                     self.maisDeTresItems = true
@@ -219,10 +243,9 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 }
                 
                 tableView.reloadData()
-                
                 completionHandler(true)
             }
-
+            
             let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
                 // Colocar aqui o que vai acontecer quando o usuario quiser editar o carrinho
                 completionHandler(true)
@@ -241,5 +264,5 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return total
     }
-
+    
 }

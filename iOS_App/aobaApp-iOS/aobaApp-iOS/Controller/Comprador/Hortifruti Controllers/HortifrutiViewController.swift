@@ -45,8 +45,6 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "AnucniosCarregados"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoCarregar), name: NSNotification.Name(rawValue: "ErroAoCarregarAnuncios"), object: nil)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

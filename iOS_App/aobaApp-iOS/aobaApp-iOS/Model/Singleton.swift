@@ -11,6 +11,8 @@ import Foundation
 class Singleton {
     static var shared = Singleton()
     
+    
+    var carrinhoPedido: CarrinhoPedido?
     var carrinho = Carrinho()
     var anuncios: [AtivosSecao]! = []
     var comercianteLogado: ComercianteData?

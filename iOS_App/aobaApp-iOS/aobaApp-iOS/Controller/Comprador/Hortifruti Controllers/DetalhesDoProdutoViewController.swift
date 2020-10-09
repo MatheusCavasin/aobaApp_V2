@@ -83,8 +83,10 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             
                 let novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
                 
-                if quantidade != nil {
+                if quantidade != nil && quantidade != 0 {
                     Singleton.shared.carrinho.adicionarNovoProduto(novoProduto, quantidade!)
+                    let novoProduto = ItemCarrinhoPedido(anuncioId: anuncio.id, quantidade: quantidade!)
+                    Singleton.shared.carrinhoPedido!.itensDoCarrinho.append(novoProduto)
                     //anuncio.decrementarQuantidadeLocal(quantidade: quantidade!)
                 }
             }

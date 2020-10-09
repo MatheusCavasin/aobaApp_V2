@@ -25,7 +25,6 @@ class Carrinho {
         
     }
     
-    
     public func adicionarNovoProduto(_ novoProduto: ItemCarrinho, _ qtde: Int) {
         novoProduto.anuncio.qtdeMax = qtde
         self.produtos.append(novoProduto)

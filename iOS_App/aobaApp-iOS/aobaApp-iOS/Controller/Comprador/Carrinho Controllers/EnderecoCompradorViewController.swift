@@ -62,6 +62,7 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          if indexPath.row < (enderecosComerciante?.count ?? 0) {
             Singleton.shared.carrinho.endereco = enderecosComerciante![indexPath.row]
+            Singleton.shared.carrinhoPedido?.enderecoId = Singleton.shared.carrinho.endereco!.id
             self.carrinhoController.tableView.reloadData()
             tableView.reloadData()
             tableView.cellForRow(at: indexPath)?.isSelected = true

@@ -1,0 +1,6 @@
+framework module Pods_aobaApp_iOS {
+  umbrella header "Pods-aobaApp-iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

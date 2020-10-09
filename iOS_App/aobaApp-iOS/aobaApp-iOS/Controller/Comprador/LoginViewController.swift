@@ -67,6 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc func sucessoAoLogar() {
         loadingView.isHidden = true
         Singleton.shared.loggedIn = true
+        Singleton.shared.carrinhoPedido = CarrinhoPedido(compradorId: Singleton.shared.comercianteLogado!.id)
         
         self.dismiss(animated: true, completion: nil)
     }

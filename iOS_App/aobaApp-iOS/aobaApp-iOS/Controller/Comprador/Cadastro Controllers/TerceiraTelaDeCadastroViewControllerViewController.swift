@@ -79,7 +79,7 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     @IBAction func btnCadastrarPressed(_ sender: Any) {
         if txtNome.text != "" && txtCnpj.text != "" && txtTelefone.text != "" && txtNomeFantasia.text != "" {
 
-            comercianteData = ComercianteData(cnpj: txtCnpj.text!, email: Singleton.shared.creatingUser[0], senha: Singleton.shared.creatingUser[1], foto: "person.fill", nome: txtNome.text!, nomeFantasia: txtNomeFantasia.text!, rating: 0)
+            comercianteData = ComercianteData(cnpj: txtCnpj.text!, email: Singleton.shared.creatingUser[0], senha: Singleton.shared.creatingUser[1], foto: "person.fill", nome: txtNome.text!, telefone: txtTelefone.text! ,nomeFantasia: txtNomeFantasia.text!, rating: 0)
                 
     
             repository.create(comerciante: comercianteData)

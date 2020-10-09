@@ -346,11 +346,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpR-Ag-NgE">
+                                <rect key="frame" x="0.0" y="66" width="414" height="818"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qdH-Sg-2cN">
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qdH-Sg-2cN" firstAttribute="centerX" secondItem="qpR-Ag-NgE" secondAttribute="centerX" id="dCF-Pm-zm2"/>
+                                    <constraint firstItem="qdH-Sg-2cN" firstAttribute="centerY" secondItem="qpR-Ag-NgE" secondAttribute="centerY" id="prp-DV-gme"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="width" secondItem="uFL-aR-3GD" secondAttribute="width" id="5ds-cB-N07"/>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="centerY" secondItem="uFL-aR-3GD" secondAttribute="centerY" id="9li-EO-Y5W"/>
                             <constraint firstItem="uFL-aR-3GD" firstAttribute="bottom" secondItem="n9h-jo-TuA" secondAttribute="bottom" id="A9k-25-Ymm"/>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="centerX" secondItem="uFL-aR-3GD" secondAttribute="centerX" id="L6D-r0-eSa"/>
                             <constraint firstItem="n9h-jo-TuA" firstAttribute="leading" secondItem="uFL-aR-3GD" secondAttribute="leading" id="R43-dD-S5e"/>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="height" secondItem="uFL-aR-3GD" secondAttribute="height" multiplier="1.05685" id="VvB-Kq-OUY"/>
                             <constraint firstItem="uFL-aR-3GD" firstAttribute="trailing" secondItem="n9h-jo-TuA" secondAttribute="trailing" id="lNE-RT-O0q"/>
                             <constraint firstItem="n9h-jo-TuA" firstAttribute="top" secondItem="uFL-aR-3GD" secondAttribute="top" id="x4o-PG-gth"/>
                         </constraints>
@@ -359,6 +377,7 @@
                     <navigationItem key="navigationItem" title="Carrinho" largeTitleDisplayMode="always" id="KuQ-Sx-QEP"/>
                     <connections>
                         <outlet property="tableView" destination="n9h-jo-TuA" id="Dgx-vy-2e7"/>
+                        <outlet property="viwLoadView" destination="qpR-Ag-NgE" id="fTq-5u-Uwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsI-CG-pRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
