@@ -73,6 +73,8 @@
 		D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1778CEA251594BE00D4432B /* ComercianteData.swift */; };
 		D1778CED251594C900D4432B /* EnderecoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1778CEC251594C900D4432B /* EnderecoData.swift */; };
 		D1864B79251A483B003A81CC /* CarrinhoPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1864B78251A483B003A81CC /* CarrinhoPedido.swift */; };
+		D18E0C292530871C002E8F41 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E0C282530871C002E8F41 /* PerfilViewController.swift */; };
+		D18E0C2C2530886B002E8F41 /* CampoPerfilTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18E0C2B2530886B002E8F41 /* CampoPerfilTableViewCell.swift */; };
 		D19D95D524E57252007701C4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95D424E57252007701C4 /* LoginViewController.swift */; };
 		D19D95D724E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95D624E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift */; };
 		D19D95DB24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D95DA24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift */; };
@@ -186,6 +188,8 @@
 		D1778CEA251594BE00D4432B /* ComercianteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComercianteData.swift; sourceTree = "<group>"; };
 		D1778CEC251594C900D4432B /* EnderecoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoData.swift; sourceTree = "<group>"; };
 		D1864B78251A483B003A81CC /* CarrinhoPedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoPedido.swift; sourceTree = "<group>"; };
+		D18E0C282530871C002E8F41 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		D18E0C2B2530886B002E8F41 /* CampoPerfilTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampoPerfilTableViewCell.swift; sourceTree = "<group>"; };
 		D19D95D424E57252007701C4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D19D95D624E57E81007701C4 /* PrimeiraTelaDeCadastroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimeiraTelaDeCadastroViewController.swift; sourceTree = "<group>"; };
 		D19D95DA24E5842B007701C4 /* TerceiraTelaDeCadastroViewControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerceiraTelaDeCadastroViewControllerViewController.swift; sourceTree = "<group>"; };
@@ -558,9 +562,27 @@
 			path = "Carrinho pedido";
 			sourceTree = "<group>";
 		};
+		D18E0C27253086E9002E8F41 /* Perfil Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D18E0C2A2530884D002E8F41 /* Celulas do perfil */,
+				D18E0C282530871C002E8F41 /* PerfilViewController.swift */,
+			);
+			path = "Perfil Controllers";
+			sourceTree = "<group>";
+		};
+		D18E0C2A2530884D002E8F41 /* Celulas do perfil */ = {
+			isa = PBXGroup;
+			children = (
+				D18E0C2B2530886B002E8F41 /* CampoPerfilTableViewCell.swift */,
+			);
+			path = "Celulas do perfil";
+			sourceTree = "<group>";
+		};
 		D19D95D324E57228007701C4 /* Comprador */ = {
 			isa = PBXGroup;
 			children = (
+				D18E0C27253086E9002E8F41 /* Perfil Controllers */,
 				D10BF1C8250FB85D005B874D /* Carrinho Controllers */,
 				D16DB9A124E6B8A500B2B279 /* Hortifruti Controllers */,
 				D16DB9A024E6B85500B2B279 /* Cadastro Controllers */,
@@ -803,6 +825,8 @@
 				88B8423E24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift in Sources */,
 				D1C942F7252E03C1009BE8F3 /* ItemData.swift in Sources */,
 				D12476C1250A663200E95433 /* AtivosAnuncios.swift in Sources */,
+				D18E0C2C2530886B002E8F41 /* CampoPerfilTableViewCell.swift in Sources */,
+				D18E0C292530871C002E8F41 /* PerfilViewController.swift in Sources */,
 				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
 				D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */,
 				D12476BD250A660500E95433 /* AtivosCategoria.swift in Sources */,
