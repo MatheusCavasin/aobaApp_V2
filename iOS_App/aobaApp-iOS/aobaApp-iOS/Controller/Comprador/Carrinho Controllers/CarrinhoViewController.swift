@@ -69,7 +69,13 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             }
         } else {
             let alert = UIAlertController(title: "Erro ao carregar o carrinho", message: "Lembre-se de entrar em sua conta para acessar o carrinho", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Entrar", comment: "Default action"), style: .default, handler: { _ in
+                let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
+                let loginController = loginView.instantiateViewController(identifier: "login")
+                loginController.modalPresentationStyle = .fullScreen
+                self.show(loginController, sender: self)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Default action"), style: .default, handler: { _ in
                 self.dismiss(animated: true, completion: nil)
             }))
             self.present(alert, animated: true, completion: nil)

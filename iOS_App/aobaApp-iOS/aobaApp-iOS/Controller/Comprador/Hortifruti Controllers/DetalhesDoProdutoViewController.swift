@@ -93,7 +93,6 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             
             else {
                 let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
-                
                 let loginController = loginView.instantiateViewController(identifier: "login")
                 tableView.cellForRow(at: indexPath)?.isSelected = false
                 loginController.modalPresentationStyle = .fullScreen
