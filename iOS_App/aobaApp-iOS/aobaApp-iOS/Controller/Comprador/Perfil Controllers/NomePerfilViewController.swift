@@ -13,11 +13,14 @@ class NomePerfilViewController: UIViewController {
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var btnCancelar: UIButton!
     @IBOutlet weak var btnAlterar: UIButton!
+    @IBOutlet weak var viewLoadView: UIView!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         txtNome.text = Singleton.shared.comercianteLogado?.nome
+        viewLoadView.isHidden = true
     }
 
     @IBAction func btnCancelarPressed(_ sender: Any) {

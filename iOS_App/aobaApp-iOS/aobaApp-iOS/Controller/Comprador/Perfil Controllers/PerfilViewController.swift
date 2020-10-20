@@ -59,6 +59,7 @@ class PerfilViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.isSelected = false //Melhora a navegaçao
         
         // Abre a tela de perfil
         if indexPath.row == 0 {

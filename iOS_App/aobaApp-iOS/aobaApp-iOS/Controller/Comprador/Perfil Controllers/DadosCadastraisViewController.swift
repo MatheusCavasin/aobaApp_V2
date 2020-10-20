@@ -45,6 +45,8 @@ class DadosCadastraisViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        tableView.cellForRow(at: indexPath)?.isSelected = false //Melhora a navegaçao
+        
         let view = UIStoryboard(name: "TabPerfilComprador", bundle: nil)
         var controller: UIViewController
         if indexPath.row == 0 {

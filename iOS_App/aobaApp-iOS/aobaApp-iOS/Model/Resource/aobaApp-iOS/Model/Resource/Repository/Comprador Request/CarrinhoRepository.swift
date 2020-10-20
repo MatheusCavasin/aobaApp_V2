@@ -20,5 +20,5 @@ class CarrinhoRepository {
         ApiResource.request(method: "POST", url: url, params: nil, body: carrinhoPedidoDict, withAuth: true) { (result, err) in
             completion(result, err)
         }
-    }
+    } 
 }

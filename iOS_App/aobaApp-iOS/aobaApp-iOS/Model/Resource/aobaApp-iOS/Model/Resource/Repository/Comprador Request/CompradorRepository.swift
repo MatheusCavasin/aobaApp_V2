@@ -119,4 +119,33 @@ class CompradorRepository {
             
         }
     }
+    
+    func mudarSenha(senhaAntiga: String, novaSenha: String) {
+        
+        let url = Singleton.shared.apiEndPoint + "/api/v1/produtor/1/editar-senha"
+        let body: Dictionary<String, Any> = ["email": Singleton.shared.comercianteLogado!.email,
+                                             "senhaAntiga": senhaAntiga,
+                                             "senhaNova": novaSenha
+                                            ]
+        
+        
+        if Singleton.shared.comercianteLogado != nil {
+            ApiResource.request(method: "PUT", url: url, params: nil, body: body, withAuth: true) { (result, err) in
+                if result != nil {
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name("SenhaAlterada"), object: nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name("ErroAoMudarSenha"), object: nil)
+                    }
+                }
+            }
+        }
+        
+        
+//        "email": "jose@redeaoba.com.br",
+ //       "senhaAntiga": "abc123",
+  //      "senhaNova": "123456"
+    }
 }

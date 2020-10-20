@@ -133,15 +133,33 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Vx-YrA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6dp-cr-kAD">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.27886879279999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6dp-cr-kAD" firstAttribute="centerX" secondItem="TLE-Vx-YrA" secondAttribute="centerX" id="Spr-sK-WXn"/>
+                                    <constraint firstItem="6dp-cr-kAD" firstAttribute="centerY" secondItem="TLE-Vx-YrA" secondAttribute="centerY" id="lYq-bG-GST"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="BBx-aR-XUP" firstAttribute="width" secondItem="yWp-Ni-ses" secondAttribute="width" id="5hz-Hs-7wV"/>
                             <constraint firstItem="BBx-aR-XUP" firstAttribute="centerX" secondItem="mvH-wz-fze" secondAttribute="centerX" id="8GL-vY-AXd"/>
+                            <constraint firstItem="TLE-Vx-YrA" firstAttribute="leading" secondItem="mvH-wz-fze" secondAttribute="leading" id="AwR-BT-Okb"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="trailing" secondItem="NS2-jq-SHp" secondAttribute="trailing" constant="20" id="KbO-b4-bz5"/>
+                            <constraint firstItem="mvH-wz-fze" firstAttribute="bottom" secondItem="TLE-Vx-YrA" secondAttribute="bottom" id="WaX-hP-N0R"/>
                             <constraint firstItem="NS2-jq-SHp" firstAttribute="top" secondItem="BBx-aR-XUP" secondAttribute="bottom" constant="40" id="XAh-LU-77J"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="top" secondItem="BBx-aR-XUP" secondAttribute="top" id="YQe-Fv-GSI"/>
                             <constraint firstItem="NS2-jq-SHp" firstAttribute="leading" secondItem="mvH-wz-fze" secondAttribute="leading" constant="20" id="j00-gG-Lrw"/>
+                            <constraint firstItem="TLE-Vx-YrA" firstAttribute="top" secondItem="mvH-wz-fze" secondAttribute="top" constant="44" id="mUK-KM-Se1"/>
+                            <constraint firstItem="mvH-wz-fze" firstAttribute="trailing" secondItem="TLE-Vx-YrA" secondAttribute="trailing" id="v4A-cg-pB4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mvH-wz-fze"/>
                     </view>
@@ -149,6 +167,7 @@
                         <outlet property="btnAlterar" destination="Xdn-xA-ZJb" id="QI8-1r-5da"/>
                         <outlet property="btnCancelar" destination="43Q-W5-JHG" id="bcB-Ih-7X4"/>
                         <outlet property="txtNome" destination="NS2-jq-SHp" id="ZKz-rf-crx"/>
+                        <outlet property="viewLoadView" destination="TLE-Vx-YrA" id="huO-ZL-eic"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfv-BI-Ft3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -210,10 +229,25 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgL-Bc-gkD">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="y9D-aQ-LaB">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.27886879279999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="y9D-aQ-LaB" firstAttribute="centerY" secondItem="CgL-Bc-gkD" secondAttribute="centerY" id="XUu-iB-GGZ"/>
+                                    <constraint firstItem="y9D-aQ-LaB" firstAttribute="centerX" secondItem="CgL-Bc-gkD" secondAttribute="centerX" id="hNb-ZE-wRK"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="5M3-wd-769" firstAttribute="trailing" secondItem="ncX-V5-sek" secondAttribute="trailing" constant="20" id="3gk-rd-l9U"/>
+                            <constraint firstItem="CgL-Bc-gkD" firstAttribute="leading" secondItem="5M3-wd-769" secondAttribute="leading" id="9zk-nS-GJV"/>
                             <constraint firstItem="Z8O-Q6-3AK" firstAttribute="centerX" secondItem="5M3-wd-769" secondAttribute="centerX" id="Dn9-KY-4hx"/>
                             <constraint firstItem="3YY-es-jg4" firstAttribute="top" secondItem="4hV-2U-sCc" secondAttribute="bottom" constant="10" id="Eve-9m-08I"/>
                             <constraint firstItem="ncX-V5-sek" firstAttribute="width" secondItem="ncX-V5-sek" secondAttribute="height" multiplier="344:44" id="Low-ny-ezK"/>
@@ -222,10 +256,13 @@
                             <constraint firstItem="3YY-es-jg4" firstAttribute="width" secondItem="3YY-es-jg4" secondAttribute="height" multiplier="344:44" id="djd-r4-eBB"/>
                             <constraint firstItem="5M3-wd-769" firstAttribute="trailing" secondItem="4hV-2U-sCc" secondAttribute="trailing" constant="20" id="fxg-Sn-SBK"/>
                             <constraint firstItem="4hV-2U-sCc" firstAttribute="top" secondItem="ncX-V5-sek" secondAttribute="bottom" constant="10" id="g1D-Ek-fHn"/>
+                            <constraint firstItem="5M3-wd-769" firstAttribute="bottom" secondItem="CgL-Bc-gkD" secondAttribute="bottom" id="ho1-E9-MW3"/>
                             <constraint firstItem="ncX-V5-sek" firstAttribute="top" secondItem="Z8O-Q6-3AK" secondAttribute="bottom" constant="40" id="imc-nD-D6g"/>
+                            <constraint firstItem="5M3-wd-769" firstAttribute="trailing" secondItem="CgL-Bc-gkD" secondAttribute="trailing" id="ivq-Uj-iQM"/>
                             <constraint firstItem="4hV-2U-sCc" firstAttribute="width" secondItem="4hV-2U-sCc" secondAttribute="height" multiplier="344:44" id="kNh-CR-4jK"/>
                             <constraint firstItem="Z8O-Q6-3AK" firstAttribute="width" secondItem="WCA-Jx-Hgu" secondAttribute="width" id="lbD-Jl-Jlg"/>
                             <constraint firstItem="5M3-wd-769" firstAttribute="trailing" secondItem="3YY-es-jg4" secondAttribute="trailing" constant="20" id="lhl-eL-DQE"/>
+                            <constraint firstItem="CgL-Bc-gkD" firstAttribute="top" secondItem="5M3-wd-769" secondAttribute="top" constant="44" id="q6s-3X-fz1"/>
                             <constraint firstItem="ncX-V5-sek" firstAttribute="leading" secondItem="5M3-wd-769" secondAttribute="leading" constant="20" id="ugm-dL-uD2"/>
                             <constraint firstItem="5M3-wd-769" firstAttribute="top" secondItem="Z8O-Q6-3AK" secondAttribute="top" id="vxw-ar-KU5"/>
                         </constraints>
@@ -237,6 +274,7 @@
                         <outlet property="txtConfirmacaoSenha" destination="3YY-es-jg4" id="tfn-Df-V9C"/>
                         <outlet property="txtNovaSenha" destination="4hV-2U-sCc" id="ORa-aG-OxJ"/>
                         <outlet property="txtSenha" destination="ncX-V5-sek" id="0it-xP-oeU"/>
+                        <outlet property="viewLoadView" destination="CgL-Bc-gkD" id="6gv-bh-ifC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fm1-Pn-vyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -293,6 +331,20 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViL-Ff-mAU">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="emn-lb-l7w">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.27886879279999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="emn-lb-l7w" firstAttribute="centerY" secondItem="ViL-Ff-mAU" secondAttribute="centerY" id="AxV-rn-4wX"/>
+                                    <constraint firstItem="emn-lb-l7w" firstAttribute="centerX" secondItem="ViL-Ff-mAU" secondAttribute="centerX" id="DQK-3H-ozj"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -302,10 +354,14 @@
                             <constraint firstItem="aeq-d2-I80" firstAttribute="trailing" secondItem="D7x-LW-5C9" secondAttribute="trailing" constant="20" id="IRb-lU-X9X"/>
                             <constraint firstItem="y9R-OB-NX0" firstAttribute="centerX" secondItem="aeq-d2-I80" secondAttribute="centerX" id="JzK-fG-2RW"/>
                             <constraint firstItem="chT-Xu-1ng" firstAttribute="top" secondItem="y9R-OB-NX0" secondAttribute="bottom" constant="40" id="TvW-7K-W7T"/>
+                            <constraint firstItem="aeq-d2-I80" firstAttribute="trailing" secondItem="ViL-Ff-mAU" secondAttribute="trailing" id="UxE-7T-PC4"/>
+                            <constraint firstItem="ViL-Ff-mAU" firstAttribute="leading" secondItem="aeq-d2-I80" secondAttribute="leading" id="aFk-DE-gNA"/>
                             <constraint firstItem="aeq-d2-I80" firstAttribute="trailing" secondItem="chT-Xu-1ng" secondAttribute="trailing" constant="20" id="e03-tc-gAV"/>
                             <constraint firstItem="D7x-LW-5C9" firstAttribute="top" secondItem="chT-Xu-1ng" secondAttribute="bottom" constant="10" id="eWK-Qi-DjT"/>
                             <constraint firstItem="y9R-OB-NX0" firstAttribute="width" secondItem="AZ2-wg-wyi" secondAttribute="width" id="g4G-4r-DWT"/>
+                            <constraint firstItem="ViL-Ff-mAU" firstAttribute="top" secondItem="aeq-d2-I80" secondAttribute="top" constant="44" id="gjR-6I-qRj"/>
                             <constraint firstItem="chT-Xu-1ng" firstAttribute="width" secondItem="chT-Xu-1ng" secondAttribute="height" multiplier="344:44" id="i3x-bK-glm"/>
+                            <constraint firstItem="aeq-d2-I80" firstAttribute="bottom" secondItem="ViL-Ff-mAU" secondAttribute="bottom" id="rdb-i7-r4R"/>
                             <constraint firstItem="chT-Xu-1ng" firstAttribute="leading" secondItem="aeq-d2-I80" secondAttribute="leading" constant="20" id="yfV-Dd-pkd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aeq-d2-I80"/>
@@ -315,6 +371,7 @@
                         <outlet property="btnCancelar" destination="JtV-aI-Fbp" id="ZTM-nk-XwH"/>
                         <outlet property="txtNovoTelefone" destination="D7x-LW-5C9" id="eF8-kd-MQ2"/>
                         <outlet property="txtTelefoneAtual" destination="chT-Xu-1ng" id="pyA-Ph-TWQ"/>
+                        <outlet property="viewLoadView" destination="ViL-Ff-mAU" id="D0Z-8X-qzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnG-JI-RF4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

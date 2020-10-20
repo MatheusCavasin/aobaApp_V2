@@ -14,10 +14,11 @@ class TelefonePerfilViewController: UIViewController {
     @IBOutlet weak var txtNovoTelefone: UITextField!
     @IBOutlet weak var btnCancelar: UIButton!
     @IBOutlet weak var btnAlterar: UIButton!
+    @IBOutlet weak var viewLoadView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        viewLoadView.isHidden = true
     }
     @IBAction func btnCancelarPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
