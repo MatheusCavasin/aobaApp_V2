@@ -88,14 +88,15 @@ class ProdutorRepository {
                     //Aqui res podera assumir dois valores, true ou false
                     print("sua requisicao foi realizada com sucesso")
                     ModelVendedor.instance.dictListaAnuncios = result as! [[String : Any?]]
+                   /*
                     var a = ModelVendedor.instance.dictListaAnuncios
-                    //                            var b = a[1]["categorias"] as! [[String : Any?]]
                     print("\n\n\n\n\n\n\(a.count)")
                     print("\n\n\n\n\n\n\(a[0])")
                     print("\n\n\n\n\n\n\(a[0]["qtdeMax"] as! Int)")
                     print("\n\n\n\n\n\n\(a[0]["valor"] as! Double)")
                     print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
                     print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
+                    */
                     DispatchQueue.main.async{
                         NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
                     }
@@ -179,8 +180,7 @@ class ProdutorRepository {
                 }
             }
         }
-        print("ENTROU PUT ATIVAR\n\n\n")
-        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/ativar")
+//        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/ativar")
     }
     
     func desativarAnuncio(idAnuncio: Int){
@@ -205,8 +205,7 @@ class ProdutorRepository {
                 }
             }
         }
-        print("ENTROU PUT DESATIVAR\n\n\n")
-        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar")
+//        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar")
     }
     
     
@@ -245,3 +244,6 @@ class ProdutorRepository {
  }
  }
  */
+
+
+

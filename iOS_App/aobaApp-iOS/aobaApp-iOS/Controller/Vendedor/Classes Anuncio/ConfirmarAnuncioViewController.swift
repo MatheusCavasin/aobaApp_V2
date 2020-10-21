@@ -10,11 +10,11 @@ import UIKit
 import Firebase
 
 class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CellsDelegate {
-
+    
     @IBOutlet weak var tableViewAnuncio: UITableView!
     
     let produtorRepositoy = ProdutorRepository()
-
+    
     
     
     override func viewDidLoad() {
@@ -26,8 +26,8 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
         tableViewAnuncio.reloadData()
         tableViewAnuncio.separatorStyle = .none
         
-
-
+        
+        
     }
     
     
@@ -61,14 +61,14 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
             cell.textLabel?.text = "\(valor as! String) caixa"
             return cell
         }
-
+        
         else if indexPath.row == 3 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "Entrega", for: indexPath) as! LabelsCriarAnuncioTableViewCell
             cell.textLabel?.text = "Entrega"
             return cell
         }
-
+        
         else if indexPath.row == 4 {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProximoDia", for: indexPath) as! LabelsCriarAnuncioTableViewCell
@@ -92,22 +92,22 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
             cell.delegate = self
             return cell
         }
-
+        
     }
-
+    
     func addButtonPressed() {
-//        tableViewAnuncio.reloadData()
+        //        tableViewAnuncio.reloadData()
         print("ENTROU1")
         self.dismiss(animated: true)
         NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
     }
     func publicarButtonPressed() {
         print("ENTROU2")
-        produtorRepositoy.criarAnuncio()
         
         for imagem in modelFotos {
             
             let randomID = UUID.init().uuidString
+            ModelVendedor.instance.idFoto.append(randomID)
             let uploadRef = Storage.storage().reference(withPath: "\(randomID).jpg")
             guard let imagem = imagem.imageName?.jpegData(compressionQuality: 0.75) else { return }
             let uploadMetadata = StorageMetadata.init()
@@ -122,14 +122,18 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
             }
         }
         
+        produtorRepositoy.criarAnuncio()
+
+        
         
         
         
         self.dismiss(animated: true){
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
-
+            ModelVendedor.instance.idFoto.removeAll()
+            
         }
     }
-
+    
     
 }
