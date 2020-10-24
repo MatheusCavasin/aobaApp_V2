@@ -288,7 +288,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-Rf-NND">
-                                        <rect key="frame" x="188" y="390" width="37" height="37"/>
+                                        <rect key="frame" x="188.5" y="390.5" width="37" height="37"/>
                                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -386,7 +386,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruta-maca" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
                                                     <rect key="frame" x="20" y="9" width="374" height="234"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="eYk-qN-JfG" secondAttribute="height" multiplier="345:216" id="zNV-Uu-Nnk"/>
@@ -628,8 +628,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="default-image" width="122" height="140"/>
         <image name="fruta-abacaxi" width="139" height="95"/>
-        <image name="fruta-maca" width="113" height="102"/>
         <image name="icone-loja" width="22" height="19.5"/>
         <image name="legume-milho" width="139" height="95"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>

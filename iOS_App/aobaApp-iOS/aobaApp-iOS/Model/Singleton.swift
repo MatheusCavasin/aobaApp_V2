@@ -11,14 +11,14 @@ import Foundation
 class Singleton {
     static var shared = Singleton()
     
+    var carrinhoPedido: CarrinhoPedido?
+    var enderecoDeEntrega: EnderecoData?
     var carrinho = Carrinho()
     var anuncios: [AtivosSecao]! = []
     var comercianteLogado: ComercianteData?
     
     var loggedIn: Bool! = false
     var creatingUser: [String] = []
-    
-    
     
     var apiEndPoint = "https://aoba-api-server.herokuapp.com"
                        

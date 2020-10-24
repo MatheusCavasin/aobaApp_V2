@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ProdutoCarrinhoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imageProduto: UIImageView!
     @IBOutlet weak var nomeProduto: UILabel!
+    @IBOutlet weak var lblDataEntrega: UILabel!
     @IBOutlet weak var valorProduto: UILabel!
     @IBOutlet weak var quantidadeProduto: UILabel!
     @IBOutlet weak var viewBackgroundView: UIView!
@@ -31,14 +33,29 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
         viewBackgroundView.layer.borderColor = #colorLiteral(red: 0.921431005, green: 0.9214526415, blue: 0.9214410186, alpha: 1)
     }
     
-    public func config(produto: ItemCarrinho){
-        self.imageProduto.image = UIImage(named: produto.anuncio.image[0])
-        self.nomeProduto.text = produto.nomeProduto
+    public func config(produto: ItemData){
         
-        var value: String = String(format: "%.2f", Float((produto.anuncio.qtdeMax!)) * Float((produto.anuncio.valor)) as CVarArg)
+        let storageRef = Storage.storage().reference(withPath: produto.foto)
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
+            if let error = error {
+                print("Erro no download: \(error.localizedDescription)")
+                return
+            } else {
+                self.imageProduto.image = UIImage(data: data!)
+            }
+        }
+        
+
+        self.nomeProduto.text = produto.produtoNome
+        
+        var value: String = String(format: "%.2f", Float((produto.valor)) * Float((produto.quantidade)) as CVarArg)
         value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         self.valorProduto.text = "R$ \(value)"
-        self.quantidadeProduto.text = "\(produto.anuncio.qtdeMax ?? 0) caixas"
+        self.quantidadeProduto.text = "\(produto.quantidade) caixas"
+        
+        
+        self.lblDataEntrega.text = "Entrega " + produto.dataEntrega.diaSemana.fullName!
+        
     }
     
 }

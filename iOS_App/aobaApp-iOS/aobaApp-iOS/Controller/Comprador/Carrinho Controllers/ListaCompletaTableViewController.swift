@@ -10,8 +10,8 @@ import UIKit
 
 class ListaCompletaTableViewController: UITableViewController {
 
-    var carrinho: Carrinho!
-    
+    //var carrinho: Carrinho!
+    var carrinhoCriado: CarrinhoData!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,34 +20,57 @@ class ListaCompletaTableViewController: UITableViewController {
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        carrinho = Singleton.shared.carrinho
-    }
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return carrinho.produtos.count + 2
+        return carrinhoCriado.itens.count + 2
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if  indexPath.row < carrinho.produtos.count {
+        if  indexPath.row < carrinhoCriado.itens.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
-            cell.config(produto: carrinho.produtos[indexPath.row])
+            cell.config(produto: carrinhoCriado.itens[indexPath.row])
             return cell
-        } else if indexPath.row == carrinho.produtos.count {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "valorCarrinho")
-            return cell!
+        } else if indexPath.row == carrinhoCriado.itens.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valorCarrinho") as! ValorTotalTodosItensTableViewCell
+            cell.config(valor: carrinhoCriado.valorTotal)
+            return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete")
-            return cell!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteTodosItensTableViewCell
+            cell.config(valor: carrinhoCriado.valorFrete)
+            return cell
         }
-        
     }
     
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            self.carrinhoCriado.itens.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+        
+        let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
+            
+        }
+        
+        let swipeActionConfig = UISwipeActionsConfiguration(actions: [rename, delete])
+        swipeActionConfig.performsFirstActionWithFullSwipe = false
+        return swipeActionConfig
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        if indexPath.row < carrinhoCriado.itens.count {
+            return 91
+        } else {
+            return 60
+        }
+        
     }
     
 

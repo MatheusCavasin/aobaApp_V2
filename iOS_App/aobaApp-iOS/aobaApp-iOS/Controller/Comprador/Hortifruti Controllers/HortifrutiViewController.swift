@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viwLoadView: UIView!
@@ -23,10 +23,12 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     let anunciosRepository = AnunciosRepository()
     var downloadDados: Bool! = true
     
+    var filtroHortifruit: [Dictionary<String, Any>]?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initObjeto()
-        
         
         
         // Tableview Configure
@@ -45,8 +47,6 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "AnucniosCarregados"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoCarregar), name: NSNotification.Name(rawValue: "ErroAoCarregarAnuncios"), object: nil)
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +55,8 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         
         chamarDados()
     }
+    
+    
     
     private func chamarDados() {
         anunciosRepository.getSecoesValidas()

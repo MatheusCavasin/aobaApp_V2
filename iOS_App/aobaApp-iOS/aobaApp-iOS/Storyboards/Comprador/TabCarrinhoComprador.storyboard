@@ -346,19 +346,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpR-Ag-NgE">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qdH-Sg-2cN">
+                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qdH-Sg-2cN" firstAttribute="centerY" secondItem="qpR-Ag-NgE" secondAttribute="centerY" id="die-zK-14G"/>
+                                    <constraint firstItem="qdH-Sg-2cN" firstAttribute="centerX" secondItem="qpR-Ag-NgE" secondAttribute="centerX" id="wgC-4T-xgg"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="bottom" secondItem="uFL-aR-3GD" secondAttribute="bottom" id="5qQ-6A-BK8"/>
                             <constraint firstItem="uFL-aR-3GD" firstAttribute="bottom" secondItem="n9h-jo-TuA" secondAttribute="bottom" id="A9k-25-Ymm"/>
                             <constraint firstItem="n9h-jo-TuA" firstAttribute="leading" secondItem="uFL-aR-3GD" secondAttribute="leading" id="R43-dD-S5e"/>
+                            <constraint firstItem="uFL-aR-3GD" firstAttribute="top" secondItem="qpR-Ag-NgE" secondAttribute="top" id="cqO-kz-lPb"/>
                             <constraint firstItem="uFL-aR-3GD" firstAttribute="trailing" secondItem="n9h-jo-TuA" secondAttribute="trailing" id="lNE-RT-O0q"/>
                             <constraint firstItem="n9h-jo-TuA" firstAttribute="top" secondItem="uFL-aR-3GD" secondAttribute="top" id="x4o-PG-gth"/>
+                            <constraint firstItem="qpR-Ag-NgE" firstAttribute="leading" secondItem="uFL-aR-3GD" secondAttribute="leading" id="x4s-Vn-4fg"/>
+                            <constraint firstItem="uFL-aR-3GD" firstAttribute="trailing" secondItem="qpR-Ag-NgE" secondAttribute="trailing" id="yfZ-zb-cmI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uFL-aR-3GD"/>
                     </view>
                     <navigationItem key="navigationItem" title="Carrinho" largeTitleDisplayMode="always" id="KuQ-Sx-QEP"/>
                     <connections>
                         <outlet property="tableView" destination="n9h-jo-TuA" id="Dgx-vy-2e7"/>
+                        <outlet property="viwLoadView" destination="qpR-Ag-NgE" id="fTq-5u-Uwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsI-CG-pRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -374,7 +393,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="valorCarrinho" rowHeight="72" id="tnt-oG-205">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="valorCarrinho" rowHeight="72" id="tnt-oG-205" customClass="ValorTotalTodosItensTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="72"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tnt-oG-205" id="ZhA-K4-Qix">
@@ -401,8 +420,11 @@
                                         <constraint firstItem="6fL-ES-87C" firstAttribute="centerY" secondItem="ZhA-K4-Qix" secondAttribute="centerY" id="cWg-6P-efP"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblTotal" destination="6fL-ES-87C" id="bsm-jM-8Ts"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="valorFrete" rowHeight="69" id="jM5-m2-E4M">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="valorFrete" rowHeight="69" id="jM5-m2-E4M" customClass="ValorFreteTodosItensTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="100" width="414" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jM5-m2-E4M" id="Ouu-an-eOU">
@@ -429,6 +451,9 @@
                                         <constraint firstAttribute="trailing" secondItem="fmF-um-Wp6" secondAttribute="trailing" constant="20" id="m9r-bc-uiQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblFrete" destination="fmF-um-Wp6" id="o3Y-SL-qHZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

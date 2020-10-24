@@ -47,7 +47,7 @@
                                 <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teste@redeaoba.com.br" borderStyle="roundedRect" placeholder="  Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-7X-cCo">
+                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teste3@gmail.com" borderStyle="roundedRect" placeholder="  Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-7X-cCo">
                                 <rect key="frame" x="37" y="260" width="340" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fxk-7X-cCo" secondAttribute="height" multiplier="85:11" id="T65-bj-eBe"/>

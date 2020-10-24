@@ -41,6 +41,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.sucessoAoLogar), name: NSNotification.Name(rawValue: "SucessoAoLogar"), object: nil)
     }
     
+    /*
+    static func instanceLoginView() -> LoginViewController {
+        let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
+        let loginController = loginView.instantiateViewController(identifier: "login")
+        return loginController as! LoginViewController
+    }*/
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
@@ -67,6 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @objc func sucessoAoLogar() {
         loadingView.isHidden = true
         Singleton.shared.loggedIn = true
+        Singleton.shared.carrinhoPedido = CarrinhoPedido(compradorId: Singleton.shared.comercianteLogado!.id)
         
         self.dismiss(animated: true, completion: nil)
     }
