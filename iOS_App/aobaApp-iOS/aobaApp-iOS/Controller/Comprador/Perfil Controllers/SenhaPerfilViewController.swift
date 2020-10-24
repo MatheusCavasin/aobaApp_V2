@@ -25,7 +25,7 @@ class SenhaPerfilViewController: UIViewController {
         super.viewDidLoad()
         viewLoadView.isHidden = true
         
-        //Observables
+        //Observables - Observers estão na classe CompradorRepository
         NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarSucesso), name: NSNotification.Name(rawValue: "SenhaAlterada"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarErro), name: NSNotification.Name(rawValue: "ErroAoMudarSenha"), object: nil)
     }
@@ -55,9 +55,6 @@ class SenhaPerfilViewController: UIViewController {
             // Caso erro, apresentar Erro
         }
     }
-    
-    
-    
     
     private func showAlertView(title: String, message: String, buttonTexts: [String]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)

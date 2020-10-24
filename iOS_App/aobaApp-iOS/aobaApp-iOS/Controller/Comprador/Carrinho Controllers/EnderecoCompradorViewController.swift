@@ -27,7 +27,6 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
         
         // Registro das celulas
         tableView.register(EnderecoCadastradoTableViewCell.nib(), forCellReuseIdentifier: EnderecoCadastradoTableViewCell.identifier)
-    
                 
         // Inicializaçao das variáveis
         enderecosComerciante = Singleton.shared.comercianteLogado?.enderecos
@@ -61,8 +60,9 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          if indexPath.row < (enderecosComerciante?.count ?? 0) {
-            Singleton.shared.carrinho.endereco = enderecosComerciante![indexPath.row]
-            Singleton.shared.carrinhoPedido?.enderecoId = Singleton.shared.carrinho.endereco!.id
+            Singleton.shared.enderecoDeEntrega = enderecosComerciante![indexPath.row]
+            Singleton.shared.carrinhoPedido?.enderecoId = Singleton.shared.enderecoDeEntrega?.id
+            
             self.carrinhoController?.tableView.reloadData()
             tableView.reloadData()
             tableView.cellForRow(at: indexPath)?.isSelected = true

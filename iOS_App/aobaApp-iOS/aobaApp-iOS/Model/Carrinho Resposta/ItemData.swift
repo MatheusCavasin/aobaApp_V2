@@ -14,13 +14,15 @@ class ItemData {
     let foto: String
     let quantidade: Int
     let valor: Float
+    let produtoNome: String
     
-    init(anuncioId: CLong, dataEntrega: DataEntregaData, foto: String, quantidade: Int, valor: Float) {
+    init(anuncioId: CLong, dataEntrega: DataEntregaData, foto: String, quantidade: Int, valor: Float, nome: String) {
         self.anuncioId = anuncioId
         self.dataEntrega = dataEntrega
         self.foto = foto
         self.quantidade = quantidade
         self.valor = valor
+        self.produtoNome = nome
     }
     
     static func jsonToObject(dict: Dictionary<String, Any>) -> ItemData {
@@ -29,8 +31,9 @@ class ItemData {
         let foto = dict["foto"] as! String
         let quantidade = dict["quantidade"] as! Int
         let valor = Float(dict["valor"] as! Double)
+        let nome = dict["produtoNome"] as! String
         
-        return ItemData(anuncioId: anuncioId, dataEntrega: dataEntrega, foto: foto, quantidade: quantidade, valor: valor)
+        return ItemData(anuncioId: anuncioId, dataEntrega: dataEntrega, foto: foto, quantidade: quantidade, valor: valor, nome: nome)
     }
     
 }

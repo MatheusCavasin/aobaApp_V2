@@ -16,7 +16,6 @@ class NomePerfilViewController: UIViewController {
     @IBOutlet weak var viewLoadView: UIView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         txtNome.text = Singleton.shared.comercianteLogado?.nome

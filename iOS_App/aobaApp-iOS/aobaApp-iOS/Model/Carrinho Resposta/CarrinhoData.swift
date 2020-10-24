@@ -11,12 +11,12 @@ import Foundation
 
 // Classe que decodifica a resposta da requisicao da criacao do carrinho
 class CarrinhoData {
-    let datasEntrega: [DataEntregaData]
-    let itens: [ItemData]
-    let produtores: [ProdutorData]
-    let pedidoCriar: CarrinhoPedido
-    let valorFrete: Float
-    let valorTotal: Float
+    var datasEntrega: [DataEntregaData]
+    var itens: [ItemData]
+    var produtores: [ProdutorData]
+    var pedidoCriar: CarrinhoPedido
+    var valorFrete: Float
+    var valorTotal: Float
     
     init(datasEntrega: [DataEntregaData], itens: [ItemData], produtores: [ProdutorData], pedidoCriar: CarrinhoPedido, valorFrete: Float, valorTotal: Float) {
         self.datasEntrega = datasEntrega
@@ -55,8 +55,8 @@ class CarrinhoData {
         let carrinhoPedido = CarrinhoPedido.dictToObject(dict: carrinoPedidoDict)
         
         // Decodificando valores do frete e total
-        let total = dict["valorTotal"] as! Float
-        let frete = dict["valorFrete"] as! Float
+        let total = Float(dict["valorTotal"] as! Double)
+        let frete = Float(dict["valorFrete"] as! Double)
         
         return CarrinhoData(datasEntrega: datasEntrega, itens: itens, produtores: produtores, pedidoCriar: carrinhoPedido, valorFrete: frete, valorTotal: total)
     }

@@ -14,7 +14,6 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     @IBOutlet weak var btnCancelar: UIBarButtonItem!
     var anuncio: AtivosAnuncio!
     var nomeDoProduto: String!
-    
     var quantidade: Int?
     
     
@@ -72,25 +71,21 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
             let cell = tableView.dequeueReusableCell(withIdentifier: "botaoAdicionar") as! BotaoAdicionar
             return cell
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 5 {
             if Singleton.shared.loggedIn {
                 self.dismiss(animated: true, completion: nil)
-            
                 let novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
-                
                 if quantidade != nil && quantidade != 0 {
                     Singleton.shared.carrinho.adicionarNovoProduto(novoProduto, quantidade!)
                     let novoProduto = ItemCarrinhoPedido(anuncioId: anuncio.id, quantidade: quantidade!)
                     Singleton.shared.carrinhoPedido!.itensDoCarrinho.append(novoProduto)
-                    //anuncio.decrementarQuantidadeLocal(quantidade: quantidade!)
                 }
             }
             
+            // Se ainda não estiver logado, mostra a tela de login
             else {
                 let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
                 let loginController = loginView.instantiateViewController(identifier: "login")

@@ -49,11 +49,11 @@ class PerfilViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if indexPath.row == 0 {
             cell.config(systemImageName: "icone-loja", title: Singleton.shared.comercianteLogado?.nomeFantasia ?? "Nome fantasia")
         } else if indexPath.row == 1 {
-            cell.config(systemImageName: "mappin.and.ellipse", title: "Meus endereços")
+            cell.config(systemImageName: "icone-localizacao", title: "Meus endereços")
         } else if indexPath.row == 2{
             cell.config(systemImageName: "creditcard.fill", title: "Métodos de pagamento")
         } else {
-            cell.config(systemImageName: "escape", title: "Sair da conta")
+            cell.config(systemImageName: "icone-sair", title: "Sair da conta")
         }
         return cell
     }

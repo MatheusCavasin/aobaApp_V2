@@ -47,6 +47,21 @@ enum DiaSemana {
         }
     }
     
+    var fullName: String? {
+        switch self {
+        case .SEG:
+            return "Segunda"
+        case .TER:
+            return "Terça"
+        case .QUA:
+            return "Quarta"
+        case .QUI:
+            return "Quinta"
+        case .SEX:
+            return "Sexta"
+        }
+    }
+    
     static func fromString(string: String) -> DiaSemana {
         if string == "SEG" {
             return .SEG
@@ -60,6 +75,7 @@ enum DiaSemana {
             return .SEX
         }
     }
+
 }
 
 

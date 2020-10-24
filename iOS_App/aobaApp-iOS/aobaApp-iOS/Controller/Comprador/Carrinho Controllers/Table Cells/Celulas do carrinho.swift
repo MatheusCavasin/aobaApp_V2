@@ -8,29 +8,6 @@
 
 import UIKit
 
-class ProdutoDoCarrinhoTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var imageProduto: UIImageView!
-    @IBOutlet weak var nomeProduto: UILabel!
-    @IBOutlet weak var valorProduto: UILabel!
-    @IBOutlet weak var quantidadeProduto: UILabel!
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        imageProduto.layer.cornerRadius = 5.0
-    }
-    
-    public func config(produto: ItemCarrinho){
-        self.imageProduto.image = UIImage(named: produto.anuncio.image[0])
-        self.nomeProduto.text = produto.nomeProduto
-
-        var value: String = String(format: "%.2f", Float((produto.anuncio.qtdeMax!)) * Float((produto.anuncio.valor)) as CVarArg)
-        value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
-        self.valorProduto.text = "R$ \(value)"
-        self.quantidadeProduto.text = "\(produto.anuncio.qtdeMax ?? 0) caixas"
-    }
-}
 
 class SubTotalCarrinhoTableViewCell: UITableViewCell {
     @IBOutlet weak var lblSubTotal: UILabel!
@@ -42,8 +19,8 @@ class SubTotalCarrinhoTableViewCell: UITableViewCell {
     }
     
     
-    public func config(carrinho: Carrinho) {
-        var total = String(format: "%.2f", carrinho.valorProdutos).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+    public func config(valor: Float) {
+        var total = String(format: "%.2f", valor).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         total = "R$\(total)"
         self.lblSubTotal.text = total
     }
@@ -53,8 +30,8 @@ class ValorFreteCarrinhoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblFrete: UILabel!
     
-    public func config(carrinho: Carrinho) {
-        lblFrete.text = String(format: "%.2f", (carrinho.valorEntrega)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+    public func config(valor: Float) {
+        lblFrete.text = String(format: "%.2f", (valor)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
     }
 }
 
@@ -73,16 +50,13 @@ class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
         viwBackground.layer.cornerRadius = 10.0
     }
     
-    public func config(carrinho: Carrinho, navigationController: UINavigationController) {
-        
+    public func config(endereco: EnderecoData?, navigationController: UINavigationController) {
         self.navigationController = navigationController
         
-        
-        if carrinho.endereco != nil {
-            self.endereco.text = "\(carrinho.endereco!.logradouro), \(carrinho.endereco!.numero)"
-            self.cidade.text =  "\(carrinho.endereco!.cidade) - \(carrinho.endereco!.uf)"
+        if endereco != nil {
+            self.endereco.text = "\(endereco!.logradouro), \(endereco!.numero)"
+            self.cidade.text =  "\(endereco!.cidade) - \(endereco!.uf)"
         }
-        
     }
 }
 
@@ -96,7 +70,6 @@ class DataEntregaTableViewCell: UITableViewCell {
         viewBackgroundView.layer.borderColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     }
     
-    
     public func config(dataEntrega: String) {
         lblDataEntrega.text = dataEntrega
     }
@@ -105,15 +78,11 @@ class DataEntregaTableViewCell: UITableViewCell {
 class TotalDoPedidoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var totalDoPedido: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
     public func config(valorTotal: Float) {
-        
-        
         let total = String(format: "%.2f", (valorTotal)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
         
         self.totalDoPedido.text = total
@@ -127,5 +96,25 @@ class FinalizarPedidoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         self.btnFinalizarPedido.layer.cornerRadius = 5.0
+    }
+}
+
+
+
+class ValorFreteTodosItensTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var lblFrete: UILabel!
+    
+    public func config(valor: Float) {
+        lblFrete.text = String(format: "%.2f", (valor)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+    }
+}
+
+
+class ValorTotalTodosItensTableViewCell: UITableViewCell {
+    @IBOutlet weak var lblTotal: UILabel!
+    
+    public func config(valor: Float) {
+        lblTotal.text = String(format: "%.2f", (valor)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
     }
 }

@@ -38,7 +38,7 @@ class DadosCadastraisViewController: UIViewController, UITableViewDataSource, UI
         } else if indexPath.row == 1 {
             cell.config(systemImageName: "lock.fill", title: "Senha")
         } else {
-            cell.config(systemImageName: "icone-telefone", title: "Telefone")
+            cell.config(systemImageName: "icone-telefone-verde", title: "Telefone")
         }
         return cell
     }
