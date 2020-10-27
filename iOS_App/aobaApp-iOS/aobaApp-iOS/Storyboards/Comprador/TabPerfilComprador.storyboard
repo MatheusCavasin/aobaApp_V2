@@ -133,8 +133,8 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Vx-YrA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Vx-YrA">
+                                <rect key="frame" x="0.0" y="358" width="414" height="774"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6dp-cr-kAD">
                                         <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
@@ -147,6 +147,14 @@
                                     <constraint firstItem="6dp-cr-kAD" firstAttribute="centerY" secondItem="TLE-Vx-YrA" secondAttribute="centerY" id="lYq-bG-GST"/>
                                 </constraints>
                             </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Nome Fantasia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-fi-aJJ">
+                                <rect key="frame" x="20" y="186" width="374" height="47.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eeb-fi-aJJ" secondAttribute="height" multiplier="344:44" id="aje-0x-9WW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -154,11 +162,14 @@
                             <constraint firstItem="BBx-aR-XUP" firstAttribute="centerX" secondItem="mvH-wz-fze" secondAttribute="centerX" id="8GL-vY-AXd"/>
                             <constraint firstItem="TLE-Vx-YrA" firstAttribute="leading" secondItem="mvH-wz-fze" secondAttribute="leading" id="AwR-BT-Okb"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="trailing" secondItem="NS2-jq-SHp" secondAttribute="trailing" constant="20" id="KbO-b4-bz5"/>
+                            <constraint firstItem="eeb-fi-aJJ" firstAttribute="leading" secondItem="mvH-wz-fze" secondAttribute="leading" constant="20" id="MX4-zO-jvp"/>
+                            <constraint firstItem="mvH-wz-fze" firstAttribute="trailing" secondItem="eeb-fi-aJJ" secondAttribute="trailing" constant="20" id="N0r-lB-isB"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="bottom" secondItem="TLE-Vx-YrA" secondAttribute="bottom" id="WaX-hP-N0R"/>
                             <constraint firstItem="NS2-jq-SHp" firstAttribute="top" secondItem="BBx-aR-XUP" secondAttribute="bottom" constant="40" id="XAh-LU-77J"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="top" secondItem="BBx-aR-XUP" secondAttribute="top" id="YQe-Fv-GSI"/>
                             <constraint firstItem="NS2-jq-SHp" firstAttribute="leading" secondItem="mvH-wz-fze" secondAttribute="leading" constant="20" id="j00-gG-Lrw"/>
                             <constraint firstItem="TLE-Vx-YrA" firstAttribute="top" secondItem="mvH-wz-fze" secondAttribute="top" constant="44" id="mUK-KM-Se1"/>
+                            <constraint firstItem="eeb-fi-aJJ" firstAttribute="top" secondItem="NS2-jq-SHp" secondAttribute="bottom" constant="10" id="sua-BL-ZN3"/>
                             <constraint firstItem="mvH-wz-fze" firstAttribute="trailing" secondItem="TLE-Vx-YrA" secondAttribute="trailing" id="v4A-cg-pB4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mvH-wz-fze"/>
@@ -167,6 +178,7 @@
                         <outlet property="btnAlterar" destination="Xdn-xA-ZJb" id="QI8-1r-5da"/>
                         <outlet property="btnCancelar" destination="43Q-W5-JHG" id="bcB-Ih-7X4"/>
                         <outlet property="txtNome" destination="NS2-jq-SHp" id="ZKz-rf-crx"/>
+                        <outlet property="txtNomeFantasia" destination="eeb-fi-aJJ" id="fQS-ok-jCz"/>
                         <outlet property="viewLoadView" destination="TLE-Vx-YrA" id="huO-ZL-eic"/>
                     </connections>
                 </viewController>

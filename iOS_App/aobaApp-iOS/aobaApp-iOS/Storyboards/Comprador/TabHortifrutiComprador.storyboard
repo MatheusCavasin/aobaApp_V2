@@ -107,8 +107,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xtk-Oj-bRy" customClass="DiaDaSemanaView" customModule="aobaApp_iOS" customModuleProvider="target">
                                         <rect key="frame" x="301.5" y="0.0" width="72.5" height="112.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMr-Mc-mLF">
-                                                <rect key="frame" x="22" y="47" width="27" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sex" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMr-Mc-mLF">
+                                                <rect key="frame" x="23" y="46.5" width="26.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -121,9 +121,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="9eK-xu-lwd" secondAttribute="height" multiplier="200:60" id="BtU-VW-gZa"/>
-                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEb-x6-gbP" customClass="AvisoDeFechamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="140" width="414" height="49.5"/>
@@ -237,6 +234,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Gl2-Wz-Opp" firstAttribute="trailing" secondItem="EF8-uz-TLc" secondAttribute="trailing" constant="20" id="4bc-0E-xQD"/>
+                            <constraint firstItem="9eK-xu-lwd" firstAttribute="height" secondItem="Gl2-Wz-Opp" secondAttribute="height" multiplier="0.155817" id="721-vO-GJC"/>
                             <constraint firstItem="JEb-x6-gbP" firstAttribute="top" secondItem="Gl2-Wz-Opp" secondAttribute="top" id="74R-j3-7Zi"/>
                             <constraint firstItem="hPG-YD-eAs" firstAttribute="top" secondItem="JEb-x6-gbP" secondAttribute="bottom" constant="25" id="BLH-rc-wkE"/>
                             <constraint firstItem="hPG-YD-eAs" firstAttribute="leading" secondItem="Gl2-Wz-Opp" secondAttribute="leading" constant="20" id="DM5-Pi-Jzj"/>
@@ -455,7 +453,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kH-bb-Jil">
-                                                            <rect key="frame" x="344.5" y="15" width="18.5" height="15.5"/>
+                                                            <rect key="frame" x="344.5" y="14.5" width="18.5" height="16"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
                                                             <color key="textColor" red="0.99215686270000003" green="0.72941176470000002" blue="0.2274509804" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
