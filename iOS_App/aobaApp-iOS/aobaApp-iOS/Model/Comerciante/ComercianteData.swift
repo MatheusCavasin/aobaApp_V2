@@ -65,7 +65,11 @@ class ComercianteData {
         let foto = dict["foto"] as! String
         let nome = dict["nome"] as! String
         let nomeFantasia = dict["nomeFantasia"] as! String
-        let rating = dict["rating"] as! Float
+        
+        var rating = Float(0.0)
+        if dict["rating"] != nil {
+             rating = dict["rating"] as! Float
+        }
         let senha = " "
         let id = dict["id"]
         let telefone = dict["telefone"] as! String

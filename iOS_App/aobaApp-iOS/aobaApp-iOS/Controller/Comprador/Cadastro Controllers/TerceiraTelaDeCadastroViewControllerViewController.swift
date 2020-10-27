@@ -36,7 +36,7 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoLogar), name: NSNotification.Name(rawValue: "ErroAoCriarComerciante"), object: nil)
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sucessoAoLogar), name: NSNotification.Name(rawValue: "SucessoAoLogar"), object: nil)
     }
 
     
@@ -50,8 +50,17 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     }
     
     @objc func logar() {
+        let defaults = UserDefaults.standard
+        defaults.set(comercianteData.email, forKey: "Usuario")
+        defaults.set(comercianteData.senha, forKey: "senha")
+        repository.login()
+    }
+    
+    
+    /// Chamado após realizar o login
+    @objc func sucessoAoLogar() {
         Singleton.shared.loggedIn = true
-        Singleton.shared.comercianteLogado = comercianteData
+        Singleton.shared.carrinhoPedido = CarrinhoPedido(compradorId: Singleton.shared.comercianteLogado!.id)
         self.navigationController?.dismiss(animated: true, completion: nil)
         loadingView.isHidden = true
     }

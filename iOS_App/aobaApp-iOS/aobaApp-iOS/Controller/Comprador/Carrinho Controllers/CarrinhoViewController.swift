@@ -60,6 +60,14 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                         self.tableView.reloadData()
                     }
                 } else {
+                    
+                    self.viwLoadView.isHidden = true
+                    let alert = UIAlertController(title: "Erro ao carregar o carrinho.", message: "Erro ao carregar o carrinho.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                        // Nao faz nada
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
                     print(err as Any)
                 }
             }
@@ -270,6 +278,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                             }
                         } else {
                             print(err as Any)
+                            self.viwLoadView.isHidden = true
                         }
                     }
                 }
