@@ -58,7 +58,7 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
 
     
 
-    func configuracao(anuncio: [String: Any]){
+    func configuracao(anuncio: [String: Any], segmented: Int){
         
         let produto = (anuncio["produto"] as! [String : Any?])["nome"] as? String
         let caixas = anuncio["qtdeMax"] as! Int

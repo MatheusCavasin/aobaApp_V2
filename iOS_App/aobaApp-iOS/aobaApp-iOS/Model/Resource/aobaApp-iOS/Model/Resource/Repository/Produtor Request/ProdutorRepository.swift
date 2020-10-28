@@ -135,6 +135,26 @@ class ProdutorRepository {
         }
     }
     
+    func editarAnuncio(idAnuncio: Int, qtde: Int, valor: Double){
+        
+        //Coloque a URL da sua API aqui
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)?qtde=\(qtde)&valor=\(valor)"
+        
+        //Chamando a funcão PUT produtor
+        ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
+            (result, err)  in
+            //Aqui você tem seu resultado
+            if let res:Bool = (err == nil) {
+                print("A requisiçao funcionou")
+                print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)?qtde=\(qtde)&valor=\(valor)")
+            }
+        }
+    }
+    
+    
+    
+    
     func deletarAnuncio(idAnuncio: Int){
         
         let url = "https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)"

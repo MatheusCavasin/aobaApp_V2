@@ -43,6 +43,8 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
         tableViewSearch.delegate = self
         tableViewSearch.dataSource = self
         ModelVendedor.instance.tipoHortifruit = searchBar.text!
+        ModelVendedor.instance.quantidadeCaixas = 0
+        ModelVendedor.instance.precoCaixa = 0.0
         
         searchBar.delegate = self
         
