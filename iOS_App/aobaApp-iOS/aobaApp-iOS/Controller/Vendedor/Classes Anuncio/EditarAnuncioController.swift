@@ -11,8 +11,14 @@ import UIKit
 class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableViewEditar: UITableView!
-    var nomeHortifruit: String!
     
+    var nomeHortifruit: String!
+    var idHortifruit: Int!
+    var qtdeHortifruit: Int!
+    var valorHortifruit: Double!
+    var teste = TabAnuncioVendedorViewController()
+    
+    let produtorRepositoy = ProdutorRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +33,10 @@ class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func salvarButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        produtorRepositoy.editarAnuncio(idAnuncio: idHortifruit, qtde: ModelVendedor.instance.quantidadeCaixas, valor: ModelVendedor.instance.precoCaixa)
+        self.dismiss(animated: true, completion: {
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID2"), object: nil)
+        })
     }
     
     
@@ -38,13 +47,14 @@ class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblProdutoCell", for: indexPath) as! EditarAnuncioTableViewCell
-            cell.lblProduto.text = nomeHortifruit
+//            cell.lblProduto.text = nomeHortifruit
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblQtdeCaixasCell", for: indexPath) as! EditarAnuncioTableViewCell
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "qtdeCaixasCell", for: indexPath) as! QtdeCaixasCell
+//            cell.lblCaixas.text = String(qtdeHortifruit)
             return cell
         } else if indexPath.row == 3{
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblValorCell", for: indexPath) as! EditarAnuncioTableViewCell

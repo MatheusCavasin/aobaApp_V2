@@ -17,6 +17,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     
     
     
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var CriarAnuncioButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var lblAnunciosAtivos: UILabel!
@@ -28,9 +29,10 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     
     let produtorRepositoy = ProdutorRepository()
     var downloadDados: Bool! // variável de controle para requisitar dados do back
+    var numLinhas = 0 // variável para contar o numero de linhas de acordo com anuncios ativos
+    var listaAnuncios = [[String: Any]]() // para salvar os anuncios ativos ou inativos
     
     override func viewDidLoad() {
-        print("LOOOOAADE")
         super.viewDidLoad()
         downloadDados = true
         CriarAnuncioButton.layer.cornerRadius = ButtonConfig.raioBorda
@@ -41,13 +43,41 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadView), name: NSNotification.Name(rawValue: "NotificationID"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.dadosChamar), name: NSNotification.Name(rawValue: "NotificationID2"), object: nil)
         
+        print("\n\n\n\n\n\n\n")
+        print("DIDLOAD")
+        print("\n\n\n\n\n\n\n")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
+        print("\n\n\n\n\n\n\n")
+        print("WILL APPEAR")
+        print("\n\n\n\n\n\n\n")
+//        segmentedControl.selectedSegmentIndex = 1
         dadosChamar()
 
+
     }
+    
+    
+    @IBAction func statusAnuncio(_ sender: UISegmentedControl) {
+        
+//        numLinhas = 0
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            dadosChamar()
+            lblAnunciosAtivos.text = "Anuncios ativos"
+        case 1:
+            dadosChamar()
+            lblAnunciosAtivos.text = "Anuncios inativos"
+//            self.tableView.isHidden = true
+        default:
+            break;
+        }
+    }
+    
+    
     
     
     @IBAction func editButtonPressed(_ sender: Any) {
@@ -63,6 +93,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     
     @objc func dadosChamar(){
         
+
         if downloadDados{
             produtorRepositoy.getAnuncios()
             self.loadViewAnuncios.isHidden = false
@@ -89,24 +120,27 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         
         
     }
-
-    //    @objc func reloadView(){
-    //        print("bbbbbbbbbbbb")
-    //
-    //        self.tableView.reloadData()
-    //        if ModelVendedor.instance.hortifruit == [] {
-    //            self.tableView.isHidden = true
-    //            self.lblAnunciosAtivos.isHidden = true
-    //            self.lblSemAnuncio.isHidden = false
-    //        } else {
-    //            self.tableView.isHidden = false
-    //            self.lblAnunciosAtivos.isHidden = false
-    //            self.lblSemAnuncio.isHidden = true
-    //        }
-    //
-    //    }
     
     @objc func reloadView(){
+        
+        var status: Bool!
+        listaAnuncios.removeAll()
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            status = true
+        } else {
+            status = false
+            
+        }
+        for i in ModelVendedor.instance.dictListaAnuncios {
+            if (i["ativo"] as! Bool) == status {
+                listaAnuncios.append(i)
+            }
+            print("\n\n\n\n\n\n\n")
+            print(listaAnuncios.count)
+            print("\n\n\n\n\n\n\n")
+        }
+        
         
         self.loadViewAnuncios.isHidden = true
         self.loadIndicatorAnuncios.stopAnimating()
@@ -133,14 +167,24 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ModelVendedor.instance.dictListaAnuncios.count
+        return listaAnuncios.count//numLinhas //ModelVendedor.instance.dictListaAnuncios.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "AnuncioCell", for: indexPath) as! AnuncioVendedorTableViewCell
-        /// let anuncio = Anuncios[indexPath.row]
-        cell.configuracao(anuncio: ModelVendedor.instance.dictListaAnuncios[indexPath.row])
+        if segmentedControl.selectedSegmentIndex == 0 && (listaAnuncios[indexPath.row]["ativo"] as! Bool){
+            /// let anuncio = Anuncios[indexPath.row]
+            cell.configuracao(anuncio: listaAnuncios[indexPath.row], segmented: segmentedControl.selectedSegmentIndex)
+        }
+        else if segmentedControl.selectedSegmentIndex == 1 && !(listaAnuncios[indexPath.row]["ativo"] as! Bool) {
+            cell.configuracao(anuncio: listaAnuncios[indexPath.row], segmented: segmentedControl.selectedSegmentIndex)
+        }
+        else {
+            cell.isHidden = true
+        }
+        
         
 //        cell.imgProduto.image = UIImage(named: "maca_gala")
 //        cell.imgProduto.layer.cornerRadius = 5
@@ -160,7 +204,17 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "EditarAnuncio") as? EditarAnuncioController {
             vc.nomeHortifruit = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["produto"] as! [String : Any?])["nome"] as? String
-            self.present(vc, animated:true, completion:nil)
+            vc.idHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as? Int
+            ModelVendedor.instance.quantidadeCaixas = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["qtdeMax"] as? Int)!
+            ModelVendedor.instance.precoCaixa = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["valor"] as? Double)!
+//            vc.idHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as? Int
+//            vc.qtdeHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["qtdeMax"] as? Int
+//            vc.valorHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["valor"] as? Double
+            self.present(vc, animated:true, completion: {
+                self.segmentedControl.selectedSegmentIndex = 0
+                self.dadosChamar()
+            })
+            
         }
         
     }
@@ -177,6 +231,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
             print("DELETAR \(idAnuncio)")
             produtorRepositoy.deletarAnuncio(idAnuncio: idAnuncio)
             dadosChamar()
+            
             }
     }
     

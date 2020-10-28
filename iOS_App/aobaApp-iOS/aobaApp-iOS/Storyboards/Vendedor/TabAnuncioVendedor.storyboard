@@ -154,8 +154,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-41-bzl">
+                                <rect key="frame" x="20.5" y="155" width="373" height="32"/>
+                                <segments>
+                                    <segment title="Ativos"/>
+                                    <segment title="Inativos"/>
+                                </segments>
+                                <connections>
+                                    <action selector="statusAnuncio:" destination="JQI-fE-7vI" eventType="valueChanged" id="uUa-lT-Fni"/>
+                                </connections>
+                            </segmentedControl>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YE-ea-DzR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="C9T-qN-ylp">
                                         <rect key="frame" x="197" y="438" width="20" height="20"/>
@@ -174,25 +184,28 @@
                             <constraint firstItem="iIg-bx-X5Q" firstAttribute="height" secondItem="SpL-8S-YaK" secondAttribute="height" multiplier="0.0267857" id="0YJ-7a-QLK"/>
                             <constraint firstItem="SQh-HL-HPw" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" id="6s0-5R-oUB"/>
                             <constraint firstItem="SQh-HL-HPw" firstAttribute="top" secondItem="iIg-bx-X5Q" secondAttribute="bottom" constant="38" id="7Sk-pt-n07"/>
+                            <constraint firstItem="4YE-ea-DzR" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="8Wu-pa-wUQ"/>
                             <constraint firstItem="r0k-4f-hAQ" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="8lW-c5-Nxf"/>
-                            <constraint firstItem="4YE-ea-DzR" firstAttribute="centerY" secondItem="SpL-8S-YaK" secondAttribute="centerY" id="Coq-Hp-5Zv"/>
                             <constraint firstItem="fSZ-EI-qbd" firstAttribute="trailing" secondItem="r0k-4f-hAQ" secondAttribute="trailing" constant="56" id="CpK-zA-rEg"/>
                             <constraint firstItem="iIg-bx-X5Q" firstAttribute="top" secondItem="2IL-hY-aUt" secondAttribute="bottom" multiplier="1.4" id="ExD-oj-oJj"/>
-                            <constraint firstItem="4YE-ea-DzR" firstAttribute="height" secondItem="SpL-8S-YaK" secondAttribute="height" id="MkX-u7-Jb4"/>
                             <constraint firstItem="r0k-4f-hAQ" firstAttribute="leading" secondItem="fSZ-EI-qbd" secondAttribute="leading" constant="56" id="OsV-9u-qLf"/>
                             <constraint firstItem="SQh-HL-HPw" firstAttribute="bottom" secondItem="fSZ-EI-qbd" secondAttribute="bottom" id="Osh-zL-D5v"/>
+                            <constraint firstItem="4YE-ea-DzR" firstAttribute="centerY" secondItem="fSZ-EI-qbd" secondAttribute="centerY" id="Pq9-w9-dHu"/>
                             <constraint firstItem="2IL-hY-aUt" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" multiplier="0.75" id="QfT-aJ-Yag"/>
+                            <constraint firstItem="XKG-41-bzl" firstAttribute="top" secondItem="fd5-Sc-VaI" secondAttribute="bottom" constant="15" id="YWW-re-ygU"/>
                             <constraint firstItem="iIg-bx-X5Q" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="dSy-od-8Gi"/>
                             <constraint firstItem="fd5-Sc-VaI" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" id="dYA-1X-GhP"/>
+                            <constraint firstItem="XKG-41-bzl" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="dgI-RT-q1r"/>
                             <constraint firstItem="iIg-bx-X5Q" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" multiplier="0.9" id="eUv-3j-p77"/>
                             <constraint firstItem="fd5-Sc-VaI" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="fpX-RW-qcF"/>
-                            <constraint firstItem="4YE-ea-DzR" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" id="fxt-yx-He1"/>
                             <constraint firstItem="2IL-hY-aUt" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="h2p-iD-Ivk"/>
                             <constraint firstItem="fd5-Sc-VaI" firstAttribute="top" secondItem="fSZ-EI-qbd" secondAttribute="top" id="jKj-OT-GJu"/>
+                            <constraint firstItem="4YE-ea-DzR" firstAttribute="height" secondItem="SpL-8S-YaK" secondAttribute="height" id="n6W-Wa-ZcO"/>
                             <constraint firstItem="r0k-4f-hAQ" firstAttribute="top" secondItem="2IL-hY-aUt" secondAttribute="bottom" constant="60" id="pGL-rC-IGK"/>
                             <constraint firstItem="SQh-HL-HPw" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="v4X-VU-tHN"/>
+                            <constraint firstItem="XKG-41-bzl" firstAttribute="width" secondItem="iIg-bx-X5Q" secondAttribute="width" id="vOy-C4-bMc"/>
+                            <constraint firstItem="4YE-ea-DzR" firstAttribute="width" secondItem="SpL-8S-YaK" secondAttribute="width" id="wv0-nd-oXY"/>
                             <constraint firstItem="2IL-hY-aUt" firstAttribute="top" secondItem="fd5-Sc-VaI" secondAttribute="bottom" constant="70" id="xZv-lU-dnl"/>
-                            <constraint firstItem="4YE-ea-DzR" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="ydk-0a-DyY"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Anúncios" image="icone-hort" id="JvV-cg-Vz9"/>
@@ -205,6 +218,7 @@
                         <outlet property="lblSemAnuncio" destination="r0k-4f-hAQ" id="shS-bC-23O"/>
                         <outlet property="loadIndicatorAnuncios" destination="C9T-qN-ylp" id="wep-H8-568"/>
                         <outlet property="loadViewAnuncios" destination="4YE-ea-DzR" id="iVs-yC-9hC"/>
+                        <outlet property="segmentedControl" destination="XKG-41-bzl" id="cxg-J0-yMO"/>
                         <outlet property="tableView" destination="SQh-HL-HPw" id="XKu-Ie-zWV"/>
                     </connections>
                 </viewController>
@@ -1127,6 +1141,7 @@
                                                     </state>
                                                     <connections>
                                                         <action selector="salvarButton:" destination="VNl-uk-fys" eventType="touchUpInside" id="s53-vo-OhT"/>
+                                                        <action selector="salvarEdicao:" destination="HAy-eN-aua" eventType="touchUpInside" id="wzc-pE-Bi7"/>
                                                     </connections>
                                                 </button>
                                             </subviews>

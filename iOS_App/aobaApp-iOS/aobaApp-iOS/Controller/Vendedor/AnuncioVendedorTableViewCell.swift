@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+
 
 class AnuncioVendedorTableViewCell: UITableViewCell {
 
@@ -31,13 +33,50 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    /*
 
-    func configuracao(anuncio: [String: Any]){
+    import Firebase
+
+     colocar dentro de um for
+     
+    let storageRef = Storage.storage().reference(withPath: "Aqui vai o id da foto que voce vai pegar do array de fotos do back")
+    storageRef.getData(maxSize: 4 * 1024 * 1024) { (data, error) in
+        if let error == error {
+            print("Erro no download: \(error.localizedDescription)")
+            return
+        }
+        if data == data {
+            variavel da imagemView que voce quer coloca-la = UIImage(data: data)
+        }
+        
+    }
+     
+     end funcao for
+    */
+
+    
+
+    func configuracao(anuncio: [String: Any], segmented: Int){
         
         let produto = (anuncio["produto"] as! [String : Any?])["nome"] as? String
         let caixas = anuncio["qtdeMax"] as! Int
         let valor = anuncio["valor"] as! Double
         let ativo = anuncio["ativo"] as! Bool
+        
+        
+        let storageRef = Storage.storage().reference(withPath: "\((anuncio["fotos"] as! [String])[0]).jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { [weak self](data, error) in
+            if let error = error {
+                print("Erro no download: \(error.localizedDescription)")
+                return
+            }
+            if let data = data {
+                self?.imgProduto.image = UIImage(data: data)
+            }
+        }
+        
         
         var formato = NumberFormatter()
         formato.usesGroupingSeparator = true
@@ -45,7 +84,7 @@ class AnuncioVendedorTableViewCell: UITableViewCell {
         formato.locale = Locale.current
         let valorString = formato.string(from: NSNumber(value: valor))!
         
-        self.imgProduto.image = UIImage(named: "fruta-laranja")
+//        self.imgProduto.image = UIImage(named: "fruta-laranja")
         self.lblTipo.text = produto
         self.lblQuantidade.text = ("\(caixas) caixas disponíveis")
         self.lblValor.text = "\(valorString)"

@@ -68,6 +68,7 @@ class QtdeCaixasCell: UITableViewCell {
     @IBOutlet weak var lblCaixas: UILabel!
     @IBOutlet weak var stepperButton: UIStepper!
     
+    var number = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,7 +80,6 @@ class QtdeCaixasCell: UITableViewCell {
     
     @IBAction func stepperCaixas(_ sender: UIStepper) {
         
-        var number = 0
         number = Int(sender.value)
         ModelVendedor.instance.quantidadeCaixas = number
         lblCaixas.text = String(number)
@@ -105,17 +105,25 @@ class TextFieldValorCell: UITableViewCell, UITextFieldDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         txtPreco.delegate = self
-        txtPreco.placeholder = updateTextField()
+//        txtPreco.placeholder = updateTextField(inicial: false)
+        txtPreco.text = updateTextField(inicial: true)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func updateTextField () -> String? {
-        let numero = Double(qtde/100) + Double(qtde%100)/100
-        ModelVendedor.instance.precoCaixa = numero
-        return numberFormatter.string(from: NSNumber(value: numero))
+    func updateTextField (inicial: Bool) -> String? {
+        if inicial {
+            
+            let numero = ModelVendedor.instance.precoCaixa
+            return numberFormatter.string(from: NSNumber(value: numero))
+        } else {
+            
+            let numero = Double(qtde/100) + Double(qtde%100)/100
+            ModelVendedor.instance.precoCaixa = numero
+            return numberFormatter.string(from: NSNumber(value: numero))
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -131,13 +139,13 @@ class TextFieldValorCell: UITableViewCell, UITextFieldDelegate {
                 }))
                 //                present(alerta, animated: true, completion: nil)
             } else {
-                txtPreco.text = updateTextField()
+                txtPreco.text = updateTextField(inicial: false)
             }
         }
         
         if string == "" {
             qtde = qtde/10
-            txtPreco.text = updateTextField()
+            txtPreco.text = updateTextField(inicial: false)
         }
         
         return false
@@ -310,7 +318,8 @@ class editarButtonCell: UITableViewCell {
     
     
     @IBOutlet weak var editarButton: UIButton!
-    
+    weak var delegate: CellsDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         editarButton.layer.cornerRadius = ButtonConfig.raioBorda
@@ -318,9 +327,13 @@ class editarButtonCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
+    
+    @IBAction func salvarEdicao(_ sender: Any) {
+        
+    }
+    
+    
 }
 
 

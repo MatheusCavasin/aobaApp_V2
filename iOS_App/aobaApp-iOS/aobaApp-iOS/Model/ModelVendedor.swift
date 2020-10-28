@@ -23,7 +23,7 @@ class ModelVendedor {
     var senha: String = ""
     var nome: String = ""
     var codigo_registro: String = ""
-    var foto: String = ""
+    var idFoto: [String?] = [String]()
     var descricao: String = ""
     var tipoHortifruit = ""
     var quantidadeCaixas = 0
@@ -36,7 +36,7 @@ class ModelVendedor {
 func anuncioDictionary() -> Dictionary<String, Any> {
     var dict: Dictionary<String, Any> = [:]
     
-    dict["fotos"] = ["String"]
+    dict["fotos"] = ModelVendedor.instance.idFoto
     dict["id"] = 0
     dict["produtoId"] = ModelVendedor.instance.idProduto
     dict["produtorId"] = ModelVendedor.instance.idProdutor
