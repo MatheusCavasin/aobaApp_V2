@@ -53,17 +53,19 @@ class ProdutoTableViewController: UITableViewController {
         if indexPath.row == produtos.count{
             let cell = tableView.dequeueReusableCell(withIdentifier: "buttonCell", for: indexPath)
             return cell
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoTableViewCell.identifier, for: indexPath) as! ProdutoTableViewCell
-        
-        if produtos[produtosContador].anuncios.count > indexPath.row {
-            produtosContador = 0
         } else {
-            produtosContador += 1
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoTableViewCell.identifier, for: indexPath) as! ProdutoTableViewCell
+            
+//            if produtos[produtosContador].anuncios.count > indexPath.row {
+//                produtosContador = 0
+//            } else {
+//                produtosContador += 1
+//            }
+            cell.config(nomeProduto: produtos[indexPath.row].nome, anuncio: anuncios[indexPath.row])
+            return cell
         }
-        cell.config(nomeProduto: produtos[produtosContador].nome, anuncio: anuncios[indexPath.row])
-        return cell
+        
+        
         
     }
     

@@ -91,9 +91,3 @@ extension PedidosViewController {
     
 }
 
-
-enum StatusPedido {
-    case realizado
-    case confirmado
-    case entregue
-}

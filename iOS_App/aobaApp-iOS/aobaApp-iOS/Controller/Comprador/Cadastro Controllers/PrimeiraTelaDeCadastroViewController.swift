@@ -57,6 +57,7 @@ class PrimeiraTelaDeCadastroViewController: UIViewController, UITextFieldDelegat
                 Singleton.shared.creatingUser.append(senha.text!)
             } else {
                 let alert = UIAlertController(title: "Alerta", message: "As senhas não correspondem", preferredStyle: .alert)
+                alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                     NSLog("The \"OK\" alert occured.")
                 }))
@@ -64,6 +65,7 @@ class PrimeiraTelaDeCadastroViewController: UIViewController, UITextFieldDelegat
             }
         } else {
             let alert = UIAlertController(title: "Alerta", message: "Esses campos são obrigatórios", preferredStyle: .alert)
+            alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")
             }))

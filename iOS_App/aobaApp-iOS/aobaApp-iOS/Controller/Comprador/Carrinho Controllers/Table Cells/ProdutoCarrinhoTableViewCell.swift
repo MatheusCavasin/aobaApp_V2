@@ -17,6 +17,7 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
     @IBOutlet weak var valorProduto: UILabel!
     @IBOutlet weak var quantidadeProduto: UILabel!
     @IBOutlet weak var viewBackgroundView: UIView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     static let identifier = "ProdutoCarrinhoTableViewCell"
     static func nib() -> UINib {
@@ -35,10 +36,11 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
     
     public func config(produto: ItemData){
         
-        let storageRef = Storage.storage().reference(withPath: produto.foto)
+        let storageRef = Storage.storage().reference(withPath: produto.foto + ".jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
-            if let error = error {
-                print("Erro no download: \(error.localizedDescription)")
+            if let _ = error {
+                self.loadingIndicator.isHidden = true
+                self.imageProduto.image = UIImage(named: "default-image")
                 return
             } else {
                 self.imageProduto.image = UIImage(data: data!)

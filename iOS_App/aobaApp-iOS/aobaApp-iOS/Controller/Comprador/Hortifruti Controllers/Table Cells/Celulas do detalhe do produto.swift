@@ -11,16 +11,18 @@ import Firebase
 
 class ImageTableViewCell: UITableViewCell {
     @IBOutlet weak var imgProduto: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         imgProduto.layer.cornerRadius = 5.0
     }
     
     public func congif(imageName: String) {
-        let storageRef = Storage.storage().reference(withPath: imageName)
+        let storageRef = Storage.storage().reference(withPath: imageName + ".jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
-            if let error = error {
-                print("Erro no download: \(error.localizedDescription)")
+            if let _ = error {
+                self.imgProduto.image = UIImage(named: "default-image")
+                self.loadingIndicator.isHidden = true
                 return
             } else {
                 self.imgProduto.image = UIImage(data: data!)

@@ -66,6 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loadingView.isHidden = true
         
         let alert = UIAlertController(title: "Erro ao tentar logar-se", message: "Usuário ou senha incorreto", preferredStyle: .alert)
+        alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
         }))

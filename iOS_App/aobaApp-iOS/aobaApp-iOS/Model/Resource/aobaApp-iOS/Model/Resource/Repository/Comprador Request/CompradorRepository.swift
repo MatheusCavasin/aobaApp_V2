@@ -31,7 +31,6 @@ class CompradorRepository {
                 if statusCode == 200 {
                     DispatchQueue.main.async {
                         NotificationCenter.default.post(name: Notification.Name(rawValue: "ComercianteCriado"), object: nil)
-                        
                         // Decodificar o response para obter o id
                         
                     }
@@ -120,6 +119,8 @@ class CompradorRepository {
         }
     }
     
+    
+
     func mudarSenha(senhaAntiga: String, novaSenha: String) {
         
         let url = Singleton.shared.apiEndPoint + "/api/v1/produtor/1/editar-senha"
@@ -142,10 +143,24 @@ class CompradorRepository {
                 }
             }
         }
+    }
+    
+    
+    func editarPerfil(perfil: PerfilData) {
+        let url = Singleton.shared.apiEndPoint + "/api/v1/usuario/\(Singleton.shared.comercianteLogado!.id)/editar-perfil"
+        let body = perfil.objectToDict()
         
-        
-//        "email": "jose@redeaoba.com.br",
- //       "senhaAntiga": "abc123",
-  //      "senhaNova": "123456"
+        ApiResource.request(method: "PUT", url: url, params: nil, body: body, withAuth: true) { (result, err) in
+            if let result = result {
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Notification.Name("PerfilEditado"), object: nil)
+                    
+                }
+            } else {
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Notification.Name("ErroAoEditarPerfil"), object: nil)
+                }
+            }
+        }
     }
 }

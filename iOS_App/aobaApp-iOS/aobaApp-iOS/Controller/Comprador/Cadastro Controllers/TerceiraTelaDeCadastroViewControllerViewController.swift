@@ -36,12 +36,13 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.erroAoLogar), name: NSNotification.Name(rawValue: "ErroAoCriarComerciante"), object: nil)
         
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.sucessoAoLogar), name: NSNotification.Name(rawValue: "SucessoAoLogar"), object: nil)
     }
 
     
     @objc func erroAoLogar() {
         let alert = UIAlertController(title: "Alerta", message: "Esse usuário já existe", preferredStyle: .alert)
+        alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
         }))
@@ -50,8 +51,17 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
     }
     
     @objc func logar() {
+        let defaults = UserDefaults.standard
+        defaults.set(comercianteData.email, forKey: "Usuario")
+        defaults.set(comercianteData.senha, forKey: "senha")
+        repository.login()
+    }
+    
+    
+    /// Chamado após realizar o login
+    @objc func sucessoAoLogar() {
         Singleton.shared.loggedIn = true
-        Singleton.shared.comercianteLogado = comercianteData
+        Singleton.shared.carrinhoPedido = CarrinhoPedido(compradorId: Singleton.shared.comercianteLogado!.id)
         self.navigationController?.dismiss(animated: true, completion: nil)
         loadingView.isHidden = true
     }
@@ -87,6 +97,7 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
 
         } else {
             let alert = UIAlertController(title: "Alerta", message: "Esses campos são obrigatórios", preferredStyle: .alert)
+            alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
                 NSLog("The \"OK\" alert occured.")
             }))

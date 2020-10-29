@@ -60,12 +60,22 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                         self.tableView.reloadData()
                     }
                 } else {
+                    
+                    self.viwLoadView.isHidden = true
+                    let alert = UIAlertController(title: "Erro ao carregar o carrinho.", message: "Erro ao carregar o carrinho.", preferredStyle: .alert)
+                    alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                        // Nao faz nada
+                    }))
+                    
+                    self.present(alert, animated: true, completion: nil)
                     print(err as Any)
                 }
             }
         } else {
             let alert = UIAlertController(title: "Erro ao carregar o carrinho", message: "Lembre-se de entrar em sua conta para acessar o carrinho", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Entrar", comment: "Default action"), style: .default, handler: { _ in
+            alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Entrar", comment: "Default action"), style: .cancel, handler: { _ in
                 let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
                 let loginController = loginView.instantiateViewController(identifier: "login")
                 loginController.modalPresentationStyle = .fullScreen
@@ -122,6 +132,11 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return cell
             } else if indexPath.row == 7 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
+                if carrinhoCriado?.datasEntrega.count ?? 0 > 0 {
+                    cell.config(dataEntrega: (carrinhoCriado?.datasEntrega[0].diaSemana.reallyFullName)! + " - " + (carrinhoCriado?.datasEntrega[0].data)!)
+                } else {
+                    cell.config(dataEntrega: " - ")
+                }
                 return cell
             } else if indexPath.row == 8 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
@@ -150,6 +165,11 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 return cell
             } else if indexPath.row == (carrinhoCriado?.itens.count ?? 0) + 3 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "dataEntrega") as! DataEntregaTableViewCell
+                if carrinhoCriado?.datasEntrega.count ?? 0 > 0 {
+                    cell.config(dataEntrega: (carrinhoCriado?.datasEntrega[0].diaSemana.reallyFullName)! + " - " + (carrinhoCriado?.datasEntrega[0].data)!)
+                } else {
+                    cell.config(dataEntrega: " - ")
+                }
                 return cell
             } else if indexPath.row == (carrinhoCriado?.itens.count ?? 0) + 4{
                 let cell = tableView.dequeueReusableCell(withIdentifier: "total") as! TotalDoPedidoTableViewCell
@@ -204,10 +224,20 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             
             
             } else if indexPath.row == (carrinhoCriado?.itens.count ?? 0) + 5 {
-                let alert = UIAlertController(title: "AOOOBA", message: "Pedido realizado com sucesso. Agora é só aguardar ele chegar até você", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
+                let alert = UIAlertController(title: "Sucesso", message: "Sua compra deu certo, entretanto, caso algum desses produtos não esteja disponível, o que fazer?", preferredStyle: .alert)
+                
+                alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+            
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Aceitar sugestão Aoba", comment: "aceitar sugestao"), style: .default, handler: { _ in
+                    print("Aceitar sugestao")
                 }))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar produto", comment: "cancelar produto"), style: .default, handler: { _ in
+                    print("Cancelar produto")
+                }))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar todo produto", comment: "cancelar tudo"), style: .cancel, handler: { _ in
+                    print("Cancelar tudo")
+                }))
+                
                 self.present(alert, animated: true, completion: nil)
             }
             
@@ -270,6 +300,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                             }
                         } else {
                             print(err as Any)
+                            self.viwLoadView.isHidden = true
                         }
                     }
                 }
@@ -278,11 +309,8 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 completionHandler(true)
             }
             
-            let rename = UIContextualAction(style: .normal, title: "Edit") { (action, sourceView, completionHandler) in
-                // Colocar aqui o que vai acontecer quando o usuario quiser editar o carrinho
-                completionHandler(true)
-            }
-            let swipeActionConfig = UISwipeActionsConfiguration(actions: [rename, delete])
+    
+            let swipeActionConfig = UISwipeActionsConfiguration(actions: [delete])
             swipeActionConfig.performsFirstActionWithFullSwipe = false
             return swipeActionConfig
         }

@@ -132,6 +132,7 @@ class TextFieldValorCell: UITableViewCell, UITextFieldDelegate {
             
             if qtde > 1_000_000 {
                 let alerta = UIAlertController(title: "O valor deve ser menor que 100 mil reais", message: nil, preferredStyle: .alert)
+                alerta.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
                 alerta.addAction(UIAlertAction(title: "Fechar", style: .default, handler: { (action) in
                     
                     self.qtde = 0
