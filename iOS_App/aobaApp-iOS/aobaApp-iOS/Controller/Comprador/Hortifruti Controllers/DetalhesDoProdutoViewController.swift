@@ -76,6 +76,7 @@ class DetalhesDoProdutoViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 5 {
             if Singleton.shared.loggedIn {
+                tableView.cellForRow(at: indexPath)?.isSelected = false //Melhora a navegaçao
                 self.dismiss(animated: true, completion: nil)
                 let novoProduto = ItemCarrinho(nome: nomeDoProduto, anuncio: anuncio)
                 if quantidade != nil && quantidade != 0 {

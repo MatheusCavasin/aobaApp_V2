@@ -51,7 +51,6 @@ class CarrinhoPedido {
             todosItems.append(itemDict)
         }
         dict["itensCarrinho"] = todosItems
-        
         return dict
     }
     
@@ -74,10 +73,6 @@ class CarrinhoPedido {
         } else {
             return CarrinhoPedido(compradorId: compradorId, enderecoId: enderecoId, itensDoCarrinho: todosItems)
         }
-
-        
-        
-        
     }
 }
 

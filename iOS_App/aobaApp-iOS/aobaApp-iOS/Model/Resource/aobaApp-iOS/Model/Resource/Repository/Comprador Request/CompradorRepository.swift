@@ -155,7 +155,6 @@ class CompradorRepository {
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: Notification.Name("PerfilEditado"), object: nil)
                     
-                    
                 }
             } else {
                 DispatchQueue.main.async {

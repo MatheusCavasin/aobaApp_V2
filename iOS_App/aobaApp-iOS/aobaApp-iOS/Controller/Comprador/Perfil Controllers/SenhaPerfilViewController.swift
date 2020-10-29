@@ -18,7 +18,6 @@ class SenhaPerfilViewController: UIViewController {
     @IBOutlet weak var viewLoadView: UIView!
     
     
-    
     let repository = CompradorRepository()
     
     override func viewDidLoad() {
@@ -26,8 +25,9 @@ class SenhaPerfilViewController: UIViewController {
         viewLoadView.isHidden = true
         
         //Observables - Observers estão na classe CompradorRepository
-        NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarSucesso), name: NSNotification.Name(rawValue: "SenhaAlterada"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarErro), name: NSNotification.Name(rawValue: "ErroAoMudarSenha"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarSucesso), name: NSNotification.Name(rawValue: "PerfilEditado"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarErro), name: NSNotification.Name(rawValue: "ErroAoEditarPerfil"), object: nil)
     }
     
     @objc func apresentarSucesso() {
@@ -58,6 +58,7 @@ class SenhaPerfilViewController: UIViewController {
     
     private func showAlertView(title: String, message: String, buttonTexts: [String]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
         for buttonText in buttonTexts {
             alert.addAction(UIAlertAction(title: NSLocalizedString(buttonText, comment: buttonText), style: .default, handler: { _ in
                 // Nao faz nada
@@ -65,5 +66,4 @@ class SenhaPerfilViewController: UIViewController {
         }
         self.present(alert, animated: true, completion: nil)
     }
-    
 }

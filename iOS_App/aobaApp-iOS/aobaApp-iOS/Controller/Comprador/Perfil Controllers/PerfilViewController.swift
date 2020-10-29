@@ -81,13 +81,15 @@ class PerfilViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // sai da conta atual
         else if indexPath.row == 3 {
             let alert = UIAlertController(title: "Sair da conta", message: "Tem certeza que deseja sair da conta atual?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Sim", comment: "sair"), style: .default, handler: { _ in
+            alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Sim", comment: "sair"), style: .destructive, handler: { _ in
                 Singleton.shared.loggedIn = false
                 Singleton.shared.comercianteLogado = nil
                 Singleton.shared.carrinhoPedido = nil
+                Singleton.shared.enderecoDeEntrega = nil
                 self.dismiss(animated: true, completion: nil)
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Default action"), style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Default action"), style: .cancel, handler: { _ in
                 //nao faz nada
             }))
             self.present(alert, animated: true, completion: nil)

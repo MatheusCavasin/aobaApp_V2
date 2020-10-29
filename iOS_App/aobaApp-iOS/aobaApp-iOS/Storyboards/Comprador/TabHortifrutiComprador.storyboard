@@ -13,7 +13,7 @@
                 <navigationController storyboardIdentifier="TabHortifrutiComprador" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="NPs-xx-Zrm" sceneMemberID="viewController">
                     <value key="contentSizeForViewInPopover" type="size" width="0.0" height="0.0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="NYO-Lw-gjW">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
@@ -363,7 +363,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wzO-5v-05E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110.14492753623189" y="-14.0625"/>
+            <point key="canvasLocation" x="91" y="-22"/>
         </scene>
         <!--Detalhes Do Produto View Controller-->
         <scene sceneID="4z5-8Y-VJY">
@@ -384,21 +384,25 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default-image" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
-                                                    <rect key="frame" x="20" y="9" width="374" height="234"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="eYk-qN-JfG" secondAttribute="height" multiplier="345:216" id="zNV-Uu-Nnk"/>
-                                                    </constraints>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-qN-JfG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="243"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="kJi-6l-H9W">
+                                                    <rect key="frame" x="197" y="111" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="eYk-qN-JfG" firstAttribute="leading" secondItem="Qdw-Hw-LuM" secondAttribute="leading" constant="20" id="XVk-ZF-mni"/>
+                                                <constraint firstItem="eYk-qN-JfG" firstAttribute="leading" secondItem="Qdw-Hw-LuM" secondAttribute="leading" id="XVk-ZF-mni"/>
                                                 <constraint firstAttribute="bottom" secondItem="eYk-qN-JfG" secondAttribute="bottom" id="fcf-7F-fVk"/>
-                                                <constraint firstAttribute="trailing" secondItem="eYk-qN-JfG" secondAttribute="trailing" constant="20" id="wAl-ZC-mfC"/>
+                                                <constraint firstItem="kJi-6l-H9W" firstAttribute="centerY" secondItem="eYk-qN-JfG" secondAttribute="centerY" id="fmv-ce-XrP"/>
+                                                <constraint firstItem="eYk-qN-JfG" firstAttribute="top" secondItem="Qdw-Hw-LuM" secondAttribute="top" id="taG-y8-qw6"/>
+                                                <constraint firstAttribute="trailing" secondItem="eYk-qN-JfG" secondAttribute="trailing" id="wAl-ZC-mfC"/>
+                                                <constraint firstItem="kJi-6l-H9W" firstAttribute="centerX" secondItem="eYk-qN-JfG" secondAttribute="centerX" id="z5a-UJ-Znn"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgProduto" destination="eYk-qN-JfG" id="Psg-LE-8ah"/>
+                                            <outlet property="loadingIndicator" destination="kJi-6l-H9W" id="PYO-6R-ptW"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="title" rowHeight="95" id="cwS-bz-jCe" customClass="TitleTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
@@ -554,7 +558,7 @@
                                             <outlet property="pkvQuantidade" destination="1GD-2I-TXu" id="hYq-wJ-g4W"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="botaoAdicionar" rowHeight="100" id="bC1-yt-5DM" customClass="BotaoAdicionar" customModule="aobaApp_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="botaoAdicionar" rowHeight="100" id="bC1-yt-5DM" customClass="BotaoAdicionar" customModule="aobaApp_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="621" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bC1-yt-5DM" id="cWp-ao-bOc">
@@ -622,11 +626,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaQ-nZ-05A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898.55072463768124" y="-14.0625"/>
+            <point key="canvasLocation" x="894" y="-22"/>
         </scene>
     </scenes>
     <resources>
-        <image name="default-image" width="122" height="140"/>
         <image name="fruta-abacaxi" width="139" height="95"/>
         <image name="icone-loja" width="22" height="19.5"/>
         <image name="legume-milho" width="139" height="95"/>

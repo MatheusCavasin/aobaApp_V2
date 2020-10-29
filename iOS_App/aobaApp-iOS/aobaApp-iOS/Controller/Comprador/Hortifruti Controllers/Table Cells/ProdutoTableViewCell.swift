@@ -17,6 +17,7 @@ class ProdutoTableViewCell: UITableViewCell {
     @IBOutlet weak var avalicaoDoProdutor: UILabel!
     @IBOutlet weak var quantidadeDisponivel: UILabel!
     @IBOutlet weak var imagem: UIImageView!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     
     
@@ -46,10 +47,11 @@ class ProdutoTableViewCell: UITableViewCell {
         titulo.text = nomeProduto
         
         
-        let storageRef = Storage.storage().reference(withPath: anuncio.image[0])
+        let storageRef = Storage.storage().reference(withPath: anuncio.image[0] + ".jpg")
         storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
             if let error = error {
-                print("Erro no download: \(error.localizedDescription)")
+                self.loadingIndicator.isHidden = true
+                self.imagem.image = UIImage(named: "default-image")
                 return
             } else {
                 self.imagem.image = UIImage(data: data!)

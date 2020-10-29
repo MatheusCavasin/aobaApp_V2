@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxa-dD-9j6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-657" y="80"/>
+            <point key="canvasLocation" x="-459" y="80"/>
         </scene>
         <!--Perfil-->
         <scene sceneID="Y0P-8V-b48">
@@ -133,8 +133,16 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Vx-YrA">
-                                <rect key="frame" x="0.0" y="358" width="414" height="774"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Nome Fantasia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-fi-aJJ">
+                                <rect key="frame" x="20" y="186" width="374" height="47.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eeb-fi-aJJ" secondAttribute="height" multiplier="344:44" id="aje-0x-9WW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TLE-Vx-YrA">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="6dp-cr-kAD">
                                         <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
@@ -147,14 +155,6 @@
                                     <constraint firstItem="6dp-cr-kAD" firstAttribute="centerY" secondItem="TLE-Vx-YrA" secondAttribute="centerY" id="lYq-bG-GST"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Nome Fantasia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeb-fi-aJJ">
-                                <rect key="frame" x="20" y="186" width="374" height="47.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="eeb-fi-aJJ" secondAttribute="height" multiplier="344:44" id="aje-0x-9WW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -291,7 +291,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fm1-Pn-vyY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="783"/>
+            <point key="canvasLocation" x="977" y="783"/>
         </scene>
         <!--Telefone Perfil View Controller-->
         <scene sceneID="WPV-Lb-VGh">
@@ -388,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnG-JI-RF4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="783"/>
+            <point key="canvasLocation" x="1694" y="783"/>
         </scene>
     </scenes>
 </document>

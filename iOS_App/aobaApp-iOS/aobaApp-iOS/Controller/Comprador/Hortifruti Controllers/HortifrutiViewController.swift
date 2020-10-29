@@ -66,6 +66,7 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @objc func erroAoCarregar() {
         let alert = UIAlertController(title: "Erro ao tentar carregar", message: "Verifique sua conexão com a internet", preferredStyle: .alert)
+        alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             
             self.navigationController?.dismiss(animated: true, completion: nil)
