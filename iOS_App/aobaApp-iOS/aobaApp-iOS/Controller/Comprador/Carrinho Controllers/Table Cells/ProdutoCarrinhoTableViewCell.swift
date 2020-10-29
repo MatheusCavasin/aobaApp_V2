@@ -43,6 +43,7 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
                 self.imageProduto.image = UIImage(named: "default-image")
                 return
             } else {
+                self.loadingIndicator.isHidden = true
                 self.imageProduto.image = UIImage(data: data!)
             }
         }

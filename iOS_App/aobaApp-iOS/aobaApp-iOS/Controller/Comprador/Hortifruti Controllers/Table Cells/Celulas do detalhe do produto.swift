@@ -25,6 +25,7 @@ class ImageTableViewCell: UITableViewCell {
                 self.loadingIndicator.isHidden = true
                 return
             } else {
+                self.loadingIndicator.isHidden = true
                 self.imgProduto.image = UIImage(data: data!)
             }
         }

@@ -54,6 +54,7 @@ class ProdutoTableViewCell: UITableViewCell {
                 self.imagem.image = UIImage(named: "default-image")
                 return
             } else {
+                self.loadingIndicator.isHidden = true
                 self.imagem.image = UIImage(data: data!)
             }
         }
