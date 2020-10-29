@@ -19,7 +19,7 @@ class PerfilData {
     var telefoneAntigo: String?
     var telefoneNovo: String?
     
-    init(emailAntigo: String?, emailNovo: String?, nome: String?, nomeFantasia: String?, senhaAntiga: String?, novaSenha: String?) {
+    init(emailAntigo: String?, emailNovo: String?, nome: String?, nomeFantasia: String?, senhaAntiga: String?, novaSenha: String?, telefoneAntigo: String?, telefoneNovo: String?) {
         
         self.emailAntigo = emailAntigo
         self.emailNovo = emailNovo
@@ -27,6 +27,8 @@ class PerfilData {
         self.nomeFantasia = nomeFantasia
         self.senhaAntiga = senhaAntiga
         self.novaSenha = novaSenha
+        self.telefoneAntigo = telefoneAntigo
+        self.telefoneNovo = telefoneNovo
     }
     
     

@@ -25,8 +25,6 @@ class NomePerfilViewController: UIViewController {
         viewLoadView.isHidden = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarSucesso), name: NSNotification.Name(rawValue: "PerfilEditado"), object: nil)
-        
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.apresentarErro), name: NSNotification.Name(rawValue: "ErroAoEditarPerfil"), object: nil)
     }
 
@@ -53,7 +51,7 @@ class NomePerfilViewController: UIViewController {
     }
     
     @IBAction func btnAlterarPressed(_ sender: Any) {
-        let perfil = PerfilData(emailAntigo: nil, emailNovo: nil, nome: txtNome.text, nomeFantasia: txtNomeFantasia.text, senhaAntiga: nil, novaSenha: nil)
+        let perfil = PerfilData(emailAntigo: nil, emailNovo: nil, nome: txtNome.text, nomeFantasia: txtNomeFantasia.text, senhaAntiga: nil, novaSenha: nil, telefoneAntigo: nil, telefoneNovo: nil)
         self.viewLoadView.isHidden = false
         
         repository.editarPerfil(perfil: perfil)

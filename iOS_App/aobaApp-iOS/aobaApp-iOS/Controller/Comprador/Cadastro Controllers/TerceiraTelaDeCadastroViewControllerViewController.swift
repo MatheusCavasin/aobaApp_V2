@@ -41,7 +41,7 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
 
     
     @objc func erroAoLogar() {
-        let alert = UIAlertController(title: "Alerta", message: "Esse usuário já existe", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Erro ao criar usuário", message: "Por favor, confira se seus dados estão corretos e tente novamente", preferredStyle: .alert)
         alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
         alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
