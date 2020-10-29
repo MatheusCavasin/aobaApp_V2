@@ -23,8 +23,8 @@ class CompradorRepository {
                 let resultDict = result as! Dictionary<String, Any>
                 var statusCode: Int = 200
                 
-                if resultDict["statusCode"] != nil {
-                    statusCode = (resultDict["statusCode"] as? Int)!
+                if resultDict["status"] != nil {
+                    statusCode = (resultDict["status"] as? Int)!
                 }
                 
                 
@@ -152,6 +152,16 @@ class CompradorRepository {
         
         ApiResource.request(method: "PUT", url: url, params: nil, body: body, withAuth: true) { (result, err) in
             if let result = result {
+                let dictResult = result as! Dictionary<String, Any>
+                
+                if let statusCode = dictResult["status"] {
+                    let intStatusCode = statusCode as! Int
+                    if intStatusCode != 200 {
+                        DispatchQueue.main.async {
+                            NotificationCenter.default.post(name: Notification.Name("ErroAoEditarPerfil"), object: nil)
+                        }
+                    }
+                }
                 DispatchQueue.main.async {
                     NotificationCenter.default.post(name: Notification.Name("PerfilEditado"), object: nil)
                     
