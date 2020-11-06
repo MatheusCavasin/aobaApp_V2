@@ -44,7 +44,8 @@
 		88B8423E24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */; };
 		88C22E062512574A00A92F77 /* Cadastro3VendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C22E052512574A00A92F77 /* Cadastro3VendedorViewController.swift */; };
 		88C22E0825139A4F00A92F77 /* DiasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C22E0725139A4F00A92F77 /* DiasTableViewCell.swift */; };
-		9DAB7730FF5507D04BE81769 /* Pods_aobaApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EEFC72EDB0F2282ED760A9 /* Pods_aobaApp_iOS.framework */; };
+		88E3271A254A4566004434AD /* PedidosVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E32719254A4566004434AD /* PedidosVendedorViewController.swift */; };
+		C8749E6E09C777FA4A61E501 /* Pods_aobaApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E15AD8B0C4715E70A0DB5A55 /* Pods_aobaApp_iOS.framework */; };
 		D10BF1C7250FB25D005B874D /* TabCarrinhoComprador.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D10BF1C6250FB25D005B874D /* TabCarrinhoComprador.storyboard */; };
 		D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */; };
 		D111AE79253873C400BDF8B0 /* DadosCadastraisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D111AE78253873C400BDF8B0 /* DadosCadastraisViewController.swift */; };
@@ -132,8 +133,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05EEFC72EDB0F2282ED760A9 /* Pods_aobaApp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aobaApp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1FAB704D4B6664BF4F91BDFD /* Pods-aobaApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aobaApp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		172208ADC6283D4EC5661C67 /* Pods-aobaApp-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aobaApp-iOS.debug.xcconfig"; path = "Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		39195C5024F54FEE00A1A82A /* ApiResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiResource.swift; path = "aobaApp-iOS/Resource/ApiResource.swift"; sourceTree = SOURCE_ROOT; };
 		39F57E0324EFFE4D00D9FA4B /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		39F57E0624EFFF2B00D9FA4B /* Slide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
@@ -173,6 +173,7 @@
 		88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAnuncioVendedorViewController.swift; sourceTree = "<group>"; };
 		88C22E052512574A00A92F77 /* Cadastro3VendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadastro3VendedorViewController.swift; sourceTree = "<group>"; };
 		88C22E0725139A4F00A92F77 /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
+		88E32719254A4566004434AD /* PedidosVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosVendedorViewController.swift; sourceTree = "<group>"; };
 		D10BF1C6250FB25D005B874D /* TabCarrinhoComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabCarrinhoComprador.storyboard; sourceTree = "<group>"; };
 		D10D4BB924EC0A87003235B4 /* PrincipalComprador.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrincipalComprador.swift; sourceTree = "<group>"; };
 		D111AE78253873C400BDF8B0 /* DadosCadastraisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DadosCadastraisViewController.swift; path = "aobaApp-iOS/Controller/Comprador/Perfil Controllers/DadosCadastraisViewController.swift"; sourceTree = SOURCE_ROOT; };
@@ -257,7 +258,8 @@
 		D1EDDA30251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampoNovoEnderecoTableViewCell.swift; sourceTree = "<group>"; };
 		D1EDDA31251B76C60039E6D9 /* CampoNovoEnderecoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CampoNovoEnderecoTableViewCell.xib; sourceTree = "<group>"; };
 		D1F00315252B5A1300573612 /* CarrinhoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoRepository.swift; sourceTree = "<group>"; };
-		FDED01BAD1EBA66AEC0B193B /* Pods-aobaApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aobaApp-iOS.release.xcconfig"; path = "Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E15AD8B0C4715E70A0DB5A55 /* Pods_aobaApp_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aobaApp_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F278326DAA7D68B589E6AB1E /* Pods-aobaApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aobaApp-iOS.release.xcconfig"; path = "Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,7 +267,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DAB7730FF5507D04BE81769 /* Pods_aobaApp_iOS.framework in Frameworks */,
+				C8749E6E09C777FA4A61E501 /* Pods_aobaApp_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +277,8 @@
 		0A7532A52139A2C8949FDD17 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1FAB704D4B6664BF4F91BDFD /* Pods-aobaApp-iOS.debug.xcconfig */,
-				FDED01BAD1EBA66AEC0B193B /* Pods-aobaApp-iOS.release.xcconfig */,
+				172208ADC6283D4EC5661C67 /* Pods-aobaApp-iOS.debug.xcconfig */,
+				F278326DAA7D68B589E6AB1E /* Pods-aobaApp-iOS.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -307,7 +309,7 @@
 				88051B1E24D1A39100339FE9 /* Products */,
 				D16DB9D124E6FCBF00B2B279 /* Recovered References */,
 				0A7532A52139A2C8949FDD17 /* Pods */,
-				E9E7109D8A92D480B936B3FD /* Frameworks */,
+				9230B28F7B9B7985E548C6DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -378,6 +380,7 @@
 				39F57E0524EFFEFA00D9FA4B /* OnBoarding */,
 				D19D95D324E57228007701C4 /* Comprador */,
 				88B8423624E6D47C00E21123 /* Vendedor */,
+				88359C9B24E424620073628A /* PrincipalVendedor.swift */,
 				88051B2424D1A39100339FE9 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -465,22 +468,37 @@
 			isa = PBXGroup;
 			children = (
 				88825C7424FC4CE6002256F4 /* Cadastro Controllers */,
-				D1EC845F24F54B08003BB786 /* Classes Anuncio */,
-				88359C9B24E424620073628A /* PrincipalVendedor.swift */,
-				88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */,
-				88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */,
-				886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */,
+				88E32717254A2D2A004434AD /* Classes Anuncio */,
+				88E32718254A2D81004434AD /* Classes Pedidos */,
 			);
 			path = Vendedor;
 			sourceTree = "<group>";
 		};
-		9C24FF57D8B1F9A66CE254D5 /* Pods */ = {
+		88E32717254A2D2A004434AD /* Classes Anuncio */ = {
 			isa = PBXGroup;
 			children = (
-				4BFAD689EA25388639FAC000 /* Pods-aobaApp-iOS.debug.xcconfig */,
-				24F1F33226A6956C4B93B58B /* Pods-aobaApp-iOS.release.xcconfig */,
+				D1EC845F24F54B08003BB786 /* Classes secundárias Anuncio */,
+				88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */,
+				88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */,
+				886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */,
 			);
-			path = Pods;
+			path = "Classes Anuncio";
+			sourceTree = "<group>";
+		};
+		88E32718254A2D81004434AD /* Classes Pedidos */ = {
+			isa = PBXGroup;
+			children = (
+				88E32719254A4566004434AD /* PedidosVendedorViewController.swift */,
+			);
+			path = "Classes Pedidos";
+			sourceTree = "<group>";
+		};
+		9230B28F7B9B7985E548C6DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E15AD8B0C4715E70A0DB5A55 /* Pods_aobaApp_iOS.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D10BF1C8250FB85D005B874D /* Carrinho Controllers */ = {
@@ -692,7 +710,7 @@
 			path = "Pedidos Controllers";
 			sourceTree = "<group>";
 		};
-		D1EC845F24F54B08003BB786 /* Classes Anuncio */ = {
+		D1EC845F24F54B08003BB786 /* Classes secundárias Anuncio */ = {
 			isa = PBXGroup;
 			children = (
 				882FC41E251B7EA20019FEA5 /* Collection Fotos Anuncio */,
@@ -701,15 +719,8 @@
 				D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */,
 				8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */,
 			);
-			path = "Classes Anuncio";
-			sourceTree = "<group>";
-		};
-		E9E7109D8A92D480B936B3FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				05EEFC72EDB0F2282ED760A9 /* Pods_aobaApp_iOS.framework */,
-			);
-			name = Frameworks;
+			name = "Classes secundárias Anuncio";
+			path = "Classes secundárias Anuncio";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -719,11 +730,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 88051B3124D1A39300339FE9 /* Build configuration list for PBXNativeTarget "aobaApp-iOS" */;
 			buildPhases = (
-				2327AD020AD471FC095166A8 /* [CP] Check Pods Manifest.lock */,
+				6C9A38C1129B1B27B1DB17AC /* [CP] Check Pods Manifest.lock */,
 				88051B1924D1A39100339FE9 /* Sources */,
 				88051B1A24D1A39100339FE9 /* Frameworks */,
 				88051B1B24D1A39100339FE9 /* Resources */,
-				93B5CCD66D82698D31D1B5FE /* [CP] Embed Pods Frameworks */,
+				18FDD666B75571766240F58D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -807,7 +818,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2327AD020AD471FC095166A8 /* [CP] Check Pods Manifest.lock */ = {
+		18FDD666B75571766240F58D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6C9A38C1129B1B27B1DB17AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -827,23 +855,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		93B5CCD66D82698D31D1B5FE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -921,6 +932,7 @@
 				D18E0C292530871C002E8F41 /* PerfilViewController.swift in Sources */,
 				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
 				D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */,
+				88E3271A254A4566004434AD /* PedidosVendedorViewController.swift in Sources */,
 				D12476BD250A660500E95433 /* AtivosCategoria.swift in Sources */,
 				D1E296A4251A553C00B34BEA /* ItemCarrinho.swift in Sources */,
 				D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */,
@@ -1087,7 +1099,7 @@
 		};
 		88051B3224D1A39300339FE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1FAB704D4B6664BF4F91BDFD /* Pods-aobaApp-iOS.debug.xcconfig */;
+			baseConfigurationReference = 172208ADC6283D4EC5661C67 /* Pods-aobaApp-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1109,7 +1121,7 @@
 		};
 		88051B3324D1A39300339FE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDED01BAD1EBA66AEC0B193B /* Pods-aobaApp-iOS.release.xcconfig */;
+			baseConfigurationReference = F278326DAA7D68B589E6AB1E /* Pods-aobaApp-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

@@ -1,44 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="njD-YW-pwB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EgW-ug-C6d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Pedidos-->
         <scene sceneID="vrZ-f7-ygz">
             <objects>
-                <viewController storyboardIdentifier="TabPedidosVendedor" id="njD-YW-pwB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TabPedidosVendedor" id="njD-YW-pwB" customClass="PedidosVendedorViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mit-cC-PBp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE" translatesAutoresizingMaskIntoConstraints="NO" id="MOL-2Z-A1d">
-                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
-                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Hef-rN-PvG">
+                                <rect key="frame" x="20" y="160" width="374" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20h-PK-eNg" customClass="PedidoEmAndamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
+                                <rect key="frame" x="20" y="211" width="374" height="424"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="20h-PK-eNg" secondAttribute="height" multiplier="344:390" id="zCp-Yj-70q"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iWl-Xm-CrE">
+                                <rect key="frame" x="20" y="211" width="374" height="602"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="height" secondItem="Mit-cC-PBp" secondAttribute="height" id="ASc-IE-m7p"/>
-                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="centerX" secondItem="yAF-Mv-EwC" secondAttribute="centerX" id="N4b-z7-Af1"/>
-                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="centerY" secondItem="yAF-Mv-EwC" secondAttribute="centerY" id="WK3-Zq-75c"/>
-                            <constraint firstItem="MOL-2Z-A1d" firstAttribute="width" secondItem="Mit-cC-PBp" secondAttribute="width" id="tWd-xP-PQX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yAF-Mv-EwC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yAF-Mv-EwC" firstAttribute="trailing" secondItem="iWl-Xm-CrE" secondAttribute="trailing" constant="20" id="5HU-bw-9GT"/>
+                            <constraint firstItem="yAF-Mv-EwC" firstAttribute="trailing" secondItem="Hef-rN-PvG" secondAttribute="trailing" constant="20" id="65i-5i-kzZ"/>
+                            <constraint firstItem="yAF-Mv-EwC" firstAttribute="bottom" secondItem="iWl-Xm-CrE" secondAttribute="bottom" id="LOZ-ev-cuf"/>
+                            <constraint firstItem="20h-PK-eNg" firstAttribute="leading" secondItem="yAF-Mv-EwC" secondAttribute="leading" constant="20" id="YrI-eG-xfa"/>
+                            <constraint firstItem="iWl-Xm-CrE" firstAttribute="leading" secondItem="yAF-Mv-EwC" secondAttribute="leading" constant="20" id="c9t-IS-N14"/>
+                            <constraint firstItem="iWl-Xm-CrE" firstAttribute="top" secondItem="Hef-rN-PvG" secondAttribute="bottom" constant="20" id="ijF-UU-8hf"/>
+                            <constraint firstItem="20h-PK-eNg" firstAttribute="top" secondItem="Hef-rN-PvG" secondAttribute="bottom" constant="20" id="kMR-91-VPC"/>
+                            <constraint firstItem="yAF-Mv-EwC" firstAttribute="trailing" secondItem="20h-PK-eNg" secondAttribute="trailing" constant="20" id="lSI-Zy-hJ9"/>
+                            <constraint firstItem="Hef-rN-PvG" firstAttribute="top" secondItem="yAF-Mv-EwC" secondAttribute="top" constant="20" id="szs-SM-dI8"/>
+                            <constraint firstItem="Hef-rN-PvG" firstAttribute="leading" secondItem="yAF-Mv-EwC" secondAttribute="leading" constant="20" id="xz4-W6-pB6"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pedidos" image="icone-pedidos" id="Xgc-dD-qi4"/>
+                    <navigationItem key="navigationItem" title="Pedidos" id="ctg-tb-dDB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Hef-rN-PvG" id="cFg-MR-VdA"/>
+                        <outlet property="tableView" destination="iWl-Xm-CrE" id="KvJ-Qd-a4L"/>
+                        <outlet property="viewEmAndamento" destination="20h-PK-eNg" id="2ld-B2-ew9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smo-dm-9lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="128"/>
+        </scene>
+        <!--Pedidos-->
+        <scene sceneID="Vkq-Br-dd9">
+            <objects>
+                <viewController id="7Sk-S0-CgA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m4y-P8-sQK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-IB-ko9">
+                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jj6-E3-JgI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5dt-IB-ko9" firstAttribute="width" secondItem="m4y-P8-sQK" secondAttribute="width" id="D8g-8r-Vfn"/>
+                            <constraint firstItem="5dt-IB-ko9" firstAttribute="centerX" secondItem="jj6-E3-JgI" secondAttribute="centerX" id="Dlv-eN-IVd"/>
+                            <constraint firstItem="5dt-IB-ko9" firstAttribute="centerY" secondItem="jj6-E3-JgI" secondAttribute="centerY" id="TtM-77-3RJ"/>
+                            <constraint firstItem="5dt-IB-ko9" firstAttribute="height" secondItem="m4y-P8-sQK" secondAttribute="height" id="lRo-qU-6Jq"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pedidos" image="icone-pedidos" id="S80-PE-EzM"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRb-8x-6jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1494" y="157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="v9J-mv-Oy5">
+            <objects>
+                <navigationController id="EgW-ug-C6d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hgP-DW-u2t">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="njD-YW-pwB" kind="relationship" relationship="rootViewController" id="XML-NW-A0Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3b-2P-F47" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-849" y="128"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
         <image name="TESTE" width="572" height="1066"/>
         <image name="icone-pedidos" width="48" height="32"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
