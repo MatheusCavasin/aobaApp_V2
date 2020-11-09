@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 
 class ActionsView: UIView {
+    
+    public var telButtonCommand: (() -> Void)?
+    public var whatsAppButtonCommand: (() -> Void)?
+    public var confirmButtonCommand: (() -> Void)?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
+        bindUI()
         setupConstraints()
         setDefaultColor(color: .blue)
     }
@@ -25,6 +31,22 @@ class ActionsView: UIView {
         self.addSubview(telButton)
         self.addSubview(whatsAppButton)
         self.addSubview(confirmarButton)
+    }
+    
+    func bindUI() {
+        telButton.addTarget(self, action: #selector(self.telButtonPressed), for: .touchDown)
+        whatsAppButton.addTarget(self, action: #selector(self.whatsAppButtonPressed), for: .touchDown)
+        confirmarButton.addTarget(self, action: #selector(self.confirmButtonPressed), for: .touchDown)
+    }
+    
+    @objc func telButtonPressed() {
+        telButtonCommand?()
+    }
+    @objc func whatsAppButtonPressed() {
+        whatsAppButtonCommand?()
+    }
+    @objc func confirmButtonPressed() {
+        confirmButtonCommand?()
     }
     
     func setupConstraints() {
@@ -51,14 +73,12 @@ class ActionsView: UIView {
     }
     
     func setDefaultColor(color: UIColor) {
-        
         telButton.setTitleColor(color, for: .normal)
         telButton.layer.borderColor = color.cgColor
         let telOrigImage = UIImage(named: "icone-telefone-verde")
         let tintedImage = telOrigImage?.withRenderingMode(.alwaysTemplate)
         telButton.setImage(tintedImage, for: .normal)
         telButton.tintColor = color
-        
         
         whatsAppButton.setTitleColor(color, for: .normal)
         whatsAppButton.layer.borderColor = color.cgColor
@@ -67,9 +87,7 @@ class ActionsView: UIView {
         whatsAppButton.setImage(tintedWhatsImage, for: .normal)
         whatsAppButton.tintColor = color
         
-        
         confirmarButton.backgroundColor = color
-        
     }
     
     

@@ -54,7 +54,7 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 133)
+        return CGSize(width: 100, height: 143)
     }
     
     
@@ -71,6 +71,7 @@ class HortifrutiTableViewCell: UITableViewCell, UICollectionViewDelegate, UIColl
         
         
         self.navigationController.show(produtosViewController, sender: self)
+        print(produtos[indexPath.row].categoria)
         produtosViewController.navigationItem.title = produtos[indexPath.row].categoria
         
         if diaDaSemana != nil {

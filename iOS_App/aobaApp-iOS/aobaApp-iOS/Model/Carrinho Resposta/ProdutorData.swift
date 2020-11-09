@@ -47,7 +47,7 @@ class ProdutorData {
         
         var diasAtendimento = [DiaSemana]()
         for diaAtendimentoString in diasAtendimentoString {
-            diasAtendimento.append(DiaSemana.fromString(string: diaAtendimentoString))
+            diasAtendimento.append(DiaSemana.fromString(string: diaAtendimentoString)!)
         }
         
         return ProdutorData(id: id, codigoRegistro: codigoRegistro, descricao: descricao, diasAtendimento: diasAtendimento, email: email, foto: foto, nome: nome, rating: rating, nomeFantasia: nomeFantasia, telefone: telefone)

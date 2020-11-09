@@ -83,7 +83,7 @@ class PedidoEmAndamentoView: UIView {
         return hView
     }()
     
-    fileprivate let bottonView: ActionsView = {
+    let bottonView: ActionsView = {
         let bView = ActionsView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         return bView
     }()
@@ -93,10 +93,6 @@ class PedidoEmAndamentoView: UIView {
         return mView
     }()
 }
-
-
-
-
 
 
 extension UIView {

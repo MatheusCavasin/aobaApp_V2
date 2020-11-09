@@ -39,7 +39,7 @@ class ItemDoPedidoData {
         let statusItem = StatusPedido.fromString(statusItemString)
         let total = Float(dict["total"] as! Double)
     
-        return ItemDoPedidoData(entrega: entrega, foto: foto, id: id, nomeItem: nomeItem, qtde: qtde, statusItem: statusItem, total: total)
+        return ItemDoPedidoData(entrega: entrega!, foto: foto, id: id, nomeItem: nomeItem, qtde: qtde, statusItem: statusItem, total: total)
     }
 }
 
