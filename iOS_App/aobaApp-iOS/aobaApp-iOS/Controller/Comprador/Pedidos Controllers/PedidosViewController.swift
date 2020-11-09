@@ -13,10 +13,30 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var viewEmAndamento: PedidoEmAndamentoView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
-    
+    fileprivate let repository = PedidosRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        repository.getPedidosComerciante { (result, err) in
+//            guard result != nil else { return }
+//            print(result)
+//        }
+        
+        viewEmAndamento.bottonView.confirmButtonCommand = { [weak self] in
+//            guard let self = self else { return }
+            print("Confirm button")
+        }
+        viewEmAndamento.bottonView.whatsAppButtonCommand = { [weak self] in
+//            guard let self = self else { return }
+//            Colocque as acoes do botao aqui
+            print("Whats app actions")
+        }
+        viewEmAndamento.bottonView.telButtonCommand = { [weak self] in
+//            guard let self = self else { return }
+//            Colocque as acoes do botao aqui
+            print("Tel button pressed")
+        }
+        
         setupSegmentationControl()
         setupPedidoEmAndamento()
         setupPedidoPassados()
@@ -32,7 +52,7 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func setupPedidoEmAndamento() {
-        viewEmAndamento.setDefaultColor(color: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1))
+        viewEmAndamento.setDefaultColor(color: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)) 
         viewEmAndamento.setStatus(status: .confirmado)
         viewEmAndamento.setMainTexts(firstField: "Realizado", secondField: "Confirmado", thirdField: "Entregue")
         viewEmAndamento.setDataText(firstField: "19/08/2020 • 11h45", secondField: "19/08/2020 • 11h45", thirdField: "19/08/2020 • 11h45")

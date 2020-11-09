@@ -20,5 +20,14 @@ class CarrinhoRepository {
         ApiResource.request(method: "POST", url: url, params: nil, body: carrinhoPedidoDict, withAuth: true) { (result, err) in
             completion(result, err)
         }
-    } 
+    }
+    
+    func fazerPedido(carrinhoPedido: CarrinhoPedido,
+                     completion: @escaping (Any?, Error?) -> Void) {
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido"
+        let carrinhoPedidoDict = carrinhoPedido.objectToDict()
+        ApiResource.request(method: "POST", url: url, params: nil, body: carrinhoPedidoDict, withAuth: true) { (result, err) in
+            completion(result, err)
+        }
+    }
 }

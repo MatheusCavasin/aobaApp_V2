@@ -41,7 +41,7 @@ class CarrinhoPedido {
 
         
         if self.opcaoAlternativa != nil {
-            dict["opcaoAlternativa"] = self.opcaoAlternativa
+            dict["opcaoAlternativa"] = opcaoAlternativa?.dictField
         }
         
         // Decodificando os items do carinho e adicionando a uma lista de objetos separada
@@ -79,6 +79,15 @@ class CarrinhoPedido {
 enum OpcaoAlternativa {
     case ACEITAR_SUGESTAO
     case CANCELAR_PRODUTO
+    
+    var dictField: String {
+        switch self {
+        case .CANCELAR_PRODUTO:
+            return "CANCELAR_PRODUTO"
+        default:
+            return "ACEITAR_SUGESTAO"
+        }
+    }
     
     static func fromString(string: String) -> OpcaoAlternativa {
         if string == "ACEITAR_SUGESTAO" {

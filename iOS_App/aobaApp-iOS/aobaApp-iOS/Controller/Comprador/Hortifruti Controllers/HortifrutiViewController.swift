@@ -151,7 +151,7 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // Determinando o tamanho das células
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var cellsize = 200
+        var cellsize = 210
         if indexPath.row == 0 {
             cellsize = 49  //Para a primeira celula: "Selecionados para você"
         }

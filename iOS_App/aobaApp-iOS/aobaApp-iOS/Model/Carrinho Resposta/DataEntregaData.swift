@@ -21,7 +21,7 @@ class DataEntregaData {
         let data = dict["data"] as! String
         let diaSemana = dict["diaSemana"] as! String
     
-        return DataEntregaData(data: data, diaSemana: DiaSemana.fromString(string: diaSemana))
+        return DataEntregaData(data: data, diaSemana: DiaSemana.fromString(string: diaSemana)!)
     }    
 }
 
@@ -77,7 +77,7 @@ enum DiaSemana {
         }
     }
     
-    static func fromString(string: String) -> DiaSemana {
+    static func fromString(string: String) -> DiaSemana? {
         if string == "SEG" {
             return .SEG
         } else if string == "TER" {
@@ -86,8 +86,10 @@ enum DiaSemana {
             return .QUA
         } else if string == "QUI" {
             return .QUI
-        } else {
+        } else if string == "SEX"{
             return .SEX
+        } else {
+            return nil
         }
     }
 
