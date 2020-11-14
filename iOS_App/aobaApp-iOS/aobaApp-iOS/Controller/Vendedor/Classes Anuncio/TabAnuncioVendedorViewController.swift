@@ -203,10 +203,10 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let vc = storyboard?.instantiateViewController(withIdentifier: "EditarAnuncio") as? EditarAnuncioController {
-            vc.nomeHortifruit = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["produto"] as! [String : Any?])["nome"] as? String
-            vc.idHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as? Int
-            ModelVendedor.instance.quantidadeCaixas = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["qtdeMax"] as? Int)!
-            ModelVendedor.instance.precoCaixa = (ModelVendedor.instance.dictListaAnuncios[indexPath.row]["valor"] as? Double)!
+            vc.nomeHortifruit = (listaAnuncios[indexPath.row]["produto"] as! [String : Any?])["nome"] as? String
+            vc.idHortifruit = listaAnuncios[indexPath.row]["id"] as? Int
+            ModelVendedor.instance.quantidadeCaixas = (listaAnuncios[indexPath.row]["qtdeMax"] as? Int)!
+            ModelVendedor.instance.precoCaixa = (listaAnuncios[indexPath.row]["valor"] as? Double)!
 //            vc.idHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as? Int
 //            vc.qtdeHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["qtdeMax"] as? Int
 //            vc.valorHortifruit = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["valor"] as? Double
@@ -227,7 +227,7 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCell.EditingStyle.delete) {
             print("DELETAR \(indexPath.row)")
-            let idAnuncio = ModelVendedor.instance.dictListaAnuncios[indexPath.row]["id"] as! Int
+            let idAnuncio = listaAnuncios[indexPath.row]["id"] as! Int
             print("DELETAR \(idAnuncio)")
             produtorRepositoy.deletarAnuncio(idAnuncio: idAnuncio)
             dadosChamar()

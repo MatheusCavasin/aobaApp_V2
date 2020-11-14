@@ -25,7 +25,7 @@ class FotoCollectionViewCell: UICollectionViewCell {
     
     public func configure(with foto: FotosHortifruit){
         self.imageHortifruit.image = foto.imageName
-        self.imageHortifruit.contentMode = .scaleAspectFit
+        self.imageHortifruit.contentMode = .scaleAspectFill
         print("\n\n\n\n SEGUNDA \n\n\n\n\n")
 
     }

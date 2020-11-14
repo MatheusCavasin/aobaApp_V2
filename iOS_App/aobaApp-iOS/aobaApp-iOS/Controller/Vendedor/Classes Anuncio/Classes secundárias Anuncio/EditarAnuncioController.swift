@@ -47,7 +47,7 @@ class EditarAnuncioController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblProdutoCell", for: indexPath) as! EditarAnuncioTableViewCell
-//            cell.lblProduto.text = nomeHortifruit
+            cell.lblProduto.text = nomeHortifruit
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lblQtdeCaixasCell", for: indexPath) as! EditarAnuncioTableViewCell

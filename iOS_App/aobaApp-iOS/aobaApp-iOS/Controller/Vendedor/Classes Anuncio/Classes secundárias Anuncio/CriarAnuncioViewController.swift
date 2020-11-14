@@ -55,7 +55,9 @@ class CriarAnuncioViewController: UIViewController, UITableViewDelegate, UITable
     
     
     @IBAction func CancelButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: {
+            modelFotos.removeAll()
+        })
     }
     
     

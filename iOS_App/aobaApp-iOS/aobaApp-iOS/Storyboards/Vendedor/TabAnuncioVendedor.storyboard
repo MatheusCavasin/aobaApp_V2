@@ -235,6 +235,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-uZ-yE9">
+                                <rect key="frame" x="0.0" y="112" width="414" height="730"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSearch" textLabel="czL-Ue-7s5" style="IBUITableViewCellStyleDefault" id="74q-7s-gJC">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="74q-7s-gJC" id="SxL-1E-8bp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czL-Ue-7s5">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <searchBar contentMode="redraw" placeholder="Procure seu produto aqui" translatesAutoresizingMaskIntoConstraints="NO" id="FXQ-la-LIN">
+                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yib-3G-POg">
                                 <rect key="frame" x="16" y="112" width="382" height="696"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -578,65 +605,49 @@
                                             <outlet property="lbDataCell" destination="cfA-IU-RCE" id="ZPk-BW-XvU"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addProdutoCell" rowHeight="44" id="Uj2-lW-duI" customClass="AddProdutoButtonCell" customModule="aobaApp_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="addProdutoCell" id="Uj2-lW-duI" customClass="AddProdutoButtonCell" customModule="aobaApp_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="371" width="382" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uj2-lW-duI" id="djC-wr-QTf">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgn-lw-7kq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="44"/>
-                                                    <color key="backgroundColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Iz-nY-FOV">
+                                                    <rect key="frame" x="0.0" y="-3" width="382" height="50"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgn-lw-7kq">
+                                                            <rect key="frame" x="0.0" y="3" width="382" height="44"/>
+                                                            <color key="backgroundColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="44" id="iUb-pY-OPD"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                            <state key="normal" title="Adicionar produto ao anúncio">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                                            </state>
+                                                            <connections>
+                                                                <segue destination="nj1-K4-qcr" kind="show" id="5QZ-9w-yc5"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="OYS-ND-7Qy"/>
+                                                        <constraint firstItem="fgn-lw-7kq" firstAttribute="centerX" secondItem="8Iz-nY-FOV" secondAttribute="centerX" id="GFj-ej-W4R"/>
+                                                        <constraint firstItem="fgn-lw-7kq" firstAttribute="width" secondItem="8Iz-nY-FOV" secondAttribute="width" id="P2E-fJ-8Du"/>
+                                                        <constraint firstItem="fgn-lw-7kq" firstAttribute="centerY" secondItem="8Iz-nY-FOV" secondAttribute="centerY" id="gU2-GL-Lbi"/>
+                                                        <constraint firstAttribute="height" constant="50" id="vj0-XF-g6F"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                    <state key="normal" title="Adicionar produto ao anúncio">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="nj1-K4-qcr" kind="show" id="5QZ-9w-yc5"/>
-                                                    </connections>
-                                                </button>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="fgn-lw-7kq" firstAttribute="top" secondItem="djC-wr-QTf" secondAttribute="top" id="1CF-gf-9GM"/>
-                                                <constraint firstAttribute="trailing" secondItem="fgn-lw-7kq" secondAttribute="trailing" id="Q7G-BP-jjO"/>
-                                                <constraint firstItem="fgn-lw-7kq" firstAttribute="leading" secondItem="djC-wr-QTf" secondAttribute="leading" id="QFQ-qC-g5k"/>
-                                                <constraint firstAttribute="bottom" secondItem="fgn-lw-7kq" secondAttribute="bottom" id="xAd-4G-1d1"/>
+                                                <constraint firstItem="8Iz-nY-FOV" firstAttribute="centerX" secondItem="djC-wr-QTf" secondAttribute="centerX" id="9hm-Ua-61g"/>
+                                                <constraint firstItem="8Iz-nY-FOV" firstAttribute="centerY" secondItem="djC-wr-QTf" secondAttribute="centerY" id="Mvp-Ev-E6M"/>
+                                                <constraint firstItem="8Iz-nY-FOV" firstAttribute="width" secondItem="djC-wr-QTf" secondAttribute="width" id="iFQ-yv-dDI"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addProdutoButton" destination="fgn-lw-7kq" id="wif-GD-bZb"/>
                                         </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <searchBar contentMode="redraw" placeholder="Procure seu produto aqui" translatesAutoresizingMaskIntoConstraints="NO" id="FXQ-la-LIN">
-                                <rect key="frame" x="0.0" y="56" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJR-uZ-yE9">
-                                <rect key="frame" x="0.0" y="112" width="414" height="730"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellSearch" textLabel="czL-Ue-7s5" style="IBUITableViewCellStyleDefault" id="74q-7s-gJC">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="74q-7s-gJC" id="SxL-1E-8bp">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="czL-Ue-7s5">
-                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -131,6 +131,7 @@ class ConfirmarAnuncioViewController: UIViewController, UITableViewDelegate, UIT
         self.dismiss(animated: true){
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "NotificationID2"), object: nil)
             ModelVendedor.instance.idFoto.removeAll()
+            modelFotos.removeAll()
             
         }
     }
