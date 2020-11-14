@@ -152,12 +152,12 @@
 		88051B2924D1A39300339FE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88051B2C24D1A39300339FE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88051B2E24D1A39300339FE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarAnuncioController.swift; sourceTree = "<group>"; };
+		8825AB2324FFD25600DC41D6 /* EditarAnuncioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EditarAnuncioController.swift; path = "Classes secundárias Anuncio/EditarAnuncioController.swift"; sourceTree = "<group>"; };
 		882FC41F251B7ED20019FEA5 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		882FC420251B7ED20019FEA5 /* FotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionViewCell.xib; sourceTree = "<group>"; };
 		882FC424251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionTableViewCell.swift; sourceTree = "<group>"; };
 		882FC425251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FotoCollectionTableViewCell.xib; sourceTree = "<group>"; };
-		882FC42A251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmarAnuncioViewController.swift; sourceTree = "<group>"; };
+		882FC42A251D1AC10019FEA5 /* ConfirmarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfirmarAnuncioViewController.swift; path = "Classes secundárias Anuncio/ConfirmarAnuncioViewController.swift"; sourceTree = "<group>"; };
 		88359C8124D9A3640073628A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		88359C8524E2EB9B0073628A /* PrincipalComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrincipalComprador.storyboard; sourceTree = "<group>"; };
 		88359C8724E416BC0073628A /* CadastroVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CadastroVendedor.storyboard; sourceTree = "<group>"; };
@@ -169,14 +169,14 @@
 		88359C9524E420060073628A /* TabAnuncioVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabAnuncioVendedor.storyboard; sourceTree = "<group>"; };
 		88359C9724E4200E0073628A /* TabPerfilVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPerfilVendedor.storyboard; sourceTree = "<group>"; };
 		88359C9924E421940073628A /* TabPedidosVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPedidosVendedor.storyboard; sourceTree = "<group>"; };
-		88359C9B24E424620073628A /* PrincipalVendedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalVendedor.swift; sourceTree = "<group>"; };
-		886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioVendedorTableViewCell.swift; sourceTree = "<group>"; };
+		88359C9B24E424620073628A /* PrincipalVendedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrincipalVendedor.swift; path = ../PrincipalVendedor.swift; sourceTree = "<group>"; };
+		886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnuncioVendedorTableViewCell.swift; path = "Classes Anuncio/AnuncioVendedorTableViewCell.swift"; sourceTree = "<group>"; };
 		889F112024FD227C00B58431 /* ProdutorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutorRepository.swift; sourceTree = "<group>"; };
 		88B8423024E6D47300E21123 /* LoginVendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVendedorViewController.swift; sourceTree = "<group>"; };
 		88B8423124E6D47300E21123 /* Cadastro1VendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadastro1VendedorViewController.swift; sourceTree = "<group>"; };
 		88B8423224E6D47300E21123 /* Cadastro2VendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadastro2VendedorViewController.swift; sourceTree = "<group>"; };
-		88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnuncioTableViewController.swift; sourceTree = "<group>"; };
-		88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAnuncioVendedorViewController.swift; sourceTree = "<group>"; };
+		88B8423724E6D77900E21123 /* AnuncioTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnuncioTableViewController.swift; path = "Classes Anuncio/AnuncioTableViewController.swift"; sourceTree = "<group>"; };
+		88B8423D24E6DA7700E21123 /* TabAnuncioVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TabAnuncioVendedorViewController.swift; path = "Classes Anuncio/TabAnuncioVendedorViewController.swift"; sourceTree = "<group>"; };
 		88C22E052512574A00A92F77 /* Cadastro3VendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cadastro3VendedorViewController.swift; sourceTree = "<group>"; };
 		88C22E0725139A4F00A92F77 /* DiasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiasTableViewCell.swift; sourceTree = "<group>"; };
 		D10BF1C6250FB25D005B874D /* TabCarrinhoComprador.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabCarrinhoComprador.storyboard; sourceTree = "<group>"; };
@@ -260,8 +260,8 @@
 		D1E9C28124EFF37A0002B9B6 /* Celulas do carrinho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Celulas do carrinho.swift"; sourceTree = "<group>"; };
 		D1EC845924F549FF003BB786 /* ButtonConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonConfig.swift; sourceTree = "<group>"; };
 		D1EC845B24F54A1A003BB786 /* ModelVendedor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelVendedor.swift; sourceTree = "<group>"; };
-		D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CriarAnuncioTableViewCell.swift; sourceTree = "<group>"; };
-		D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarAnuncioViewController.swift; sourceTree = "<group>"; };
+		D1EC846024F54B15003BB786 /* CriarAnuncioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CriarAnuncioTableViewCell.swift; path = "Classes secundárias Anuncio/CriarAnuncioTableViewCell.swift"; sourceTree = "<group>"; };
+		D1EC846224F54B1B003BB786 /* CriarAnuncioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CriarAnuncioViewController.swift; path = "Classes secundárias Anuncio/CriarAnuncioViewController.swift"; sourceTree = "<group>"; };
 		D1EDDA2A251B76860039E6D9 /* EnderecoCompradorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCompradorViewController.swift; sourceTree = "<group>"; };
 		D1EDDA2C251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoCadastradoTableViewCell.swift; sourceTree = "<group>"; };
 		D1EDDA2D251B76AD0039E6D9 /* EnderecoCadastradoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnderecoCadastradoTableViewCell.xib; sourceTree = "<group>"; };
@@ -354,7 +354,8 @@
 				882FC424251B7F1B0019FEA5 /* FotoCollectionTableViewCell.swift */,
 				882FC425251B7F1B0019FEA5 /* FotoCollectionTableViewCell.xib */,
 			);
-			path = "Collection Fotos Anuncio";
+			name = "Collection Fotos Anuncio";
+			path = "Classes secundárias Anuncio/Collection Fotos Anuncio";
 			sourceTree = "<group>";
 		};
 		88359C7E24D848770073628A /* Model */ = {
