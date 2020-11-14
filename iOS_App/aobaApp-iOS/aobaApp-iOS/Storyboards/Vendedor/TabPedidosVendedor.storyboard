@@ -34,6 +34,14 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iWl-Xm-CrE">
                                 <rect key="frame" x="20" y="211" width="374" height="602"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="niL-0D-Pvo">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="121"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <segue destination="NVb-zl-T4f" kind="presentation" id="nzW-l8-JY4"/>
+                                    </connections>
+                                </button>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yAF-Mv-EwC"/>
@@ -62,35 +70,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Smo-dm-9lY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="128"/>
+            <point key="canvasLocation" x="131.8840579710145" y="127.90178571428571"/>
         </scene>
-        <!--Pedidos-->
-        <scene sceneID="Vkq-Br-dd9">
+        <!--View Controller-->
+        <scene sceneID="MCd-Ah-J0v">
             <objects>
-                <viewController id="7Sk-S0-CgA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m4y-P8-sQK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <viewController id="NVb-zl-T4f" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YsJ-9u-RxK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TESTE" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-IB-ko9">
-                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
-                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8mC-xQ-KLN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                <items>
+                                    <navigationItem title="Title" id="rcL-oL-gJ7"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iie-Pq-AuP">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CPO-lW-F48">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CPO-lW-F48" id="3ce-rl-EKX">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="jj6-E3-JgI"/>
+                        <viewLayoutGuide key="safeArea" id="SiF-Gg-CeK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5dt-IB-ko9" firstAttribute="width" secondItem="m4y-P8-sQK" secondAttribute="width" id="D8g-8r-Vfn"/>
-                            <constraint firstItem="5dt-IB-ko9" firstAttribute="centerX" secondItem="jj6-E3-JgI" secondAttribute="centerX" id="Dlv-eN-IVd"/>
-                            <constraint firstItem="5dt-IB-ko9" firstAttribute="centerY" secondItem="jj6-E3-JgI" secondAttribute="centerY" id="TtM-77-3RJ"/>
-                            <constraint firstItem="5dt-IB-ko9" firstAttribute="height" secondItem="m4y-P8-sQK" secondAttribute="height" id="lRo-qU-6Jq"/>
+                            <constraint firstItem="iie-Pq-AuP" firstAttribute="width" secondItem="YsJ-9u-RxK" secondAttribute="width" id="BDl-vn-ofZ"/>
+                            <constraint firstItem="iie-Pq-AuP" firstAttribute="centerX" secondItem="SiF-Gg-CeK" secondAttribute="centerX" id="DMr-RF-CUf"/>
+                            <constraint firstItem="8mC-xQ-KLN" firstAttribute="centerX" secondItem="SiF-Gg-CeK" secondAttribute="centerX" id="PqO-gN-R6r"/>
+                            <constraint firstAttribute="bottom" secondItem="iie-Pq-AuP" secondAttribute="bottom" id="iBg-aw-xnM"/>
+                            <constraint firstItem="8mC-xQ-KLN" firstAttribute="width" secondItem="YsJ-9u-RxK" secondAttribute="width" id="iOM-Ig-zpb"/>
+                            <constraint firstItem="8mC-xQ-KLN" firstAttribute="top" secondItem="SiF-Gg-CeK" secondAttribute="top" id="kQn-c5-dlN"/>
+                            <constraint firstItem="iie-Pq-AuP" firstAttribute="top" secondItem="8mC-xQ-KLN" secondAttribute="bottom" id="ksc-vj-Y4A"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pedidos" image="icone-pedidos" id="S80-PE-EzM"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CRb-8x-6jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FFy-3e-kf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1494" y="157"/>
+            <point key="canvasLocation" x="1169.5652173913045" y="129.91071428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v9J-mv-Oy5">
@@ -111,7 +137,6 @@
     </scenes>
     <color key="tintColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
     <resources>
-        <image name="TESTE" width="572" height="1066"/>
         <image name="icone-pedidos" width="48" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
