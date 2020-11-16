@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-HL-HPw">
-                                <rect key="frame" x="0.0" y="419.5" width="414" height="393.5"/>
+                                <rect key="frame" x="0.0" y="431.5" width="414" height="381.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnuncioCell" rowHeight="103" id="gep-NZ-V6c" customClass="AnuncioVendedorTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
@@ -118,7 +118,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2IL-hY-aUt">
-                                <rect key="frame" x="52" y="210" width="310.5" height="45.5"/>
+                                <rect key="frame" x="52" y="218.5" width="310.5" height="45.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45.5" id="ooH-CF-cm0"/>
                                 </constraints>
@@ -131,13 +131,13 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anúncios Ativos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIg-bx-X5Q">
-                                <rect key="frame" x="20.5" y="357.5" width="373" height="24"/>
+                                <rect key="frame" x="20.5" y="369.5" width="373" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fd5-Sc-VaI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="104.5"/>
                                 <items>
                                     <navigationItem title="Anúncios" id="wMD-By-Acz">
                                         <barButtonItem key="leftBarButtonItem" title="Editar" style="plain" id="ZVC-XJ-tF8">
@@ -149,13 +149,13 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Você ainda não possui anúncios. Crie agora e encontre seus próximos clientes no aoba!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0k-4f-hAQ">
-                                <rect key="frame" x="56" y="315.5" width="302" height="61"/>
+                                <rect key="frame" x="56" y="324" width="302" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XKG-41-bzl">
-                                <rect key="frame" x="20.5" y="155" width="373" height="32"/>
+                                <rect key="frame" x="20.5" y="163.5" width="373" height="32"/>
                                 <segments>
                                     <segment title="Ativos"/>
                                     <segment title="Inativos"/>
