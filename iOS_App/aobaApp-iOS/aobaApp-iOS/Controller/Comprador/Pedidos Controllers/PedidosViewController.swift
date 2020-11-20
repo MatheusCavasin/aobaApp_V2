@@ -8,72 +8,56 @@
 
 import UIKit
 
-class PedidosViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PedidosViewController: UIViewController {
     
-    @IBOutlet weak var viewEmAndamento: PedidoEmAndamentoView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var pedidosPassadosTableView: UITableView!
+    @IBOutlet weak var pedidosTableView: UITableView!
     fileprivate let repository = PedidosRepository()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-//        repository.getPedidosComerciante { (result, err) in
-//            guard result != nil else { return }
-//            print(result)
-//        }
-        
-        viewEmAndamento.bottonView.confirmButtonCommand = { [weak self] in
-//            guard let self = self else { return }
-            print("Confirm button")
-        }
-        viewEmAndamento.bottonView.whatsAppButtonCommand = { [weak self] in
-//            guard let self = self else { return }
-//            Colocque as acoes do botao aqui
-            print("Whats app actions")
-        }
-        viewEmAndamento.bottonView.telButtonCommand = { [weak self] in
-//            guard let self = self else { return }
-//            Colocque as acoes do botao aqui
-            print("Tel button pressed")
-        }
-        
         setupSegmentationControl()
         setupPedidoEmAndamento()
         setupPedidoPassados()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.isHidden = true
+        pedidosPassadosTableView.delegate = self
+        pedidosPassadosTableView.dataSource = self
+        pedidosPassadosTableView.isHidden = true
+        
+        pedidosTableView.delegate = self
+        pedidosTableView.dataSource = self
+        pedidosTableView.isHidden = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        repository.getPedidosComerciante { (result, err) in
+            guard result != nil else { return }
+        }
     }
     
     func setupSegmentationControl() {
         segmentedControl.setTitle("Em andamento", forSegmentAt: 0)
         segmentedControl.setTitle("Passados", forSegmentAt: 1)
     }
-    
     func setupPedidoEmAndamento() {
-        viewEmAndamento.setDefaultColor(color: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)) 
-        viewEmAndamento.setStatus(status: .confirmado)
-        viewEmAndamento.setMainTexts(firstField: "Realizado", secondField: "Confirmado", thirdField: "Entregue")
-        viewEmAndamento.setDataText(firstField: "19/08/2020 • 11h45", secondField: "19/08/2020 • 11h45", thirdField: "19/08/2020 • 11h45")
+        pedidosTableView.register(PedidoEmAndamentoTableViewCell.nib(), forCellReuseIdentifier: PedidoEmAndamentoTableViewCell.identifier)
+        pedidosPassadosTableView.separatorStyle = .none
     }
     
     func setupPedidoPassados() {
-        tableView.register(AvaliarPedidosTableViewCell.nib(), forCellReuseIdentifier: AvaliarPedidosTableViewCell.identifier)
-        tableView.register(DetalhesDoPedidoTableViewCell.nib(), forCellReuseIdentifier: DetalhesDoPedidoTableViewCell.identifier)
-        
-        tableView.separatorStyle = .none
+        pedidosPassadosTableView.register(AvaliarPedidosTableViewCell.nib(), forCellReuseIdentifier: AvaliarPedidosTableViewCell.identifier)
+        pedidosPassadosTableView.register(DetalhesDoPedidoTableViewCell.nib(), forCellReuseIdentifier: DetalhesDoPedidoTableViewCell.identifier)
+        pedidosPassadosTableView.separatorStyle = .none
     }
-
 
     @IBAction func segmentedControlChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
         case 0:
-            viewEmAndamento.isHidden = false
-            tableView.isHidden = true
+            pedidosTableView.isHidden = false
+            pedidosPassadosTableView.isHidden = true
         case 1:
-            viewEmAndamento.isHidden = true
-            tableView.isHidden = false
+            pedidosTableView.isHidden = true
+            pedidosPassadosTableView.isHidden = false
         default:
             break
         }
@@ -81,28 +65,38 @@ class PedidosViewController: UIViewController, UITableViewDataSource, UITableVie
 }
 
 
-extension PedidosViewController {   
+extension PedidosViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        switch indexPath.row {
-        case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: AvaliarPedidosTableViewCell.identifier) as! AvaliarPedidosTableViewCell
-            cell.config(text: "Avalie seus pedidos passados", color: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1))
-            return cell
-        
-        default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: DetalhesDoPedidoTableViewCell.identifier) as! DetalhesDoPedidoTableViewCell
-            cell.config(mainText: "Detalhes do pedido #\(indexPath.row)", dataText: "28/10/2020")
+        if tableView == pedidosPassadosTableView {
+            switch indexPath.row {
+            case 0:
+                let cell = tableView.dequeueReusableCell(withIdentifier: AvaliarPedidosTableViewCell.identifier) as! AvaliarPedidosTableViewCell
+                cell.config(text: "Avalie seus pedidos passados", color: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1))
+                return cell
+            
+            default:
+                let cell = tableView.dequeueReusableCell(withIdentifier: DetalhesDoPedidoTableViewCell.identifier) as! DetalhesDoPedidoTableViewCell
+                cell.config(mainText: "Detalhes do pedido #\(indexPath.row)", dataText: "28/10/2020")
+                return cell
+            }
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: PedidoEmAndamentoTableViewCell.identifier) as! PedidoEmAndamentoTableViewCell
+            cell.config(defaultColor: #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1))
+            cell.setStatus(status: .realizado)
             return cell
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if tableView == pedidosPassadosTableView {
+            return 100
+        } else {
+            return 424
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

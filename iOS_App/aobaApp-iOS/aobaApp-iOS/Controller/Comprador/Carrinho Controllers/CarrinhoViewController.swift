@@ -225,30 +225,34 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
             
             } else if indexPath.row == (carrinhoCriado?.itens.count ?? 0) + 5 {
                 let alert = UIAlertController(title: "Sucesso", message: "Sua compra deu certo, entretanto, caso algum desses produtos não esteja disponível, o que fazer?", preferredStyle: .alert)
-                
-                
+                let successAlert = UIAlertController(title: "AOOOBA", message: "Pedido finalizado com sucesso! Você pode verificar seu pedido na aba Pedidos do nosso app", preferredStyle: .alert)
                 
                 alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
                 alert.addAction(UIAlertAction(title: NSLocalizedString("Aceitar sugestão Aoba", comment: "aceitar sugestao"), style: .default, handler: { _ in
                     if let carrinhoPedido = Singleton.shared.carrinhoPedido {
                         carrinhoPedido.opcaoAlternativa = .ACEITAR_SUGESTAO
+                        self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
+                            DispatchQueue.main.async {
+                                self.viwLoadView.isHidden = true
+                                successAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                                    self.tabBarController?.selectedIndex = 2
+                                }))
+                             self.present(successAlert, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }))
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar produto", comment: "cancelar produto"), style: .default, handler: { _ in
+                    if let carrinhoPedido = Singleton.shared.carrinhoPedido {
+                        carrinhoPedido.opcaoAlternativa = .CANCELAR_PRODUTO
                         self.viwLoadView.isHidden = false
-                        self.repository.getCarrinho(carrinhoPedido: carrinhoPedido) { result, _ in
-                            print(result)
+                        self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
                             DispatchQueue.main.async {
                                 self.viwLoadView.isHidden = true
                             }
                         }
                     }
-                    
                 }))
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar produto", comment: "cancelar produto"), style: .default, handler: { _ in
-                    print("Cancelar produto")
-                }))
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar todo produto", comment: "cancelar tudo"), style: .cancel, handler: { _ in
-                    print("Cancelar tudo")
-                }))
-                
                 self.present(alert, animated: true, completion: nil)
             }
             
