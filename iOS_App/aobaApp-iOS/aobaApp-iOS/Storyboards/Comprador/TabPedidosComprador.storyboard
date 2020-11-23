@@ -182,38 +182,36 @@
                                     <action selector="segmentedControlChanged:" destination="ATb-FR-A9e" eventType="valueChanged" id="1UO-WP-s7o"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ac8-5o-tNA" customClass="PedidoEmAndamentoView" customModule="aobaApp_iOS" customModuleProvider="target">
-                                <rect key="frame" x="20" y="210" width="374" height="424"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Ac8-5o-tNA" secondAttribute="height" multiplier="344:390" id="4Gc-5Q-Bth"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lgA-5B-35c">
+                                <rect key="frame" x="20" y="210" width="374" height="652"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aBg-Kj-xPf">
                                 <rect key="frame" x="20" y="210" width="374" height="652"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Ac8-5o-tNA" firstAttribute="top" secondItem="AW9-VM-2JA" secondAttribute="bottom" constant="20" id="4h1-kQ-GBc"/>
+                            <constraint firstItem="zuF-Ir-7uw" firstAttribute="bottom" secondItem="aBg-Kj-xPf" secondAttribute="bottom" id="2aW-Xw-FTY"/>
+                            <constraint firstItem="zuF-Ir-7uw" firstAttribute="trailing" secondItem="aBg-Kj-xPf" secondAttribute="trailing" constant="20" id="7bs-wG-XQS"/>
                             <constraint firstItem="zuF-Ir-7uw" firstAttribute="trailing" secondItem="AW9-VM-2JA" secondAttribute="trailing" constant="20" id="Fi5-gk-62b"/>
                             <constraint firstItem="lgA-5B-35c" firstAttribute="bottom" secondItem="zuF-Ir-7uw" secondAttribute="bottom" id="L3R-Ax-3TB"/>
-                            <constraint firstItem="zuF-Ir-7uw" firstAttribute="trailing" secondItem="Ac8-5o-tNA" secondAttribute="trailing" constant="20" id="Mhg-TS-X8J"/>
-                            <constraint firstItem="Ac8-5o-tNA" firstAttribute="leading" secondItem="zuF-Ir-7uw" secondAttribute="leading" constant="20" id="QJr-1L-ekF"/>
                             <constraint firstItem="AW9-VM-2JA" firstAttribute="top" secondItem="zuF-Ir-7uw" secondAttribute="top" constant="19" id="SMH-fo-OAa"/>
                             <constraint firstItem="zuF-Ir-7uw" firstAttribute="trailing" secondItem="lgA-5B-35c" secondAttribute="trailing" constant="20" id="Sj0-o8-xQ8"/>
                             <constraint firstItem="lgA-5B-35c" firstAttribute="top" secondItem="AW9-VM-2JA" secondAttribute="bottom" constant="20" id="Zeu-zJ-BnT"/>
                             <constraint firstItem="lgA-5B-35c" firstAttribute="leading" secondItem="zuF-Ir-7uw" secondAttribute="leading" constant="20" id="jvx-c9-Msd"/>
+                            <constraint firstItem="aBg-Kj-xPf" firstAttribute="leading" secondItem="zuF-Ir-7uw" secondAttribute="leading" constant="20" id="oMO-Ua-1uY"/>
                             <constraint firstItem="AW9-VM-2JA" firstAttribute="leading" secondItem="zuF-Ir-7uw" secondAttribute="leading" constant="20" id="unk-83-zlY"/>
+                            <constraint firstItem="aBg-Kj-xPf" firstAttribute="top" secondItem="AW9-VM-2JA" secondAttribute="bottom" constant="20" id="wwW-76-HfT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zuF-Ir-7uw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pedidos" id="nXl-2b-BmQ"/>
                     <connections>
+                        <outlet property="pedidosPassadosTableView" destination="lgA-5B-35c" id="o1q-4h-AE2"/>
+                        <outlet property="pedidosTableView" destination="aBg-Kj-xPf" id="0we-Mq-K4a"/>
                         <outlet property="segmentedControl" destination="AW9-VM-2JA" id="Blt-j2-7KQ"/>
-                        <outlet property="tableView" destination="lgA-5B-35c" id="3TF-Xi-s0G"/>
-                        <outlet property="viewEmAndamento" destination="Ac8-5o-tNA" id="c2q-tF-bB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PUN-2E-pgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

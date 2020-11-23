@@ -27,7 +27,6 @@ class CompradorRepository {
                     statusCode = (resultDict["status"] as? Int)!
                 }
                 
-                
                 if statusCode == 200 {
                     DispatchQueue.main.async {
                         NotificationCenter.default.post(name: Notification.Name(rawValue: "ComercianteCriado"), object: nil)
@@ -45,7 +44,6 @@ class CompradorRepository {
                     NotificationCenter.default.post(name: Notification.Name(rawValue: "ErroAoCriarComerciante"), object: nil)
                 }
             }
-            
         }
         print("ENTROU \n\n\n")}
     
@@ -115,14 +113,10 @@ class CompradorRepository {
                     }
                 }
             }
-            
         }
     }
-    
-    
 
     func mudarSenha(senhaAntiga: String, novaSenha: String) {
-        
         let url = Singleton.shared.apiEndPoint + "/api/v1/produtor/1/editar-senha"
         let body: Dictionary<String, Any> = ["email": Singleton.shared.comercianteLogado!.email,
                                              "senhaAntiga": senhaAntiga,

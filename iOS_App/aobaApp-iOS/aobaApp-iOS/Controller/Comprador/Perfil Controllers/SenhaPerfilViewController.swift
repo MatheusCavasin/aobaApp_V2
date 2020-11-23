@@ -62,7 +62,6 @@ class SenhaPerfilViewController: UIViewController {
                 let perfil = PerfilData(emailAntigo: nil, emailNovo: nil, nome: nil, nomeFantasia: nil, senhaAntiga: self.txtSenha.text, novaSenha: self.txtNovaSenha.text, telefoneAntigo: nil, telefoneNovo: nil)
                 self.repository.editarPerfil(perfil: perfil)
                 
-                
                 let defaults = UserDefaults.standard
                 defaults.set(self.txtNovaSenha.text, forKey: "senha")
             }

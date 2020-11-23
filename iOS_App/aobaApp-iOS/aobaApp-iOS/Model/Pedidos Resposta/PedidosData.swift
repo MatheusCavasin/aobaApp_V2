@@ -33,22 +33,18 @@ enum StatusPedido {
 
 class PedidoData {
     let detalhes: DetalhesPedidoData
-    let dtConfirmado: String
     let dtRealizado: String
     let nomeFantasiaComerciante: String
     let pedidoId: CLong
-    let prazoEntrega: String
     let status: StatusPedido
     let telefoneComerciante: String
     
     
-    init(detalhes: DetalhesPedidoData, dtConfirmado: String ,dtRealizado: String, nomeFantasiaComerciante: String, pedidoId: CLong, prazoEntrega: String, status: StatusPedido, telefoneComerciante: String) {
+    init(detalhes: DetalhesPedidoData ,dtRealizado: String, nomeFantasiaComerciante: String, pedidoId: CLong, status: StatusPedido, telefoneComerciante: String) {
         self.detalhes = detalhes
-        self.dtConfirmado = dtConfirmado
         self.dtRealizado = dtRealizado
         self.nomeFantasiaComerciante = nomeFantasiaComerciante
         self.pedidoId = pedidoId
-        self.prazoEntrega = prazoEntrega
         self.status = status
         self.telefoneComerciante = telefoneComerciante
     }
@@ -56,16 +52,14 @@ class PedidoData {
     static func dictToObject(dict: Dictionary<String, Any>) -> PedidoData {
         let detalhesDict = dict["detalhes"] as! Dictionary<String, Any>
         let detalhes = DetalhesPedidoData.dictToObject(dict: detalhesDict)
-        let dtConfirmado = dict["dtConfirmado"] as! String
         let dtRealizado = dict["dtRealizado"] as! String
         let nomeFantasiaComerciante = dict["nomeFantasiaComerciante"] as! String
         let pedidoId = dict["pedidoId"] as! CLong
-        let prazoEntrega = dict["prazoEntrega"] as! String
         let statusString = dict["status"] as! String
         let status = StatusPedido.fromString(statusString)
         let telefoneComerciante = dict["telefoneComerciante"] as! String
         
-        return PedidoData(detalhes: detalhes, dtConfirmado: dtConfirmado, dtRealizado: dtRealizado, nomeFantasiaComerciante: nomeFantasiaComerciante, pedidoId: pedidoId, prazoEntrega: prazoEntrega, status: status, telefoneComerciante: telefoneComerciante)
+        return PedidoData(detalhes: detalhes, dtRealizado: dtRealizado, nomeFantasiaComerciante: nomeFantasiaComerciante, pedidoId: pedidoId, status: status, telefoneComerciante: telefoneComerciante)
     }
     
         
