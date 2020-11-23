@@ -23,19 +23,17 @@ class ProdutorRepository {
         ApiResource.request(method: "POST", url: url, params: nil, body: produtorDict, withAuth: false){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    print(result)
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                print(result)
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
             }
         }
-    print("ENTROU \n\n\n")}
+        print("ENTROU \n\n\n")}
     
     
     
@@ -50,25 +48,24 @@ class ProdutorRepository {
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    //                    print(result as! [[String : Any?]])
-                    
-                    ModelVendedor.instance.dictListaProdutos = result as! [[String : Any?]]
-                    print(ModelVendedor.instance.dictListaProdutos[0])
-                    //                    print(ModelVendedor.instance.dictListaProdutos[0]["nome"] as! String)
-                    /*   // para pegar a categoria
-                     var categoria = ModelVendedor.instance.dictListaProdutos[1]["categoria"] as! [String : Any?]
-                     print("\n\n\(categoria["nome"] as! String)") */
-                    
-                    
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                //                    print(result as! [[String : Any?]])
+                
+                ModelVendedor.instance.dictListaProdutos = result as! [[String : Any?]]
+                print(ModelVendedor.instance.dictListaProdutos[0])
+                //                    print(ModelVendedor.instance.dictListaProdutos[0]["nome"] as! String)
+                /*   // para pegar a categoria
+                 var categoria = ModelVendedor.instance.dictListaProdutos[1]["categoria"] as! [String : Any?]
+                 print("\n\n\(categoria["nome"] as! String)") */
+                
+                
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
+                
             }
         }
     }
@@ -83,30 +80,29 @@ class ProdutorRepository {
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    ModelVendedor.instance.dictListaAnuncios = result as! [[String : Any?]]
-                   /*
-                    var a = ModelVendedor.instance.dictListaAnuncios
-                    print("\n\n\n\n\n\n\(a.count)")
-                    print("\n\n\n\n\n\n\(a[0])")
-                    print("\n\n\n\n\n\n\(a[0]["qtdeMax"] as! Int)")
-                    print("\n\n\n\n\n\n\(a[0]["valor"] as! Double)")
-                    print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
-                    print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
-                    */
-                    DispatchQueue.main.async{
-                        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
-                    }
-                    
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                ModelVendedor.instance.dictListaAnuncios = result as! [[String : Any?]]
+                /*
+                 var a = ModelVendedor.instance.dictListaAnuncios
+                 print("\n\n\n\n\n\n\(a.count)")
+                 print("\n\n\n\n\n\n\(a[0])")
+                 print("\n\n\n\n\n\n\(a[0]["qtdeMax"] as! Int)")
+                 print("\n\n\n\n\n\n\(a[0]["valor"] as! Double)")
+                 print("\n\n\n\n\n\n\(a[0]["ativo"] as! Bool)")
+                 print("\n\n\n\n\n\n\((a[0]["produto"] as! [String : Any?])["nome"] as! String)")
+                 */
+                DispatchQueue.main.async{
+                    NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
                 }
+                
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
             }
+            
         }
     }
     
@@ -121,17 +117,16 @@ class ProdutorRepository {
         ApiResource.request(method: "POST", url: url, params: nil, body: produtorDict, withAuth: false){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    print(result)
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result  {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                print(result)
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
             }
+            
         }
     }
     
@@ -145,10 +140,9 @@ class ProdutorRepository {
         ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                print("A requisiçao funcionou")
-                print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)?qtde=\(qtde)&valor=\(valor)")
-            }
+            guard result != nil else { return }
+            print("A requisiçao funcionou")
+            print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)?qtde=\(qtde)&valor=\(valor)")
         }
     }
     
@@ -164,16 +158,15 @@ class ProdutorRepository {
         ApiResource.request(method: "DELETE", url: url, params: nil, body: produtorDict, withAuth: false){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    print(result)
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                print(result)
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
+                
             }
         }
     }
@@ -188,16 +181,14 @@ class ProdutorRepository {
         ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    print(result)
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                print(result)
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
             }
         }
 //        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/ativar")
@@ -213,19 +204,18 @@ class ProdutorRepository {
         ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
-            if let res:Bool = (err == nil) {
-                if(res) {
-                    //Aqui res podera assumir dois valores, true ou false
-                    print("sua requisicao foi realizada com sucesso")
-                    print(result)
-                } else {
-                    //Aqui voce pode tratar os erros
-                    print("a requisicao nao funcionou")
-                    print(err)
-                }
+            if let result = result {
+                //Aqui res podera assumir dois valores, true ou false
+                print("sua requisicao foi realizada com sucesso")
+                print(result)
+            } else {
+                //Aqui voce pode tratar os erros
+                print("a requisicao nao funcionou")
+                print(err)
             }
         }
-//        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar")
+        
+        //        print("https://aoba-api-server.herokuapp.com/api/v1/anuncio/\(idAnuncio)/desativar")
     }
     
     
