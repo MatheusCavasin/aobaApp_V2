@@ -21,7 +21,6 @@ class EnderecoCadastradoTableViewCell: UITableViewCell {
         return UINib(nibName: "EnderecoCadastradoTableViewCell", bundle: nil)
     }
     
-    
     override func awakeFromNib() {
         self.viewCirculoExterno.layer.borderWidth = 1.0
         self.viewCirculoExterno.layer.borderColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)

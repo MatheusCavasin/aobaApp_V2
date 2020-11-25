@@ -14,6 +14,7 @@ class Singleton {
     var carrinhoPedido: CarrinhoPedido?
     var enderecoDeEntrega: EnderecoData?
     var carrinho = Carrinho()
+    var pedidos: [PedidoData]?
     var anuncios: [AtivosSecao]! = []
     var comercianteLogado: ComercianteData?
     

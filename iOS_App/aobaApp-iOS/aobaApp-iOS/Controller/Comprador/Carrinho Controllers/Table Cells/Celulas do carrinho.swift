@@ -50,13 +50,13 @@ class EnderecoDoCarrinhoTableViewCell: UITableViewCell {
         viwBackground.layer.cornerRadius = 10.0
     }
     
-    public func config(endereco: EnderecoData?, navigationController: UINavigationController) {
+    public func config(endereco: EnderecoData?, navigationController: UINavigationController?) {
         self.navigationController = navigationController
         
-        if endereco != nil {
-            self.endereco.text = "\(endereco!.logradouro), \(endereco!.numero)"
-            self.cidade.text =  "\(endereco!.cidade) - \(endereco!.uf)"
-        }
+        guard endereco != nil else { return }
+        self.endereco.text = "\(endereco!.logradouro), \(endereco!.numero)"
+        self.cidade.text =  "\(endereco!.cidade) - \(endereco!.uf)"
+        
     }
 }
 
@@ -118,3 +118,4 @@ class ValorTotalTodosItensTableViewCell: UITableViewCell {
         lblTotal.text = String(format: "%.2f", (valor)).replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
     }
 }
+

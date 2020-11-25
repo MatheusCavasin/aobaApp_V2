@@ -23,7 +23,7 @@ enum StatusPedido {
             return .pendente
         case "CONFIRMADO":
             return .confirmado
-        case "ENNTREGUE":
+        case "ENTREGUE":
             return .entregue
         default:
             return .cancelado
@@ -36,9 +36,8 @@ class PedidoData {
     let dtRealizado: String
     let nomeFantasiaComerciante: String
     let pedidoId: CLong
-    let status: StatusPedido
+    var status: StatusPedido
     let telefoneComerciante: String
-    
     
     init(detalhes: DetalhesPedidoData ,dtRealizado: String, nomeFantasiaComerciante: String, pedidoId: CLong, status: StatusPedido, telefoneComerciante: String) {
         self.detalhes = detalhes
@@ -61,8 +60,6 @@ class PedidoData {
         
         return PedidoData(detalhes: detalhes, dtRealizado: dtRealizado, nomeFantasiaComerciante: nomeFantasiaComerciante, pedidoId: pedidoId, status: status, telefoneComerciante: telefoneComerciante)
     }
-    
-        
 }
     
     
