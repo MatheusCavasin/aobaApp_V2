@@ -71,6 +71,7 @@
 		D14D35F0251A7C3500610AF7 /* loadingActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14D35EF251A7C3500610AF7 /* loadingActivityView.swift */; };
 		D15A02DB254330CE004F0A29 /* DetalhesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15A02DA254330CE004F0A29 /* DetalhesView.swift */; };
 		D167EF4D25221FAC008EA324 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D167EF4C25221FAC008EA324 /* GoogleService-Info.plist */; };
+		D16B4483256CA30500090074 /* DetalhesDoPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B4482256CA30500090074 /* DetalhesDoPedidoViewController.swift */; };
 		D16DB9A424E6B93700B2B279 /* HortifrutiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9A224E6B93700B2B279 /* HortifrutiCollectionViewCell.swift */; };
 		D16DB9A524E6B93700B2B279 /* HortifrutiCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D16DB9A324E6B93700B2B279 /* HortifrutiCollectionViewCell.xib */; };
 		D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9AA24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift */; };
@@ -79,6 +80,7 @@
 		D16DB9D324E6FCE400B2B279 /* Comerciante.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16DB9D224E6FCE400B2B279 /* Comerciante.swift */; };
 		D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1778CEA251594BE00D4432B /* ComercianteData.swift */; };
 		D1778CED251594C900D4432B /* EnderecoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1778CEC251594C900D4432B /* EnderecoData.swift */; };
+		D178D93C256D155800E2B4CC /* TotalPedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D178D93B256D155800E2B4CC /* TotalPedidoTableViewCell.swift */; };
 		D17BB031253CE19C00FC6D4C /* NomePerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BB030253CE19C00FC6D4C /* NomePerfilViewController.swift */; };
 		D17BB033253CE1A800FC6D4C /* SenhaPerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BB032253CE1A800FC6D4C /* SenhaPerfilViewController.swift */; };
 		D17BB035253CE1BF00FC6D4C /* TelefonePerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D17BB034253CE1BF00FC6D4C /* TelefonePerfilViewController.swift */; };
@@ -120,6 +122,7 @@
 		D1CB876924EC21CD00266EC0 /* ProdutoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */; };
 		D1CB876C24EC32A000266EC0 /* ProdutoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */; };
 		D1CB876D24EC32A000266EC0 /* ProdutoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1CB876B24EC32A000266EC0 /* ProdutoTableViewCell.xib */; };
+		D1E0FE7C256F0A090013F004 /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E0FE7B256F0A090013F004 /* LoadView.swift */; };
 		D1E296A2251A4E7200B34BEA /* Carrinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E296A1251A4E7200B34BEA /* Carrinho.swift */; };
 		D1E296A4251A553C00B34BEA /* ItemCarrinho.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E296A3251A553C00B34BEA /* ItemCarrinho.swift */; };
 		D1E4AEB325433CD600B2F02E /* ActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4AEB225433CD600B2F02E /* ActionsView.swift */; };
@@ -203,9 +206,9 @@
 		D14CB6E124ED6B7C00CA9B3F /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewController.swift; sourceTree = "<group>"; };
 		D14CB6E324ED6D0600CA9B3F /* DetalhesDoProdutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesDoProdutoViewController.swift; sourceTree = "<group>"; };
 		D14D35EF251A7C3500610AF7 /* loadingActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingActivityView.swift; sourceTree = "<group>"; };
-		D1561D411FFA36354187CC13 /* Pods-aobaApp-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-aobaApp-iOS.release.xcconfig"; path = "Target Support Files/Pods-aobaApp-iOS/Pods-aobaApp-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D15A02DA254330CE004F0A29 /* DetalhesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesView.swift; sourceTree = "<group>"; };
 		D167EF4C25221FAC008EA324 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D16B4482256CA30500090074 /* DetalhesDoPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesDoPedidoViewController.swift; sourceTree = "<group>"; };
 		D16DB9A224E6B93700B2B279 /* HortifrutiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortifrutiCollectionViewCell.swift; sourceTree = "<group>"; };
 		D16DB9A324E6B93700B2B279 /* HortifrutiCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HortifrutiCollectionViewCell.xib; sourceTree = "<group>"; };
 		D16DB9AA24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HortifrutiTableViewCell.swift; sourceTree = "<group>"; };
@@ -214,6 +217,7 @@
 		D16DB9D224E6FCE400B2B279 /* Comerciante.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comerciante.swift; sourceTree = "<group>"; };
 		D1778CEA251594BE00D4432B /* ComercianteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComercianteData.swift; sourceTree = "<group>"; };
 		D1778CEC251594C900D4432B /* EnderecoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoData.swift; sourceTree = "<group>"; };
+		D178D93B256D155800E2B4CC /* TotalPedidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalPedidoTableViewCell.swift; sourceTree = "<group>"; };
 		D17BB030253CE19C00FC6D4C /* NomePerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NomePerfilViewController.swift; sourceTree = "<group>"; };
 		D17BB032253CE1A800FC6D4C /* SenhaPerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenhaPerfilViewController.swift; sourceTree = "<group>"; };
 		D17BB034253CE1BF00FC6D4C /* TelefonePerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonePerfilViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 		D1CB876824EC21CD00266EC0 /* ProdutoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewController.swift; sourceTree = "<group>"; };
 		D1CB876A24EC32A000266EC0 /* ProdutoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoTableViewCell.swift; sourceTree = "<group>"; };
 		D1CB876B24EC32A000266EC0 /* ProdutoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProdutoTableViewCell.xib; sourceTree = "<group>"; };
+		D1E0FE7B256F0A090013F004 /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadView.swift; sourceTree = "<group>"; };
 		D1E296A1251A4E7200B34BEA /* Carrinho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrinho.swift; sourceTree = "<group>"; };
 		D1E296A3251A553C00B34BEA /* ItemCarrinho.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCarrinho.swift; sourceTree = "<group>"; };
 		D1E4AEB225433CD600B2F02E /* ActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsView.swift; sourceTree = "<group>"; };
@@ -672,6 +677,7 @@
 				D1E7625025439F14000D85AA /* AvaliarPedidosTableViewCell.xib */,
 				D1C01412255B569300EFBD93 /* PedidoEmAndamentoTableViewCell.swift */,
 				D1C01413255B569300EFBD93 /* PedidoEmAndamentoTableViewCell.xib */,
+				D178D93B256D155800E2B4CC /* TotalPedidoTableViewCell.swift */,
 			);
 			name = "Table cells";
 			path = ../../../..;
@@ -696,6 +702,7 @@
 				D1A7277025432502006B4F20 /* TaskView.swift */,
 				D15A02DA254330CE004F0A29 /* DetalhesView.swift */,
 				D1E4AEB225433CD600B2F02E /* ActionsView.swift */,
+				D1E0FE7B256F0A090013F004 /* LoadView.swift */,
 			);
 			path = "Views Personalizadas";
 			sourceTree = "<group>";
@@ -716,6 +723,7 @@
 			children = (
 				D1ADBEE5254391B8000359F4 /* Table cells */,
 				D1149FF92542E8AC004640C5 /* PedidosViewController.swift */,
+				D16B4482256CA30500090074 /* DetalhesDoPedidoViewController.swift */,
 			);
 			path = "Pedidos Controllers";
 			sourceTree = "<group>";
@@ -917,6 +925,7 @@
 				D11DBD062542E4A1007F3923 /* PedidoEmAndamentoView.swift in Sources */,
 				D1CB876724EC1B4900266EC0 /* Singleton.swift in Sources */,
 				D14757702510F84400868B46 /* ProdutoCarrinhoTableViewCell.swift in Sources */,
+				D178D93C256D155800E2B4CC /* TotalPedidoTableViewCell.swift in Sources */,
 				D111AE79253873C400BDF8B0 /* DadosCadastraisViewController.swift in Sources */,
 				D1EC846124F54B15003BB786 /* CriarAnuncioTableViewCell.swift in Sources */,
 				D1A36EEE2549674200EAFD48 /* EnderecoDoPedidoData.swift in Sources */,
@@ -945,8 +954,10 @@
 				D12476C1250A663200E95433 /* AtivosAnuncios.swift in Sources */,
 				D18E0C2C2530886B002E8F41 /* CampoPerfilTableViewCell.swift in Sources */,
 				D18E0C292530871C002E8F41 /* PerfilViewController.swift in Sources */,
+				D1E0FE7C256F0A090013F004 /* LoadView.swift in Sources */,
 				D19FE68624E4336A007D138A /* TipoComercio.swift in Sources */,
 				D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */,
+				D16B4483256CA30500090074 /* DetalhesDoPedidoViewController.swift in Sources */,
 				D12476BD250A660500E95433 /* AtivosCategoria.swift in Sources */,
 				D1E296A4251A553C00B34BEA /* ItemCarrinho.swift in Sources */,
 				D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */,
