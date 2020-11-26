@@ -47,7 +47,6 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
                 self.imageProduto.image = UIImage(data: data!)
             }
         }
-        
 
         self.nomeProduto.text = produto.produtoNome
         
@@ -56,9 +55,7 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
         self.valorProduto.text = "R$ \(value)"
         self.quantidadeProduto.text = "\(produto.quantidade) caixas"
         
-        
         self.lblDataEntrega.text = "Entrega " + produto.dataEntrega.diaSemana.fullName!
-        
     }
     
 }

@@ -18,8 +18,6 @@ class ListaCompletaTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
-        
-        
     }
 
 

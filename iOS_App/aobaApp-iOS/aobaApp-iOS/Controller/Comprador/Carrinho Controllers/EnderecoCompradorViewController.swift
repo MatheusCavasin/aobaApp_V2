@@ -15,7 +15,6 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
     var celulaSelecionada: Int?
     var carrinhoController: CarrinhoViewController?
     
-    
     @IBOutlet weak var btnVoltar: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
@@ -42,10 +41,8 @@ class EnderecoCompradorViewController: UIViewController, UITableViewDelegate, UI
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (enderecosComerciante?.count ?? 0) + 1
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         if indexPath.row < (enderecosComerciante?.count ?? 0) {
             let cell = tableView.dequeueReusableCell(withIdentifier: EnderecoCadastradoTableViewCell.identifier) as! EnderecoCadastradoTableViewCell
             cell.config(endereco: enderecosComerciante![indexPath.row])

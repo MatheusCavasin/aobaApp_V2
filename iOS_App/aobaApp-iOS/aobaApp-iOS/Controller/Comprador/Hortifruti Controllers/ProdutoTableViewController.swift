@@ -22,8 +22,8 @@ class ProdutoTableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Navigation Controller
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Busque aqui seu produto"
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.placeholder = "Busque aqui seu produto"
         
 
         // TableView

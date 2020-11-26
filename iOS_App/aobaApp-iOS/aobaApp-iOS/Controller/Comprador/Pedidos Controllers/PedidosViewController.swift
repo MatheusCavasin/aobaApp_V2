@@ -18,8 +18,6 @@ class PedidosViewController: UIViewController {
     fileprivate var pedidosEmAndamento: [PedidoData]?
     
     override func viewDidLoad() {
-        LoadView.shared.showLoadView(self.view)
-        
         setupSegmentationControl()
         setupPedidoEmAndamento()
         setupPedidoPassados()
@@ -34,17 +32,36 @@ class PedidosViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        repository.getPedidosComerciante { (result, err) in
-            guard result != nil else { return }
-            Singleton.shared.pedidos = result as? [PedidoData]
-            self.pedidosPassados = self.getPedidosPassados()
-            self.pedidosEmAndamento = self.getPedidosEmAndamento()
-            LoadView.shared.hideLoadView()
-            DispatchQueue.main.async {
-                self.pedidosTableView.reloadData()
-                self.pedidosPassadosTableView.reloadData()
+        
+        if Singleton.shared.comercianteLogado == nil {
+            let alert = UIAlertController(title: "Erro ao carregar pedidos", message: "Lembre-se de entrar em sua conta para acessar os pedidos", preferredStyle: .alert)
+            alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Entrar", comment: "Default action"), style: .cancel, handler: { _ in
+                let loginView = UIStoryboard(name: "CadastroComprador", bundle: nil)
+                let loginController = loginView.instantiateViewController(identifier: "login")
+                loginController.modalPresentationStyle = .fullScreen
+                self.show(loginController, sender: self)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar", comment: "Default action"), style: .default, handler: { _ in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            LoadView.shared.showLoadView(self.view)
+            repository.getPedidosComerciante { (result, err) in
+                guard result != nil else { return }
+                Singleton.shared.pedidos = result as? [PedidoData]
+                self.pedidosPassados = self.getPedidosPassados()
+                self.pedidosEmAndamento = self.getPedidosEmAndamento()
+                LoadView.shared.hideLoadView()
+                DispatchQueue.main.async {
+                    self.pedidosTableView.reloadData()
+                    self.pedidosPassadosTableView.reloadData()
+                }
             }
         }
+        
+        
     }
     
     public func reloadView() {
@@ -139,16 +156,15 @@ extension PedidosViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.isSelected = false //Melhora a navegaçao
+        let view = UIStoryboard(name: "TabPedidosComprador", bundle: nil)
+        let controller: DetalhesDoPedidoViewController!
+        controller = view.instantiateViewController(identifier: "detalhesComprador") as? DetalhesDoPedidoViewController
         if tableView == pedidosPassadosTableView {
-            
-            LoadView.shared.showLoadView(self.view)
+            controller.pedido = pedidosPassados?[indexPath.row]
         } else {
-            let view = UIStoryboard(name: "TabPedidosComprador", bundle: nil)
-            let controller: DetalhesDoPedidoViewController!
-            controller = view.instantiateViewController(identifier: "detalhesComprador") as! DetalhesDoPedidoViewController
             controller.pedido = pedidosEmAndamento?[indexPath.row]
-            navigationController?.showDetailViewController(controller, sender: self)
         }
+        navigationController?.showDetailViewController(controller, sender: self)
     }
 }
 
