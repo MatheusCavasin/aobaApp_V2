@@ -48,19 +48,27 @@ extension DetalhesDoPedidoViewController: UITableViewDelegate, UITableViewDataSo
             cell.config(valor: pedido.detalhes.totalItens)
             return cell
         } else if indexPath.row == pedido.detalhes.itens.count + 1 {
+            let cidadeUF = pedido.detalhes.endereco.cidadeUf.components(separatedBy: "-")
+            let cidade = cidadeUF[0]
+            let uf = cidadeUF[1]
+            
+            let logradouraNumero = pedido.detalhes.endereco.logradouroNumero.components(separatedBy: ",")
+            let logradoura = logradouraNumero[0]
+            let numero = Int(logradouraNumero[1].replacingOccurrences(of: " ", with: ""))
+
             let cell = tableView.dequeueReusableCell(withIdentifier: "endereco") as! EnderecoDoCarrinhoTableViewCell
             let endereco =
                 EnderecoData(
                     bairro: pedido.detalhes.endereco.bairro,
                     cep: "",
-                    cidade: pedido.detalhes.endereco.cidadeUf,
+                    cidade: cidade,
                     complemento: "",
                     id: 0,
                     latitude: 0,
                     longitude: 0,
-                    logradouro: pedido.detalhes.endereco.logradouroNumero,
-                    numero: 0,
-                    uf: ""
+                    logradouro: logradoura,
+                    numero: numero ?? 0 ,
+                    uf: uf
                 )
             cell.config(endereco: endereco, navigationController: nil)
             return cell

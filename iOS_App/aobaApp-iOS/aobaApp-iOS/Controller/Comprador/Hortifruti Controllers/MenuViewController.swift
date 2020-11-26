@@ -10,27 +10,23 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var seg: DiaDaSemanaView!
     @IBOutlet weak var ter: DiaDaSemanaView!
     @IBOutlet weak var qua: DiaDaSemanaView!
     @IBOutlet weak var qui: DiaDaSemanaView!
     @IBOutlet weak var sex: DiaDaSemanaView!
     
-    
     @IBOutlet weak var imgFrutas: CardOQueProcura!
     @IBOutlet weak var imgVerduras: CardOQueProcura!
     @IBOutlet weak var imgLegumes: CardOQueProcura!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Navigation Bar
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Busque aqui seu produto"
-        navigationItem.searchController = searchController
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.placeholder = "Busque aqui seu produto"
+//        navigationItem.searchController = searchController
         
         //Tela
         setupDiasDaSemanaView()
@@ -51,6 +47,4 @@ class MenuViewController: UIViewController {
         imgLegumes.setupView("VERDURA", presentingController: self)
         imgVerduras.setupView("LEGUME", presentingController: self)
     }
-
-    
 }

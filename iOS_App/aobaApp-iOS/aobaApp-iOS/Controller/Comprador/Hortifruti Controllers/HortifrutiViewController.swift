@@ -38,9 +38,9 @@ class HortifrutiViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView.separatorStyle = .none
         
         //Navbar and search item
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "Busque aqui seu produto"
-        navigationItem.searchController = searchController
+//        let searchController = UISearchController(searchResultsController: nil)
+//        searchController.searchBar.placeholder = "Busque aqui seu produto"
+//        navigationItem.searchController = searchController
         
         
         //Observables
