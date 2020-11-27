@@ -10,6 +10,28 @@ import Foundation
 
 
 class ProdutorRepository {
+    
+    func getPedidosNovos(completion: @escaping (Any?, Error?) -> Void){
+        print("request pedidos novos")
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/novos/produtor/3"
+        
+        ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
+            (result, err) in completion(result, err)
+        }
+    }
+    
+    func getCarrinhoVendedor(completion: @escaping (Any?, Error?) -> Void) {
+
+            print("request carrinho")
+
+            let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/respondidos/produtor/3"
+            // dictListaCarrinho
+
+            ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
+                (result, err)  in completion(result, err)
+            }
+
+        }
         
     func create(produtor: Produtor){
         
