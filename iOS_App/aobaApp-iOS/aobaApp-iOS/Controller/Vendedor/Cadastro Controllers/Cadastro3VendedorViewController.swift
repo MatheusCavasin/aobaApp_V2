@@ -105,7 +105,18 @@ class Cadastro3VendedorViewController: UIViewController, UITableViewDelegate, UI
                 let defaults = UserDefaults.standard
                 defaults.set(produtor.email, forKey: "Usuario")
                 defaults.set(produtorCreated.senha, forKey: "senha")
+    
                 self.repository.getProdutos()
+                
+                DispatchQueue.main.async {
+                    LoadView.shared.hideLoadView()
+                    guard (result != nil) else { return }
+                    let controller: PrincipalVendedor
+                    let view  = UIStoryboard(name: "PrincipalVendedor", bundle: nil)
+                    controller = view.instantiateViewController(identifier: "TabVendedor") as! PrincipalVendedor
+                    self.navigationController?.pushViewController(controller, animated: true)
+                }
+                
             } else {
                 let alert = UIAlertController(title: "Parece que algo de errado", message: "Confira seus dados e tente novamente", preferredStyle: .alert)
                 alert.view.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)

@@ -29,11 +29,6 @@ class LoginVendedorViewController: UIViewController {
         CriarButton.layer.borderWidth = 2
         CriarButton.layer.borderColor = #colorLiteral(red: 1, green: 0.5716887116, blue: 0.1306569278, alpha: 1)
         
-        
-        emailVendedor.text = "matheus@redeaoba.com.br"
-        senhaVendedor.text = "123456"
-        
-        
         self.hideKeyboardWhenTappedAround()
         self.emailVendedor.keyboardType = UIKeyboardType.emailAddress
 
@@ -62,11 +57,27 @@ class LoginVendedorViewController: UIViewController {
     
     @IBAction func entrarButton(_ sender: Any) {
         let defaults = UserDefaults.standard
+        LoadView.shared.showLoadView(self.view)
         defaults.set(emailVendedor.text, forKey: "Usuario")
         defaults.set(senhaVendedor.text, forKey: "senha")
         produtorRepository.login { (result, err) in
-            guard (result != nil) else { return }
-            self.produtorRepository.getProdutos()
+            DispatchQueue.main.async {
+                LoadView.shared.hideLoadView()
+                if result != nil {
+                    self.produtorRepository.getProdutos()
+                    let controller: PrincipalVendedor
+                    let view  = UIStoryboard(name: "PrincipalVendedor", bundle: nil)
+                    controller = view.instantiateViewController(identifier: "TabVendedor") as! PrincipalVendedor
+                    self.navigationController?.pushViewController(controller, animated: true)
+                } else {
+                    let alert = UIAlertController(title: "Erro ao tentar logar", message: "Confira seus dados e tente novamente", preferredStyle: .alert)
+                    alert.view.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+                    alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+                
+            }
         }
         
         

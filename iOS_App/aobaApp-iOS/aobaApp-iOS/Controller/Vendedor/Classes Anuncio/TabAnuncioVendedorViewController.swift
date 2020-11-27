@@ -51,8 +51,10 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
         print("\n\n\n\n\n\n\n")
 //        segmentedControl.selectedSegmentIndex = 1
         dadosChamar()
-
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        dadosChamar()
     }
     
     
@@ -88,28 +90,11 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     
     @objc func dadosChamar(){
         if downloadDados{
-            produtorRepositoy.login { (result, err) in
-                guard result != nil else { return }
-                self.produtorRepositoy.getAnuncios()
-                DispatchQueue.main.async {
-                    self.loadViewAnuncios.isHidden = false
-                    self.loadIndicatorAnuncios.startAnimating()
-                }
-            }
-           
-//            if let vc = storyboard?.instantiateViewController(withIdentifier: "LoadView") as? LoadingViewController {
-//                vc.modalPresentationStyle = .fullScreen
-//                self.present(vc, animated: false, completion: nil)
-//            }
-//            self.downloadDados = false
-        } /*else {
-            self.downloadDados = true
-            self.loadViewAnuncios.isHidden = true
-            self.loadIndicatorAnuncios.stopAnimating()
-            reloadView()
-        }*/
-        
-        
+            guard ModelVendedor.instance.produtorLogado != nil else { return }
+            self.produtorRepositoy.getAnuncios()
+            self.loadViewAnuncios.isHidden = false
+            self.loadIndicatorAnuncios.startAnimating()
+        }
     }
     
     @objc func dadosCapturados(){

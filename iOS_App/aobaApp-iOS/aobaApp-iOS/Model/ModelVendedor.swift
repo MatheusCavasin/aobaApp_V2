@@ -33,8 +33,7 @@ class ModelVendedor {
     var quantidadeCaixas = 0
     var precoCaixa = 0.0
     var idProduto = 0
-    var idProdutor = 3
-    
+    var idProdutor: Int {produtorLogado!.id}
 }
 
 func anuncioDictionary() -> Dictionary<String, Any> {

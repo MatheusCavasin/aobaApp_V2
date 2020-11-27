@@ -14,14 +14,10 @@ class ProdutorRepository {
     func getPedidosNovos(completion: @escaping (Any?, Error?) -> Void){
         print("request pedidos novos")
         let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/novos/produtor/3"
-        
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
             (result, err) in completion(result, err)
         }
     }
-    
-    
-        
     
     func login(completion: @escaping (Any?, Error?) -> Void ) {
         let url = Singleton.shared.apiEndPoint + "/api/v1/produtor/login"
@@ -34,11 +30,15 @@ class ProdutorRepository {
                     if statusCode as! Int == 200 {
                         ModelVendedor.instance.produtorLogado = Produtor.dictionaryToObject(dictionary: resultDict)
                         completion(result, nil)
+                    } else {
+                        completion(nil, nil)
                     }
                 } else {
                     ModelVendedor.instance.produtorLogado = Produtor.dictionaryToObject(dictionary: resultDict)
                     completion(result, nil)
                 }
+            } else {
+                completion(nil, err)
             }
         }
     }
@@ -72,7 +72,7 @@ class ProdutorRepository {
         print("requestProducts")
         
         //Coloque a URL da sua API aqui
-        let url = "https://aoba-api-server.herokuapp.com/api/v1/produto/"
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/produto"
         
         //Chamando a funcão GET produtor
         
@@ -145,7 +145,7 @@ class ProdutorRepository {
                 //Aqui res podera assumir dois valores, true ou false
                 print("sua requisicao foi realizada com sucesso")
                 
-                let novos = result as? Dictionary<String, Any>.Element
+                let novos = result as? [Dictionary<String, Any>]
                 if novos == nil {
                     print("Nao há novos pedidos")
                 } else {
@@ -173,7 +173,7 @@ class ProdutorRepository {
         let produtorDict = anuncioDictionary()
         
         //Chamando a funcão POST produtor
-        ApiResource.request(method: "POST", url: url, params: nil, body: produtorDict, withAuth: false){
+        ApiResource.request(method: "POST", url: url, params: nil, body: produtorDict, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
             if let result = result  {
@@ -214,7 +214,7 @@ class ProdutorRepository {
         let produtorDict = anuncioDictionary()
         
         //Chamando a funcão POST produtor
-        ApiResource.request(method: "DELETE", url: url, params: nil, body: produtorDict, withAuth: false){
+        ApiResource.request(method: "DELETE", url: url, params: nil, body: produtorDict, withAuth: true){
             (result, err)  in
             //Aqui você tem seu resultado
             if let result = result {
