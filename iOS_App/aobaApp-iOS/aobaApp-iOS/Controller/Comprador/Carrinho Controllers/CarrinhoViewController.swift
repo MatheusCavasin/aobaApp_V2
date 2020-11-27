@@ -46,22 +46,6 @@ class CarrinhoViewController: UIViewController {
         self.viwLoadView.isHidden = false
         // navigation controller
         
-       /* if !vendedor {
-            repository.getCarrinhoVendedor { (result, err) in
-                if let result = result {
-                    print(result)
-                    DispatchQueue.main.async {
-                        // Quando carregado, esconde a tela de load e atribui o valor de carrinhoData
-                        self.viwLoadView.isHidden = true
-                        self.carrinhoCriado = CarrinhoData.jsonToObject(dict: result as! Dictionary<String, Any>) //[[String : Any?]]
-                        self.tableView.reloadData()
-                    }
-                } else {
-                    print(err as Any)
-                }
-            }
-        }*/
-        
         if let carrinhoPedido = Singleton.shared.carrinhoPedido {
             repository.getCarrinho(carrinhoPedido: carrinhoPedido) { (result, err) in
                 if let result = result {
@@ -271,6 +255,9 @@ extension CarrinhoViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             }
         }
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
