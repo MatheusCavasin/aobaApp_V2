@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fhN-RD-5KI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fhN-RD-5KI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +49,7 @@
                                 <color key="textColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="teste3@gmail.com" borderStyle="roundedRect" placeholder="  Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-7X-cCo">
+                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-7X-cCo">
                                 <rect key="frame" x="37" y="260" width="340" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fxk-7X-cCo" secondAttribute="height" multiplier="85:11" id="T65-bj-eBe"/>
@@ -58,7 +60,7 @@
                                     <outlet property="delegate" destination="pZT-zA-yBA" id="9pX-Vv-DWm"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="  Senha" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-rz-yQ4">
+                            <textField opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="340" placeholderIntrinsicHeight="44" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="  Senha" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xpp-rz-yQ4">
                                 <rect key="frame" x="37" y="319" width="340" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xpp-rz-yQ4" secondAttribute="height" multiplier="85:11" id="C76-5O-r5c"/>
@@ -67,12 +69,12 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esqueceu a senha?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBe-Nf-uQn">
-                                <rect key="frame" x="133" y="378" width="148" height="21"/>
+                                <rect key="frame" x="134" y="378" width="146.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-tU-cVJ">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxB-tU-cVJ">
                                 <rect key="frame" x="37" y="414" width="340" height="46"/>
                                 <rect key="contentStretch" x="0.5" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -87,7 +89,7 @@
                                     <segue destination="9Pr-cu-vMM" kind="show" id="HK5-gi-MI6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-JZ-YTp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSm-JZ-YTp">
                                 <rect key="frame" x="37" y="475" width="340" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019607845" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -116,7 +118,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aNo-dM-nbl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="gxB-tU-cVJ" firstAttribute="top" secondItem="dBe-Nf-uQn" secondAttribute="bottom" constant="15" id="0rj-9y-xuG"/>
                             <constraint firstItem="aNo-dM-nbl" firstAttribute="trailing" secondItem="xpp-rz-yQ4" secondAttribute="trailing" constant="37" id="6Wb-Ou-0vs"/>
@@ -142,12 +145,11 @@
                             <constraint firstItem="X1B-hf-aRl" firstAttribute="top" secondItem="wYf-kV-h2i" secondAttribute="bottom" constant="28" id="x8C-fe-5qO"/>
                             <constraint firstItem="xpp-rz-yQ4" firstAttribute="top" secondItem="fxk-7X-cCo" secondAttribute="bottom" constant="15" id="zGB-Vx-PSh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="aNo-dM-nbl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="Wav-dE-r4P">
                         <barButtonItem key="backBarButtonItem" title="Login" id="vWA-Hd-Dj7"/>
                         <barButtonItem key="leftBarButtonItem" title="Voltar" style="plain" id="SZl-Wz-fht">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zxZ-xs-nhE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="zxZ-xs-nhE">
                                 <rect key="frame" x="20" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Voltar"/>
@@ -208,7 +210,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3K-6x-NrH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3K-6x-NrH">
                                 <rect key="frame" x="37" y="487.5" width="340" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.5" y="0.0" width="1" height="1"/>
@@ -226,7 +228,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="eHP-fP-Snt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hJV-ze-kLF" firstAttribute="leading" secondItem="eHP-fP-Snt" secondAttribute="leading" constant="37" id="3OB-KK-GDb"/>
                             <constraint firstItem="swC-w6-OnN" firstAttribute="top" secondItem="eHP-fP-Snt" secondAttribute="top" multiplier="1.3" constant="26" id="GPq-ib-Ire"/>
@@ -244,7 +247,6 @@
                             <constraint firstItem="S3K-6x-NrH" firstAttribute="leading" secondItem="eHP-fP-Snt" secondAttribute="leading" constant="37" id="yPf-N4-WHu"/>
                             <constraint firstItem="eHP-fP-Snt" firstAttribute="trailing" secondItem="hJV-ze-kLF" secondAttribute="trailing" constant="37" id="zKL-bI-AfI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="eHP-fP-Snt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro" id="ye1-lJ-gSl">
                         <barButtonItem key="backBarButtonItem" title="voltar" id="vJN-E2-gic"/>
@@ -306,7 +308,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-92-LzB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTL-92-LzB">
                                 <rect key="frame" x="37" y="546.5" width="340" height="46"/>
                                 <color key="backgroundColor" red="0.0" green="0.71372549019999998" blue="0.17254901959999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <rect key="contentStretch" x="0.5" y="0.0" width="1" height="1"/>
@@ -337,7 +339,8 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="kIo-QN-37E"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7Zb-1B-7Sn" firstAttribute="top" secondItem="43b-Mh-TlN" secondAttribute="bottom" constant="15" id="16h-6d-M2h"/>
                             <constraint firstItem="kIo-QN-37E" firstAttribute="trailing" secondItem="axW-Kl-T24" secondAttribute="trailing" constant="37" id="7Qn-ek-PtK"/>
@@ -362,7 +365,6 @@
                             <constraint firstItem="43b-Mh-TlN" firstAttribute="leading" secondItem="kIo-QN-37E" secondAttribute="leading" constant="37" id="swW-lL-6ie"/>
                             <constraint firstItem="kIo-QN-37E" firstAttribute="trailing" secondItem="7Zb-1B-7Sn" secondAttribute="trailing" constant="37" id="xU5-sc-vQl"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="kIo-QN-37E"/>
                     </view>
                     <navigationItem key="navigationItem" title="Cadastro" id="xyc-l8-yoI">
                         <barButtonItem key="backBarButtonItem" title="voltar" id="qfJ-6e-Gu7"/>
@@ -386,5 +388,8 @@
         <image name="logo-comprador" width="222" height="70"/>
         <image name="signup3" width="164" height="143"/>
         <image name="singup-1" width="155" height="153"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

@@ -55,7 +55,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Pedidos" image="icone-pedidos" id="Xgc-dD-qi4"/>
-                    <navigationItem key="navigationItem" title="Pedidos" id="ctg-tb-dDB"/>
+                    <navigationItem key="navigationItem" title="Pedidos" largeTitleDisplayMode="always" id="ctg-tb-dDB"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="pedidosTableView" destination="iWl-Xm-CrE" id="kBU-Sm-ifM"/>
@@ -85,13 +85,13 @@
         <!--carrinho-->
         <scene sceneID="WeB-vf-LQI">
             <objects>
-                <viewController title="carrinho" id="X6y-me-EHw" customClass="CarrinhoVendedorViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarrinhoVendedorViewController" title="carrinho" id="X6y-me-EHw" customClass="CarrinhoVendedorViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7w-7J-eL6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="koB-4x-Lae">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listaCompleta" rowHeight="56" id="XaC-oM-HlW">
@@ -388,7 +388,7 @@
                                                         <constraint firstAttribute="width" secondItem="f0L-6d-LrM" secondAttribute="height" multiplier="17:2" id="tPi-sO-LdD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                    <state key="normal" title="Cancelar pedido">
+                                                    <state key="normal" title="Fechar">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
@@ -406,10 +406,10 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9IQ-Ts-3IC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Hot-83-bS6">
-                                        <rect key="frame" x="188.5" y="368.5" width="37" height="37"/>
+                                        <rect key="frame" x="188.5" y="357.5" width="37" height="37"/>
                                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -434,6 +434,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Carrinho" largeTitleDisplayMode="always" id="HOy-7F-jhG"/>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="koB-4x-Lae" id="7rh-ke-9Sl"/>
                         <outlet property="viwLoadView" destination="9IQ-Ts-3IC" id="1yP-bz-D3V"/>
@@ -464,7 +465,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="todosOsProdutosVendedor" title="Lista de Produtos" id="4Hz-th-v8x" customClass="ListaCompletaVendedorTableViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JtX-eH-Yz2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -536,6 +537,7 @@
                             <outlet property="delegate" destination="4Hz-th-v8x" id="aYK-co-oB4"/>
                         </connections>
                     </tableView>
+                    <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EqN-0k-K5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -16,6 +16,7 @@ class NovosPedidosViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var tableView: UITableView!
     var itens = [[String : Any?]]()
     var produtor = [String : Any?]()
+    let repository: ProdutorRepository = ProdutorRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,10 +69,16 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
 
     func recusarPedidoPressed() {
         print("RECUSAR")
+        repository.responderPedido(pedidoId: (produtor["idPedido"] as! Int), aceite: false, completion: {_,_ in })
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID5"), object: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     func aceitarPedidoPressed() {
         print("ACEITAR")
+        repository.responderPedido(pedidoId: (produtor["idPedido"] as! Int), aceite: true, completion: {_,_ in })
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID5"), object: nil)
+        self.dismiss(animated: true, completion: nil)
 
     }
     

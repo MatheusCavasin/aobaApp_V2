@@ -42,11 +42,11 @@ class ListaCompletaVendedorTableViewController: UITableViewController {
             return cell
         } else if indexPath.row == self.itens.count {
             let cell = tableView.dequeueReusableCell(withIdentifier: "valorCarrinho") as! ValorTotalTodosItensTableViewCell
-            cell.config(valor: ModelVendedor.instance.dictListaCarrinho[0]["valorTotal"] as? Float ?? 0.00)
+            cell.config(valor: ModelVendedor.instance.dictListaCarrinho["valorTotal"] as? Float ?? 0.00)
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "valorFrete") as! ValorFreteTodosItensTableViewCell
-            cell.config(valor: ModelVendedor.instance.dictListaCarrinho[0]["valorFrete"] as? Float ?? 0.00)
+            cell.config(valor: ModelVendedor.instance.dictListaCarrinho["valorFrete"] as? Float ?? 0.00)
             return cell
         }
     }

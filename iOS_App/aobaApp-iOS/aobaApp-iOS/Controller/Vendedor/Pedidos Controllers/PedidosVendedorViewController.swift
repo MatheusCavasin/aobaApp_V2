@@ -24,6 +24,8 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
         self.navigationController?.title = "Pedidos"
         setupSegmentationControl()
         setupTablePedidos()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.loadPedidosNovos), name: NSNotification.Name(rawValue: "NotificationID5"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,12 +35,16 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
         loadPedidosNovos()
     }
     
-    func loadPedidosNovos(){
+    @objc func loadPedidosNovos(){
+        self.pedidosRespondidos = []
+        self.pedidosRespondidosFiltro = []
+        self.novosPedidos = []
         produtorRepository.getPedidosNovos{ (result, err) in
             if let result = result{
                 let novos = result as? [[String : Any?]]
                 if(novos == nil){
                     print("novos pedidos é nil")
+                    self.novosPedidos = []
                 }else{
                     self.novosPedidos = novos as! [[String : Any?]]
                 }
@@ -56,6 +62,8 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
                 let respondidos = result as? [[String : Any?]]
                 if(respondidos == nil){
                     print("respondidos é nil")
+                    self.pedidosRespondidos = []
+                    self.pedidosRespondidosFiltro = []
                 }else{
                     self.pedidosRespondidos = respondidos as! [[String : Any?]]
                     self.pedidosRespondidosFiltro = self.pedidosRespondidos
@@ -146,15 +154,12 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("clicado: \(indexPath.row)")
-        if(segmentedControl.selectedSegmentIndex == 0 && novosPedidos.count > 0){
-            if(indexPath.row < novosPedidos.count){
+//        if(segmentedControl.selectedSegmentIndex == 0 && novosPedidos.count > 0){
+            if(indexPath.row < novosPedidos.count && segmentedControl.selectedSegmentIndex == 0 && novosPedidos.count > 0){
                 print("item clicado é pedido novo: \(indexPath.row)")
                 
                 let novo = novosPedidos[indexPath.row]
                 //MARK: enviar esse novo para a tela de novos p/ responder
-                print("\n\n\n\n\n\n\n\n")
-                print(novo)
-                print("\n\n\n\n\n\n\n\n")
                 if let vc = storyboard?.instantiateViewController(withIdentifier: "NovosPedidosViewController") as? NovosPedidosViewController {
                     vc.itens = novo["itens"] as! [[String : Any?]]
                     vc.produtor = novo
@@ -169,9 +174,19 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
                 
                 let respondido = pedidosRespondidosFiltro[row]
                 //MARK: enviar esse novo para detalhes
+                if let vc = storyboard?.instantiateViewController(withIdentifier: "CarrinhoVendedorViewController") as? CarrinhoVendedorViewController {
+                    ModelVendedor.instance.dictListaCarrinho = respondido as [String : Any]
+                    vc.itens = respondido["itens"] as! [[String : Any?]]
+                    vc.datasEntrega = respondido["datasEntrega"] as! [[String : Any?]]
+                    vc.dadosComerciante = ComercianteData.dictToObject(dict: (respondido["comerciante"] as! Dictionary<String,Any>))
+                    self.present(vc, animated:true, completion: {
+//                        self.dadosChamar()
+                    })
+                }
+                
                 
             }
-        }
+//        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
