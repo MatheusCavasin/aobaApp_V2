@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQI-fE-7vI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQI-fE-7vI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SQh-HL-HPw">
-                                <rect key="frame" x="0.0" y="419.5" width="414" height="393.5"/>
+                                <rect key="frame" x="0.0" y="343" width="414" height="470"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnuncioCell" rowHeight="103" id="gep-NZ-V6c" customClass="AnuncioVendedorTableViewCell" customModule="aobaApp_iOS" customModuleProvider="target">
@@ -131,7 +131,7 @@
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anúncios Ativos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIg-bx-X5Q">
-                                <rect key="frame" x="20.5" y="357.5" width="373" height="24"/>
+                                <rect key="frame" x="20.5" y="281" width="373" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -164,8 +164,8 @@
                                     <action selector="statusAnuncio:" destination="JQI-fE-7vI" eventType="valueChanged" id="uUa-lT-Fni"/>
                                 </connections>
                             </segmentedControl>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4YE-ea-DzR">
-                                <rect key="frame" x="0.0" y="-19.5" width="414" height="896"/>
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4YE-ea-DzR">
+                                <rect key="frame" x="0.0" y="546" width="73" height="330"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="C9T-qN-ylp">
                                         <rect key="frame" x="197" y="438" width="20" height="20"/>
@@ -187,7 +187,7 @@
                             <constraint firstItem="4YE-ea-DzR" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="8Wu-pa-wUQ"/>
                             <constraint firstItem="r0k-4f-hAQ" firstAttribute="centerX" secondItem="fSZ-EI-qbd" secondAttribute="centerX" id="8lW-c5-Nxf"/>
                             <constraint firstItem="fSZ-EI-qbd" firstAttribute="trailing" secondItem="r0k-4f-hAQ" secondAttribute="trailing" constant="56" id="CpK-zA-rEg"/>
-                            <constraint firstItem="iIg-bx-X5Q" firstAttribute="top" secondItem="2IL-hY-aUt" secondAttribute="bottom" multiplier="1.4" id="ExD-oj-oJj"/>
+                            <constraint firstItem="iIg-bx-X5Q" firstAttribute="top" secondItem="2IL-hY-aUt" secondAttribute="bottom" multiplier="1.1" id="ExD-oj-oJj"/>
                             <constraint firstItem="r0k-4f-hAQ" firstAttribute="leading" secondItem="fSZ-EI-qbd" secondAttribute="leading" constant="56" id="OsV-9u-qLf"/>
                             <constraint firstItem="SQh-HL-HPw" firstAttribute="bottom" secondItem="fSZ-EI-qbd" secondAttribute="bottom" id="Osh-zL-D5v"/>
                             <constraint firstItem="4YE-ea-DzR" firstAttribute="centerY" secondItem="fSZ-EI-qbd" secondAttribute="centerY" id="Pq9-w9-dHu"/>

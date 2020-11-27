@@ -49,7 +49,6 @@ class PrimeiraTelaDeCadastroViewController: UIViewController, UITextFieldDelegat
     }
     
     @IBAction func btnProximoPressed(_ sender: Any) {
-        
         if email.text != "" && senha.text != "" && confirmacaoSenha.text != ""{
             if senha.text == confirmacaoSenha.text {
                 Singleton.shared.creatingUser = []
@@ -71,8 +70,5 @@ class PrimeiraTelaDeCadastroViewController: UIViewController, UITextFieldDelegat
             }))
             self.present(alert, animated: true, completion: nil)
         }
-        
     }
-    
-    
 }

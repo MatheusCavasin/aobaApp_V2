@@ -16,13 +16,16 @@ class ModelVendedor {
     private init() {
     }
     
+    var produtorLogado: Produtor?
     var hortifruit: [String] = []
     var dictListaProdutos = [[String: Any]]()
     var dictListaAnuncios = [[String: Any]]()
     var email: String = ""
     var senha: String = ""
     var nome: String = ""
+    var telefone: String = ""
     var codigo_registro: String = ""
+    var nomeFantasia: String = ""
     var idFoto: [String?] = [String]()
     var descricao: String = ""
     var tipoHortifruit = ""
