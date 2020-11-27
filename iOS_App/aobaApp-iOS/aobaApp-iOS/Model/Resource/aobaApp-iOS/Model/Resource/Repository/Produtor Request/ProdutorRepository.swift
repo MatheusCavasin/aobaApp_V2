@@ -13,7 +13,10 @@ class ProdutorRepository {
     
     func getPedidosNovos(completion: @escaping (Any?, Error?) -> Void){
         print("request pedidos novos")
-        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/novos/produtor/3"
+        
+        guard let produtor = ModelVendedor.instance.produtorLogado else { return }
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/novos/produtor/\(produtor.id)"
+        
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
             (result, err) in completion(result, err)
         }
@@ -97,8 +100,8 @@ class ProdutorRepository {
     func getCarrinhoVendedor(completion: @escaping (Any?, Error?) -> Void) {
         
         print("request carrinho")
-        
-        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/respondidos/produtor/3"
+        guard let produtor = ModelVendedor.instance.produtorLogado else { return }
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/respondidos/produtor/\(produtor.id)"
         // dictListaCarrinho
         
         ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){

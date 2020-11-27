@@ -29,6 +29,7 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
     override func viewWillAppear(_ animated: Bool) {
         
         //Iniciar o load
+        LoadView.shared.showLoadView(self.view)
         loadPedidosNovos()
     }
     
@@ -41,9 +42,9 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
                 }else{
                     self.novosPedidos = novos as! [[String : Any?]]
                 }
-                DispatchQueue.main.async {
-                    self.loadPedidosRespondidos()
-                }
+            }
+            DispatchQueue.main.async {
+                self.loadPedidosRespondidos()
             }
             
         }
@@ -59,15 +60,16 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
                     self.pedidosRespondidos = respondidos as! [[String : Any?]]
                     self.pedidosRespondidosFiltro = self.pedidosRespondidos
                 }
-                DispatchQueue.main.async {
-                    //Quando finaliza o carregamento
-                    self.filterBySegmented(index: self.segmentedControl.selectedSegmentIndex)
-                    
-                    //Finalizar o load
-                }
             } else {
                 print(err as Any)
 
+            }
+            DispatchQueue.main.async {
+                //Quando finaliza o carregamento
+                self.filterBySegmented(index: self.segmentedControl.selectedSegmentIndex)
+                
+                //Finalizar o load
+                LoadView.shared.hideLoadView()
             }
         }
     }

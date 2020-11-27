@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "verdura-alface.png",
+      "filename" : "verdura-alface.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "verdura-alface@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "verdura-alface@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
