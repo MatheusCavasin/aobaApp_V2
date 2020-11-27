@@ -74,6 +74,44 @@ class ProdutorRepository {
     }
     
     
+    
+    func getCarrinhoVendedor(completion: @escaping (Any?, Error?) -> Void) {
+        
+        print("request carrinho")
+        
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/respondidos/produtor/3"
+        // dictListaCarrinho
+        
+        ApiResource.request(method: "GET", url: url, params: nil, body: nil, withAuth: true){
+            (result, err)  in completion(result, err)
+        }
+        
+        /*
+         if let res:Bool = (err == nil) {
+             if(res) {
+                 //Aqui res podera assumir dois valores, true ou false
+                 print("sua requisicao foi realizada com sucesso")
+                 ModelVendedor.instance.dictListaCarrinho = result as! [[String : Any?]]
+                 DispatchQueue.main.async{
+//                        NotificationCenter.default.post(name: Notification.Name(rawValue: "NotificationID"), object: nil)
+//                        print(result)
+                     print(ModelVendedor.instance.dictListaCarrinho[0]["valorFrete"])
+                 }
+                 
+             } else {
+                 //Aqui voce pode tratar os erros
+                 print("a requisicao nao funcionou")
+                 print(err)
+             }
+         }
+         
+         
+         */
+        
+        
+    }
+    
+    
     func getAnuncios(){
         print("requestAnuncios")
         

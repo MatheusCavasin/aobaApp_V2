@@ -19,6 +19,7 @@ class ModelVendedor {
     var hortifruit: [String] = []
     var dictListaProdutos = [[String: Any]]()
     var dictListaAnuncios = [[String: Any]]()
+    var dictListaCarrinho = [[String: Any]]()
     var email: String = ""
     var senha: String = ""
     var nome: String = ""

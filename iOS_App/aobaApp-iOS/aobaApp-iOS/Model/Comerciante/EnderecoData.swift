@@ -42,8 +42,8 @@ class EnderecoData {
         let cidade = dict["cidade"] as! String
         let complemento = String(dict["complemento"]  as! String)
         let id = dict["id"] as! CLong
-        let latitude = dict["latitude"] as! Int
-        let longitude = dict["longitude"] as! Int
+        let latitude = 10 // dict["latitude"] as! Int
+        let longitude = 10 // dict["longitude"] as! Int
         let logradouro = dict["logradouro"] as! String
         let numero = dict["numero"] as! Int
         let uf = dict["uf"] as! String
@@ -69,8 +69,71 @@ class EnderecoData {
         
         return dict
     }
+}
+
+
+class EnderecoDataVenda {
+    var bairro: String
+    var cep: String
+    var cidade: String
+    var complemento: String
+    var id: CLong
+    var logradouro: String
+    var numero: Int
+    var uf: String
+    
+    
+    init(bairro: String, cep: String, cidade: String, complemento: String, id: Int, logradouro: String, numero: Int, uf: String) {
+        self.bairro = bairro
+        self.cep = cep
+        self.cidade = cidade
+        self.complemento = complemento
+        self.id = id
+        self.logradouro = logradouro
+        self.numero = numero
+        self.uf = uf
+    }
+    
+    
+    static func dictToObject(dict: Dictionary<String, Any>) -> EnderecoDataVenda {
+        let bairro = dict["bairro"] as! String
+        let cep = dict["cep"] as! String
+        let cidade = dict["cidade"] as! String
+        let complemento = String(dict["complemento"]  as! String)
+        let id = dict["id"] as! CLong
+        let logradouro = dict["logradouro"] as! String
+        let numero = dict["numero"] as! Int
+        let uf = dict["uf"] as! String
+        
+        return EnderecoDataVenda(bairro: bairro, cep: cep, cidade: cidade, complemento: complemento, id: id, logradouro: logradouro, numero: numero, uf: uf)
+    }
+    
+    
+    
+    func objectToDictrionary() -> Dictionary<String, Any> {
+        var dict: Dictionary<String, Any> = [:]
+        
+        dict["bairro"] = self.bairro
+        dict["cep"] = self.cep
+        dict["cidade"] = self.cidade
+        dict["complemento"] = self.complemento
+        dict["id"] = self.id
+        dict["logradouro"] = self.logradouro
+        dict["numero"] = self.numero
+        dict["uf"] = self.uf
+        
+        return dict
+    }
     
 }
+
+
+
+
+
+
+
+
 
 /*
 {

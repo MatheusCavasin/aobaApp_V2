@@ -61,4 +61,33 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
         
     }
     
+    public func configVendedor(produto: [String : Any?], data: [[String : Any?]]){
+        
+        let storageRef = Storage.storage().reference(withPath: (produto["foto"] as! String) + ".jpg")
+        storageRef.getData(maxSize: 4 * 1024 * 1024) { data, error in
+            if let _ = error {
+                self.loadingIndicator.isHidden = true
+                self.imageProduto.image = UIImage(named: "default-image")
+                return
+            } else {
+                self.loadingIndicator.isHidden = true
+                self.imageProduto.image = UIImage(data: data!)
+            }
+        }
+        
+        self.nomeProduto.text = produto["produtoNome"] as! String
+
+        
+        var value: String = String(format: "%.2f", Float((produto["valor"] as! Double)) * Float((produto["quantidade"] as! Int)) as CVarArg)
+        value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        self.valorProduto.text = "R$ \(value)"
+        self.quantidadeProduto.text = "\(produto["quantidade"] as! Int) caixas"
+        
+        
+        self.lblDataEntrega.text = "Entrega " + (data[0]["diaSemana"] as! String)
+        
+    }
+    
+    
+    
 }
