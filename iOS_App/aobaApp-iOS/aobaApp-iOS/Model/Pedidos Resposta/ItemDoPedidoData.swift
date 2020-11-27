@@ -16,9 +16,9 @@ class ItemDoPedidoData {
     let qtde: Int
     let statusItem: StatusPedido
     let total: Float
+    let valor: Float
     
-    init(entrega: DiaSemana, foto: String, id: CLong, nomeItem: String, qtde: Int, statusItem: StatusPedido, total: Float) {
-    
+    init(entrega: DiaSemana, foto: String, id: CLong, nomeItem: String, qtde: Int, statusItem: StatusPedido, total: Float, valor: Float) {
         self.entrega = entrega
         self.foto = foto
         self.id = id
@@ -26,6 +26,7 @@ class ItemDoPedidoData {
         self.qtde = qtde
         self.statusItem = statusItem
         self.total = total
+        self.valor = valor
     }
     
     static func dictToObject(dict: Dictionary<String, Any>) -> ItemDoPedidoData {
@@ -38,8 +39,9 @@ class ItemDoPedidoData {
         let statusItemString = dict["statusItem"] as! String
         let statusItem = StatusPedido.fromString(statusItemString)
         let total = Float(dict["total"] as! Double)
+        let valor = Float(dict["valor"] as! Double)
     
-        return ItemDoPedidoData(entrega: entrega!, foto: foto, id: id, nomeItem: nomeItem, qtde: qtde, statusItem: statusItem, total: total)
+        return ItemDoPedidoData(entrega: entrega!, foto: foto, id: id, nomeItem: nomeItem, qtde: qtde, statusItem: statusItem, total: total, valor: valor)
     }
 }
 

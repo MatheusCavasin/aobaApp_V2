@@ -26,7 +26,7 @@ class DetalhesDoPedidoViewController: UIViewController {
                 dataEntrega: DataEntregaData(data: item.entrega.dia!, diaSemana: DiaSemana.fromString(string: item.entrega.dia!)!),
                 foto: item.foto,
                 quantidade: item.qtde,
-                valor: item.total,
+                valor: item.valor,
                 nome: item.nomeItem
             )
         }
