@@ -150,12 +150,24 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
                 
                 let novo = novosPedidos[indexPath.row]
                 //MARK: enviar esse novo para a tela de novos p/ responder
+                print("\n\n\n\n\n\n\n\n")
+                print(novo)
+                print("\n\n\n\n\n\n\n\n")
+                if let vc = storyboard?.instantiateViewController(withIdentifier: "NovosPedidosViewController") as? NovosPedidosViewController {
+                    vc.itens = novo["itens"] as! [[String : Any?]]
+                    vc.produtor = novo
+                    self.present(vc, animated:true, completion: {
+//                        self.dadosChamar()
+                    })
+                }
+                
             }else{
                 let row = indexPath.row - novosPedidos.count
                 print("item clicado é pedido em andamento: \(row)")
                 
                 let respondido = pedidosRespondidosFiltro[row]
                 //MARK: enviar esse novo para detalhes
+                
             }
         }
     }
