@@ -16,9 +16,10 @@ class NovosPedidoTableViewCell: UITableViewCell {
     @IBOutlet weak var tempoRestante: UILabel!
     
     
+    
     static let identifier = "NovosPedidoTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: identifier,
+        return UINib(nibName: "NovosPedidoTableViewCell",
                      bundle: nil)
     }
     
@@ -35,14 +36,14 @@ class NovosPedidoTableViewCell: UITableViewCell {
     }
     
     public func configVendedor(produto: [String : Any?]){
-        self.nomeFantasia.text = produto["nomeFantasia"] as? String
-        self.nomeComprador.text = produto["nome"] as? String
-        self.tempoRestante.text = "5h restantes"
+        self.nomeFantasia.text = produto["nomeFantasiaComerciante"] as? String
+        self.nomeComprador.text = produto["nomeComerciante"] as? String
+        self.tempoRestante.text = "5h restantes" // prazoResposta
     }
 }
 
 
-class confirmarAnuncio: UITableViewCell {
+class confirmarPedidoCell: UITableViewCell {
     
 
     @IBOutlet weak var aceitarPedido: UIButton!

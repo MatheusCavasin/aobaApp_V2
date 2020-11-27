@@ -14,14 +14,15 @@ class NovosPedidosViewController: UIViewController, UITableViewDelegate, UITable
     
     
     @IBOutlet weak var tableView: UITableView!
-    var itens = 3
+    var itens = [[String : Any?]]()
+    var produtor = [String : Any?]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
+        tableView.register(produtosConfirmarPedidoTableViewCell.nib(), forCellReuseIdentifier: produtosConfirmarPedidoTableViewCell.identifier)
         tableView.register(NovosPedidoTableViewCell.nib(), forCellReuseIdentifier: NovosPedidoTableViewCell.identifier)
     }
     
@@ -30,21 +31,40 @@ class NovosPedidosViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return itens + 1
+        return itens.count + 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-     /*   if indexPath.row < itens {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ProdutoCarrinhoTableViewCell.identifier) as! ProdutoCarrinhoTableViewCell
-            cell.configVendedor(produto: self.itens[indexPath.row], data: self.datasEntrega)
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NovosPedidoTableViewCell", for: indexPath) as! NovosPedidoTableViewCell
+            cell.configVendedor(produto: produtor)
             return cell
-        } */
+        } else if indexPath.row <= itens.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: produtosConfirmarPedidoTableViewCell.identifier) as! produtosConfirmarPedidoTableViewCell
+            cell.configVendedor(iten: itens[indexPath.row - 1] as! [String : Any?])
+            return cell
+        } else {
+         let cell = tableView.dequeueReusableCell(withIdentifier: "confirmarPedidoCell", for: indexPath) as! confirmarPedidoCell
+         cell.delegate = self
+         return cell
+        }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NovosPedidoTableViewCell", for: indexPath) as! confirmarAnuncio
-        cell.delegate = self
-        return cell
     }
+    
+func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    
+    if indexPath.row == 0 {
+        return 140
+    } else if indexPath.row <= itens.count {
+        return 90
+    }
+    else {
+        return 60
+    }
+}
+    
+    
 
     func recusarPedidoPressed() {
         print("RECUSAR")

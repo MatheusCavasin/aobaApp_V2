@@ -85,6 +85,24 @@ class ProdutoCarrinhoTableViewCell: UITableViewCell {
         
     }
     
+//    novo["nomeComerciante"] as! String
+    
+    public func configNovoPedido(produto: [String : Any?], data: [[String : Any?]]){
+        
+        self.nomeProduto.text = produto["produtoNome"] as! String
+
+        
+        var value: String = String(format: "%.2f", Float((produto["valor"] as! Double)) * Float((produto["quantidade"] as! Int)) as CVarArg)
+        value = value.replacingOccurrences(of: ".", with: ",", options: .literal, range: nil)
+        self.valorProduto.text = "R$ \(value)"
+        self.quantidadeProduto.text = "\(produto["quantidade"] as! Int) caixas"
+        
+        
+        self.lblDataEntrega.text = "Entrega " + (data[0]["diaSemana"] as! String)
+        
+    }
+
+    
     
     
 }
