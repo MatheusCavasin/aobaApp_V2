@@ -12,11 +12,9 @@
 		391C2564256D418D0092263A /* PedidoAndamentoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 391C2562256D418D0092263A /* PedidoAndamentoTableViewCell.swift */; };
 		391C2565256D418D0092263A /* PedidoAndamentoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 391C2563256D418D0092263A /* PedidoAndamentoTableViewCell.xib */; };
 		39738A2E256FE1290013AAF1 /* NovoPedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39738A2C256FE1290013AAF1 /* NovoPedidoTableViewCell.swift */; };
-		39738A2F256FE1290013AAF1 /* NovoPedidoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39738A2D256FE1290013AAF1 /* NovoPedidoTableViewCell.xib */; };
 		39F57E0424EFFE4D00D9FA4B /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F57E0324EFFE4D00D9FA4B /* OnBoardingViewController.swift */; };
 		39F57E0724EFFF2B00D9FA4B /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F57E0624EFFF2B00D9FA4B /* Slide.swift */; };
 		39F57E0924EFFF4B00D9FA4B /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F57E0824EFFF4B00D9FA4B /* Slide.xib */; };
-		42D1EE7EA199C6CD61261594 /* Pods_aobaApp_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C143E97B487AB38CE623695E /* Pods_aobaApp_iOS.framework */; };
 		88051B2124D1A39100339FE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2024D1A39100339FE9 /* AppDelegate.swift */; };
 		88051B2324D1A39100339FE9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2224D1A39100339FE9 /* SceneDelegate.swift */; };
 		88051B2524D1A39100339FE9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88051B2424D1A39100339FE9 /* ViewController.swift */; };
@@ -42,10 +40,10 @@
 		88359C9A24E421940073628A /* TabPedidosVendedor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88359C9924E421940073628A /* TabPedidosVendedor.storyboard */; };
 		88359C9C24E424620073628A /* PrincipalVendedor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88359C9B24E424620073628A /* PrincipalVendedor.swift */; };
 		886227A324E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */; };
-		886C368E2570080A00D12D91 /* NovoPedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C368C2570080A00D12D91 /* NovoPedidoTableViewCell.swift */; };
-		886C368F2570080A00D12D91 /* NovoPedidoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886C368D2570080A00D12D91 /* NovoPedidoTableViewCell.xib */; };
+		886C368E2570080A00D12D91 /* NovosPedidoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C368C2570080A00D12D91 /* NovosPedidoTableViewCell.swift */; };
+		886C368F2570080A00D12D91 /* NovosPedidoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 886C368D2570080A00D12D91 /* NovosPedidoTableViewCell.xib */; };
 		886C36922570A6E700D12D91 /* NovosPedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C36912570A6E700D12D91 /* NovosPedidosViewController.swift */; };
-		887BBC692562220A00C394EC /* PedidosVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887BBC682562220900C394EC /* PedidosVendedorViewController.swift */; };
+		887BA2622570C32800FF8553 /* NovoPedidoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39738A2D256FE1290013AAF1 /* NovoPedidoTableViewCell.xib */; };
 		887BBC6C256224A600C394EC /* CarrinhoVendedorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887BBC6B256224A600C394EC /* CarrinhoVendedorViewController.swift */; };
 		887BBC6F256F401200C394EC /* ListaCompletaVendedorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887BBC6E256F401200C394EC /* ListaCompletaVendedorTableViewController.swift */; };
 		889F112124FD227C00B58431 /* ProdutorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889F112024FD227C00B58431 /* ProdutorRepository.swift */; };
@@ -191,10 +189,9 @@
 		88359C9924E421940073628A /* TabPedidosVendedor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabPedidosVendedor.storyboard; sourceTree = "<group>"; };
 		88359C9B24E424620073628A /* PrincipalVendedor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PrincipalVendedor.swift; path = ../PrincipalVendedor.swift; sourceTree = "<group>"; };
 		886227A224E6DFBF00605E61 /* AnuncioVendedorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnuncioVendedorTableViewCell.swift; path = "Classes Anuncio/AnuncioVendedorTableViewCell.swift"; sourceTree = "<group>"; };
-		886C368C2570080A00D12D91 /* NovoPedidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoPedidoTableViewCell.swift; sourceTree = "<group>"; };
-		886C368D2570080A00D12D91 /* NovoPedidoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NovoPedidoTableViewCell.xib; sourceTree = "<group>"; };
+		886C368C2570080A00D12D91 /* NovosPedidoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovosPedidoTableViewCell.swift; sourceTree = "<group>"; };
+		886C368D2570080A00D12D91 /* NovosPedidoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NovosPedidoTableViewCell.xib; sourceTree = "<group>"; };
 		886C36912570A6E700D12D91 /* NovosPedidosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovosPedidosViewController.swift; sourceTree = "<group>"; };
-		887BBC682562220900C394EC /* PedidosVendedorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidosVendedorViewController.swift; sourceTree = "<group>"; };
 		887BBC6B256224A600C394EC /* CarrinhoVendedorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoVendedorViewController.swift; sourceTree = "<group>"; };
 		887BBC6E256F401200C394EC /* ListaCompletaVendedorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaCompletaVendedorTableViewController.swift; sourceTree = "<group>"; };
 		889F112024FD227C00B58431 /* ProdutorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutorRepository.swift; sourceTree = "<group>"; };
@@ -487,12 +484,11 @@
 		887BBC672562220900C394EC /* Classes Pedidos */ = {
 			isa = PBXGroup;
 			children = (
-				887BBC682562220900C394EC /* PedidosVendedorViewController.swift */,
 				887BBC6B256224A600C394EC /* CarrinhoVendedorViewController.swift */,
 				887BBC6E256F401200C394EC /* ListaCompletaVendedorTableViewController.swift */,
 				886C36912570A6E700D12D91 /* NovosPedidosViewController.swift */,
-				886C368C2570080A00D12D91 /* NovoPedidoTableViewCell.swift */,
-				886C368D2570080A00D12D91 /* NovoPedidoTableViewCell.xib */,
+				886C368C2570080A00D12D91 /* NovosPedidoTableViewCell.swift */,
+				886C368D2570080A00D12D91 /* NovosPedidoTableViewCell.xib */,
 			);
 			path = "Classes Pedidos";
 			sourceTree = "<group>";
@@ -866,6 +862,7 @@
 				D1C05E2525386FDB0082A33E /* CampoPerfilTableViewCell.xib in Resources */,
 				88359C8C24E41D670073628A /* CadastroComprador.storyboard in Resources */,
 				D1C01415255B569300EFBD93 /* PedidoEmAndamentoTableViewCell.xib in Resources */,
+				887BA2622570C32800FF8553 /* NovoPedidoTableViewCell.xib in Resources */,
 				88051B2D24D1A39300339FE9 /* LaunchScreen.storyboard in Resources */,
 				88359C9024E41F8C0073628A /* TabHortifrutiComprador.storyboard in Resources */,
 				88051B2A24D1A39300339FE9 /* Assets.xcassets in Resources */,
@@ -887,7 +884,7 @@
 				882FC422251B7ED20019FEA5 /* FotoCollectionViewCell.xib in Resources */,
 				D1E7625225439F14000D85AA /* AvaliarPedidosTableViewCell.xib in Resources */,
 				88359C9224E41FA50073628A /* TabPedidosComprador.storyboard in Resources */,
-				886C368F2570080A00D12D91 /* NovoPedidoTableViewCell.xib in Resources */,
+				886C368F2570080A00D12D91 /* NovosPedidoTableViewCell.xib in Resources */,
 				88359C9A24E421940073628A /* TabPedidosVendedor.storyboard in Resources */,
 				39F57E0924EFFF4B00D9FA4B /* Slide.xib in Resources */,
 				D10BF1C7250FB25D005B874D /* TabCarrinhoComprador.storyboard in Resources */,
@@ -964,7 +961,6 @@
 				889F112124FD227C00B58431 /* ProdutorRepository.swift in Sources */,
 				887BBC6F256F401200C394EC /* ListaCompletaVendedorTableViewController.swift in Sources */,
 				D15A02DB254330CE004F0A29 /* DetalhesView.swift in Sources */,
-				887BBC692562220A00C394EC /* PedidosVendedorViewController.swift in Sources */,
 				D17BB035253CE1BF00FC6D4C /* TelefonePerfilViewController.swift in Sources */,
 				D16DB9AC24E6B9DA00B2B279 /* HortifrutiTableViewCell.swift in Sources */,
 				D10D4BBA24EC0A87003235B4 /* PrincipalComprador.swift in Sources */,
@@ -1025,7 +1021,7 @@
 				D1778CEB251594BE00D4432B /* ComercianteData.swift in Sources */,
 				D16B4483256CA30500090074 /* DetalhesDoPedidoViewController.swift in Sources */,
 				D12476BD250A660500E95433 /* AtivosCategoria.swift in Sources */,
-				886C368E2570080A00D12D91 /* NovoPedidoTableViewCell.swift in Sources */,
+				886C368E2570080A00D12D91 /* NovosPedidoTableViewCell.swift in Sources */,
 				D1E296A4251A553C00B34BEA /* ItemCarrinho.swift in Sources */,
 				39738A2E256FE1290013AAF1 /* NovoPedidoTableViewCell.swift in Sources */,
 				D1CAE6632509207E00A024E4 /* CardOQueProcura.swift in Sources */,

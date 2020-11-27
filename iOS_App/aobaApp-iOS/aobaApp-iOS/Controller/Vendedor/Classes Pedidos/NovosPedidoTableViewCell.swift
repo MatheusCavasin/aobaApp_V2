@@ -1,5 +1,5 @@
 //
-//  NovoPedidoTableViewCell.swift
+//  NovosPedidoTableViewCell.swift
 //  aobaApp-iOS
 //
 //  Created by M Cavasin on 26/11/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NovoPedidoTableViewCell: UITableViewCell {
+class NovosPedidoTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var nomeFantasia: UILabel!
@@ -16,9 +16,9 @@ class NovoPedidoTableViewCell: UITableViewCell {
     @IBOutlet weak var tempoRestante: UILabel!
     
     
-    static let identifier = "NovoPedidoTableViewCell"
+    static let identifier = "NovosPedidoTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "NovoPedidoTableViewCell",
+        return UINib(nibName: identifier,
                      bundle: nil)
     }
     

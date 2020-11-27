@@ -12,7 +12,7 @@ class PedidosVendedorViewController: UIViewController, UITableViewDelegate, UITa
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var pedidosTableView: UITableView!
-    
+        
     var produtorRepository: ProdutorRepository = ProdutorRepository()
     var pedidosRespondidos : [[String : Any?]] = []
     var pedidosRespondidosFiltro : [[String : Any?]] = []

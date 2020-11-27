@@ -22,7 +22,7 @@ class NovosPedidosViewController: UIViewController, UITableViewDelegate, UITable
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
-        tableView.register(NovoPedidoTableViewCell.nib(), forCellReuseIdentifier: NovoPedidoTableViewCell.identifier)
+        tableView.register(NovosPedidoTableViewCell.nib(), forCellReuseIdentifier: NovosPedidoTableViewCell.identifier)
     }
     
     @IBAction func cancelButton(_ sender: Any) {
@@ -41,7 +41,7 @@ class NovosPedidosViewController: UIViewController, UITableViewDelegate, UITable
             return cell
         } */
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ConfirmarPedidoCell", for: indexPath) as! confirmarAnuncio
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NovosPedidoTableViewCell", for: indexPath) as! confirmarAnuncio
         cell.delegate = self
         return cell
     }
