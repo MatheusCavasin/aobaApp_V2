@@ -90,8 +90,6 @@ class TerceiraTelaDeCadastroViewControllerViewController: UIViewController {
         if txtNome.text != "" && txtCnpj.text != "" && txtTelefone.text != "" && txtNomeFantasia.text != "" {
 
             comercianteData = ComercianteData(cnpj: txtCnpj.text!, email: Singleton.shared.creatingUser[0], senha: Singleton.shared.creatingUser[1], foto: "person.fill", nome: txtNome.text!, telefone: txtTelefone.text! ,nomeFantasia: txtNomeFantasia.text!, rating: 0)
-                
-    
             repository.create(comerciante: comercianteData)
             loadingView.isHidden = false
 

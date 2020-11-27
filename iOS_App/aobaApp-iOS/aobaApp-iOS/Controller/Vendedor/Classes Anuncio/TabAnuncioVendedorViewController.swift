@@ -11,12 +11,7 @@
 import UIKit
 
 class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
-    
-    
-    
-    
+
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var CriarAnuncioButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -92,12 +87,16 @@ class TabAnuncioVendedorViewController: UIViewController, UITableViewDelegate, U
     }
     
     @objc func dadosChamar(){
-        
-
         if downloadDados{
-            produtorRepositoy.getAnuncios()
-            self.loadViewAnuncios.isHidden = false
-            self.loadIndicatorAnuncios.startAnimating()
+            produtorRepositoy.login { (result, err) in
+                guard result != nil else { return }
+                self.produtorRepositoy.getAnuncios()
+                DispatchQueue.main.async {
+                    self.loadViewAnuncios.isHidden = false
+                    self.loadIndicatorAnuncios.startAnimating()
+                }
+            }
+           
 //            if let vc = storyboard?.instantiateViewController(withIdentifier: "LoadView") as? LoadingViewController {
 //                vc.modalPresentationStyle = .fullScreen
 //                self.present(vc, animated: false, completion: nil)

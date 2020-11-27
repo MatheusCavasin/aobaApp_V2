@@ -11,6 +11,7 @@ import UIKit
 class Cadastro2VendedorViewController: UIViewController {
 
     @IBOutlet weak var CadastrarButton: UIButton!
+    @IBOutlet weak var nomeFantasia: UITextField!
     @IBOutlet weak var descricaoTextField: UITextField!
     @IBOutlet weak var cnpjTextField: UITextField!
     @IBOutlet weak var telefoneTextField: UITextField!
@@ -42,15 +43,22 @@ class Cadastro2VendedorViewController: UIViewController {
     }
     
     @IBAction func cadastrarButton(_ sender: Any) {
-        
-        let produtor: Produtor = Produtor(email: ModelVendedor.instance.email,
-                                          senha: ModelVendedor.instance.senha,
-                                          nome: ModelVendedor.instance.nome,
-                                          codigo_registro: cnpjTextField.text!,
-                                          foto: "",
-                                          descricao: descricaoTextField.text!)
-        produtorRepository.create(produtor: produtor)
-
+        if descricaoTextField.text!.isEmpty || cnpjTextField.text!.isEmpty || telefoneTextField.text!.isEmpty || nomeFantasia.text!.isEmpty{
+            let alert = UIAlertController(title: "Alerta", message: "Todos os campos devem ser preenchidos. Certifiique-se de que não há nenhum campo em branco", preferredStyle: .alert)
+            alert.view.tintColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            }))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            ModelVendedor.instance.telefone = telefoneTextField.text!
+            ModelVendedor.instance.descricao = descricaoTextField.text!
+            ModelVendedor.instance.codigo_registro = cnpjTextField.text!
+            ModelVendedor.instance.nomeFantasia = nomeFantasia.text!
+            let controller: Cadastro3VendedorViewController!
+            let view = UIStoryboard(name: "CadastroVendedor", bundle: nil)
+            controller = view.instantiateViewController(identifier: "cadastroVendedor03") as? Cadastro3VendedorViewController
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
     
     

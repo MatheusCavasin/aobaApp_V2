@@ -61,12 +61,13 @@ class LoginVendedorViewController: UIViewController {
     
     
     @IBAction func entrarButton(_ sender: Any) {
-        
         let defaults = UserDefaults.standard
         defaults.set(emailVendedor.text, forKey: "Usuario")
         defaults.set(senhaVendedor.text, forKey: "senha")
-        
-        produtorRepository.getProdutos()
+        produtorRepository.login { (result, err) in
+            guard (result != nil) else { return }
+            self.produtorRepository.getProdutos()
+        }
         
         
         
