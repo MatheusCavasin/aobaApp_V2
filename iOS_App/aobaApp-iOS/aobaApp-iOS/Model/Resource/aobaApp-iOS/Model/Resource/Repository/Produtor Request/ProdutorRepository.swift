@@ -11,6 +11,16 @@ import Foundation
 
 class ProdutorRepository {
     
+    func responderPedido(pedidoId: Int, aceite: Bool, completion: @escaping (Any?, Error?) -> Void){
+        
+        guard let produtor = ModelVendedor.instance.produtorLogado else { return }
+        let url = "https://aoba-api-server.herokuapp.com/api/v1/pedido/\(pedidoId)/produtor/\(produtor.id)?aceite=\(aceite)"
+        
+        ApiResource.request(method: "PUT", url: url, params: nil, body: nil, withAuth: true){
+            (result, err) in completion(result, err)
+        }
+    }
+    
     func getPedidosNovos(completion: @escaping (Any?, Error?) -> Void){
         print("request pedidos novos")
         
