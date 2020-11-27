@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class CarrinhoViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var btnCancelar: UIButton!
@@ -28,20 +28,13 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(ProdutoCarrinhoTableViewCell.nib(), forCellReuseIdentifier: ProdutoCarrinhoTableViewCell.identifier)
-        
-        // Configuraçao do carrinho
-        //self.carrinho =  Singleton.shared.carrinho
-        if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
-            Singleton.shared.enderecoDeEntrega = Singleton.shared.comercianteLogado?.enderecos[0]
-            //carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         //carrinho =  Singleton.shared.carrinho
         if (Singleton.shared.comercianteLogado?.enderecos.count ?? 0) > 1 {
             Singleton.shared.enderecoDeEntrega = Singleton.shared.comercianteLogado?.enderecos[0]
-            //carrinho.setEndereco(novoEndereco: Singleton.shared.comercianteLogado?.enderecos[0])
+            Singleton.shared.carrinhoPedido?.enderecoId = Singleton.shared.enderecoDeEntrega?.id
         }
         
         if (carrinhoCriado?.itens.count ?? 0) > 3 {
@@ -110,9 +103,87 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.reloadData()
     }
     
+    
+    private func finalizarPedido() {
+        let emptyCart = UIAlertController(title: "Carrinho vazio", message: "Para realizar o pedido, o carrinho não pode estar vazio. Confira nossos produtos na aba Hortfruti", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Tudo certo!", message: "Caso algum desses produtos não esteja disponível, o que fazer?", preferredStyle: .alert)
+        let successAlert = UIAlertController(title: "AOOOBA", message: "Pedido finalizado com sucesso! Você pode verificar seu pedido na aba Pedidos do nosso app", preferredStyle: .alert)
+        let errorAlert = UIAlertController(title: "Erro", message: "Parece que algo deu errado durante a execução do seu pedido. Tente novamente mais tarde", preferredStyle: .alert)
+        
+        guard let carrinhoPedido = Singleton.shared.carrinhoPedido else { return }
+        emptyCart.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+        
+        if carrinhoPedido.itensDoCarrinho.isEmpty {
+            emptyCart.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+                return
+            }))
+            self.present(emptyCart, animated: true, completion: nil)
+        }
+        alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Aceitar sugestão Aoba", comment: "aceitar sugestao"), style: .default, handler: { _ in
+            if let carrinhoPedido = Singleton.shared.carrinhoPedido {
+                carrinhoPedido.opcaoAlternativa = .ACEITAR_SUGESTAO
+                self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
+                    if let _ = result {
+                        DispatchQueue.main.async {
+                            self.viwLoadView.isHidden = true
+                            successAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                                self.tabBarController?.selectedIndex = 2
+                            }))
+                            self.present(successAlert, animated: true, completion: nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.viwLoadView.isHidden = true
+                            errorAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                            }))
+                            self.present(errorAlert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.viwLoadView.isHidden = true
+                    errorAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                    }))
+                    self.present(errorAlert, animated: true, completion: nil)
+                }
+            }
+        }))
+        
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar produto", comment: "cancelar produto"), style: .default, handler: { _ in
+            if let carrinhoPedido = Singleton.shared.carrinhoPedido {
+                carrinhoPedido.opcaoAlternativa = .CANCELAR_PRODUTO
+                self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
+                    if let _ = result {
+                        DispatchQueue.main.async {
+                            self.viwLoadView.isHidden = true
+                            successAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                                self.tabBarController?.selectedIndex = 2
+                            }))
+                            self.present(successAlert, animated: true, completion: nil)
+                        }
+                    } else {
+                        DispatchQueue.main.async {
+                            self.viwLoadView.isHidden = true
+                            errorAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
+                            }))
+                            self.present(errorAlert, animated: true, completion: nil)
+                        }
+                    }
+                }
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func btnCancelarPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+}
+
+
+extension CarrinhoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if maisDeTresItems {
@@ -226,11 +297,7 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 enderecoCompradorController.carrinhoController = self
             
             } else if indexPath.row == 9 {
-                let alert = UIAlertController(title: "AOOOBA", message: "Pedido realizado com sucesso. Agora é só aguardar ele chegar até você", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-                    NSLog("The \"OK\" alert occured.")
-                }))
-                self.present(alert, animated: true, completion: nil)
+                finalizarPedido()
             }
             
         } else {
@@ -242,42 +309,10 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
                 enderecoCompradorController.navigationItem.title = "Enderecos"
                 enderecoCompradorController.carrinhoController = self
             
-            
             } else if indexPath.row == (carrinhoCriado?.itens.count ?? 0) + 5 {
-                let alert = UIAlertController(title: "Sucesso", message: "Sua compra deu certo, entretanto, caso algum desses produtos não esteja disponível, o que fazer?", preferredStyle: .alert)
-                let successAlert = UIAlertController(title: "AOOOBA", message: "Pedido finalizado com sucesso! Você pode verificar seu pedido na aba Pedidos do nosso app", preferredStyle: .alert)
-                
-                alert.view.tintColor = #colorLiteral(red: 0, green: 0.7470995188, blue: 0.2256398201, alpha: 1)
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Aceitar sugestão Aoba", comment: "aceitar sugestao"), style: .default, handler: { _ in
-                    if let carrinhoPedido = Singleton.shared.carrinhoPedido {
-                        carrinhoPedido.opcaoAlternativa = .ACEITAR_SUGESTAO
-                        self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
-                            DispatchQueue.main.async {
-                                self.viwLoadView.isHidden = true
-                                successAlert.addAction(UIAlertAction(title: NSLocalizedString("Ok", comment: "Ok"), style: .default, handler: { _ in
-                                    self.tabBarController?.selectedIndex = 2
-                                }))
-                             self.present(successAlert, animated: true, completion: nil)
-                            }
-                        }
-                    }
-                }))
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Cancelar produto", comment: "cancelar produto"), style: .default, handler: { _ in
-                    if let carrinhoPedido = Singleton.shared.carrinhoPedido {
-                        carrinhoPedido.opcaoAlternativa = .CANCELAR_PRODUTO
-                        self.viwLoadView.isHidden = false
-                        self.repository.fazerPedido(carrinhoPedido: carrinhoPedido) { result, _ in
-                            DispatchQueue.main.async {
-                                self.viwLoadView.isHidden = true
-                            }
-                        }
-                    }
-                }))
-                self.present(alert, animated: true, completion: nil)
+                finalizarPedido()
             }
-            
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -351,7 +386,4 @@ class CarrinhoViewController: UIViewController, UITableViewDelegate, UITableView
         }
         return nil
     }
-    
-  
-    
 }

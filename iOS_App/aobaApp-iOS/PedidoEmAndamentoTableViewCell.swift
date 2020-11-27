@@ -24,8 +24,10 @@ class PedidoEmAndamentoTableViewCell: UITableViewCell {
     @IBOutlet weak var telButton: UIButton!
     @IBOutlet weak var whatsButton: UIButton!
     @IBOutlet weak var confirmarButton: UIButton!
+    fileprivate var pedido: PedidoData?
+    public var controller: PedidosViewController?
     var defaultColor: UIColor?
-    
+    public var confirmButtonPressed: (() -> Void)?
     
     static let identifier = "PedidoEmAndamentoTableViewCell"
     static func nib() -> UINib {
@@ -38,10 +40,13 @@ class PedidoEmAndamentoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    public func config(defaultColor: UIColor) {
+    public func config(defaultColor: UIColor, pedido: PedidoData) {
         self.defaultColor = defaultColor
+        self.pedido = pedido
         setupUI()
+        bindUI()
     }
+    
     
     public func setStatus(status: StatusPedido) {
         switch status {
@@ -75,10 +80,16 @@ class PedidoEmAndamentoTableViewCell: UITableViewCell {
     }
     fileprivate func setupUI() {
         enteryView.layer.cornerRadius = 8
-        enteryView.layer.borderWidth = 1.0
+        enteryView.layer.borderWidth = 0.5
         enteryView.layer.borderColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         setStatus(status: .pendente)
         setupButtons()
+    }
+    fileprivate func bindUI() {
+        confirmarButton.addTarget(self, action: #selector(self.confirmarClicked), for: .touchDown)
+    }
+    @objc fileprivate func confirmarClicked() {
+        confirmButtonPressed?()
     }
     fileprivate func setupButtons() {
         telButton.layer.cornerRadius = 8
@@ -103,15 +114,29 @@ class PedidoEmAndamentoTableViewCell: UITableViewCell {
         dot.backgroundColor = self.defaultColor
         dot.layer.cornerRadius = dot.frame.width / 2
         dot.layer.borderWidth = 0.0
-        
         label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
     }
     
     @IBAction func telButtonPressed(_ sender: Any) {
+        guard var tel = pedido?.telefoneComerciante else { return }
+        tel = tel.replacingOccurrences(of: "-", with: "")
+        tel = tel.replacingOccurrences(of: " ", with: "")
+        if let url = URL(string: "tel://\(tel)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            print("erro ao ligar")
+        }
     }
+    
     @IBAction func whatButtonPressed(_ sender: Any) {
-    }
-    @IBAction func confirmarButtonPressed(_ sender: Any) {
-        setStatus(status: .confirmado)
+        guard var tel = pedido?.telefoneComerciante else { return }
+        tel = tel.replacingOccurrences(of: "-", with: "")
+        tel = tel.replacingOccurrences(of: " ", with: "")
+        tel = "18997198491"
+        if let url = URL(string: "https://wa.me/1+55\(tel)") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            print("erro ao abrir whatsapp")
+        }
     }
 }

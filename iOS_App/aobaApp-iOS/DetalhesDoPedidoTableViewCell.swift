@@ -14,7 +14,7 @@ class DetalhesDoPedidoTableViewCell: UITableViewCell {
     @IBOutlet var lblMain: UILabel!
     @IBOutlet var lblData: UILabel!
     @IBOutlet var arrowIcon: UIImageView!
-    
+    fileprivate var pedido: PedidoData?
     
     static func nib() -> UINib {
         return UINib(nibName: "DetalhesDoPedidoTableViewCell", bundle: nil)
@@ -30,7 +30,9 @@ class DetalhesDoPedidoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func config(mainText: String, dataText: String) {
+    func config(mainText: String, dataText: String, pedido: PedidoData) {
+        self.pedido = pedido
+        
         lblMain.text = mainText
         lblData.text = dataText
         
