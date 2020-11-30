@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j9j-JA-rkp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j9j-JA-rkp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -75,7 +75,7 @@
                                     <color key="titleColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lZj-66-BA4" kind="show" id="MBD-9t-FLf"/>
+                                    <segue destination="CgE-Rb-DPp" kind="show" id="sAp-om-Meg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,6 +122,74 @@
             </objects>
             <point key="canvasLocation" x="270" y="137"/>
         </scene>
+        <!--Cadastro-->
+        <scene sceneID="1ek-pL-juK">
+            <objects>
+                <viewController id="CgE-Rb-DPp" customClass="CodigoVendedorViewController" customModule="aobaApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NDH-NQ-1Ja">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No momento disponibilizamos o acesso apenas por convite. Insira abaixo o convite que nossa equipe lhe encaminhou." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sB-Q3-TNc">
+                                <rect key="frame" x="50" y="178" width="314" height="81.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caso não tenha o convite, nos encie um e-mail que entraremos em contato! contato@redeaoba.com.br" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIf-kP-HaW">
+                                <rect key="frame" x="50" y="279.5" width="314" height="61"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código do convite" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aKO-jH-8qk">
+                                <rect key="frame" x="50" y="380.5" width="314" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3D4-Ss-A6t">
+                                <rect key="frame" x="50" y="434.5" width="314" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sfE-3r-5Yv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Continuar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="continuarActButton:" destination="CgE-Rb-DPp" eventType="touchUpInside" id="bGq-z6-kUp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ODQ-MM-zEy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uIf-kP-HaW" firstAttribute="leading" secondItem="ODQ-MM-zEy" secondAttribute="leading" constant="50" id="QGv-eD-b7o"/>
+                            <constraint firstItem="uIf-kP-HaW" firstAttribute="top" secondItem="5sB-Q3-TNc" secondAttribute="bottom" constant="20" id="RGP-NW-1Vn"/>
+                            <constraint firstItem="5sB-Q3-TNc" firstAttribute="leading" secondItem="ODQ-MM-zEy" secondAttribute="leading" constant="50" id="TvH-NZ-v9p"/>
+                            <constraint firstItem="5sB-Q3-TNc" firstAttribute="centerX" secondItem="ODQ-MM-zEy" secondAttribute="centerX" id="UX9-8Q-7Pj"/>
+                            <constraint firstItem="ODQ-MM-zEy" firstAttribute="trailing" secondItem="5sB-Q3-TNc" secondAttribute="trailing" constant="50" id="Yzn-74-Lla"/>
+                            <constraint firstItem="aKO-jH-8qk" firstAttribute="top" secondItem="uIf-kP-HaW" secondAttribute="bottom" constant="40" id="cyj-SF-74S"/>
+                            <constraint firstItem="ODQ-MM-zEy" firstAttribute="trailing" secondItem="3D4-Ss-A6t" secondAttribute="trailing" constant="50" id="fK1-N6-w0J"/>
+                            <constraint firstItem="5sB-Q3-TNc" firstAttribute="top" secondItem="ODQ-MM-zEy" secondAttribute="top" constant="90" id="ngV-4o-SKK"/>
+                            <constraint firstItem="3D4-Ss-A6t" firstAttribute="top" secondItem="aKO-jH-8qk" secondAttribute="bottom" constant="20" id="p4w-qF-fu5"/>
+                            <constraint firstItem="3D4-Ss-A6t" firstAttribute="leading" secondItem="ODQ-MM-zEy" secondAttribute="leading" constant="50" id="vtR-9m-DsT"/>
+                            <constraint firstItem="ODQ-MM-zEy" firstAttribute="trailing" secondItem="aKO-jH-8qk" secondAttribute="trailing" constant="50" id="yb0-IJ-o7W"/>
+                            <constraint firstItem="aKO-jH-8qk" firstAttribute="leading" secondItem="ODQ-MM-zEy" secondAttribute="leading" constant="50" id="z2w-di-YdZ"/>
+                            <constraint firstAttribute="trailing" secondItem="uIf-kP-HaW" secondAttribute="trailing" constant="50" id="zhF-fY-Mr6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cadastro" id="HUU-FE-47f"/>
+                    <connections>
+                        <outlet property="codigoText" destination="aKO-jH-8qk" id="r3z-Um-48c"/>
+                        <outlet property="continuarButton" destination="3D4-Ss-A6t" id="ROc-27-VIx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ih6-PC-R4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1242.0289855072465" y="136.60714285714286"/>
+        </scene>
         <!--cadastroVendedor01-->
         <scene sceneID="yaN-WP-PAc">
             <objects>
@@ -131,25 +199,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="JO0-CD-dQM">
-                                <rect key="frame" x="37" y="345.5" width="340" height="220"/>
+                                <rect key="frame" x="37" y="292" width="340" height="220"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keK-1O-dUc">
-                                        <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="340" height="44"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Wv-4b-uNr">
-                                        <rect key="frame" x="0.0" y="58.5" width="340" height="44"/>
+                                        <rect key="frame" x="0.0" y="59" width="340" height="43.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P7k-VB-GoI">
-                                        <rect key="frame" x="0.0" y="117.5" width="340" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="117.5" width="340" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmação de senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2PH-V2-n7y">
-                                        <rect key="frame" x="0.0" y="176" width="340" height="44"/>
+                                        <rect key="frame" x="0.0" y="176.5" width="340" height="43.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
@@ -159,7 +227,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zi9-SH-f54">
-                                <rect key="frame" x="37" y="622" width="340" height="45"/>
+                                <rect key="frame" x="37" y="563.5" width="340" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="6fM-f3-Ysp"/>
@@ -173,10 +241,10 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cadastro-comerciante1" translatesAutoresizingMaskIntoConstraints="NO" id="G2V-bc-gc7">
-                                <rect key="frame" x="83" y="88" width="248" height="125.5"/>
+                                <rect key="frame" x="83" y="44" width="248" height="125.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre-se no aoba para vender frutas, verduras e legumes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rV6-UK-XP1">
-                                <rect key="frame" x="35.5" y="235" width="343" height="72"/>
+                                <rect key="frame" x="35.5" y="186.5" width="343" height="72"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -215,7 +283,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EV1-OL-nLO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1140.5797101449277" y="136.60714285714286"/>
+            <point key="canvasLocation" x="2338" y="137"/>
         </scene>
         <!--PrincipalVendedor-->
         <scene sceneID="jqe-nv-vcN">
@@ -334,7 +402,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mQu-YW-lGs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2100" y="137"/>
+            <point key="canvasLocation" x="3135" y="137"/>
         </scene>
         <!--cadastroVendedor02-->
         <scene sceneID="ynV-R6-zvH">
@@ -421,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdZ-3s-IGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950.7246376811595" y="136.60714285714286"/>
+            <point key="canvasLocation" x="3986" y="137"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.4941176471" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
@@ -432,6 +500,9 @@
         <image name="cadastro-comerciante3" width="274" height="237"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
